@@ -1,0 +1,6300 @@
+<!DOCTYPE html>
+<!--
+  Copyright 2010 Google Inc.
+
+  Licensed under the Apache License, Version 2.0 (the "License");
+  you may not use this file except in compliance with the License.
+  You may obtain a copy of the License at
+
+     http://www.apache.org/licenses/LICENSE-2.0
+
+  Unless required by applicable law or agreed to in writing, software
+  distributed under the License is distributed on an "AS IS" BASIS,
+  WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+  See the License for the specific language governing permissions and
+  limitations under the License.
+
+  Original slides: Marcin Wichary (mwichary@google.com)
+  Modifications: Ernest Delgado (ernestd@google.com)
+                 Alex Russell (slightlyoff@chromium.org)
+
+  landslide modifications: Adam Zapletal (adamzap@gmail.com)
+                           Nicolas Perriault (nperriault@gmail.com)
+-->
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="chrome=1" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta id="viewport" name="viewport" content="user-scalable=no" />
+    <title>Operatör</title>
+    <!-- Styles -->
+    
+    <style type="text/css" media="print">
+      * {
+    margin: 0;
+    padding: 0;
+}
+
+@page {
+    size: landscape;
+}
+
+body {
+    font: 100% "Lucida Grande", "Trebuchet MS", Verdana, sans-serif;
+    padding: 0;
+    margin: 0;
+}
+
+div.slide {
+    min-width: 800px;
+    min-height: 600px;
+    padding: 1em;
+    overflow: hidden;
+    page-break-after: always;
+    border: 1px solid black;
+    border-radius: 20px;
+}
+
+div.slide div.inner {
+    width: 800px;
+    height: 600px;
+    margin: auto;
+    display: table-cell;
+}
+
+h1 {
+    font-size: 2.4em;
+}
+
+h2 {
+    font-size: 1.4em;
+}
+
+h3 {
+    margin: 1em 0;
+}
+
+ul {
+    margin: 0;
+    padding: 0;
+}
+
+p, li, pre {
+    margin: 1em 0;
+}
+
+li {
+    margin-left: 2em;
+}
+
+a {
+    color: #000000;
+}
+
+pre, code {
+    max-width: 800px;
+    background: #eee;
+    font-family: Monaco, monospace;
+    font-size: 90%;
+}
+
+pre {
+    padding: .2em .5em;
+    overflow: hidden;
+    border-radius: .8em;
+}
+
+code {
+    padding: 0 .2em;
+}
+
+.slide header:only-child h1 {
+  line-height: 180%;
+  text-align: center;
+  display: table-cell;
+  vertical-align: middle;
+  height: 600px;
+  width: 800px;
+  font-size: 48px;
+  margin-top:100px;
+  margin-bottom:100px;
+}
+
+#toc, #help, .slide aside, .slide footer, .slide .notes,
+.presenter_notes, #current_presenter_notes, #presenter_note {
+  display: none;
+}
+
+    </style>
+    <style type="text/css" media="screen, projection">
+      body {
+  font: 14px "Lucida Grande", "Trebuchet MS", Verdana, sans-serif;
+  background: #fff;
+  padding: 0;
+  margin: 0;
+  overflow: hidden;
+}
+
+div.presentation {
+  position: absolute;
+  width: 100%;
+  display: table-cell;
+  vertical-align: middle;
+  height: 100%;
+  background: inherit;
+}
+
+div.slides, body.expose div.slides.nocontext {
+  width: 100%;
+  height: 100%;
+  left: 0;
+  top: 0;
+  position: absolute;
+  display: block;
+  background-color: #fff;
+}
+
+
+div.slides.nocontext {
+  width: 900px;
+  margin: 0 auto;
+  overflow: hidden;
+  position: relative;
+  left: auto;
+  top: auto;
+}
+
+div.slide {
+  display: none;
+  position: absolute;
+  overflow: hidden;
+  width: 900px;
+  height: 700px;
+  left: 50%;
+  top: 50%;
+  margin-top: -350px;
+  background: -webkit-gradient(linear, left bottom, left top, from(#fff), to(#eeeeec));
+  background-color: #eee;
+  background: -moz-linear-gradient(bottom, #fff, #eeeeec);
+  -webkit-transition: margin 0.25s ease-in-out;
+  -moz-transition: margin 0.25s ease-in-out;
+  -o-transition: margin 0.25s ease-in-out;
+  border-top-right-radius: 20px;
+  -moz-border-radius-topright: 20px;
+  -webkit-border-top-right-radius: 20px;
+  border-bottom-left-radius: 0px;
+  -moz-border-radius-bottomleft: 0px;
+  -webkit-border-bottom-left-radius: 0px;
+  border-top-left-radius: 20px;
+  -moz-border-radius-topleft: 20px;
+  -webkit-border-top-left-radius: 20px;
+  border-bottom-right-radius: 0px;
+  -moz-border-radius-bottomright: 0px;
+  -webkit-border-bottom-right-radius: 0px;
+
+}
+
+div.slide p {
+  font-size: 20px;
+}
+
+.slide.far-past {
+  display: block;
+  margin-left: -2400px;
+}
+
+.slide.past {
+  display: block;
+  margin-left: -1400px;
+}
+
+.slide.current {
+  display: block;
+  margin-left: -450px;
+}
+
+.slide.future {
+  display: block;
+  margin-left: 500px;
+}
+
+.slide.far-future {
+  display: block;
+  margin-left: 1500px;
+}
+
+body.three-d div.slides {
+  -webkit-transform: translateX(50px) scale(0.8) rotateY(10deg);
+  -moz-transform: translateX(50px) scale(0.8) rotateY(10deg);
+  -o-transform: translateX(50px) scale(0.8) rotateY(10deg);
+}
+
+
+/* Content */
+
+header:not(:only-child) {
+  font-family: "Lucida Grande", "Trebuchet MS", Verdana, sans-serif;
+  font-weight: normal;
+  font-size: 50px;
+  letter-spacing: -.05em;
+  color: white;
+  color: black;
+  text-shadow: rgba(0, 0, 0, 0.2) 0 2px 5px;
+  position: absolute;
+  left: 30px;
+  top: 25px;
+  margin: 0;
+  padding: 0;
+}
+
+header h1, header h2, header h3, header h4, header h5, header h6 {
+  display: inline;
+  font-size: 100%;
+  font-weight: normal;
+  padding: 0;
+  margin: 0;
+}
+
+header h2:first-child {
+  margin-top: 0;
+}
+
+section, .slide header:only-child h1 {
+  font-family: "Lucida Grande", "Trebuchet MS", Verdana, sans-serif;
+  color: #3f3f3f;
+  text-shadow: rgba(0, 0, 0, 0.2) 0 2px 5px;
+  margin-left: 30px;
+  margin-right: 30px;
+  margin-top: 100px;
+  display: block;
+  overflow: hidden;
+}
+
+section img.align-center {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+section img.align-right {
+  display: block;
+  margin-left: auto;
+  margin-right: 0;
+}
+
+section img.align-left {
+  display: block;
+  margin-right: auto;
+  margin-left: 0;
+}
+
+a {
+  color: inherit;
+  display: inline-block;
+  text-decoration: none;
+  line-height: 110%;
+  border-bottom: 2px solid #3f3f3f;
+}
+
+pre, code, tt {
+  font-family: Monaco, Consolas, 'Bitstream Vera Sans Mono', 'Lucida Console', FreeMono, Courier, monospace;
+}
+
+pre, .gist .gist-file .gist-data {
+  font-size: 18px;
+  max-height: 485px;
+  padding-top: 0.25em !important;
+  padding-right: 0.5em !important;
+  padding-left: 0.5em !important;
+  overflow: auto;
+}
+
+/* render a nice scrollbar in overflowed pre area's */
+::-webkit-scrollbar {
+  height: 8px;
+  width: 8px;
+}
+::-webkit-scrollbar-thumb {
+  background: -webkit-gradient(linear, left bottom, left top, from(#777), to(#bbd));
+  -webkit-border-radius: 1ex;
+}
+::-webkit-scrollbar-corner {
+  background: #dedede;
+}
+
+li {
+  padding: 10px 0;
+  font-size: 20px;
+}
+
+li pre { margin-left: 0em; }
+
+.slide header:only-child h1 {
+  line-height: 180%;
+  text-align: center;
+  display: table-cell;
+  vertical-align: middle;
+  height: 700px;
+  width: 900px;
+  font-size: 50px;
+  margin-top:100px;
+  margin-bottom:100px;
+}
+
+.sidebar {
+  background: -webkit-gradient(linear, top right, bottom right, from(#dde), to(#fff));
+  -webkit-transition: margin 0.25s ease-in-out;
+  background-color: #eee;
+  background: -moz-linear-gradient(right, #dde, #fff);
+  border-right: 5px solid #ccd;
+  z-index: 9999999;
+  height: 100%;
+  overflow: hidden;
+  top: 0;
+  position: absolute;
+  display: block;
+  margin: 0;
+  margin-left: -400px;
+  padding: 10px 16px;
+  overflow: auto;
+  -webkit-transition: margin 0.2s ease-in-out;
+  -moz-transition: margin 0.2s ease-in-out;
+  -o-transition: margin 0.2s ease-in-out;
+}
+
+.sidebar h2 {
+  text-shadow: rgba(0, 0, 0, 0.2) 0 2px 5px;
+  margin: 0 0 16px;
+  padding: 0;
+}
+
+.sidebar table {
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  border-collapse: collapse;
+}
+
+.sidebar table caption {
+  display: none;
+}
+
+.sidebar tr {
+  margin: 2px 0;
+  border-bottom: 1px solid #ccc;
+}
+
+.sidebar th {
+  text-align: left;
+  font-weight: normal;
+  max-width: 300px;
+  overflow: hidden;
+}
+
+.sidebar tr.sub th {
+  text-indent: 20px;
+}
+
+.sidebar td {
+  text-align: right;
+  min-width: 20px;
+}
+
+.sidebar a {
+  display: block;
+  text-decoration: none;
+  border-bottom: none;
+  padding: 4px 0;
+}
+
+.sidebar tr.active {
+  background: #ff0;
+}
+
+aside {
+  display: none;
+}
+  aside.source {
+    position: absolute;
+    bottom: 6px;
+    left: 10px;
+    text-indent: 10px;
+  }
+  aside.page_number {
+    position: absolute;
+    bottom: 6px;
+    right: 10px;
+    text-indent: 10px;
+  }
+
+.notes {
+  display: none;
+  padding: 10px;
+  background: #ccc;
+  border-radius: 10px;
+  -moz-border-radius: 10px;
+  -webkit-border-radius: 10px;
+}
+  div.slide p.notes {
+    font-size: 90%;
+}
+
+img { display: block; margin: auto; }
+
+/* Expose */
+
+body.expose div.slides {
+  float: left;
+  position: relative;
+  overflow: auto;
+  margin-bottom: 10px;
+}
+
+body.expose div.slide {
+  display: block;
+  float: left;
+  position: relative;
+  left: auto !important;
+  top: auto !important;
+  margin: 10px !important;
+  -webkit-transition: none;
+  -moz-transition: none;
+  -o-transition: none;  
+  -moz-transform: scale(.33, .33);
+  -moz-transform-origin: 0 0;
+  -webkit-transform: scale(.33, .33);
+  -webkit-transform-origin: 0 0;
+  -o-transform: scale(.33, .33);
+  -o-transform-origin: 0 0;
+  -webkit-transition: none;
+  -moz-transition: none;
+  -o-transition: none;
+  cursor: pointer;
+}
+
+body.expose div.slide:hover {
+  background: -webkit-gradient(linear, left bottom, left top, from(#bdd), to(#fff));
+  background-color: #eee;
+  background: -moz-linear-gradient(bottom, #bdd, #fff);
+}
+
+body.expose .slide-wrapper {
+  float: left;
+  position: relative;
+  margin: .5%;
+  width: 300px;
+  height: 233px;
+}
+
+body.expose .slide footer {
+}
+
+body.expose .slide .inner {
+}
+
+body.expose .slide.far-past,
+body.expose .slide.past,
+body.expose .slide.future,
+body.expose .slide.far-future {
+  margin-left: 0;
+}
+
+body.expose .slide.current {
+  background: -webkit-gradient(linear, left bottom, left top, from(#ddb), to(#fff));
+  background-color: #eee;
+  background: -moz-linear-gradient(bottom, #ddb, #fff);
+  border: 16px solid #fff;
+  -moz-transform: scale(.315, .315);
+  -moz-transform-origin: 0 0;
+  -webkit-transform: scale(.315, .315);
+  -webkit-transform-origin: 0 0;
+  -o-transform: scale(.315, .315);
+  -o-transform-origin: 0 0;
+}
+
+/* Navigator */
+
+nav {
+  position: fixed;
+  z-index: 10;
+  background-color: black;
+  opacity: 0.0;
+  text-align: center;
+  top: 1%;
+  width: 100px;
+  height: 98%;
+}
+nav:hover, nav.hover {
+  opacity: 0.4;
+}
+
+nav#left {
+  border-top-right-radius: 10px;
+  border-bottom-right-radius: 10px;
+  left: 0;
+}
+nav#right {
+  border-bottom-left-radius: 5px;
+  border-top-left-radius: 5px;
+  right: 0;
+}
+
+nav menu {
+  padding: 0;
+  display: block;
+  height: 40%;
+  width: inherit;
+  position: fixed;
+}
+nav menu#top {
+  top: 5%;
+}
+nav menu#bottom {
+  top: auto;
+  bottom: 3%;
+}
+
+nav menu button {
+  background-color: #222;
+  border: none;
+  color: white;
+  cursor: pointer;
+  text-align: center;
+  width: 100%;
+  height: 19%;
+  font-size: 24px;
+  font-family: monospace;
+  margin-top: 1%;
+}
+nav menu button:hover {
+  opacity: 1.0;
+}
+nav menu button#prev, nav menu button#next {
+  margin-top: 0;
+  margin-bottom: 1%;
+  padding-top: 0;
+  height: 25%;
+  font-size: 40px;
+}
+
+/* Pygments default theme */
+.hll { background-color: #ffffcc }
+.c { color: #408080; font-style: italic } /* Comment */
+.err { border: 1px solid #FF0000 } /* Error */
+.k { color: #008000; font-weight: bold } /* Keyword */
+.o { color: #666666 } /* Operator */
+.cm { color: #408080; font-style: italic } /* Comment.Multiline */
+.cp { color: #BC7A00 } /* Comment.Preproc */
+.c1 { color: #408080; font-style: italic } /* Comment.Single */
+.cs { color: #408080; font-style: italic } /* Comment.Special */
+.gd { color: #A00000 } /* Generic.Deleted */
+.ge { font-style: italic } /* Generic.Emph */
+.gr { color: #FF0000 } /* Generic.Error */
+.gh { color: #000080; font-weight: bold } /* Generic.Heading */
+.gi { color: #00A000 } /* Generic.Inserted */
+.go { color: #808080 } /* Generic.Output */
+.gp { color: #000080; font-weight: bold } /* Generic.Prompt */
+.gs { font-weight: bold } /* Generic.Strong */
+.gu { color: #800080; font-weight: bold } /* Generic.Subheading */
+.gt { color: #0040D0 } /* Generic.Traceback */
+.kc { color: #008000; font-weight: bold } /* Keyword.Constant */
+.kd { color: #008000; font-weight: bold } /* Keyword.Declaration */
+.kn { color: #008000; font-weight: bold } /* Keyword.Namespace */
+.kp { color: #008000 } /* Keyword.Pseudo */
+.kr { color: #008000; font-weight: bold } /* Keyword.Reserved */
+.kt { color: #B00040 } /* Keyword.Type */
+.m { color: #666666 } /* Literal.Number */
+.s { color: #BA2121 } /* Literal.String */
+.na { color: #7D9029 } /* Name.Attribute */
+.nb { color: #008000 } /* Name.Builtin */
+.nc { color: #0000FF; font-weight: bold } /* Name.Class */
+.no { color: #880000 } /* Name.Constant */
+.nd { color: #AA22FF } /* Name.Decorator */
+.ni { color: #999999; font-weight: bold } /* Name.Entity */
+.ne { color: #D2413A; font-weight: bold } /* Name.Exception */
+.nf { color: #0000FF } /* Name.Function */
+.nl { color: #A0A000 } /* Name.Label */
+.nn { color: #0000FF; font-weight: bold } /* Name.Namespace */
+.nt { color: #008000; font-weight: bold } /* Name.Tag */
+.nv { color: #19177C } /* Name.Variable */
+.ow { color: #AA22FF; font-weight: bold } /* Operator.Word */
+.w { color: #bbbbbb } /* Text.Whitespace */
+.mf { color: #666666 } /* Literal.Number.Float */
+.mh { color: #666666 } /* Literal.Number.Hex */
+.mi { color: #666666 } /* Literal.Number.Integer */
+.mo { color: #666666 } /* Literal.Number.Oct */
+.sb { color: #BA2121 } /* Literal.String.Backtick */
+.sc { color: #BA2121 } /* Literal.String.Char */
+.sd { color: #BA2121; font-style: italic } /* Literal.String.Doc */
+.s2 { color: #BA2121 } /* Literal.String.Double */
+.se { color: #BB6622; font-weight: bold } /* Literal.String.Escape */
+.sh { color: #BA2121 } /* Literal.String.Heredoc */
+.si { color: #BB6688; font-weight: bold } /* Literal.String.Interpol */
+.sx { color: #008000 } /* Literal.String.Other */
+.sr { color: #BB6688 } /* Literal.String.Regex */
+.s1 { color: #BA2121 } /* Literal.String.Single */
+.ss { color: #19177C } /* Literal.String.Symbol */
+.bp { color: #008000 } /* Name.Builtin.Pseudo */
+.vc { color: #19177C } /* Name.Variable.Class */
+.vg { color: #19177C } /* Name.Variable.Global */
+.vi { color: #19177C } /* Name.Variable.Instance */
+.il { color: #666666 } /* Literal.Number.Integer.Long */
+.lineno { padding-right: 10px } /* A few space after linenos */
+
+/* Presenter Mode */
+
+body.presenter_view div.slide {
+  display: inline;
+  position: absolute;
+  overflow: hidden;
+  -moz-transform: scale(.5, .5);
+  -moz-transform-origin: 0 0;
+  -webkit-transform: scale(.5, .5);
+  -webkit-transform-origin: 0 0;
+  -o-transform: scale(.5, .5);
+  -o-transform-origin: 0 0;
+  margin-top: -300px;
+}
+
+body.presenter_view .slide.far-past {
+  display: block;
+  margin-left: -1500px;
+}
+
+body.presenter_view .slide.past {
+  display: block;
+  margin-left: -975px;
+}
+
+body.presenter_view .slide.current {
+  display: block;
+  margin-left: -475px;
+  border: 8px solid maroon;
+  z-index: 2;
+}
+
+body.presenter_view .slide.future {
+  display: block;
+  margin-left: 25px;
+  z-index: 1;
+}
+
+body.presenter_view .slide.far-future {
+  display: block;
+  margin-left: 525px;
+}
+
+body.presenter_view div#current_presenter_notes {
+  visibility: visible;
+  display: block;
+  position: absolute;
+  overflow: auto;
+  vertical-align: middle;
+  left: 50%;
+  top: 50%;
+  margin-left: -475px;
+  margin-top: 100px;
+  z-index: 2;
+  width: 950px;
+  border-style: solid;
+  height: 30%;
+  background-color: silver;
+}
+
+body.presenter_view div#current_presenter_notes section {
+  font-family: "Lucida Grande", "Trebuchet MS", Verdana, sans-serif;
+  color: black;
+  text-shadow: rgba(0, 0, 0, 0.2) 0 2px 5px;
+  display: block;
+  overflow: visible;
+  position: relative;
+  background-color: #fffeff;
+  height: 120px;
+  margin-right: 30px;
+  margin-top: 60px;
+  margin-left: 30px;
+  padding-right: 10px;
+  padding-left: 10px;
+  padding-top: 10px;
+}
+
+body.presenter_view div#current_presenter_notes section p {
+  margin: 0;
+}
+
+body.presenter_view div#current_presenter_notes h1 {
+  font-size: 50%;
+  display: block;
+}
+
+div#current_presenter_notes {
+  display: none;
+}
+
+div.slide div.presenter_notes {
+  display: none;
+}
+
+#blank {
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: black;
+  width: 100%;
+  height: 100%;
+  z-index: 64;
+  display: none;
+}
+
+    </style>
+    
+    
+      
+      <style type="text/css" media="screen, projection">
+        /* begin presentation.css */
+
+ul li {
+  list-style: none;
+  list-style-type: none;
+  margin-left: -26px;
+  padding-left: 1em;
+  text-indent: -32px;
+}
+ul li p:first-child {
+  margin-left: 3px;
+}
+ul li p {
+  margin-left: 32px;
+}
+ul li pre { text-indent: 0; }
+ul li:before {
+  content: '\25B6 \0020';
+  color: #9c000d;
+  line-height:80%;
+  vertical-align: 16%;
+  padding-right: 0.4em;
+}
+ul li:first {
+  content: ' ';
+}
+
+li p { display: inline; }
+li pre { margin-left: 2em; }
+
+a {
+  text-decoration: none;
+  color: #1571e1;
+  border: none;
+  display: inline !important;
+}
+
+pre, code, tt {
+  font-family: Monaco, Consolas, 'Bitstream Vera Sans Mono', 'Lucida Console', FreeMono, Courier, monospace;
+}
+
+pre, .gist .gist-file .gist-data {
+  font-size: 18px;
+  max-height: 485px;
+  padding-top: 0.25em !important;
+  padding-right: 0.5em !important;
+  padding-left: 0.5em !important;
+  overflow: auto;
+}
+
+code {
+  background: #ffffff;
+  padding: 0.1em;
+  padding-right: 0.15em;
+  border-top-right-radius: 0.2em;
+  -moz-border-radius-topright: 0.2em;
+  -webkit-border-top-right-radius: 0.2em;
+  border-bottom-left-radius: 2px;
+  -moz-border-radius-bottomleft: 0.2em;
+  -webkit-border-bottom-left-radius: 0.2em;
+  border-top-left-radius: 0.2em;
+  -moz-border-radius-topleft: 0.2em;
+  -webkit-border-top-left-radius: 0.2em;
+  border-bottom-right-radius: 0.2em;
+  -moz-border-radius-bottomright: 0.2em;
+  -webkit-border-bottom-right-radius: 0.2em;
+}
+pre, pre code {
+  background: none;
+}
+
+div.slide {
+  background: -webkit-gradient(linear, left bottom, left top, from(#eee), to(#eaeaea));
+  background-color: #eee;
+  background: -moz-linear-gradient(bottom, #eee, #eaeaea);
+  border-top-right-radius: 20px;
+  -moz-border-radius-topright: 20px;
+  -webkit-border-top-right-radius: 20px;
+  border-bottom-left-radius: 2px;
+  -moz-border-radius-bottomleft: 20px;
+  -webkit-border-bottom-left-radius: 20px;
+  border-top-left-radius: 20px;
+  -moz-border-radius-topleft: 20px;
+  -webkit-border-top-left-radius: 20px;
+  border-bottom-right-radius: 20px;
+  -moz-border-radius-bottomright: 20px;
+  -webkit-border-bottom-right-radius: 20px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: -webkit-gradient(linear, left bottom, left top, from(#9c000d), to(#eee));
+}
+::-webkit-scrollbar-thumb:horizontal { /* no horizontal scrollbar */
+  background: none;
+}
+
+.slide.task {
+  background: #ffffe0;
+  border: 1px solid #eee;
+  border-radius: 20px;
+}
+.slide.task header {
+  color: #9c000d;
+}
+
+.slide.achtung {
+  background: #d7e5f5;
+  border: 1px solid #eee;
+  border-radius: 20px;
+}
+.slide.achtung header {
+  color: #9c000d;
+}
+.slide.achtung header {
+  color: #9c000d;
+}
+
+.slide.first {
+  text-align: center;
+}
+.slide.first header {
+  color: #9c000d;
+  width: 900px;
+  padding-top: 30px;
+  margin-left: 0px;
+  padding-left: 0px;
+  margin-top: 40px;
+  margin-bottom: 20px;
+  left: 0px;
+  color: white;
+  background-color: #9c000d;
+  -moz-border-radius: 0.15em 0.15em 0.15em 0.15em;
+  border-radius: 0.15em 0.15em 0.15em 0.15em;
+  height: 80px;
+}
+.slide.first section {
+  padding-top: 90px;
+}
+
+.section {
+  color: black;
+}
+
+/* Pygments */
+.err { border: 0px; }
+
+/* end presentation.css */
+
+      </style>
+      
+    
+    <!-- /Styles -->
+    <!-- Javascripts -->
+    
+    <script>
+      function main() {
+    // Since we don't have the fallback of attachEvent and
+    // other IE only stuff we won't try to run JS for IE.
+    // It will run though when using Google Chrome Frame
+    if (document.all) { return; }
+
+    var currentSlideNo;
+    var notesOn = false;
+    var expanded = false;
+    var hiddenContext = false;
+    var blanked = false;
+    var slides = document.getElementsByClassName('slide');
+    var touchStartX = 0;
+    var spaces = /\s+/, a1 = [''];
+    var tocOpened = false;
+    var helpOpened = false;
+    var overviewActive = false;
+    var modifierKeyDown = false;
+    var scale = 1;
+    var showingPresenterView = false;
+    var presenterViewWin = null;
+    var isPresenterView = false;
+
+    var str2array = function(s) {
+        if (typeof s == 'string' || s instanceof String) {
+            if (s.indexOf(' ') < 0) {
+                a1[0] = s;
+                return a1;
+            } else {
+                return s.split(spaces);
+            }
+        }
+        return s;
+    };
+
+    var trim = function(str) {
+        return str.replace(/^\s\s*/, '').replace(/\s\s*$/, '');
+    };
+
+    var addClass = function(node, classStr) {
+        classStr = str2array(classStr);
+        var cls = ' ' + node.className + ' ';
+        for (var i = 0, len = classStr.length, c; i < len; ++i) {
+            c = classStr[i];
+            if (c && cls.indexOf(' ' + c + ' ') < 0) {
+                cls += c + ' ';
+            }
+        }
+        node.className = trim(cls);
+    };
+
+    var removeClass = function(node, classStr) {
+        var cls;
+        if (!node) {
+            throw 'no node provided';
+        }
+        if (classStr !== undefined) {
+            classStr = str2array(classStr);
+            cls = ' ' + node.className + ' ';
+            for (var i = 0, len = classStr.length; i < len; ++i) {
+                cls = cls.replace(' ' + classStr[i] + ' ', ' ');
+            }
+            cls = trim(cls);
+        } else {
+            cls = '';
+        }
+        if (node.className != cls) {
+            node.className = cls;
+        }
+    };
+
+    var getSlideEl = function(slideNo) {
+        if (slideNo > 0) {
+            return slides[slideNo - 1];
+        } else {
+            return null;
+        }
+    };
+
+    var getSlideTitle = function(slideNo) {
+        var el = getSlideEl(slideNo);
+        if (el) {
+            var headers = el.getElementsByTagName('header');
+            if (headers.length > 0) {
+                return el.getElementsByTagName('header')[0].innerText;
+            }
+        }
+        return null;
+    };
+
+    var getSlidePresenterNote = function(slideNo) {
+        var el = getSlideEl(slideNo);
+        if (el) {
+            var n = el.getElementsByClassName('presenter_notes');
+            if (n.length > 0) {
+                return n[0];
+            }
+        }
+        return null;
+    };
+
+    var changeSlideElClass = function(slideNo, className) {
+        var el = getSlideEl(slideNo);
+        if (el) {
+            removeClass(el, 'far-past past current future far-future');
+            addClass(el, className);
+        }
+    };
+
+    var updateSlideClasses = function(updateOther) {
+        window.location.hash = (isPresenterView ? "presenter" : "slide") + currentSlideNo;
+
+        for (var i=1; i<currentSlideNo-1; i++) {
+            changeSlideElClass(i, 'far-past');
+        }
+
+        changeSlideElClass(currentSlideNo - 1, 'past');
+        changeSlideElClass(currentSlideNo, 'current');
+        changeSlideElClass(currentSlideNo + 1, 'future');
+
+        for (i=currentSlideNo+2; i<slides.length+1; i++) {
+            changeSlideElClass(i, 'far-future');
+        }
+
+        highlightCurrentTocLink();
+
+        processContext();
+
+        document.getElementsByTagName('title')[0].innerText = getSlideTitle(currentSlideNo);
+
+        updatePresenterNotes();
+
+        if (updateOther) { updateOtherPage(); }
+    };
+
+    var updatePresenterNotes = function() {
+        if (!isPresenterView) { return; }
+
+        var existingNote = document.getElementById('current_presenter_notes');
+        var currentNote = getSlidePresenterNote(currentSlideNo).cloneNode(true);
+        currentNote.setAttribute('id', 'presenter_note');
+
+        existingNote.replaceChild(currentNote, document.getElementById('presenter_note'));
+    };
+
+    var highlightCurrentTocLink = function() {
+        var toc = document.getElementById('toc');
+
+        if (toc) {
+            var tocRows = toc.getElementsByTagName('tr');
+            for (var i=0; i<tocRows.length; i++) {
+                removeClass(tocRows.item(i), 'active');
+            }
+
+            var currentTocRow = document.getElementById('toc-row-' + currentSlideNo);
+            if (currentTocRow) {
+                addClass(currentTocRow, 'active');
+            }
+        }
+    };
+
+    var updateOtherPage = function() {
+        if (!showingPresenterView) { return; }
+
+        var w = isPresenterView ? window.opener : presenterViewWin;
+        w.postMessage('slide#' + currentSlideNo, '*');
+    };
+
+    var nextSlide = function() {
+        if (currentSlideNo < slides.length) {
+            currentSlideNo++;
+        }
+        updateSlideClasses(true);
+    };
+
+    var prevSlide = function() {
+        if (currentSlideNo > 1) {
+            currentSlideNo--;
+        }
+        updateSlideClasses(true);
+    };
+
+    var showNotes = function() {
+        var notes = getSlideEl(currentSlideNo).getElementsByClassName('notes');
+        for (var i = 0, len = notes.length; i < len; i++) {
+            notes.item(i).style.display = (notesOn) ? 'none':'block';
+        }
+        notesOn = !notesOn;
+    };
+
+    var showSlideNumbers = function() {
+        var asides = document.getElementsByClassName('page_number');
+        var hidden = asides[0].style.display != 'block';
+        for (var i = 0; i < asides.length; i++) {
+            asides.item(i).style.display = hidden ? 'block' : 'none';
+        }
+    };
+
+    var showSlideSources = function() {
+        var asides = document.getElementsByClassName('source');
+        var hidden = asides[0].style.display != 'block';
+        for (var i = 0; i < asides.length; i++) {
+            asides.item(i).style.display = hidden ? 'block' : 'none';
+        }
+    };
+
+    var showToc = function() {
+        if (helpOpened) {
+                showHelp();
+        }
+        var toc = document.getElementById('toc');
+        if (toc) {
+            toc.style.marginLeft = tocOpened ? '-' + (toc.clientWidth + 20) + 'px' : '0px';
+            tocOpened = !tocOpened;
+        }
+        updateOverview();
+    };
+
+    var showHelp = function() {
+        if (tocOpened) {
+                showToc();
+        }
+
+        var help = document.getElementById('help');
+
+        if (help) {
+            help.style.marginLeft = helpOpened ? '-' + (help.clientWidth + 20) + 'px' : '0px';
+            helpOpened = !helpOpened;
+        }
+    };
+
+    var showPresenterView = function() {
+        if (isPresenterView) { return; }
+
+        if (showingPresenterView) {
+            presenterViewWin.close();
+            presenterViewWin = null;
+            showingPresenterView = false;
+        } else {
+            presenterViewWin = open(window.location.pathname + "#presenter" + currentSlideNo, 'presenter_notes',
+                                                                    'directories=no,location=no,toolbar=no,menubar=no,copyhistory=no');
+            showingPresenterView = true;
+        }
+    };
+
+    var switch3D = function() {
+        if (document.body.className.indexOf('three-d') == -1) {
+            document.getElementsByClassName('presentation')[0].style.webkitPerspective = '1000px';
+            document.body.className += ' three-d';
+        } else {
+            window.setTimeout('document.getElementsByClassName(\'presentation\')[0].style.webkitPerspective = \'0\';', 2000);
+            document.body.className = document.body.className.replace(/three-d/, '');
+        }
+    };
+
+    var toggleOverview = function() {
+        if (!overviewActive) {
+            addClass(document.body, 'expose');
+            overviewActive = true;
+            setScale(1);
+        } else {
+            removeClass(document.body, 'expose');
+            overviewActive = false;
+            if (expanded) {
+                setScale(scale);    // restore scale
+            }
+        }
+        processContext();
+        updateOverview();
+    };
+
+    var updateOverview = function() {
+        try {
+            var presentation = document.getElementsByClassName('presentation')[0];
+        } catch (e) {
+            return;
+        }
+
+        if (isPresenterView) {
+            var action = overviewActive ? removeClass : addClass;
+            action(document.body, 'presenter_view');
+        }
+
+        var toc = document.getElementById('toc');
+
+        if (!toc) {
+            return;
+        }
+
+        if (!tocOpened || !overviewActive) {
+            presentation.style.marginLeft = '0px';
+            presentation.style.width = '100%';
+        } else {
+            presentation.style.marginLeft = toc.clientWidth + 'px';
+            presentation.style.width = (presentation.clientWidth - toc.clientWidth) + 'px';
+        }
+    };
+
+    var computeScale = function() {
+        var cSlide = document.getElementsByClassName('current')[0];
+        var sx = cSlide.clientWidth / window.innerWidth;
+        var sy = cSlide.clientHeight / window.innerHeight;
+        return 1 / Math.max(sx, sy);
+    };
+
+    var setScale = function(scale) {
+        var presentation = document.getElementsByClassName('slides')[0];
+        var transform = 'scale(' + scale + ')';
+        presentation.style.MozTransform = transform;
+        presentation.style.WebkitTransform = transform;
+        presentation.style.OTransform = transform;
+        presentation.style.msTransform = transform;
+        presentation.style.transform = transform;
+    };
+
+    var expandSlides = function() {
+        if (overviewActive) {
+            return;
+        }
+        if (expanded) {
+            setScale(1);
+            expanded = false;
+        } else {
+            scale = computeScale();
+            setScale(scale);
+            expanded = true;
+        }
+    };
+
+    var showContext = function() {
+        try {
+            var presentation = document.getElementsByClassName('slides')[0];
+            removeClass(presentation, 'nocontext');
+        } catch (e) {}
+    };
+
+    var hideContext = function() {
+        try {
+            var presentation = document.getElementsByClassName('slides')[0];
+            addClass(presentation, 'nocontext');
+        } catch (e) {}
+    };
+
+    var processContext = function() {
+        if (hiddenContext) {
+            hideContext();
+        } else {
+            showContext();
+        }
+    };
+
+    var toggleContext = function() {
+        hiddenContext = !hiddenContext;
+        processContext();
+    };
+
+    var toggleBlank = function() {
+        blank_elem = document.getElementById('blank');
+
+        blank_elem.style.display = blanked ? 'none' : 'block';
+
+        blanked = !blanked;
+    };
+
+    var isModifierKey = function(keyCode) {
+        switch (keyCode) {
+            case 16: // shift
+            case 17: // ctrl
+            case 18: // alt
+            case 91: // command
+                return true;
+                break;
+            default:
+                return false;
+                break;
+        }
+    };
+
+    var checkModifierKeyUp = function(event) {
+        if (isModifierKey(event.keyCode)) {
+            modifierKeyDown = false;
+        }
+    };
+
+    var checkModifierKeyDown = function(event) {
+        if (isModifierKey(event.keyCode)) {
+            modifierKeyDown = true;
+        }
+    };
+
+    var handleBodyKeyDown = function(event) {
+        switch (event.keyCode) {
+            case 13: // Enter
+                if (overviewActive) {
+                    toggleOverview();
+                }
+                break;
+            case 27: // ESC
+                toggleOverview();
+                break;
+            case 37: // left arrow
+            case 33: // page up
+                event.preventDefault();
+                prevSlide();
+                break;
+            case 39: // right arrow
+            case 32: // space
+            case 34: // page down
+                event.preventDefault();
+                nextSlide();
+                break;
+            case 50: // 2
+                if (!modifierKeyDown) {
+                        showNotes();
+                }
+                break;
+            case 51: // 3
+                if (!modifierKeyDown && !overviewActive) {
+                    switch3D();
+                }
+                break;
+            case 190: // .
+            case 48: // 0
+            case 66: // b
+                if (!modifierKeyDown && !overviewActive) {
+                    toggleBlank();
+                }
+                break;
+            case 67: // c
+                if (!modifierKeyDown && !overviewActive) {
+                    toggleContext();
+                }
+                break;
+            case 69: // e
+                if (!modifierKeyDown && !overviewActive) {
+                    expandSlides();
+                }
+                break;
+            case 72: // h
+                showHelp();
+                break;
+            case 78: // n
+                if (!modifierKeyDown && !overviewActive) {
+                    showSlideNumbers();
+                }
+                break;
+            case 80: // p
+                if (!modifierKeyDown && !overviewActive) {
+                    showPresenterView();
+                }
+                break;
+            case 83: // s
+                if (!modifierKeyDown && !overviewActive) {
+                    showSlideSources();
+                }
+                break;
+            case 84: // t
+                showToc();
+                break;
+        }
+    };
+
+    var handleWheel = function(event) {
+        if (tocOpened || helpOpened || overviewActive) {
+            return;
+        }
+
+        var delta = 0;
+
+        if (!event) {
+            event = window.event;
+        }
+
+        if (event.wheelDelta) {
+            delta = event.wheelDelta/120;
+            if (window.opera) delta = -delta;
+        } else if (event.detail) {
+            delta = -event.detail/3;
+        }
+
+        if (delta && delta <0) {
+            nextSlide();
+        } else if (delta) {
+            prevSlide();
+        }
+    };
+
+    var addSlideClickListeners = function() {
+        for (var i=0; i < slides.length; i++) {
+            var slide = slides.item(i);
+            slide.num = i + 1;
+            slide.addEventListener('click', function(e) {
+                if (overviewActive) {
+                    currentSlideNo = this.num;
+                    toggleOverview();
+                    updateSlideClasses(true);
+                    e.preventDefault();
+                }
+                return false;
+            }, true);
+        }
+    };
+
+    var addRemoteWindowControls = function() {
+        window.addEventListener("message", function(e) {
+            if (e.data.indexOf("slide#") != -1) {
+                    currentSlideNo = Number(e.data.replace('slide#', ''));
+                    updateSlideClasses(false);
+            }
+        }, false);
+    };
+
+    var addTouchListeners = function() {
+        document.addEventListener('touchstart', function(e) {
+            touchStartX = e.touches[0].pageX;
+        }, false);
+        document.addEventListener('touchend', function(e) {
+            var pixelsMoved = touchStartX - e.changedTouches[0].pageX;
+            var SWIPE_SIZE = 150;
+            if (pixelsMoved > SWIPE_SIZE) {
+                nextSlide();
+            }
+            else if (pixelsMoved < -SWIPE_SIZE) {
+             prevSlide();
+            }
+        }, false);
+    };
+
+    var addTocLinksListeners = function() {
+        var toc = document.getElementById('toc');
+        if (toc) {
+            var tocLinks = toc.getElementsByTagName('a');
+            for (var i=0; i < tocLinks.length; i++) {
+                tocLinks.item(i).addEventListener('click', function(e) {
+                    currentSlideNo = Number(this.attributes['href'].value.replace('#slide', ''));
+                    updateSlideClasses(true);
+                    e.preventDefault();
+                }, true);
+            }
+        }
+    };
+
+    var addMenuListeners = function() {
+        var buttons = document.querySelectorAll('button');
+        for (var i = 0; i < buttons.length; i++) {
+            buttons.item(i).addEventListener('click', function(e) {
+                var n = e.target.getAttribute('data-command');
+                switch(n) {
+                case 'toc':
+                    showToc(); break;
+                case 'notes':
+                    showNotes(); break;
+                case 'numbers':
+                    showSlideNumbers(); break;
+                case 'overview':
+                    toggleOverview(); break;
+                case 'context':
+                    toggleContext(); break;
+                case 'blank':
+                    toggleBlank(); break;
+                case 'help':
+                    showHelp(); break;
+                default:
+                    return;
+                }
+            }, true);
+        }
+        var action = {
+            'prev': function(e) { prevSlide() },
+            'next': function(e) { nextSlide() }
+        };
+        for (var name in action) {
+            var buttons = document.querySelectorAll('#' + name);
+            for (var i = 0; i < buttons.length; i++)
+                buttons.item(i).addEventListener('click', action[name], true);
+        }
+
+        if (navigator.userAgent.match(/iPhone/i) || navigator.userAgent.match(/iPod/i)) {
+            var navs = document.getElementsByTagName('nav');
+            for (var i = 0; i < navs.length; i++) {
+                navs.item(i).addEventListener('touchstart', function() {
+                    this.className = (this.className == 'hover') ? '' : 'hover';
+                }, false);
+            }
+        }
+    };
+
+    // initialize
+
+    (function() {
+        if (window.location.hash == "") {
+            currentSlideNo = 1;
+        } else if (window.location.hash.indexOf("#presenter") != -1) {
+            currentSlideNo = Number(window.location.hash.replace('#presenter', ''));
+            isPresenterView = true;
+            showingPresenterView = true;
+            presenterViewWin = window;
+            addClass(document.body, 'presenter_view');
+        } else {
+            currentSlideNo = Number(window.location.hash.replace('#slide', ''));
+        }
+
+        // hide context on small screens and iframes
+        if (window.screen.availWidth < 1280 || top != self) {
+            hiddenContext = true;
+        }
+
+        document.addEventListener('keyup', checkModifierKeyUp, false);
+        document.addEventListener('keydown', handleBodyKeyDown, false);
+        document.addEventListener('keydown', checkModifierKeyDown, false);
+        document.addEventListener('DOMMouseScroll', handleWheel, false);
+
+        window.onmousewheel = document.onmousewheel = handleWheel;
+        window.onresize = expandSlides;
+
+        for (var i = 0, el; el = slides[i]; i++) {
+            addClass(el, 'slide far-future');
+        }
+        updateSlideClasses(false);
+
+        // add support for finger events (filter it by property detection?)
+        addTouchListeners();
+
+        addMenuListeners();
+
+        addTocLinksListeners();
+
+        addSlideClickListeners();
+
+        addRemoteWindowControls();
+    })();
+}
+
+    </script>
+    
+    
+      
+      <script>
+        
+      </script>
+      
+    
+    <!-- /Javascripts -->
+</head>
+<body>
+  <div id="blank"></div>
+
+  <nav id="left">
+    <menu id="top">
+      <button title="Previous slide" id="prev" class="prev">«</button>
+      <button title="Next slide" id="next" class="next">»</button>
+    </menu>
+    <menu id="bottom">
+      <button type="checkbox" data-command="toc" title="Table of Contents" class="toc">TOC</button>
+      <button type="checkbox" data-command="numbers" title="Show Slide Numbers">#</button>
+      <button type="checkbox" data-command="overview" title="Overview">↻</button>
+      <button type="checkbox" data-command="notes" title="View Slide Notes">✏</button>
+      <button type="checkbox" data-command="help" title="View Help">?</button>
+    </menu>
+  </nav>
+  <nav id="right">
+    <menu id="top">
+      <button title="Next slide" id="next" class="next">»</button>
+      <button title="Previous slide" id="prev" class="prev">«</button>
+    </menu>
+    <div id="blank"></div>
+    <menu id="bottom">
+      <button type="checkbox" data-command="toc" title="Table of Contents" class="toc">TOC</button>
+      <button type="checkbox" data-command="numbers" title="Show Slide Numbers">#</button>
+      <button type="checkbox" data-command="overview" title="Overview">↻</button>
+      <button type="checkbox" data-command="notes" title="View Slide Notes">✏</button>
+      <button type="checkbox" data-command="help" title="View Help">?</button>
+    </menu>
+  </nav>
+
+  <div class="presentation">
+    <div id="current_presenter_notes">
+      <div id="presenter_note"></div>
+    </div>
+    <div class="slides">
+      
+      <!-- slide source: 01op/index.md -->
+      <div class="slide-wrapper">
+        <div class="slide first">
+          <div class="inner">
+            
+            <header><h1>Operatör</h1></header>
+            
+            
+            <section>
+<p>Recai Oktaş <code>&lt;roktas@bil.omu.edu.tr&gt;</code></p>
+
+<p><a href="http://roktas.me/">http://roktas.me/</a></p>
+
+<p>Ekim 2012</p></section>
+            
+          </div>
+          <div class="presenter_notes">
+            <header><h1>Presenter Notes</h1></header>
+            <section>
+            
+            </section>
+          </div>
+          <footer>
+            
+            <aside class="source">
+              Source: <a href="01op/index.md">01op/index.md</a>
+            </aside>
+            
+            <aside class="page_number">
+              1/101
+            </aside>
+          </footer>
+        </div>
+      </div>
+      
+      <!-- slide source: 01op/index.md -->
+      <div class="slide-wrapper">
+        <div class="slide">
+          <div class="inner">
+            
+            <header><h2>Kabuk</h2></header>
+            
+            
+            <section><ul>
+<li><p>Sisteme girdiğinizde sizi karşılayan ortam; siyah ekran!</p></li>
+<li><p>İşletim sistemiyle (adeta) &ldquo;chat&rdquo; yapıyorsunuz</p></li>
+<li><p>Bu nasıl bir ortam, nasıl bir sistem?</p></li>
+<li><p>Sekreter Lale hanımı her sistem açılışından sonra mutad olduğu üzre karşılayan
+Feysbuk ortamından bahsetmiyoruz!</p></li>
+<li><p>Örneğin bir veri merkezinde (&ldquo;data center&rdquo;) yönetiminden sorumlu olduğunuz bir
+sunucu</p></li>
+<li><p>Örneğin kodlama yaptığınız bir iş istasyonu</p></li>
+</ul></section>
+            
+          </div>
+          <div class="presenter_notes">
+            <header><h1>Presenter Notes</h1></header>
+            <section>
+            
+            </section>
+          </div>
+          <footer>
+            
+            <aside class="source">
+              Source: <a href="01op/index.md">01op/index.md</a>
+            </aside>
+            
+            <aside class="page_number">
+              2/101
+            </aside>
+          </footer>
+        </div>
+      </div>
+      
+      <!-- slide source: 01op/index.md -->
+      <div class="slide-wrapper">
+        <div class="slide has_code">
+          <div class="inner">
+            
+            <header><h2>Kabuk</h2></header>
+            
+            
+            <section><div class="highlight"><pre><span class="nv">$ </span>whoami
+roktas
+</pre></div>
+
+
+<ul>
+<li><p><code>$</code> → &ldquo;Komut girebilirsin&rdquo; sembolü (&ldquo;Command Prompt&rdquo;)</p></li>
+<li><p>Kabuk tarafından görüntüleniyor</p></li>
+<li><p>Farklı biçimlerde farklı bilgiler içerecek şekilde ayarlanabilir</p></li>
+<li><p>Dokümantasyonda geleneksel olarak <code>$</code> + boşluk şeklinde gösteriyoruz</p></li>
+<li><p><code>whoami</code> → komut; <code>roktas</code> → komut çıktısı</p></li>
+<li><p>Bu dokümandaki komutları denerken, komutun <code>$</code>&#39;dan sonraki kısım olduğunu
+unutmayın!</p></li>
+</ul></section>
+            
+          </div>
+          <div class="presenter_notes">
+            <header><h1>Presenter Notes</h1></header>
+            <section>
+            
+            </section>
+          </div>
+          <footer>
+            
+            <aside class="source">
+              Source: <a href="01op/index.md">01op/index.md</a>
+            </aside>
+            
+            <aside class="page_number">
+              3/101
+            </aside>
+          </footer>
+        </div>
+      </div>
+      
+      <!-- slide source: 01op/index.md -->
+      <div class="slide-wrapper">
+        <div class="slide has_code">
+          <div class="inner">
+            
+            <header><h2><code>whoami</code></h2></header>
+            
+            
+            <section><div class="highlight"><pre><span class="nv">$ </span>whoami
+roktas
+</pre></div>
+
+
+<p><code>whoami</code> &ldquo;Ben Kimim?&rdquo;</p>
+
+<ul>
+<li><p>UNIX sistemlerde her kullanıcının bir adı var</p></li>
+<li><p>Kullanıcı adı (&ldquo;username&rdquo;) geleneksel olarak hepsi küçük harf (noktalama
+işareti veya rakam yok) ve Türkçe karakter içermiyor</p></li>
+<li><p>Sistemi grafik arayüzle kullandığınız masaüstü ortamların giriş ekranlarında
+&ldquo;kullanıcı dostu&rdquo; olmak adına ad soyadınız da görüntülenebilir</p></li>
+<li><p>Fakat kullanıcı adı size ait önemli bir öge</p></li>
+</ul></section>
+            
+          </div>
+          <div class="presenter_notes">
+            <header><h1>Presenter Notes</h1></header>
+            <section>
+            
+            </section>
+          </div>
+          <footer>
+            
+            <aside class="source">
+              Source: <a href="01op/index.md">01op/index.md</a>
+            </aside>
+            
+            <aside class="page_number">
+              4/101
+            </aside>
+          </footer>
+        </div>
+      </div>
+      
+      <!-- slide source: 01op/index.md -->
+      <div class="slide-wrapper">
+        <div class="slide achtung">
+          <div class="inner">
+            
+            <header><h2>Kullanıcı Adı</h2></header>
+            
+            
+            <section>
+<p>Kullanıcı adınızı özenle seçin ve meslek hayatınız boyunca da tutarlı olarak her
+ortamda kullanın</p>
+
+<ul>
+<li><p><strong>Sadece <code>a-z</code> aralığında; hepsi küçük harf, Türkçe karakter (maalesef) yok</strong></p></li>
+<li><p>Kullanıcı adının fazla uzun olmamasında yarar var; bu adı meslek hayatınız
+boyunca kaç kere tuşlayacağınızı düşünün!</p></li>
+<li><p>Eposta adresi başta gelmek üzere kullandığınız her serviste kullanıcı adı aynı
+olsun</p></li>
+<li><p>Bu düzenlemenin programatik bir değeri var; değişiklik günceleri, telif hakkı
+metinleri başta olmak üzere pek çok yerde bu adı kullanacaksınız</p></li>
+<li><p>Fakat İnternet kullanımının olağanüstü yaygınlaştığı günümüzde geçerli biçimde
+(<code>a-z</code>), kısa ve tekil bir isim bulmak kolay olmayabilir</p></li>
+<li><p>Bu koşullara uygun bir ad bulmak için hayalgücünüzü kullanın</p></li>
+</ul></section>
+            
+          </div>
+          <div class="presenter_notes">
+            <header><h1>Presenter Notes</h1></header>
+            <section>
+            
+            </section>
+          </div>
+          <footer>
+            
+            <aside class="source">
+              Source: <a href="01op/index.md">01op/index.md</a>
+            </aside>
+            
+            <aside class="page_number">
+              5/101
+            </aside>
+          </footer>
+        </div>
+      </div>
+      
+      <!-- slide source: 01op/index.md -->
+      <div class="slide-wrapper">
+        <div class="slide has_code">
+          <div class="inner">
+            
+            <header><h2><code>passwd</code></h2></header>
+            
+            
+            <section><ul>
+<li><p>Parolanızı nasıl değiştireceksiniz?</p></li>
+<li><p>Hemen başlangıçta öğrenilmesi gereken ilk işlem</p>
+
+<div class="highlight"><pre><span class="nv">$ </span>passwd
+</pre></div>
+</li>
+</ul></section>
+            
+          </div>
+          <div class="presenter_notes">
+            <header><h1>Presenter Notes</h1></header>
+            <section>
+            
+            </section>
+          </div>
+          <footer>
+            
+            <aside class="source">
+              Source: <a href="01op/index.md">01op/index.md</a>
+            </aside>
+            
+            <aside class="page_number">
+              6/101
+            </aside>
+          </footer>
+        </div>
+      </div>
+      
+      <!-- slide source: 01op/index.md -->
+      <div class="slide-wrapper">
+        <div class="slide achtung">
+          <div class="inner">
+            
+            <header><h2>Parola Seçimi</h2></header>
+            
+            
+            <section>
+<pre><code>Qwerty
+</code></pre></section>
+            
+          </div>
+          <div class="presenter_notes">
+            <header><h1>Presenter Notes</h1></header>
+            <section>
+            
+            </section>
+          </div>
+          <footer>
+            
+            <aside class="source">
+              Source: <a href="01op/index.md">01op/index.md</a>
+            </aside>
+            
+            <aside class="page_number">
+              7/101
+            </aside>
+          </footer>
+        </div>
+      </div>
+      
+      <!-- slide source: 01op/index.md -->
+      <div class="slide-wrapper">
+        <div class="slide has_code">
+          <div class="inner">
+            
+            <header><h2><code>lspci</code></h2></header>
+            
+            
+            <section><div class="highlight"><pre><span class="nv">$ </span>lspci
+...
+00:02.0 VGA compatible controller: Intel ...
+00:1b.0 Audio device: Intel ...
+...
+02:00.0 Ethernet controller: Atheros ...
+</pre></div>
+
+
+<p><code>lspci</code> → List PCI</p>
+
+<ul>
+<li><p>İşletim sistemiyle (adeta) &ldquo;chat&rdquo; yapıyoruz</p></li>
+<li><p>İşletim sistemine soralım: &ldquo;PCI veriyoluna bağlı bileşenler neler?&rdquo;</p></li>
+<li><p>PCI veriyoluna bağlı bileşenler; örneğin ses yongası, ağ bağdaştırıcısı, ekran
+bağdaştırıcısı</p></li>
+<li><p>Bu bilgileri bir grafik arayüz üzerinden de öğrenebilirsiniz</p></li>
+</ul></section>
+            
+          </div>
+          <div class="presenter_notes">
+            <header><h1>Presenter Notes</h1></header>
+            <section>
+            
+            </section>
+          </div>
+          <footer>
+            
+            <aside class="source">
+              Source: <a href="01op/index.md">01op/index.md</a>
+            </aside>
+            
+            <aside class="page_number">
+              8/101
+            </aside>
+          </footer>
+        </div>
+      </div>
+      
+      <!-- slide source: 01op/index.md -->
+      <div class="slide-wrapper">
+        <div class="slide">
+          <div class="inner">
+            
+            <header><h2>Uçbirim</h2></header>
+            
+            
+            <section><ul>
+<li><p>Tipik bir UNIX iş istasyonunda (güçlü bir masaüstü sistem) grafik ortam (GUI)
+her zaman erişilir durumda</p></li>
+<li><p>Sisteme muhtemelen böyle bir grafik ortam üzerinden (GNOME → GDM), kimliğinizi
+doğrulatarak girdiniz</p></li>
+<li><p>Sonra bir uçbirim (&ldquo;terminal&rdquo;) açıyorsunuz</p></li>
+<li><p>İşletim sistemiyle etkileşime girmenin tek yolu grafik ortam değil</p></li>
+</ul></section>
+            
+          </div>
+          <div class="presenter_notes">
+            <header><h1>Presenter Notes</h1></header>
+            <section>
+            
+            </section>
+          </div>
+          <footer>
+            
+            <aside class="source">
+              Source: <a href="01op/index.md">01op/index.md</a>
+            </aside>
+            
+            <aside class="page_number">
+              9/101
+            </aside>
+          </footer>
+        </div>
+      </div>
+      
+      <!-- slide source: 01op/index.md -->
+      <div class="slide-wrapper">
+        <div class="slide">
+          <div class="inner">
+            
+            <header><h2>Uçbirim</h2></header>
+            
+            
+            <section><p>Neden uçbirim?</p>
+
+<ul>
+<li><p>Uçbirim dediğimizde bir klavye/ekran çiftini anlıyoruz</p></li>
+<li><p>Bu ikili geçmişte tek bir ünite halinde bir veri kablosu üzerinden (işlemci,
+bellek ve depolama aygıtlarını barındıran) ana bilgisayara bağlanıyordu</p></li>
+<li><p>Ana makine → veri kablosu (seri iletişim) → kablo bir klavye/ekran ünitesiyle
+sonlandırılıyor</p></li>
+<li><p>Sonlandırma → Termination; yani Terminal → Uçbirim</p></li>
+</ul>
+
+<p>Günümüzde böyle bir düzenleme yok</p>
+
+<ul>
+<li><p>Ana makine, klavye, ekran tek bir ünitede</p></li>
+<li><p>Böyle bir terminal ünitesi yok ama o eski düzene öykünen yazılımlar var →
+Terminal Emulators</p></li>
+</ul></section>
+            
+          </div>
+          <div class="presenter_notes">
+            <header><h1>Presenter Notes</h1></header>
+            <section>
+            
+            </section>
+          </div>
+          <footer>
+            
+            <aside class="source">
+              Source: <a href="01op/index.md">01op/index.md</a>
+            </aside>
+            
+            <aside class="page_number">
+              10/101
+            </aside>
+          </footer>
+        </div>
+      </div>
+      
+      <!-- slide source: 01op/index.md -->
+      <div class="slide-wrapper">
+        <div class="slide">
+          <div class="inner">
+            
+            <header><h2>Konsol</h2></header>
+            
+            
+            <section><ul>
+<li><p>Uçbirim veya Uçbirim Emulatörü adlandırması kablo sonlandırması yönüyle anlam
+kazanıyor</p></li>
+<li><p>Uçbirimin çalışma ortamında daha dekoratif durmasını sağlayabilirsiniz</p></li>
+<li><p>Bir konsol gibi&hellip;</p></li>
+<li><p>Konsol uçbirimle aynı şeyi anlatıyor, tek farkla &ldquo;mobilya bakış açısı&rdquo;</p></li>
+</ul></section>
+            
+          </div>
+          <div class="presenter_notes">
+            <header><h1>Presenter Notes</h1></header>
+            <section>
+            
+            </section>
+          </div>
+          <footer>
+            
+            <aside class="source">
+              Source: <a href="01op/index.md">01op/index.md</a>
+            </aside>
+            
+            <aside class="page_number">
+              11/101
+            </aside>
+          </footer>
+        </div>
+      </div>
+      
+      <!-- slide source: 01op/index.md -->
+      <div class="slide-wrapper">
+        <div class="slide">
+          <div class="inner">
+            
+            <header><h2><code>echo</code></h2></header>
+            
+            
+            <section><pre><code>    !sh
+    $ echo Merhaba Dünya
+    Merhaba Dünya
+</code></pre>
+
+<ul>
+<li><p>En basit komutlardan biri</p></li>
+<li><p>Komut satırı argümanlarını görüntülüyor</p></li>
+</ul></section>
+            
+          </div>
+          <div class="presenter_notes">
+            <header><h1>Presenter Notes</h1></header>
+            <section>
+            
+            </section>
+          </div>
+          <footer>
+            
+            <aside class="source">
+              Source: <a href="01op/index.md">01op/index.md</a>
+            </aside>
+            
+            <aside class="page_number">
+              12/101
+            </aside>
+          </footer>
+        </div>
+      </div>
+      
+      <!-- slide source: 01op/index.md -->
+      <div class="slide-wrapper">
+        <div class="slide has_code">
+          <div class="inner">
+            
+            <header><h2>Kabuk</h2></header>
+            
+            
+            <section><ul>
+<li><p>Sadece komut girilen bir &ldquo;çalıştırıcı&rdquo; (&ldquo;launcher&rdquo;) değil</p>
+
+<div class="highlight"><pre><span class="nv">$ </span><span class="nb">echo </span>Merhaba <span class="nv">$USER</span>
+Merhaba roktas
+</pre></div>
+</li>
+<li><p>Örneğin bir değişken kullandık: <code>$USER</code></p></li>
+<li><p>Değişken referansları <code>$</code> ile başlıyor</p></li>
+<li><p>Değişkenin adı → <code>USER</code>, içeriği → <code>$USER</code></p></li>
+<li><p>Kabukta bundan da fazlası var gibi</p></li>
+</ul></section>
+            
+          </div>
+          <div class="presenter_notes">
+            <header><h1>Presenter Notes</h1></header>
+            <section>
+            
+            </section>
+          </div>
+          <footer>
+            
+            <aside class="source">
+              Source: <a href="01op/index.md">01op/index.md</a>
+            </aside>
+            
+            <aside class="page_number">
+              13/101
+            </aside>
+          </footer>
+        </div>
+      </div>
+      
+      <!-- slide source: 01op/index.md -->
+      <div class="slide-wrapper">
+        <div class="slide has_code achtung">
+          <div class="inner">
+            
+            <header><h2>İpuçları</h2></header>
+            
+            
+            <section>
+<p>Komut satırında çalışmak herşeyi yazmak anlamına gelmiyor; aşağıdaki basit
+kısayolları kullanabilirsiniz</p>
+
+<ul>
+<li><p>Önceden girdiğiniz bir komutu tekrar yazmanız gerekmiyor; aşağı/yukarı ok
+tuşlarıyla komut satırı tarihçesinde dolaşabilirsiniz</p></li>
+<li><p>Bir komutun adını veya komuta verilen argümanları (örneğin dosya isimleri)
+sonuna kadar yazmanız gerekmiyor; sekme (&ldquo;tab&rdquo;) tuşunu kullanarak otomatik
+tamamlama yapabilirsiniz</p></li>
+<li><p>Geçmiş bir komuta ulaşmak için komut tarihçesinde baştan sona dolaşmanız
+gerekmiyor; <code>ctrl-r</code> tuşuna basın ve komutun hatırladığınız bir bölümünü
+(örneğin ilk harfini) yazmaya başlayın</p></li>
+<li><p>Kopyalama için fareyle metni seçin ve imleci uygun yere konumladıktan sonra
+farenin orta tuşuna (veya kaydırma tekerleğine) basın</p></li>
+<li><p>Bir komutun çıktısını (örneğin yardım almak amacıyla) bir dosyaya kaydetmeyi
+tercih edin; nasıl?</p>
+
+<div class="highlight"><pre><span class="nv">$ </span>KOMUT &gt;dosya 2&gt;&amp;1
+</pre></div>
+</li>
+</ul></section>
+            
+          </div>
+          <div class="presenter_notes">
+            <header><h1>Presenter Notes</h1></header>
+            <section>
+            
+            </section>
+          </div>
+          <footer>
+            
+            <aside class="source">
+              Source: <a href="01op/index.md">01op/index.md</a>
+            </aside>
+            
+            <aside class="page_number">
+              14/101
+            </aside>
+          </footer>
+        </div>
+      </div>
+      
+      <!-- slide source: 01op/index.md -->
+      <div class="slide-wrapper">
+        <div class="slide has_code">
+          <div class="inner">
+            
+            <header><h2>Kabuk Programlama</h2></header>
+            
+            
+            <section><p><strong>Kabuk bir programlama ortamı!</strong></p>
+
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3
+4
+5
+6
+7
+8</pre></div></td><td class="code"><div class="highlight"><pre><span class="nv">$ </span><span class="k">if</span> <span class="o">[</span> <span class="nv">$USER</span> <span class="o">=</span> roktas <span class="o">]</span>
+&gt; <span class="k">then</span>
+&gt;       <span class="nv">you</span><span class="o">=</span><span class="s2">&quot;dostum&quot;</span>
+&gt; <span class="k">else</span>
+&gt;       <span class="nv">you</span><span class="o">=</span><span class="s2">&quot;yabancı&quot;</span>
+&gt; <span class="k">fi</span>
+&gt; <span class="nb">echo </span>Merhaba <span class="nv">$you</span>
+Merhaba dostum
+</pre></div>
+</td></tr></table>
+
+<ul>
+<li><p>Komutlar tek satıra sığmadığında komut istemi değişiyor; <code>&gt;</code> →  &ldquo;devamı&rdquo;</p></li>
+<li><p>Fakat dikkat sözdiziminde boşluk özgürlüğü yok!</p></li>
+<li><p>Atama yaparken (satır 3 ve 5) <code>=</code> etrafında boşluk <strong>olmamalı</strong></p></li>
+<li><p><code>[</code>&#39;dan sonra ve <code>]</code>&#39;dan önce en az bir boşluk <strong>olmalı</strong></p></li>
+</ul></section>
+            
+          </div>
+          <div class="presenter_notes">
+            <header><h1>Presenter Notes</h1></header>
+            <section>
+            
+            </section>
+          </div>
+          <footer>
+            
+            <aside class="source">
+              Source: <a href="01op/index.md">01op/index.md</a>
+            </aside>
+            
+            <aside class="page_number">
+              15/101
+            </aside>
+          </footer>
+        </div>
+      </div>
+      
+      <!-- slide source: 01op/index.md -->
+      <div class="slide-wrapper">
+        <div class="slide has_code">
+          <div class="inner">
+            
+            <header><h2>Neredeyim?</h2></header>
+            
+            
+            <section><div class="highlight"><pre><span class="nv">$ </span><span class="nb">pwd</span>
+/home/roktas
+</pre></div>
+
+
+<ul>
+<li><p><code>pwd</code> → &ldquo;Print Working Directory&rdquo;</p></li>
+<li><p>Bulunduğunuz dizini görüntüler; bulunduğunuz dizin → çalışma dizini</p></li>
+<li><p>Sisteme giriş yaptığınızda (özel bir yapılandırma kullanmadığınız sürece)
+daima &ldquo;ev dizini&rdquo; içindesiniz</p></li>
+</ul></section>
+            
+          </div>
+          <div class="presenter_notes">
+            <header><h1>Presenter Notes</h1></header>
+            <section>
+            
+            </section>
+          </div>
+          <footer>
+            
+            <aside class="source">
+              Source: <a href="01op/index.md">01op/index.md</a>
+            </aside>
+            
+            <aside class="page_number">
+              16/101
+            </aside>
+          </footer>
+        </div>
+      </div>
+      
+      <!-- slide source: 01op/index.md -->
+      <div class="slide-wrapper">
+        <div class="slide has_code">
+          <div class="inner">
+            
+            <header><h2>Çalışma Dizini</h2></header>
+            
+            
+            <section><p>Çalışma dizini temel bir kavram</p>
+
+<ul>
+<li><p>Örneğin göreceli dosya yolları çalışma dizinine göre çözülür</p></li>
+<li><p>Yaptığınız bazı işlemler (okuma/yazma) çalışma dizininde size tanınan haklarla
+sınırlı</p></li>
+<li><p>Oturum süresince çalışma dizinin görünür durumda olmasında yarar var</p></li>
+<li><p>Bunu nasıl sağlarız?  Komut istemi &ldquo;farklı biçimlerde farklı bilgiler içerecek
+şekilde ayarlanabilir&rdquo;</p></li>
+<li><p>Bu ayar yapıldığında örneğin <code>/tmp</code> dizinindeyseniz komut istemi şuna benzer
+görünür</p>
+
+<div class="highlight"><pre>/tmp<span class="err">$</span>
+</pre></div>
+</li>
+<li><p>Dokümanda, çalışma dizininin bilinmesini gerektiren örneklerde böyle bir komut
+istemi kullanacağız</p></li>
+</ul></section>
+            
+          </div>
+          <div class="presenter_notes">
+            <header><h1>Presenter Notes</h1></header>
+            <section>
+            
+            </section>
+          </div>
+          <footer>
+            
+            <aside class="source">
+              Source: <a href="01op/index.md">01op/index.md</a>
+            </aside>
+            
+            <aside class="page_number">
+              17/101
+            </aside>
+          </footer>
+        </div>
+      </div>
+      
+      <!-- slide source: 01op/index.md -->
+      <div class="slide-wrapper">
+        <div class="slide">
+          <div class="inner">
+            
+            <header><h2>Dizinler ve Dosyalar</h2></header>
+            
+            
+            <section><p>.</p></section>
+            
+          </div>
+          <div class="presenter_notes">
+            <header><h1>Presenter Notes</h1></header>
+            <section>
+            
+            </section>
+          </div>
+          <footer>
+            
+            <aside class="source">
+              Source: <a href="01op/index.md">01op/index.md</a>
+            </aside>
+            
+            <aside class="page_number">
+              18/101
+            </aside>
+          </footer>
+        </div>
+      </div>
+      
+      <!-- slide source: 01op/index.md -->
+      <div class="slide-wrapper">
+        <div class="slide">
+          <div class="inner">
+            
+            <header><h2>Dizin ve Dosya</h2></header>
+            
+            
+            <section><ul>
+<li><p>Dizin (&ldquo;Directory&rdquo;): GUI ortamlarda klasör (&ldquo;folder&rdquo;) olarak biliniyor</p></li>
+<li><p>UNIX sistemlerde dosya ve dizin mümkün olduğunca benzer bir semantik gösterir</p></li>
+<li><p>Aslolan dosyadır</p></li>
+<li><p>Dizinlere de birer dosya gibi muamele edilir</p></li>
+<li><p>Bir dizini, içindeki dosyalarla ilgili bilgileri (dosya isimleri, erişim
+zamanları vs) tutan bir dosya gibi düşünebilirsiniz</p></li>
+<li><p>Aksi belirtilmediği sürece dosyalar için belirtilen özellikler dizinler için
+de geçerli</p></li>
+</ul></section>
+            
+          </div>
+          <div class="presenter_notes">
+            <header><h1>Presenter Notes</h1></header>
+            <section>
+            
+            </section>
+          </div>
+          <footer>
+            
+            <aside class="source">
+              Source: <a href="01op/index.md">01op/index.md</a>
+            </aside>
+            
+            <aside class="page_number">
+              19/101
+            </aside>
+          </footer>
+        </div>
+      </div>
+      
+      <!-- slide source: 01op/index.md -->
+      <div class="slide-wrapper">
+        <div class="slide">
+          <div class="inner">
+            
+            <header><h2>Dosya Yolu</h2></header>
+            
+            
+            <section><ul>
+<li><p><code>/</code> kök dizin altında bir ağaç yapısı</p></li>
+<li><p><code>/</code> ile ayrılmış dizin/dosya isimleri → <code>/home/roktas</code></p></li>
+<li><p>Bu bir <code>PATH</code> tanımlar: dosya yolu, patika</p></li>
+<li><p>&ldquo;mutlak/göreceli dosya yolu&rdquo; → <code>/</code> ile başlayan/başlamayan dosya yolu</p></li>
+<li><p>Göreceli dosya yolunda başlangıç noktası çalışma dizini</p></li>
+</ul></section>
+            
+          </div>
+          <div class="presenter_notes">
+            <header><h1>Presenter Notes</h1></header>
+            <section>
+            
+            </section>
+          </div>
+          <footer>
+            
+            <aside class="source">
+              Source: <a href="01op/index.md">01op/index.md</a>
+            </aside>
+            
+            <aside class="page_number">
+              20/101
+            </aside>
+          </footer>
+        </div>
+      </div>
+      
+      <!-- slide source: 01op/index.md -->
+      <div class="slide-wrapper">
+        <div class="slide has_code">
+          <div class="inner">
+            
+            <header><h2><code>cd</code></h2></header>
+            
+            
+            <section><p><code>cd</code> → &ldquo;Change Directory&rdquo; - &ldquo;Dizin Değiştir&rdquo;</p>
+
+<ul>
+<li><p>Dosya sisteminde gezinmek için birincil araç</p>
+
+<div class="highlight"><pre>/home/roktas<span class="nv">$ </span><span class="nb">cd</span> .config
+/home/roktas/.config<span class="nv">$ </span><span class="nb">cd</span> -
+/home/roktas<span class="err">$</span>
+</pre></div>
+</li>
+<li><p>Teknik olarak &ldquo;çalışma dizini&quot;ni argümanla bildirilen dizin olarak ayarlıyor</p></li>
+<li><p>Göreceli dosya yolları çalışma dizinine göre çözülüyor</p>
+
+<div class="highlight"><pre>/home/roktas<span class="nv">$ </span><span class="nb">cd </span>tmp
+bash: <span class="nb">cd</span>: tmp: Böyle bir dosya ya da dizin yok
+/home/roktas<span class="nv">$ </span><span class="nb">cd</span> /tmp
+/tmp<span class="err">$</span>
+</pre></div>
+</li>
+</ul></section>
+            
+          </div>
+          <div class="presenter_notes">
+            <header><h1>Presenter Notes</h1></header>
+            <section>
+            
+            </section>
+          </div>
+          <footer>
+            
+            <aside class="source">
+              Source: <a href="01op/index.md">01op/index.md</a>
+            </aside>
+            
+            <aside class="page_number">
+              21/101
+            </aside>
+          </footer>
+        </div>
+      </div>
+      
+      <!-- slide source: 01op/index.md -->
+      <div class="slide-wrapper">
+        <div class="slide has_code">
+          <div class="inner">
+            
+            <header><h2>Özel Dizin İsimleri</h2></header>
+            
+            
+            <section><p>Bazı dizin isimleri özel</p>
+
+<ul>
+<li><p><code>.</code> → bulunduğunuz dizin</p>
+
+<div class="highlight"><pre>/home/roktas<span class="nv">$ </span><span class="nb">cd</span> .
+/home/roktas<span class="err">$</span>
+</pre></div>
+</li>
+<li><p><code>..</code> → üst dizin</p>
+
+<div class="highlight"><pre>/home/roktas<span class="nv">$ </span><span class="nb">cd</span> ..
+/home<span class="err">$</span>
+</pre></div>
+</li>
+<li><p>Bu isimler kabuktan bağımsız, çekirdek tarafından oluşturuluyor ve her düzeyde
+anlamlı</p></li>
+</ul></section>
+            
+          </div>
+          <div class="presenter_notes">
+            <header><h1>Presenter Notes</h1></header>
+            <section>
+            
+            </section>
+          </div>
+          <footer>
+            
+            <aside class="source">
+              Source: <a href="01op/index.md">01op/index.md</a>
+            </aside>
+            
+            <aside class="page_number">
+              22/101
+            </aside>
+          </footer>
+        </div>
+      </div>
+      
+      <!-- slide source: 01op/index.md -->
+      <div class="slide-wrapper">
+        <div class="slide has_code">
+          <div class="inner">
+            
+            <header><h2>Özel Dizin İsimleri</h2></header>
+            
+            
+            <section><ul>
+<li><p><code>~</code> → ev dizini</p>
+
+<div class="highlight"><pre>/home<span class="nv">$ </span><span class="nb">cd</span> ~
+/home/roktas<span class="err">$</span>
+</pre></div>
+</li>
+<li><p>Argüman vermediğinizde öntanımlı argüman <code>~</code></p>
+
+<div class="highlight"><pre>/home/roktas<span class="nv">$ </span><span class="nb">cd</span> /tmp
+/tmp<span class="nv">$ </span><span class="nb">cd</span>
+/home/roktas<span class="err">$</span>
+</pre></div>
+</li>
+<li><p><code>~</code> kabuk tarafından dönüştürülüyor → tilde dönüşümü (&quot;tilde expansion&rdquo;)</p></li>
+<li><p>Program (örnekte <code>cd</code>) <code>~</code>&#39;nin varlığından haberdar değil, dönüşüm program
+çalışmadan önce gerçekleşiyor</p></li>
+<li><p>Kabuk tarafından çalıştırılmayan bazı programlarda <code>~</code> tanınmayabilir</p></li>
+</ul></section>
+            
+          </div>
+          <div class="presenter_notes">
+            <header><h1>Presenter Notes</h1></header>
+            <section>
+            
+            </section>
+          </div>
+          <footer>
+            
+            <aside class="source">
+              Source: <a href="01op/index.md">01op/index.md</a>
+            </aside>
+            
+            <aside class="page_number">
+              23/101
+            </aside>
+          </footer>
+        </div>
+      </div>
+      
+      <!-- slide source: 01op/index.md -->
+      <div class="slide-wrapper">
+        <div class="slide">
+          <div class="inner">
+            
+            <header><h2>Dosya İsimleri</h2></header>
+            
+            
+            <section><ul>
+<li><p><code>/</code> dosya yolu ayırıcısı olarak kullanılıyor</p></li>
+<li><p>(<code>/</code> ayırıcısı dışında) ASCII <code>NUL</code> karakteri yasak; diğer her karakter
+&ldquo;teknik olarak&rdquo; serbest (boşluk dahil)</p></li>
+<li><p>Dosya yolu için maksimum uzunluk tipik olarak 255 karakter</p></li>
+<li><p>Fakat &ldquo;doğru pratikler&quot;e uymanızda yarar var</p></li>
+<li><p>Özellikle geliştirme yaparken</p></li>
+</ul></section>
+            
+          </div>
+          <div class="presenter_notes">
+            <header><h1>Presenter Notes</h1></header>
+            <section>
+            
+            </section>
+          </div>
+          <footer>
+            
+            <aside class="source">
+              Source: <a href="01op/index.md">01op/index.md</a>
+            </aside>
+            
+            <aside class="page_number">
+              24/101
+            </aside>
+          </footer>
+        </div>
+      </div>
+      
+      <!-- slide source: 01op/index.md -->
+      <div class="slide-wrapper">
+        <div class="slide achtung">
+          <div class="inner">
+            
+            <header><h2>Dosya İsimleri</h2></header>
+            
+            
+            <section>
+<ul>
+<li><p>Kodlamada değişken isimlerini seçerken gösterdiğiniz özeni (yoksa böyle bir
+özeniniz yok mu?) dosya isimlendirmelerinde de gösterin</p></li>
+<li><p>Veya e-posta iletilerinde konu alanını yazarken gösterdiğiniz özene benzer bir
+özen</p></li>
+<li><p>İçeriği en kısa ve anlamlı şekilde yansıtan bir isim seçin (idealde dosya
+içeriğini görüntülemek zorunda kalınmamalı)</p></li>
+<li><p>Boşluk karakterleri kullanmayın</p></li>
+<li><p>Türkçe karakterler kullanmayın</p></li>
+<li><p>Kelimeleri <code>-</code> veya <code>_</code> ile ayırın (ilki daha yaygın)</p></li>
+<li><p>Özel anlamı olan bazı dosya/dizinler dışında büyük harf kullanmayın; dosya
+ismi küçük harflerden oluşmalı</p></li>
+<li><p>Kod dosyaları için önerilen bu kısıtlamaları ofis dosyalarında
+gevşetebilirsiniz (örneğin Türkçe karakterler kullanılabilir)</p></li>
+</ul></section>
+            
+          </div>
+          <div class="presenter_notes">
+            <header><h1>Presenter Notes</h1></header>
+            <section>
+            
+            </section>
+          </div>
+          <footer>
+            
+            <aside class="source">
+              Source: <a href="01op/index.md">01op/index.md</a>
+            </aside>
+            
+            <aside class="page_number">
+              25/101
+            </aside>
+          </footer>
+        </div>
+      </div>
+      
+      <!-- slide source: 01op/index.md -->
+      <div class="slide-wrapper">
+        <div class="slide has_code">
+          <div class="inner">
+            
+            <header><h2><code>ls</code></h2></header>
+            
+            
+            <section><p><code>ls</code> &quot;List Directory Contents&rdquo; → Dizin içeriğini listele</p>
+
+<div class="highlight"><pre>~<span class="nv">$ </span>ls /tmp
+...
+</pre></div>
+
+
+<ul>
+<li><p>Argüman verilmediğinde çalışma dizini <code>.</code></p>
+
+<div class="highlight"><pre>~<span class="nv">$ </span>ls
+bin etc lib
+</pre></div>
+</li>
+<li><p>Fakat bu haliyle ayrıntı vermiyor sadece dosya/dizin isimleri</p></li>
+<li><p>Görüntülenen ismin dizin mi, dosya mı olduğunu bile öğrenemiyoruz!</p></li>
+</ul></section>
+            
+          </div>
+          <div class="presenter_notes">
+            <header><h1>Presenter Notes</h1></header>
+            <section>
+            
+            </section>
+          </div>
+          <footer>
+            
+            <aside class="source">
+              Source: <a href="01op/index.md">01op/index.md</a>
+            </aside>
+            
+            <aside class="page_number">
+              26/101
+            </aside>
+          </footer>
+        </div>
+      </div>
+      
+      <!-- slide source: 01op/index.md -->
+      <div class="slide-wrapper">
+        <div class="slide has_code">
+          <div class="inner">
+            
+            <header><h2>Bir Komutun Anatomisi</h2></header>
+            
+            
+            <section><ul>
+<li><p>Daha uzun (&ldquo;<strong>l</strong>ong&rdquo;) bilgi görüntüle → <code>-l</code></p>
+
+<div class="highlight"><pre>~<span class="nv">$ </span>ls -l ~
+drwxr-xr-x 2 roktas roktas 4096 Ağu 12 00:37 bin
+...
+</pre></div>
+</li>
+<li><p>Şimdilik program çıktısı üzerinde durmayalım; komutun yapısını inceleyin</p></li>
+<li><p>Program → <code>ls</code>, program argümanları → <code>-l</code>, <code>~</code> (argüman vektörü)</p></li>
+<li><p>Komut satırı seçenekleri (&ldquo;options&rdquo;) → <code>-l</code></p></li>
+<li><p>Seçenekler genellikle <code>-&lt;KARAKTER&gt;</code> biçiminde</p></li>
+<li><p>Yaygın kullanımda argüman denildiğinde seçenek dışındaki ögeler kastediliyor →
+<code>~</code></p></li>
+<li><p>Seçeneğin bir diğer adı &ldquo;anahtar&rdquo; → <code>l</code> anahtarı</p></li>
+</ul></section>
+            
+          </div>
+          <div class="presenter_notes">
+            <header><h1>Presenter Notes</h1></header>
+            <section>
+            
+            </section>
+          </div>
+          <footer>
+            
+            <aside class="source">
+              Source: <a href="01op/index.md">01op/index.md</a>
+            </aside>
+            
+            <aside class="page_number">
+              27/101
+            </aside>
+          </footer>
+        </div>
+      </div>
+      
+      <!-- slide source: 01op/index.md -->
+      <div class="slide-wrapper">
+        <div class="slide has_code">
+          <div class="inner">
+            
+            <header><h2>Bir Komutun Anatomisi</h2></header>
+            
+            
+            <section><ul>
+<li><p>Genel biçim</p>
+
+<div class="highlight"><pre><span class="nv">$ </span>&lt;PROGRAM&gt; <span class="o">[</span>&lt;SEÇENEKLER&gt;...<span class="o">]</span> <span class="o">[</span>&lt;ARGÜMANLAR&gt;...<span class="o">]</span>
+</pre></div>
+</li>
+<li><p>Yaygın notasyonda <code>[]</code> ilgili ögelerin isteğe bağlı olduğunu, <code>...</code> ise
+ögelerin bir veya daha fazla sayıda tekrar ettiğini anlatır</p></li>
+<li><p><code>[]</code> yoksa ilgili ögenin varlığı gerekli</p></li>
+</ul></section>
+            
+          </div>
+          <div class="presenter_notes">
+            <header><h1>Presenter Notes</h1></header>
+            <section>
+            
+            </section>
+          </div>
+          <footer>
+            
+            <aside class="source">
+              Source: <a href="01op/index.md">01op/index.md</a>
+            </aside>
+            
+            <aside class="page_number">
+              28/101
+            </aside>
+          </footer>
+        </div>
+      </div>
+      
+      <!-- slide source: 01op/index.md -->
+      <div class="slide-wrapper">
+        <div class="slide has_code">
+          <div class="inner">
+            
+            <header><h2>Seçenekler</h2></header>
+            
+            
+            <section><ul>
+<li><p>GUI uygulamalarındaki &ldquo;Tercihler&quot;in (&quot;Preferences&rdquo; veya &ldquo;Setup&rdquo;) komut
+satırındaki karşılığı</p></li>
+<li><p>Programın davranışını kontrol etmeye yarıyor</p></li>
+<li><p>Genellikle tek harf (&ldquo;short options&rdquo;)</p></li>
+<li><p>Standartlara uygunluk endişesiyle seçenekleri (varsa) argümanlardan önce
+yazıyoruz</p></li>
+<li><p>Fakat bazı programlarda (özellikle GNU araç seti) yeri önemli değil</p></li>
+<li><p>Yine standart dışı bir ekleme olarak pek çok program iki tireyle başlayan
+kelimelerden oluşan uzun seçenekleri de kabul ediliyor (&ldquo;long options&rdquo;)</p>
+
+<div class="highlight"><pre><span class="nv">$ </span>ls --all ~
+<span class="nv">$ </span>ls --ignore-backups ~
+</pre></div>
+</li>
+</ul></section>
+            
+          </div>
+          <div class="presenter_notes">
+            <header><h1>Presenter Notes</h1></header>
+            <section>
+            
+            </section>
+          </div>
+          <footer>
+            
+            <aside class="source">
+              Source: <a href="01op/index.md">01op/index.md</a>
+            </aside>
+            
+            <aside class="page_number">
+              29/101
+            </aside>
+          </footer>
+        </div>
+      </div>
+      
+      <!-- slide source: 01op/index.md -->
+      <div class="slide-wrapper">
+        <div class="slide has_code">
+          <div class="inner">
+            
+            <header><h2><code>man</code></h2></header>
+            
+            
+            <section><div class="highlight"><pre><span class="nv">$ </span>man ls
+</pre></div>
+
+
+<p><code>man</code> → &ldquo;Manual&rdquo; - &ldquo;Kılavuz&rdquo;</p>
+
+<ul>
+<li><p><code>ls</code> ile ilgili seçenek bilgilerini nereden öğreniyoruz?</p></li>
+<li><p>Kılavuz → Kullandığınız sistemin otoriter bilgi kaynağı</p></li>
+<li><p>Kılavuz hakkında yine kendisinden yardım alalım</p>
+
+<div class="highlight"><pre><span class="nv">$ </span>man man
+</pre></div>
+</li>
+</ul></section>
+            
+          </div>
+          <div class="presenter_notes">
+            <header><h1>Presenter Notes</h1></header>
+            <section>
+            
+            </section>
+          </div>
+          <footer>
+            
+            <aside class="source">
+              Source: <a href="01op/index.md">01op/index.md</a>
+            </aside>
+            
+            <aside class="page_number">
+              30/101
+            </aside>
+          </footer>
+        </div>
+      </div>
+      
+      <!-- slide source: 01op/index.md -->
+      <div class="slide-wrapper">
+        <div class="slide">
+          <div class="inner">
+            
+            <header><h2><code>man</code></h2></header>
+            
+            
+            <section><ul>
+<li><p>Seçenek sayısı fazla olan komutlar için zorunlu; ör. <code>ls</code></p></li>
+<li><p>Çıktısı basit olmayan komutlar için de yararlı; ör. <code>ls</code></p></li>
+<li><p>Sık kullanılan komut ve seçenekler akılda kalabilir</p></li>
+<li><p>Fakat tüm seçeneklerini bildiğiniz komutlarda bile bazen uç durumlardaki
+davranışı kestiremeyebilirsiniz</p></li>
+<li><p>Bu komuta elinizi alıştırın</p></li>
+<li><p>İngilizceniz çok iyi olmasa bile sorununuzu çözebilecek örnek komutlar veya
+basit açıklamalar bulabilirsiniz</p></li>
+</ul></section>
+            
+          </div>
+          <div class="presenter_notes">
+            <header><h1>Presenter Notes</h1></header>
+            <section>
+            
+            </section>
+          </div>
+          <footer>
+            
+            <aside class="source">
+              Source: <a href="01op/index.md">01op/index.md</a>
+            </aside>
+            
+            <aside class="page_number">
+              31/101
+            </aside>
+          </footer>
+        </div>
+      </div>
+      
+      <!-- slide source: 01op/index.md -->
+      <div class="slide-wrapper">
+        <div class="slide achtung">
+          <div class="inner">
+            
+            <header><h2>BSD Kılavuz Sayfaları</h2></header>
+            
+            
+            <section>
+<ul>
+<li><p>Linux kılavuz sayfalarında kalite bazen çok düşüyor</p></li>
+<li><p>BSD sistemlerinin, özellikle OpenBSD&#39;nin, kılavuz sayfaları son derece özenli
+ve doyurucu</p></li>
+<li><p>Bu sayfalardan yararlanmak için BSD kurmanız gerekmiyor (ama öneririz);
+Web&#39;den okuyabilirsiniz</p></li>
+<li><p><a href="http://www.openbsd.org/cgi-bin/man.cgi">http://www.openbsd.org/cgi-bin/man.cgi</a></p></li>
+<li><p>UNIX sistemler arasında taşınabilir programlar yazmanız için de çok yararlı</p></li>
+<li><p>BSD ile Linux arasındaki farklılıklara dikkat edin!  Bazı komutlar Linux&#39;ta
+farklı davranabilir</p></li>
+</ul></section>
+            
+          </div>
+          <div class="presenter_notes">
+            <header><h1>Presenter Notes</h1></header>
+            <section>
+            
+            </section>
+          </div>
+          <footer>
+            
+            <aside class="source">
+              Source: <a href="01op/index.md">01op/index.md</a>
+            </aside>
+            
+            <aside class="page_number">
+              32/101
+            </aside>
+          </footer>
+        </div>
+      </div>
+      
+      <!-- slide source: 01op/index.md -->
+      <div class="slide-wrapper">
+        <div class="slide has_code">
+          <div class="inner">
+            
+            <header><h2><code>ls</code></h2></header>
+            
+            
+            <section><div class="highlight"><pre>~<span class="nv">$ </span>ls -l
+drwxr-xr-x 2 roktas roktas 4096 Ağu 12 00:37 bin
+...
+</pre></div>
+
+
+<ul>
+<li><p><code>d</code> → dosya türü: bu bir dizin</p></li>
+<li><p><code>rwxr-xr-x</code> → izinler: sahibi okur/yazar/çalıştırır, grup ve diğerleri
+okur/çalıştırır</p></li>
+<li><p><code>2</code> → referans sayısı: diğer dosya sistemi nesneleri tarafından bu nesneye
+verilen referansların sayısı</p></li>
+<li><p><code>roktas</code> → sahip</p></li>
+<li><p><code>roktas</code> → grup</p></li>
+<li><p><code>4096</code> → boyut: Bayt cinsinden</p></li>
+<li><p><code>Ağu 12 00:37</code> → son değişiklik zamanı</p></li>
+<li><p><code>bin</code> → isim</p></li>
+</ul></section>
+            
+          </div>
+          <div class="presenter_notes">
+            <header><h1>Presenter Notes</h1></header>
+            <section>
+            
+            </section>
+          </div>
+          <footer>
+            
+            <aside class="source">
+              Source: <a href="01op/index.md">01op/index.md</a>
+            </aside>
+            
+            <aside class="page_number">
+              33/101
+            </aside>
+          </footer>
+        </div>
+      </div>
+      
+      <!-- slide source: 01op/index.md -->
+      <div class="slide-wrapper">
+        <div class="slide has_code">
+          <div class="inner">
+            
+            <header><h2><code>ls</code></h2></header>
+            
+            
+            <section><ul>
+<li><p>Sadece dizin (&ldquo;<strong>d</strong>irectory&rdquo;) hakkında bilgi → <code>-d</code></p>
+
+<div class="highlight"><pre>~<span class="nv">$ </span>ls -ld
+drwx------ 49 roktas roktas 4096 Eki  3 21:34 .
+</pre></div>
+</li>
+<li><p>Çıktıda bazı dosya/dizinler gizlenir; hepsini (&ldquo;<strong>a</strong>ll&rdquo;) gör → <code>-a</code></p>
+
+<div class="highlight"><pre>~<span class="nv">$ </span>ls -a
+.bashrc
+...
+.private
+</pre></div>
+</li>
+<li><p>Hangi dosyalar gizleniyor?</p></li>
+</ul></section>
+            
+          </div>
+          <div class="presenter_notes">
+            <header><h1>Presenter Notes</h1></header>
+            <section>
+            
+            </section>
+          </div>
+          <footer>
+            
+            <aside class="source">
+              Source: <a href="01op/index.md">01op/index.md</a>
+            </aside>
+            
+            <aside class="page_number">
+              34/101
+            </aside>
+          </footer>
+        </div>
+      </div>
+      
+      <!-- slide source: 01op/index.md -->
+      <div class="slide-wrapper">
+        <div class="slide has_code">
+          <div class="inner">
+            
+            <header><h2>Gizli Dosyalar</h2></header>
+            
+            
+            <section><ul>
+<li><p>UNIX sistemlerde dosyaları &ldquo;gizleyen&rdquo; bir mekanizma yok fakat bir konvansiyon
+var</p></li>
+<li><p><code>.</code> ile başlayan dosyalar pek çok program tarafından öntanımlı kullanımda
+işleme alınmaz → &ldquo;nokta dosyalar&rdquo; (&ldquo;dotfiles&rdquo;)</p>
+
+<div class="highlight"><pre><span class="nv">$ </span>ls ~
+</pre></div>
+</li>
+<li><p>Örneğin ev dizininizde bulunan yapılandırma dosyaları, geçici dosyalar,
+önbellekleme veya yedekleme amaçlı kullanılan dosyalar</p></li>
+<li><p>Örneğin sürüm takip sistemlerinin meta dizinleri (<code>.git</code>, <code>.svn</code>)</p></li>
+<li><p><strong>Bu konvansiyonda amaç mahremiyet değil (dosya izinlerinin konusu), kullanım
+konforu (&ldquo;sadece gerekli olanları göster&rdquo;)</strong></p></li>
+<li><p>Konvansiyonla işleme alınmayan bu dosyaların dikkate alınması için programa
+özel bir seçenek girmeniz gerekebilir</p>
+
+<div class="highlight"><pre><span class="nv">$ </span>ls -a ~
+</pre></div>
+</li>
+</ul></section>
+            
+          </div>
+          <div class="presenter_notes">
+            <header><h1>Presenter Notes</h1></header>
+            <section>
+            
+            </section>
+          </div>
+          <footer>
+            
+            <aside class="source">
+              Source: <a href="01op/index.md">01op/index.md</a>
+            </aside>
+            
+            <aside class="page_number">
+              35/101
+            </aside>
+          </footer>
+        </div>
+      </div>
+      
+      <!-- slide source: 01op/index.md -->
+      <div class="slide-wrapper">
+        <div class="slide has_code">
+          <div class="inner">
+            
+            <header><h2><code>mkdir</code></h2></header>
+            
+            
+            <section><p><code>mkdir</code> Make Directory → Dizin Oluştur</p>
+
+<div class="highlight"><pre>~<span class="nv">$ </span>mkdir tmp
+~<span class="nv">$ </span>ls -d tmp
+tmp
+</pre></div>
+
+
+<ul>
+<li><p>Argüman olarak verilen dizini oluşturur</p></li>
+<li><p>Argüman olarak bir dizin yolu verilmişse yolda son dizin (çocuk) dışındaki
+dizinler (ebeveynler) önceden varolmalı</p>
+
+<div class="highlight"><pre>~<span class="nv">$ </span>mkdir tmp/foo/bar
+mkdir: <span class="sb">`</span>tmp/foo/bar<span class="err">&#39;</span> dizini oluşturulamıyor: ...
+</pre></div>
+</li>
+<li><p><code>-p</code> → önce ebeveyn dizinleri (&ldquo;<strong>p</strong>arents&rdquo;) yoksa oluştur</p>
+
+<div class="highlight"><pre>~<span class="nv">$ </span>mkdir -p tmp/foo/bar
+~<span class="nv">$ </span>ls -d tmp/foo/bar
+tmp/foo/bar
+</pre></div>
+</li>
+</ul></section>
+            
+          </div>
+          <div class="presenter_notes">
+            <header><h1>Presenter Notes</h1></header>
+            <section>
+            
+            </section>
+          </div>
+          <footer>
+            
+            <aside class="source">
+              Source: <a href="01op/index.md">01op/index.md</a>
+            </aside>
+            
+            <aside class="page_number">
+              36/101
+            </aside>
+          </footer>
+        </div>
+      </div>
+      
+      <!-- slide source: 01op/index.md -->
+      <div class="slide-wrapper">
+        <div class="slide">
+          <div class="inner">
+            
+            <header><h2><code>touch</code></h2></header>
+            
+            
+            <section><p>.</p></section>
+            
+          </div>
+          <div class="presenter_notes">
+            <header><h1>Presenter Notes</h1></header>
+            <section>
+            
+            </section>
+          </div>
+          <footer>
+            
+            <aside class="source">
+              Source: <a href="01op/index.md">01op/index.md</a>
+            </aside>
+            
+            <aside class="page_number">
+              37/101
+            </aside>
+          </footer>
+        </div>
+      </div>
+      
+      <!-- slide source: 01op/index.md -->
+      <div class="slide-wrapper">
+        <div class="slide">
+          <div class="inner">
+            
+            <header><h2><code>rmdir</code></h2></header>
+            
+            
+            <section><p>.</p></section>
+            
+          </div>
+          <div class="presenter_notes">
+            <header><h1>Presenter Notes</h1></header>
+            <section>
+            
+            </section>
+          </div>
+          <footer>
+            
+            <aside class="source">
+              Source: <a href="01op/index.md">01op/index.md</a>
+            </aside>
+            
+            <aside class="page_number">
+              38/101
+            </aside>
+          </footer>
+        </div>
+      </div>
+      
+      <!-- slide source: 01op/index.md -->
+      <div class="slide-wrapper">
+        <div class="slide">
+          <div class="inner">
+            
+            <header><h2><code>rm</code></h2></header>
+            
+            
+            <section><p>.</p></section>
+            
+          </div>
+          <div class="presenter_notes">
+            <header><h1>Presenter Notes</h1></header>
+            <section>
+            
+            </section>
+          </div>
+          <footer>
+            
+            <aside class="source">
+              Source: <a href="01op/index.md">01op/index.md</a>
+            </aside>
+            
+            <aside class="page_number">
+              39/101
+            </aside>
+          </footer>
+        </div>
+      </div>
+      
+      <!-- slide source: 01op/index.md -->
+      <div class="slide-wrapper">
+        <div class="slide">
+          <div class="inner">
+            
+            <header><h2><code>cp</code></h2></header>
+            
+            
+            <section><p>.</p></section>
+            
+          </div>
+          <div class="presenter_notes">
+            <header><h1>Presenter Notes</h1></header>
+            <section>
+            
+            </section>
+          </div>
+          <footer>
+            
+            <aside class="source">
+              Source: <a href="01op/index.md">01op/index.md</a>
+            </aside>
+            
+            <aside class="page_number">
+              40/101
+            </aside>
+          </footer>
+        </div>
+      </div>
+      
+      <!-- slide source: 01op/index.md -->
+      <div class="slide-wrapper">
+        <div class="slide">
+          <div class="inner">
+            
+            <header><h2><code>mv</code></h2></header>
+            
+            
+            <section><p>.</p></section>
+            
+          </div>
+          <div class="presenter_notes">
+            <header><h1>Presenter Notes</h1></header>
+            <section>
+            
+            </section>
+          </div>
+          <footer>
+            
+            <aside class="source">
+              Source: <a href="01op/index.md">01op/index.md</a>
+            </aside>
+            
+            <aside class="page_number">
+              41/101
+            </aside>
+          </footer>
+        </div>
+      </div>
+      
+      <!-- slide source: 01op/index.md -->
+      <div class="slide-wrapper">
+        <div class="slide">
+          <div class="inner">
+            
+            <header><h2><code>ln</code></h2></header>
+            
+            
+            <section><p>.</p></section>
+            
+          </div>
+          <div class="presenter_notes">
+            <header><h1>Presenter Notes</h1></header>
+            <section>
+            
+            </section>
+          </div>
+          <footer>
+            
+            <aside class="source">
+              Source: <a href="01op/index.md">01op/index.md</a>
+            </aside>
+            
+            <aside class="page_number">
+              42/101
+            </aside>
+          </footer>
+        </div>
+      </div>
+      
+      <!-- slide source: 01op/index.md -->
+      <div class="slide-wrapper">
+        <div class="slide has_code">
+          <div class="inner">
+            
+            <header><h2>Sahiplik ve İzinler</h2></header>
+            
+            
+            <section><div class="highlight"><pre><span class="nv">$ </span>ls foo.txt
+-rw-r--r-- 1 roktas users 0 Eki  2 01:27 foo.txt
+</pre></div>
+
+
+<ul>
+<li><p>Uzun <code>ls</code> çıktılarındaki sahiplik ve izin bilgilerine tekrar bakalım</p></li>
+<li><p>9 karakterlik bir dizgi; 3&#39;lü <code>rwx</code> öbekleri</p></li>
+<li><p>Her öbekte <code>rwx</code> dizgisinde izin verilmeyen eylem için <code>-</code></p></li>
+</ul></section>
+            
+          </div>
+          <div class="presenter_notes">
+            <header><h1>Presenter Notes</h1></header>
+            <section>
+            
+            </section>
+          </div>
+          <footer>
+            
+            <aside class="source">
+              Source: <a href="01op/index.md">01op/index.md</a>
+            </aside>
+            
+            <aside class="page_number">
+              43/101
+            </aside>
+          </footer>
+        </div>
+      </div>
+      
+      <!-- slide source: 01op/index.md -->
+      <div class="slide-wrapper">
+        <div class="slide">
+          <div class="inner">
+            
+            <header><h2>Sahiplik ve İzinler</h2></header>
+            
+            
+            <section><p>Bir dosya ile sahiplik ilişkimiz nasıl olabilir?</p>
+
+<ul>
+<li><p>Dosya kullanıcıya ait: kullanıcı → <strong>u</strong>ser</p></li>
+<li><p>Gruba ait: grup → <strong>g</strong>roup</p></li>
+<li><p>Başkalarına ait: başkaları → <strong>o</strong>thers</p></li>
+</ul>
+
+<p>Bir dosya üzerinde hangi eylemler gerçekleştirilebilir?</p>
+
+<ul>
+<li><p>Oku → <strong>r</strong>ead</p></li>
+<li><p>Yaz → <strong>w</strong>rite</p></li>
+<li><p>Çalıştır → e<strong>x</strong>ecute</p></li>
+</ul></section>
+            
+          </div>
+          <div class="presenter_notes">
+            <header><h1>Presenter Notes</h1></header>
+            <section>
+            
+            </section>
+          </div>
+          <footer>
+            
+            <aside class="source">
+              Source: <a href="01op/index.md">01op/index.md</a>
+            </aside>
+            
+            <aside class="page_number">
+              44/101
+            </aside>
+          </footer>
+        </div>
+      </div>
+      
+      <!-- slide source: 01op/index.md -->
+      <div class="slide-wrapper">
+        <div class="slide has_code">
+          <div class="inner">
+            
+            <header><h2>Sahiplik ve İzinler</h2></header>
+            
+            
+            <section><div class="highlight"><pre><span class="nv">$ </span>ls foo.txt
+-rw-r--r-- 1 roktas users 0 Eki  2 01:27 foo.txt
+</pre></div>
+
+
+<ul>
+<li><p>Kullanıcı (<code>roktas</code>) okuyabilir/yazabilir, çalıştıramaz</p></li>
+<li><p>Grup (<code>users</code>) ve başkaları sadece okuyabilir</p></li>
+<li><p>Görüldüğü gibi bu dosyanın çalıştırılması anlamlı da değil; çünkü bu bir veri
+dosyası</p></li>
+<li><p>Fakat dizinlerde çalıştırılabilirlik izninin bulunduğunu görmüştük</p></li>
+</ul></section>
+            
+          </div>
+          <div class="presenter_notes">
+            <header><h1>Presenter Notes</h1></header>
+            <section>
+            
+            </section>
+          </div>
+          <footer>
+            
+            <aside class="source">
+              Source: <a href="01op/index.md">01op/index.md</a>
+            </aside>
+            
+            <aside class="page_number">
+              45/101
+            </aside>
+          </footer>
+        </div>
+      </div>
+      
+      <!-- slide source: 01op/index.md -->
+      <div class="slide-wrapper">
+        <div class="slide">
+          <div class="inner">
+            
+            <header><h2>Çalıştırılabilir Dosya</h2></header>
+            
+            
+            <section><ul>
+<li><p>Okuma ve yazma izinlerinin kavranması görece kolay</p></li>
+<li><p>Dosya için çalıştırılabilirlik?  Dosyanın bir program olarak
+çalıştırılabilmesi</p></li>
+<li><p>Çalıştırılabilir bir dosya hemen hemen daima bir program dosyasıdır</p></li>
+<li><p>Bu konuya döneceğiz</p></li>
+</ul></section>
+            
+          </div>
+          <div class="presenter_notes">
+            <header><h1>Presenter Notes</h1></header>
+            <section>
+            
+            </section>
+          </div>
+          <footer>
+            
+            <aside class="source">
+              Source: <a href="01op/index.md">01op/index.md</a>
+            </aside>
+            
+            <aside class="page_number">
+              46/101
+            </aside>
+          </footer>
+        </div>
+      </div>
+      
+      <!-- slide source: 01op/index.md -->
+      <div class="slide-wrapper">
+        <div class="slide">
+          <div class="inner">
+            
+            <header><h2>Çalıştırılabilir Dizin</h2></header>
+            
+            
+            <section><ul>
+<li><p>&ldquo;Dosya çalıştırılabilir&rdquo; anlamlı bir izin; dosyanın bir program dosyası
+olduğunu anlıyoruz</p></li>
+<li><p>&ldquo;Çalıştırılabilir dizin&rdquo; anlamlı mı?  Dizin bir program değil ki çalıştırılsın</p></li>
+<li><p>&ldquo;Çalıştırılabilir dizin&quot;i basitçe şöyle yorumlayın: &quot;dizine girebilir → <code>cd</code>
+ve içeriğini listeleyebilirim → <code>ls -l</code>&rdquo;</p></li>
+<li><p>Bu yorum olağan senaryolarda gayet yeterli</p></li>
+<li><p>Fakat muğlak kaldığı durumlar da var; ilerleyen bölümlerde&hellip;</p></li>
+</ul></section>
+            
+          </div>
+          <div class="presenter_notes">
+            <header><h1>Presenter Notes</h1></header>
+            <section>
+            
+            </section>
+          </div>
+          <footer>
+            
+            <aside class="source">
+              Source: <a href="01op/index.md">01op/index.md</a>
+            </aside>
+            
+            <aside class="page_number">
+              47/101
+            </aside>
+          </footer>
+        </div>
+      </div>
+      
+      <!-- slide source: 01op/index.md -->
+      <div class="slide-wrapper">
+        <div class="slide has_code">
+          <div class="inner">
+            
+            <header><h2><code>chown</code></h2></header>
+            
+            
+            <section><p>Sahipliği nasıl düzenliyoruz?</p>
+
+<ul>
+<li><p>Kullanıcıyı değiştir</p>
+
+<div class="highlight"><pre><span class="nv">$ </span>chown roktas foo.txt
+</pre></div>
+</li>
+<li><p>Kullanıcı ve grubu değiştir</p>
+
+<div class="highlight"><pre><span class="nv">$ </span>chown roktas:staff foo.txt
+</pre></div>
+</li>
+<li><p>Grubu değiştir</p>
+
+<div class="highlight"><pre><span class="nv">$ </span>chown :staff foo.txt
+</pre></div>
+</li>
+</ul></section>
+            
+          </div>
+          <div class="presenter_notes">
+            <header><h1>Presenter Notes</h1></header>
+            <section>
+            
+            </section>
+          </div>
+          <footer>
+            
+            <aside class="source">
+              Source: <a href="01op/index.md">01op/index.md</a>
+            </aside>
+            
+            <aside class="page_number">
+              48/101
+            </aside>
+          </footer>
+        </div>
+      </div>
+      
+      <!-- slide source: 01op/index.md -->
+      <div class="slide-wrapper">
+        <div class="slide has_code">
+          <div class="inner">
+            
+            <header><h2><code>chgrp</code></h2></header>
+            
+            
+            <section><p>Grubu düzenlemenin bir başka yolu</p>
+
+<div class="highlight"><pre><span class="nv">$ </span>chgrp staff foo.txt
+</pre></div>
+
+
+<ul>
+<li><p><code>chown</code> ile hem kullanıcı hem grup düzenlenebiliyor</p></li>
+<li><p>Kognitif yükü azaltmak için tek bir araç: <code>chown</code> kullanmak daha doğru</p></li>
+<li><p>Bu nedenle fazla kullanmıyoruz</p></li>
+</ul></section>
+            
+          </div>
+          <div class="presenter_notes">
+            <header><h1>Presenter Notes</h1></header>
+            <section>
+            
+            </section>
+          </div>
+          <footer>
+            
+            <aside class="source">
+              Source: <a href="01op/index.md">01op/index.md</a>
+            </aside>
+            
+            <aside class="page_number">
+              49/101
+            </aside>
+          </footer>
+        </div>
+      </div>
+      
+      <!-- slide source: 01op/index.md -->
+      <div class="slide-wrapper">
+        <div class="slide has_code">
+          <div class="inner">
+            
+            <header><h2><code>chmod</code></h2></header>
+            
+            
+            <section><p>İzinleri nasıl düzenliyoruz?</p>
+
+<ul>
+<li><p>Sadece ben okuyup/yazabileyim</p>
+
+<div class="highlight"><pre><span class="nv">$ </span>chmod <span class="nv">u</span><span class="o">=</span>rw foo.txt
+</pre></div>
+</li>
+<li><p>Gruba yazma hakkı ver</p>
+
+<div class="highlight"><pre><span class="nv">$ </span>chmod g+w foo.txt
+</pre></div>
+</li>
+<li><p>Başkalarının tüm haklarını kısıtla</p>
+
+<div class="highlight"><pre><span class="nv">$ </span>chmod <span class="nv">o</span><span class="o">=</span> foo.txt
+</pre></div>
+</li>
+<li><p>Herkese (ben, grubum ve başkaları) çalıştırma hakkı ver</p>
+
+<div class="highlight"><pre><span class="nv">$ </span>chmod +x foo.txt
+</pre></div>
+</li>
+</ul></section>
+            
+          </div>
+          <div class="presenter_notes">
+            <header><h1>Presenter Notes</h1></header>
+            <section>
+            
+            </section>
+          </div>
+          <footer>
+            
+            <aside class="source">
+              Source: <a href="01op/index.md">01op/index.md</a>
+            </aside>
+            
+            <aside class="page_number">
+              50/101
+            </aside>
+          </footer>
+        </div>
+      </div>
+      
+      <!-- slide source: 01op/index.md -->
+      <div class="slide-wrapper">
+        <div class="slide">
+          <div class="inner">
+            
+            <header><h2><code>chmod</code></h2></header>
+            
+            
+            <section><ul>
+<li><p>Sahiplik için <code>ugoa</code>, izinler için <code>rwx</code> mnemonikleri ve üç basit operatör
+<code>=+-</code> kullanılıyor</p></li>
+<li><p>Sol tarafta → sahiplik, ortada → operatör, sağ tarafta → izinler</p></li>
+<li><p>Sol tarafın yokluğu <code>a</code> (&ldquo;all&rdquo;) yani herkes anlamına geliyor</p></li>
+<li><p><code>=</code> ile ilgili sahip alanının <strong>üzerine yazılıyor</strong></p></li>
+<li><p><code>=</code> bir atama, ekleme/çıkarma değil; sağ taraf boşsa tüm izinler kaldırılır</p></li>
+<li><p><code>+/-</code> ile mevcut düzenlemeye ekleme/çıkarma yapılıyor</p></li>
+</ul></section>
+            
+          </div>
+          <div class="presenter_notes">
+            <header><h1>Presenter Notes</h1></header>
+            <section>
+            
+            </section>
+          </div>
+          <footer>
+            
+            <aside class="source">
+              Source: <a href="01op/index.md">01op/index.md</a>
+            </aside>
+            
+            <aside class="page_number">
+              51/101
+            </aside>
+          </footer>
+        </div>
+      </div>
+      
+      <!-- slide source: 01op/index.md -->
+      <div class="slide-wrapper">
+        <div class="slide">
+          <div class="inner">
+            
+            <header><h2>Program</h2></header>
+            
+            
+            <section><ul>
+<li><p>UNIX&#39;te program dosyalarının önemli bir kısmı ikili (&ldquo;binary&rdquo;) biçimde</p></li>
+<li><p>Bunlar derlenmiş dosyalar; içeriğine baktığınızda adeta şifrelenmiş bir metin</p></li>
+<li><p>İkili içerik programın kaynak kodu hakkında yeterli bir bilgi vermez (fakat
+özel araçlarla bu içerik bile yorumlanabilir)</p></li>
+<li><p>Bazı program dosyaları ise dinamik bir programlama diliyle; örneğin kabuğun
+kendisiyle veya Perl, Python, Ruby gibi dillerle yazılıyor</p></li>
+<li><p>Bu tür programlara &ldquo;betik&rdquo; (&ldquo;script&rdquo;) diyoruz</p></li>
+<li><p>Betik aynı zamanda kaynak kod; Web sayfalarında yüklenen JavaScript betikleri
+gibi</p></li>
+</ul></section>
+            
+          </div>
+          <div class="presenter_notes">
+            <header><h1>Presenter Notes</h1></header>
+            <section>
+            
+            </section>
+          </div>
+          <footer>
+            
+            <aside class="source">
+              Source: <a href="01op/index.md">01op/index.md</a>
+            </aside>
+            
+            <aside class="page_number">
+              52/101
+            </aside>
+          </footer>
+        </div>
+      </div>
+      
+      <!-- slide source: 01op/index.md -->
+      <div class="slide-wrapper">
+        <div class="slide has_code">
+          <div class="inner">
+            
+            <header><h2>Betik</h2></header>
+            
+            
+            <section><ul>
+<li><p>Ruby ile yazılmış tek satırlık bir <code>echo.rb</code> dosyası</p>
+
+<div class="highlight"><pre><span class="nb">puts</span> <span class="no">ARGV</span><span class="o">.</span><span class="n">join</span> <span class="s1">&#39; &#39;</span>
+</pre></div>
+</li>
+<li><p>Kabukta kullandığımız <code>echo</code>&#39;nun Ruby sürümü</p></li>
+<li><p>Bu betiği nasıl çalıştırırız?</p>
+
+<div class="highlight"><pre><span class="nv">$ </span>ruby echo.rb
+</pre></div>
+</li>
+</ul></section>
+            
+          </div>
+          <div class="presenter_notes">
+            <header><h1>Presenter Notes</h1></header>
+            <section>
+            
+            </section>
+          </div>
+          <footer>
+            
+            <aside class="source">
+              Source: <a href="01op/index.md">01op/index.md</a>
+            </aside>
+            
+            <aside class="page_number">
+              53/101
+            </aside>
+          </footer>
+        </div>
+      </div>
+      
+      <!-- slide source: 01op/index.md -->
+      <div class="slide-wrapper">
+        <div class="slide">
+          <div class="inner">
+            
+            <header><h2>Dosya Uzantıları</h2></header>
+            
+            
+            <section><ul>
+<li><p><code>echo.rb</code> dosya uzantısı → <code>.rb</code></p></li>
+<li><p>Uzantının betiğin çalıştırılması bağlamında özel bir anlamı yok!</p></li>
+<li><p>Fakat güzel bir pratik; betiğin Ruby diliyle yazıldığını anlatıyor</p></li>
+<li><p>Bu bir konvansiyon; <code>rb</code> uzantısı sadece Ruby ile yazılan kaynak kodlarda
+kullanılmalı&quot;</p></li>
+<li><p>Dosyayı düzenlerken de yararlı; pek çok düzenleyici bu uzantıya bakarak
+ilgili dilin sözdizimi renklendirmesini etkinleştiriyor</p></li>
+</ul></section>
+            
+          </div>
+          <div class="presenter_notes">
+            <header><h1>Presenter Notes</h1></header>
+            <section>
+            
+            </section>
+          </div>
+          <footer>
+            
+            <aside class="source">
+              Source: <a href="01op/index.md">01op/index.md</a>
+            </aside>
+            
+            <aside class="page_number">
+              54/101
+            </aside>
+          </footer>
+        </div>
+      </div>
+      
+      <!-- slide source: 01op/index.md -->
+      <div class="slide-wrapper">
+        <div class="slide achtung">
+          <div class="inner">
+            
+            <header><h2>Dosya Uzantıları</h2></header>
+            
+            
+            <section>
+<p>UNIX sistemlerde dosya uzantısı sadece bir konvansiyondur; dosyanın nasıl
+çalıştırılacağıyla ilgili teknik bir zorunluluk değildir</p>
+
+<ul>
+<li><p>Windows® sistemlerde karşılaştırın → <code>.exe</code> uzantıları</p></li>
+<li><p>UNIX&#39;te böyle bir zorunluluk yok</p></li>
+</ul></section>
+            
+          </div>
+          <div class="presenter_notes">
+            <header><h1>Presenter Notes</h1></header>
+            <section>
+            
+            </section>
+          </div>
+          <footer>
+            
+            <aside class="source">
+              Source: <a href="01op/index.md">01op/index.md</a>
+            </aside>
+            
+            <aside class="page_number">
+              55/101
+            </aside>
+          </footer>
+        </div>
+      </div>
+      
+      <!-- slide source: 01op/index.md -->
+      <div class="slide-wrapper">
+        <div class="slide has_code">
+          <div class="inner">
+            
+            <header><h2>Betik</h2></header>
+            
+            
+            <section><ul>
+<li><p>Bu yöntemde <code>echo.rb</code>&#39;nin çalıştırılabilir olması gerekiyor mu?  Hayır</p>
+
+<div class="highlight"><pre><span class="nv">$ </span>ls -l echo.rb
+-rw-r--r-- 1 roktas roktas 19 Eki  4 03:32 echo.rb
+</pre></div>
+</li>
+<li><p>Çalıştırılabilir olması gereken Ruby yorumlayıcısı, betik değil</p></li>
+<li><p>Çalıştırma eylemini gerçekleştiren kişi için okunabilir olması yeterli</p></li>
+<li><p>Madem betik programlar kaynak kod halinde geliyor, programı düzenleyebilir de!</p></li>
+<li><p>Tek şartla dosya yazılabilir olmalı</p></li>
+</ul></section>
+            
+          </div>
+          <div class="presenter_notes">
+            <header><h1>Presenter Notes</h1></header>
+            <section>
+            
+            </section>
+          </div>
+          <footer>
+            
+            <aside class="source">
+              Source: <a href="01op/index.md">01op/index.md</a>
+            </aside>
+            
+            <aside class="page_number">
+              56/101
+            </aside>
+          </footer>
+        </div>
+      </div>
+      
+      <!-- slide source: 01op/index.md -->
+      <div class="slide-wrapper">
+        <div class="slide has_code">
+          <div class="inner">
+            
+            <header><h2>Betik</h2></header>
+            
+            
+            <section><p>Betiği tıpkı olağan bir komut gibi çalıştırmak isterseniz?</p>
+
+<ul>
+<li><p>Örneğin buna bir isim verelim → <code>papagan</code></p></li>
+<li><p>Şöyle istiyoruz</p>
+
+<div class="highlight"><pre><span class="nv">$ </span>papagan Naber
+Naber
+</pre></div>
+</li>
+</ul></section>
+            
+          </div>
+          <div class="presenter_notes">
+            <header><h1>Presenter Notes</h1></header>
+            <section>
+            
+            </section>
+          </div>
+          <footer>
+            
+            <aside class="source">
+              Source: <a href="01op/index.md">01op/index.md</a>
+            </aside>
+            
+            <aside class="page_number">
+              57/101
+            </aside>
+          </footer>
+        </div>
+      </div>
+      
+      <!-- slide source: 01op/index.md -->
+      <div class="slide-wrapper">
+        <div class="slide has_code">
+          <div class="inner">
+            
+            <header><h2>Betik</h2></header>
+            
+            
+            <section><ul>
+<li><p>İsmi değiştirmemiz yeterli değil, ama ilk adım</p>
+
+<div class="highlight"><pre><span class="nv">$ </span>mv echo.rb papagan
+</pre></div>
+</li>
+<li><p><strong>Zorunlu adım</strong> dosya çalıştırılabilir olmalı</p>
+
+<div class="highlight"><pre><span class="nv">$ </span>chmod +x papagan
+</pre></div>
+</li>
+<li><p>Bakalım böyle çalışıyor mu?</p>
+
+<div class="highlight"><pre><span class="nv">$ </span>papagan
+bash: papagan: komut yok
+</pre></div>
+</li>
+</ul></section>
+            
+          </div>
+          <div class="presenter_notes">
+            <header><h1>Presenter Notes</h1></header>
+            <section>
+            
+            </section>
+          </div>
+          <footer>
+            
+            <aside class="source">
+              Source: <a href="01op/index.md">01op/index.md</a>
+            </aside>
+            
+            <aside class="page_number">
+              58/101
+            </aside>
+          </footer>
+        </div>
+      </div>
+      
+      <!-- slide source: 01op/index.md -->
+      <div class="slide-wrapper">
+        <div class="slide has_code">
+          <div class="inner">
+            
+            <header><h2><code>PATH</code></h2></header>
+            
+            
+            <section><ul>
+<li><p>Komut satırında girilen programlar belirli dizinlerde aranır ve ilk bulunan
+çalıştırılır</p></li>
+<li><p>Aranacak dizinler <code>:</code> ayrılmış bir biçimde <code>PATH</code> isimli ortam değişkeninde</p>
+
+<div class="highlight"><pre><span class="nv">$ </span><span class="nb">echo</span> <span class="nv">$PATH</span>
+~/bin:/usr/local/bin:/usr/bin:/bin
+</pre></div>
+</li>
+<li><p>Bulunduğunuz dizin <code>PATH</code>&#39;te tanımlı değildir ve <strong>tanımlı olmamalıdır</strong>,
+neden?</p></li>
+<li><p><code>PATH</code>&#39;te tanımlı olmayan bir programı çalıştırmak için programı açık dosya
+yoluyla yazmalısınız</p></li>
+<li><p>Açık dosya yolu?  Bulunduğumuz dizin → <code>.</code>, dosya yolu → <code>./papagan</code></p></li>
+</ul></section>
+            
+          </div>
+          <div class="presenter_notes">
+            <header><h1>Presenter Notes</h1></header>
+            <section>
+            
+            </section>
+          </div>
+          <footer>
+            
+            <aside class="source">
+              Source: <a href="01op/index.md">01op/index.md</a>
+            </aside>
+            
+            <aside class="page_number">
+              59/101
+            </aside>
+          </footer>
+        </div>
+      </div>
+      
+      <!-- slide source: 01op/index.md -->
+      <div class="slide-wrapper">
+        <div class="slide has_code">
+          <div class="inner">
+            
+            <header><h2>Betik</h2></header>
+            
+            
+            <section><ul>
+<li><p>O halde şöyle çalışmalı?</p>
+
+<div class="highlight"><pre><span class="nv">$ </span>./papagan
+./papagan: line 1: puts: komut yok
+</pre></div>
+</li>
+<li><p>Hayır çalışmadı; hata iletisi kabuktan geliyor gibi</p></li>
+<li><p>Bakın Ruby bu hikayede hala sahneye çıkmadı → <code>ruby echo.rb</code> etkisi</p></li>
+<li><p>Sistem kaynak kodun kabukta yazıldığını düşünüyor</p></li>
+<li><p>Sistem yani kabuğun talimat verdiği &ldquo;program yükleyici&rdquo;; işletim sisteminin
+bir unsuru</p></li>
+<li><p>Bu makul bir varsayım, hangi yorumlayıcının kullanılacağı bilinmiyorsa kabuk
+dilini varsay</p></li>
+<li><p>Kaynağın Ruby ile yorumlanması gerektiğini &ldquo;program yükleyici&quot;ye anlatmalıyız</p></li>
+</ul></section>
+            
+          </div>
+          <div class="presenter_notes">
+            <header><h1>Presenter Notes</h1></header>
+            <section>
+            
+            </section>
+          </div>
+          <footer>
+            
+            <aside class="source">
+              Source: <a href="01op/index.md">01op/index.md</a>
+            </aside>
+            
+            <aside class="page_number">
+              60/101
+            </aside>
+          </footer>
+        </div>
+      </div>
+      
+      <!-- slide source: 01op/index.md -->
+      <div class="slide-wrapper">
+        <div class="slide">
+          <div class="inner">
+            
+            <header><h2>Betik</h2></header>
+            
+            
+            <section><p>UNIX sistemlerde bu nasıl yapılıyor</p>
+
+<ul>
+<li><p>Sistem ikili dosyalarla düz metin dosyaları ayırabiliyor</p></li>
+<li><p>Çalıştırılabilir ikili dosyalarda içeriğin ilk baytlarında bir tür imza var</p></li>
+<li><p>Düz metin dosyalarda ise ilk satır özel</p></li>
+</ul></section>
+            
+          </div>
+          <div class="presenter_notes">
+            <header><h1>Presenter Notes</h1></header>
+            <section>
+            
+            </section>
+          </div>
+          <footer>
+            
+            <aside class="source">
+              Source: <a href="01op/index.md">01op/index.md</a>
+            </aside>
+            
+            <aside class="page_number">
+              61/101
+            </aside>
+          </footer>
+        </div>
+      </div>
+      
+      <!-- slide source: 01op/index.md -->
+      <div class="slide-wrapper">
+        <div class="slide has_code">
+          <div class="inner">
+            
+            <header><h2><code>#!</code> Shebang</h2></header>
+            
+            
+            <section><ul>
+<li><p>Program yükleyici ilk satırı ayrıştırarak dosyanın hangi dille yorumlanması
+gerektiğini belirliyor</p></li>
+<li><p>Betik artık şöyle görünmeli</p>
+
+<div class="highlight"><pre><span class="c">#!/usr/bin/ruby</span>
+puts ARGV.join <span class="s1">&#39; &#39;</span>
+</pre></div>
+</li>
+<li><p><strong>Dikkat!</strong>  Shebang satırında yorumlayıcının mutlak dosya yolunu yazmanız
+gerekiyor; neden?</p></li>
+<li><p><code>#</code> Hash simgesi + <code>!</code> simgesi → Hashbang</p></li>
+<li><p>İngilizce &quot;Hash&rdquo; kelimesini okursanız &ldquo;She&rdquo; sesini alacaksınız → Shebang</p></li>
+</ul></section>
+            
+          </div>
+          <div class="presenter_notes">
+            <header><h1>Presenter Notes</h1></header>
+            <section>
+            
+            </section>
+          </div>
+          <footer>
+            
+            <aside class="source">
+              Source: <a href="01op/index.md">01op/index.md</a>
+            </aside>
+            
+            <aside class="page_number">
+              62/101
+            </aside>
+          </footer>
+        </div>
+      </div>
+      
+      <!-- slide source: 01op/index.md -->
+      <div class="slide-wrapper">
+        <div class="slide has_code">
+          <div class="inner">
+            
+            <header><h2><code>#!</code> Shebang</h2></header>
+            
+            
+            <section><ul>
+<li><p><code>!</code> anlaşılır bir şey; program yükleyiciye bir nida gibi; <code>#</code> neden var?</p></li>
+<li><p><code>#</code> karakteri Ruby dahil pek çok betik dilinde açıklama satırlarını belirtmek
+için kullanılır; bu karakterle başlayan satırlar göz ardı ediliyor</p></li>
+<li><p>Bakın bu düzenlemeyle artık önceki çalıştırma yöntemi de geçerliliğini korur</p>
+
+<div class="highlight"><pre><span class="nv">$ </span>ruby papagan
+</pre></div>
+</li>
+<li><p><code>#</code> olmasaydı bu sefer Ruby (veya bir başka betik dili) ihtimal ki <code>!</code> ile
+başlayan satırı yorumlayamayacak ve hata oluşacaktı</p></li>
+</ul></section>
+            
+          </div>
+          <div class="presenter_notes">
+            <header><h1>Presenter Notes</h1></header>
+            <section>
+            
+            </section>
+          </div>
+          <footer>
+            
+            <aside class="source">
+              Source: <a href="01op/index.md">01op/index.md</a>
+            </aside>
+            
+            <aside class="page_number">
+              63/101
+            </aside>
+          </footer>
+        </div>
+      </div>
+      
+      <!-- slide source: 01op/index.md -->
+      <div class="slide-wrapper">
+        <div class="slide has_code">
+          <div class="inner">
+            
+            <header><h2>Betik</h2></header>
+            
+            
+            <section><div class="highlight"><pre><span class="nv">$ </span>./papagan Naber
+Naber
+</pre></div>
+
+
+<ul>
+<li><p>Evet çalıştı!  Ama baştaki şu <code>./</code>&#39;dan kurtulamaz mıyız?  Diğer komutlar gibi
+olmasını istiyoruz</p></li>
+<li><p>Açık dosya yolunu verdik çünkü program sadece <code>PATH</code> içinde belirtilen
+dizinlerde aranıyor ve <code>.</code> dizini <code>PATH</code>&#39;te değil</p></li>
+<li><p>Ve tekrar edelim → <strong>&ldquo;<code>.</code> dizini <code>PATH</code>&#39;te olmamalı&rdquo;</strong>  Neden?</p></li>
+<li><p>Dosyayı PATH&#39;te belirtilen bir dizine koymalıyız</p></li>
+</ul></section>
+            
+          </div>
+          <div class="presenter_notes">
+            <header><h1>Presenter Notes</h1></header>
+            <section>
+            
+            </section>
+          </div>
+          <footer>
+            
+            <aside class="source">
+              Source: <a href="01op/index.md">01op/index.md</a>
+            </aside>
+            
+            <aside class="page_number">
+              64/101
+            </aside>
+          </footer>
+        </div>
+      </div>
+      
+      <!-- slide source: 01op/index.md -->
+      <div class="slide-wrapper">
+        <div class="slide has_code">
+          <div class="inner">
+            
+            <header><h2>Betik</h2></header>
+            
+            
+            <section><div class="highlight"><pre><span class="nv">$ </span><span class="nb">echo</span> <span class="nv">$PATH</span>
+~/bin:/usr/local/bin:/usr/bin:/bin
+</pre></div>
+
+
+<ul>
+<li><p>Bu sistemde seçenekler → <code>~/bin</code>, <code>/usr/local/bin</code>, <code>/usr/bin</code>,  <code>/bin</code></p></li>
+<li><p>Sizde seçenekler böyle olmayabilir</p></li>
+<li><p>İlki dışındaki seçenekler olmaz çünkü bu dizinlere yazma hakkımız yok, dosyayı
+bu dizinlere kopyalayamayız</p></li>
+<li><p>Kullandığınız sistemde yazma hakkına sahip olduğunuz böyle bir <code>~/bin</code> dizini
+yoksa?</p></li>
+<li><p>Bu dizini oluşturarak, dizinin <strong>kalıcı şekilde</strong> <code>PATH</code>&#39;te listelenmesini
+sağlamalısınız; Nasıl?  Eklere bakın</p></li>
+</ul></section>
+            
+          </div>
+          <div class="presenter_notes">
+            <header><h1>Presenter Notes</h1></header>
+            <section>
+            
+            </section>
+          </div>
+          <footer>
+            
+            <aside class="source">
+              Source: <a href="01op/index.md">01op/index.md</a>
+            </aside>
+            
+            <aside class="page_number">
+              65/101
+            </aside>
+          </footer>
+        </div>
+      </div>
+      
+      <!-- slide source: 01op/index.md -->
+      <div class="slide-wrapper">
+        <div class="slide has_code">
+          <div class="inner">
+            
+            <header><h2>Betik</h2></header>
+            
+            
+            <section><div class="highlight"><pre><span class="nv">$ </span><span class="nb">echo</span> <span class="nv">$PATH</span>
+~/bin:/usr/local/bin:/usr/bin:/bin
+</pre></div>
+
+
+<ul>
+<li><p><code>~/bin</code> dizinine yazma hakkımız var</p>
+
+<div class="highlight"><pre><span class="nv">$ </span>cp papagan ~/bin
+</pre></div>
+</li>
+<li><p>Ve&hellip;</p>
+
+<div class="highlight"><pre><span class="nv">$ </span>papagan Naber
+Naber
+</pre></div>
+</li>
+</ul></section>
+            
+          </div>
+          <div class="presenter_notes">
+            <header><h1>Presenter Notes</h1></header>
+            <section>
+            
+            </section>
+          </div>
+          <footer>
+            
+            <aside class="source">
+              Source: <a href="01op/index.md">01op/index.md</a>
+            </aside>
+            
+            <aside class="page_number">
+              66/101
+            </aside>
+          </footer>
+        </div>
+      </div>
+      
+      <!-- slide source: 01op/index.md -->
+      <div class="slide-wrapper">
+        <div class="slide">
+          <div class="inner">
+            
+            <header><h2><code>root</code></h2></header>
+            
+            
+            <section><ul>
+<li><p>Sistem yöneticisi; sistemde her türlü eylemi yapma gücüne sahip kullanıcı</p></li>
+<li><p>Yani &ldquo;superuser&rdquo;</p></li>
+<li><p>Sistem yöneticisi bir rol; yöneticinin gerçekte kim veya kimler olacağına
+sistemi yönetimi karar verir</p></li>
+<li><p>Tipik ev kullanımı senaryosunda kurulumu yapan kişi aynı zamanda sistem
+yöneticisi</p></li>
+<li><p><code>sudo</code> yapılandırması hakkında daha ayrıntılı bilgi için eklere bakın</p></li>
+</ul></section>
+            
+          </div>
+          <div class="presenter_notes">
+            <header><h1>Presenter Notes</h1></header>
+            <section>
+            
+            </section>
+          </div>
+          <footer>
+            
+            <aside class="source">
+              Source: <a href="01op/index.md">01op/index.md</a>
+            </aside>
+            
+            <aside class="page_number">
+              67/101
+            </aside>
+          </footer>
+        </div>
+      </div>
+      
+      <!-- slide source: 01op/index.md -->
+      <div class="slide-wrapper">
+        <div class="slide has_code">
+          <div class="inner">
+            
+            <header><h2><code>sudo</code></h2></header>
+            
+            
+            <section><ul>
+<li><p>Sistem yöneticisi olarak atanan gerçek bir kullanıcının bu rolle bir işlem
+yapması için <code>sudo</code> (&ldquo;superuser do&rdquo;) komutu kullanılıyor</p>
+
+<div class="highlight"><pre><span class="nv">$ </span>sudo whoami
+root
+</pre></div>
+</li>
+<li><p><code>sudo</code> başına yazıldığı komutu sistem yöneticisi rolüyle çalıştırır</p></li>
+<li><p>Tipik ev kullanımı senaryosunda bu komut genellikle sisteme yeni programlar
+yüklemek için kullanılır</p></li>
+<li><p>Örneğin Debian ve türevi sistemlerde</p>
+
+<div class="highlight"><pre><span class="nv">$ </span>sudo apt-get install chromium
+</pre></div>
+</li>
+</ul></section>
+            
+          </div>
+          <div class="presenter_notes">
+            <header><h1>Presenter Notes</h1></header>
+            <section>
+            
+            </section>
+          </div>
+          <footer>
+            
+            <aside class="source">
+              Source: <a href="01op/index.md">01op/index.md</a>
+            </aside>
+            
+            <aside class="page_number">
+              68/101
+            </aside>
+          </footer>
+        </div>
+      </div>
+      
+      <!-- slide source: 01op/index.md -->
+      <div class="slide-wrapper">
+        <div class="slide achtung">
+          <div class="inner">
+            
+            <header><h2><code>sudo</code></h2></header>
+            
+            
+            <section>
+<p><strong><code>sudo</code> komutu iki tarafı keskin bir bıçaktır, kullanırken dikkatli olun,
+  sisteme hasar verebilirsiniz!</strong></p></section>
+            
+          </div>
+          <div class="presenter_notes">
+            <header><h1>Presenter Notes</h1></header>
+            <section>
+            
+            </section>
+          </div>
+          <footer>
+            
+            <aside class="source">
+              Source: <a href="01op/index.md">01op/index.md</a>
+            </aside>
+            
+            <aside class="page_number">
+              69/101
+            </aside>
+          </footer>
+        </div>
+      </div>
+      
+      <!-- slide source: 01op/index.md -->
+      <div class="slide-wrapper">
+        <div class="slide task">
+          <div class="inner">
+            
+            <header><h2>Görev</h2></header>
+            
+            
+            <section>
+<ul>
+<li><p><code>sudo</code> ve <code>su</code> komutlarının arasında ne farklar vardır</p></li>
+<li><p>Bu farklara göre her iki komut için tipik kullanım senaryoları neler olabilir?</p></li>
+</ul></section>
+            
+          </div>
+          <div class="presenter_notes">
+            <header><h1>Presenter Notes</h1></header>
+            <section>
+            
+            </section>
+          </div>
+          <footer>
+            
+            <aside class="source">
+              Source: <a href="01op/index.md">01op/index.md</a>
+            </aside>
+            
+            <aside class="page_number">
+              70/101
+            </aside>
+          </footer>
+        </div>
+      </div>
+      
+      <!-- slide source: 01op/index.md -->
+      <div class="slide-wrapper">
+        <div class="slide">
+          <div class="inner">
+            
+            <header><h2><code>root</code></h2></header>
+            
+            
+            <section><ul>
+<li><p>Sistem yöneticisi → &ldquo;superuser&rdquo;</p></li>
+<li><p>Aynı kimlikte bir <code>root</code> grubu da mevcut; diğer &ldquo;öz grup&quot;larda olduğu gibi bu
+gruba sadece <code>root</code> kullanıcısı üyedir ve öyle de bırakılmalıdır</p></li>
+<li><p>Böyle bir hesap düzenlemesi her UNIX sisteminde daima mevcuttur</p></li>
+<li><p>Fakat bazı UNIX sistemlerinde (ör. Ubuntu ve türevleri) <code>root</code> hesabıyla
+oturum açamazsınız</p></li>
+<li><p>Kullandığınız dağıtımda gerçek bir <code>root</code> hesabı varsa (ör. Debian) <strong><code>sudo</code>
+komutunu çalıştırdığınızda istenen parola <code>root</code> parolası değil normal
+kullanıcı hesabınıza ait paroladır</strong></p></li>
+</ul></section>
+            
+          </div>
+          <div class="presenter_notes">
+            <header><h1>Presenter Notes</h1></header>
+            <section>
+            
+            </section>
+          </div>
+          <footer>
+            
+            <aside class="source">
+              Source: <a href="01op/index.md">01op/index.md</a>
+            </aside>
+            
+            <aside class="page_number">
+              71/101
+            </aside>
+          </footer>
+        </div>
+      </div>
+      
+      <!-- slide source: 01op/index.md -->
+      <div class="slide-wrapper">
+        <div class="slide">
+          <div class="inner">
+            
+            <header><h2>Yönlendirme</h2></header>
+            
+            
+            <section><ul>
+<li><p>Bir senaryo: bilgisayarınızda bir sorun var; örneğin ağ bağdaştırıcı
+çalışmıyor</p></li>
+<li><p>İhtimal o ki ağ bağdaştırıcısının sürücüsü yüklenmemiş veya hatalı çalışıyor</p></li>
+<li><p>Doğru sürücüyü bulma prosedürü: bağdaştırıcının marka/modelini öğren →
+İnternette arama yap → benzer sorunla karşılaşanların önerilerini incele</p></li>
+<li><p>Sorunu çözemediniz, artık bir bilene (forum, liste, kişi) yazabilirsiniz</p></li>
+<li><p>Yardım isteyeceğiniz kişilere donanım bilgisini nasıl gönderirsiniz?</p></li>
+<li><p>Kopyala/yapıştır?  Daha kolay bir yolu olmalı</p></li>
+<li><p>Ekranda gördüğünü bir dosyaya kaydet ve yardım iletisine dosya olarak ekle</p></li>
+</ul></section>
+            
+          </div>
+          <div class="presenter_notes">
+            <header><h1>Presenter Notes</h1></header>
+            <section>
+            
+            </section>
+          </div>
+          <footer>
+            
+            <aside class="source">
+              Source: <a href="01op/index.md">01op/index.md</a>
+            </aside>
+            
+            <aside class="page_number">
+              72/101
+            </aside>
+          </footer>
+        </div>
+      </div>
+      
+      <!-- slide source: 01op/index.md -->
+      <div class="slide-wrapper">
+        <div class="slide has_code">
+          <div class="inner">
+            
+            <header><h2>Yönlendirme</h2></header>
+            
+            
+            <section><ul>
+<li><p>Komut çıktıları ekranda görüntüleniyor</p>
+
+<div class="highlight"><pre><span class="nv">$ </span>lspci
+...
+</pre></div>
+</li>
+<li><p>Şimdi çıktıyı ekrana değil bir dosyaya <strong>yönlendirelim</strong></p>
+
+<div class="highlight"><pre><span class="nv">$ </span>lspci &gt; pci.txt
+</pre></div>
+</li>
+<li><p>Ekranda görünen tüm bilgiler <code>pci.txt</code> dosyasında</p>
+
+<div class="highlight"><pre><span class="nv">$ </span>cat pci.txt
+...
+</pre></div>
+</li>
+<li><p><code>cat</code> dosya içeriğini görüntülüyor</p></li>
+</ul></section>
+            
+          </div>
+          <div class="presenter_notes">
+            <header><h1>Presenter Notes</h1></header>
+            <section>
+            
+            </section>
+          </div>
+          <footer>
+            
+            <aside class="source">
+              Source: <a href="01op/index.md">01op/index.md</a>
+            </aside>
+            
+            <aside class="page_number">
+              73/101
+            </aside>
+          </footer>
+        </div>
+      </div>
+      
+      <!-- slide source: 01op/index.md -->
+      <div class="slide-wrapper">
+        <div class="slide">
+          <div class="inner">
+            
+            <header><h2>Yönlendirme: <code>&gt;</code></h2></header>
+            
+            
+            <section><p><code>&gt;</code> → yönlendirme operatörü</p>
+
+<ul>
+<li><p>Bu özelliği kabuk sunuyor</p></li>
+<li><p><code>lspci</code> programı <code>&gt;</code>&#39;ın varlığından bile haberdar değil</p></li>
+<li><p><strong>Dikkat!  Yönlendirme yapılan dosya zaten varsa üzerine yazıyoruz</strong></p></li>
+<li><p>Dosya adını dikkatli seçin</p></li>
+</ul></section>
+            
+          </div>
+          <div class="presenter_notes">
+            <header><h1>Presenter Notes</h1></header>
+            <section>
+            
+            </section>
+          </div>
+          <footer>
+            
+            <aside class="source">
+              Source: <a href="01op/index.md">01op/index.md</a>
+            </aside>
+            
+            <aside class="page_number">
+              74/101
+            </aside>
+          </footer>
+        </div>
+      </div>
+      
+      <!-- slide source: 01op/index.md -->
+      <div class="slide-wrapper">
+        <div class="slide has_code">
+          <div class="inner">
+            
+            <header><h2><code>cat</code></h2></header>
+            
+            
+            <section><p><code>cat</code> → con<strong>cat</strong>enate → ardarda bitiştir</p>
+
+<ul>
+<li><p>Argüman olarak verilen dosyaları ardarda ekranda görüntülüyor</p>
+
+<div class="highlight"><pre><span class="nv">$ </span><span class="nb">echo </span>foo &gt;/tmp/foo.txt
+<span class="nv">$ </span><span class="nb">echo </span>bar &gt;/tmp/bar.txt
+<span class="nv">$ </span>cat foo.txt bar.txt
+foo
+bar
+</pre></div>
+</li>
+<li><p>Tek dosya verilirse bitiştirme sonucu yine tek dosya ve o dosyayı görüntülüyor</p>
+
+<div class="highlight"><pre><span class="nv">$ </span>cat /tmp/foo.txt /tmp/bar.txt &gt;/tmp/foobar.txt
+<span class="nv">$ </span>cat /tmp/foobar.txt
+foo
+bar
+</pre></div>
+</li>
+</ul></section>
+            
+          </div>
+          <div class="presenter_notes">
+            <header><h1>Presenter Notes</h1></header>
+            <section>
+            
+            </section>
+          </div>
+          <footer>
+            
+            <aside class="source">
+              Source: <a href="01op/index.md">01op/index.md</a>
+            </aside>
+            
+            <aside class="page_number">
+              75/101
+            </aside>
+          </footer>
+        </div>
+      </div>
+      
+      <!-- slide source: 01op/index.md -->
+      <div class="slide-wrapper">
+        <div class="slide has_code">
+          <div class="inner">
+            
+            <header><h2>Yönlendirme: <code>&gt;&gt;</code></h2></header>
+            
+            
+            <section><p><code>&gt;&gt;</code> → sonuna ekleyerek yönlendirme operatörü</p>
+
+<ul>
+<li><p>Bakın burada ikinci yönlendirme dosyanın üzerine yazılıyor</p>
+
+<div class="highlight"><pre><span class="nv">$ </span><span class="nb">echo </span>foo &gt;/tmp/foo.txt
+<span class="nv">$ </span><span class="nb">echo </span>bar &gt;/tmp/foo.txt
+<span class="nv">$ </span>cat foo.txt
+bar
+</pre></div>
+</li>
+<li><p>Üzerine yazmak yerine sonuna eklemek istiyoruz</p>
+
+<div class="highlight"><pre><span class="nv">$ </span><span class="nb">echo </span>foo &gt;/tmp/foo.txt
+<span class="nv">$ </span><span class="nb">echo </span>bar &gt;&gt;/tmp/foo.txt
+foo
+bar
+</pre></div>
+</li>
+<li><p>Bu bir &quot;ekleme&rdquo; → <code>append</code>; bir açıdan bu da bir &ldquo;bitiştirme&rdquo;  → <code>cat</code></p></li>
+<li><p>Aynı işlemi üç farklı dosya kullanarak <code>cat</code> ile de yapabildiğimizi görmüştük</p></li>
+</ul></section>
+            
+          </div>
+          <div class="presenter_notes">
+            <header><h1>Presenter Notes</h1></header>
+            <section>
+            
+            </section>
+          </div>
+          <footer>
+            
+            <aside class="source">
+              Source: <a href="01op/index.md">01op/index.md</a>
+            </aside>
+            
+            <aside class="page_number">
+              76/101
+            </aside>
+          </footer>
+        </div>
+      </div>
+      
+      <!-- slide source: 01op/index.md -->
+      <div class="slide-wrapper">
+        <div class="slide has_code">
+          <div class="inner">
+            
+            <header><h2><code>cat</code></h2></header>
+            
+            
+            <section><ul>
+<li><p><code>cat</code> terimi bir tür bitiştirme yapan işlev ve programların isimlendirmesinde
+kullanılan standart bir son ek; bu semantiği unutmayın</p></li>
+<li><p>Örneğin: <code>strcat</code> → iki dizgiyi birleştir, <code>netcat</code> → <code>cat</code> dosya sistemi
+için, bu ağ için</p></li>
+<li><p>Kabuk programlarında <code>cat</code> kullanımı bir antipatern&#39;dir; nadiren gereklidir</p></li>
+<li><p><code>cat</code> kullanılan her yerde daha uygun ve etkili bir alternatif çoğunlukla
+vardır (gelecekte bahsedeğiz)</p></li>
+<li><p>Ama komut satırında bazen yararlı olabilir; özellikle bir aygıtın içerik
+dökümünü (&ldquo;dump) bir başka aygıta veya dosyaya yönlendirmek için</p>
+
+<div class="highlight"><pre><span class="nv">$ </span>cat mini.iso &gt;/dev/sdb
+</pre></div>
+</li>
+</ul></section>
+            
+          </div>
+          <div class="presenter_notes">
+            <header><h1>Presenter Notes</h1></header>
+            <section>
+            
+            </section>
+          </div>
+          <footer>
+            
+            <aside class="source">
+              Source: <a href="01op/index.md">01op/index.md</a>
+            </aside>
+            
+            <aside class="page_number">
+              77/101
+            </aside>
+          </footer>
+        </div>
+      </div>
+      
+      <!-- slide source: 01op/index.md -->
+      <div class="slide-wrapper">
+        <div class="slide has_code">
+          <div class="inner">
+            
+            <header><h2>Borulama: <code>|</code></h2></header>
+            
+            
+            <section><p><code>|</code> → boru (&quot;pipe&rdquo;) operatörü</p>
+
+<ul>
+<li><p><code>&gt;</code> ve <code>&gt;&gt;</code> yönlendirme operatörleriyle komut çıktılarını dosyalara
+yönlendiriyoruz</p></li>
+<li><p>Bu operatörlerin sağ tarafında birer dosya adı var</p></li>
+<li><p>Komut çıktısını bir başka komuta yönlendirebilir miyiz?</p></li>
+<li><p>Öyle ki alıcı komut yönlendirdiğimiz komut çıktısını girdi olarak kabul etsin</p></li>
+<li><p>Örneğin &ldquo;foo&rdquo; dizgisinde kaç bayt var?</p>
+
+<div class="highlight"><pre><span class="nv">$ </span><span class="nb">echo</span> -n foo | wc -c
+3
+</pre></div>
+</li>
+<li><p>Operatörün sağ tarafında dosya değil bir komut var</p></li>
+<li><p>Örnekte &ldquo;<code>foo</code>&rdquo; dizgisindeki bayt sayısı hesaplanıyor</p></li>
+</ul></section>
+            
+          </div>
+          <div class="presenter_notes">
+            <header><h1>Presenter Notes</h1></header>
+            <section>
+            
+            </section>
+          </div>
+          <footer>
+            
+            <aside class="source">
+              Source: <a href="01op/index.md">01op/index.md</a>
+            </aside>
+            
+            <aside class="page_number">
+              78/101
+            </aside>
+          </footer>
+        </div>
+      </div>
+      
+      <!-- slide source: 01op/index.md -->
+      <div class="slide-wrapper">
+        <div class="slide has_code">
+          <div class="inner">
+            
+            <header><h2>Borulama: <code>|</code></h2></header>
+            
+            
+            <section><div class="highlight"><pre><span class="nv">$ </span><span class="nb">echo</span> -n foo | wc -c
+3
+</pre></div>
+
+
+<ul>
+<li><p>İki komut arasında veri akışını sağlayan bir tür boru düşünün → &ldquo;borulama&rdquo;</p></li>
+<li><p>Dikkatli bakarsanız <code>|</code> karakterinin ortasında bir boru deliği göreceksiniz
+(bazı sabit genişlikli yazıtiplerinde bu belirgin olmayabilir)</p></li>
+<li><p>Verinin o delikten aktığını düşünün</p></li>
+<li><p>Borunun sol ucunda <code>echo</code>, sağ ucunda <code>wc</code></p></li>
+<li><p><code>echo</code> komutu &ldquo;<code>foo</code>&rdquo; dizgisini sonda satır sonu olmadan görüntülüyor</p></li>
+<li><p>Fakat çıktı ekranda değil boruda</p></li>
+<li><p>Borunun diğer ucundaki <code>wc</code> komutu veriyi alarak işliyor</p></li>
+</ul></section>
+            
+          </div>
+          <div class="presenter_notes">
+            <header><h1>Presenter Notes</h1></header>
+            <section>
+            
+            </section>
+          </div>
+          <footer>
+            
+            <aside class="source">
+              Source: <a href="01op/index.md">01op/index.md</a>
+            </aside>
+            
+            <aside class="page_number">
+              79/101
+            </aside>
+          </footer>
+        </div>
+      </div>
+      
+      <!-- slide source: 01op/index.md -->
+      <div class="slide-wrapper">
+        <div class="slide">
+          <div class="inner">
+            
+            <header><h2>Borulama</h2></header>
+            
+            
+            <section><ul>
+<li><p>Borulama işlemi kabuk tarafından yönetiliyor</p></li>
+<li><p>Borunun iki ucundaki aktörler bu işlemden habersiz</p></li>
+<li><p>Komutların dikkate aldığı tek şey şu: &ldquo;veri bir yerden okunur, bir yere
+yazılır&rdquo;</p></li>
+<li><p>&ldquo;Bir yer&rdquo; bir dosya da olabilir, bir boru da olabilir</p></li>
+<li><p>Ama komutların bunu bilmesi gerekmiyor</p></li>
+<li><p>Bu şekilde komutları birleştirerek pek çok iş çevirebilirsiniz!</p></li>
+</ul></section>
+            
+          </div>
+          <div class="presenter_notes">
+            <header><h1>Presenter Notes</h1></header>
+            <section>
+            
+            </section>
+          </div>
+          <footer>
+            
+            <aside class="source">
+              Source: <a href="01op/index.md">01op/index.md</a>
+            </aside>
+            
+            <aside class="page_number">
+              80/101
+            </aside>
+          </footer>
+        </div>
+      </div>
+      
+      <!-- slide source: 01op/index.md -->
+      <div class="slide-wrapper">
+        <div class="slide">
+          <div class="inner">
+            
+            <header><h2><code>less</code></h2></header>
+            
+            
+            <section><p>.</p></section>
+            
+          </div>
+          <div class="presenter_notes">
+            <header><h1>Presenter Notes</h1></header>
+            <section>
+            
+            </section>
+          </div>
+          <footer>
+            
+            <aside class="source">
+              Source: <a href="01op/index.md">01op/index.md</a>
+            </aside>
+            
+            <aside class="page_number">
+              81/101
+            </aside>
+          </footer>
+        </div>
+      </div>
+      
+      <!-- slide source: 01op/index.md -->
+      <div class="slide-wrapper">
+        <div class="slide has_code">
+          <div class="inner">
+            
+            <header><h2><code>grep</code></h2></header>
+            
+            
+            <section><p><code>grep</code> → Global Regular Expression Printer → (basitçesi) İfadeyle eşleşen
+satırları görüntüle</p>
+
+<ul>
+<li><p>Argüman olarak verilen ifadeyi (diğer argümanla bildirilen) dosyada veya
+boruda ara</p></li>
+<li><p>&ldquo;Bu makinede kullanılan ağ bağdaştıcısının (Ethernet) markası ne?&rdquo;</p>
+
+<div class="highlight"><pre><span class="nv">$ </span>lspci | grep thernet
+02:00.0 Ethernet controller: Atheros Communications Inc...
+</pre></div>
+</li>
+<li><p><code>lspci</code>&#39;nin veri pompaladığı boruda arama <code>thernet</code> terimini aradık</p></li>
+<li><p>Aranan bulunmuşsa terimi içeren satır görüntüleniyor</p></li>
+<li><p>Aramada neden &ldquo;<code>ethernet</code>&rdquo; demedik?</p></li>
+</ul></section>
+            
+          </div>
+          <div class="presenter_notes">
+            <header><h1>Presenter Notes</h1></header>
+            <section>
+            
+            </section>
+          </div>
+          <footer>
+            
+            <aside class="source">
+              Source: <a href="01op/index.md">01op/index.md</a>
+            </aside>
+            
+            <aside class="page_number">
+              82/101
+            </aside>
+          </footer>
+        </div>
+      </div>
+      
+      <!-- slide source: 01op/index.md -->
+      <div class="slide-wrapper">
+        <div class="slide achtung">
+          <div class="inner">
+            
+            <header><h2>Küçük Araçlar Anlayışı</h2></header>
+            
+            
+            <section>
+<p>UNIX araçları borulama yoluyla birleştirilerek farklı ihtiyaçları
+karşılayabilecek şekilde tasarlanmıştır</p>
+
+<ul>
+<li><p>Küçük ama kişilikli araçlar geliştir öyle ki her biri yalnız bir işi yapsın ve
+borulama yoluyla birleştirilebilsin</p></li>
+<li><p>Küçük araçları borulama yoluyla birleştirerek farklı kabiliyetler oluştur</p></li>
+<li><p>Kompozisyonla elde edilen kabiliyet sadece o kabiliyete sahip büyük ve özel
+bir araca olan ihtiyacı ortadan kaldırıyor</p></li>
+<li><p>Tüm araçları bir arada kullanabilmek için (bir tür yapıştırıcı olarak)
+kabuktan yararlan</p></li>
+</ul></section>
+            
+          </div>
+          <div class="presenter_notes">
+            <header><h1>Presenter Notes</h1></header>
+            <section>
+            
+            </section>
+          </div>
+          <footer>
+            
+            <aside class="source">
+              Source: <a href="01op/index.md">01op/index.md</a>
+            </aside>
+            
+            <aside class="page_number">
+              83/101
+            </aside>
+          </footer>
+        </div>
+      </div>
+      
+      <!-- slide source: 01op/index.md -->
+      <div class="slide-wrapper">
+        <div class="slide has_code">
+          <div class="inner">
+            
+            <header><h2><code>grep</code></h2></header>
+            
+            
+            <section><ul>
+<li><p>Dosyalarda da arama yapabilirsiniz</p>
+
+<div class="highlight"><pre><span class="nv">$ </span>grep roktas /etc/passwd
+roktas:x:1000:1000:Recai Oktaş,,,:/home/roktas:/bin/bash
+</pre></div>
+</li>
+<li><p>İlk argüman &ldquo;ifade&rdquo;, ikinci argüman dosya</p></li>
+<li><p><code>grep</code>&#39;te bundan da fazlası var →  &ldquo;Global <strong>Regular Expression</strong> Printer&rdquo;</p></li>
+<li><p>Karmaşık ifadeler tanımlanabiliyor</p></li>
+</ul></section>
+            
+          </div>
+          <div class="presenter_notes">
+            <header><h1>Presenter Notes</h1></header>
+            <section>
+            
+            </section>
+          </div>
+          <footer>
+            
+            <aside class="source">
+              Source: <a href="01op/index.md">01op/index.md</a>
+            </aside>
+            
+            <aside class="page_number">
+              84/101
+            </aside>
+          </footer>
+        </div>
+      </div>
+      
+      <!-- slide source: 01op/index.md -->
+      <div class="slide-wrapper">
+        <div class="slide">
+          <div class="inner">
+            
+            <header><h2>Düzenli İfadeler</h2></header>
+            
+            
+            <section><p>Regular Expression → Düzenli İfade</p>
+
+<p>.</p></section>
+            
+          </div>
+          <div class="presenter_notes">
+            <header><h1>Presenter Notes</h1></header>
+            <section>
+            
+            </section>
+          </div>
+          <footer>
+            
+            <aside class="source">
+              Source: <a href="01op/index.md">01op/index.md</a>
+            </aside>
+            
+            <aside class="page_number">
+              85/101
+            </aside>
+          </footer>
+        </div>
+      </div>
+      
+      <!-- slide source: 01op/index.md -->
+      <div class="slide-wrapper">
+        <div class="slide">
+          <div class="inner">
+            
+            <header><h2>Kabuk Desenleri</h2></header>
+            
+            
+            <section><p>.</p></section>
+            
+          </div>
+          <div class="presenter_notes">
+            <header><h1>Presenter Notes</h1></header>
+            <section>
+            
+            </section>
+          </div>
+          <footer>
+            
+            <aside class="source">
+              Source: <a href="01op/index.md">01op/index.md</a>
+            </aside>
+            
+            <aside class="page_number">
+              86/101
+            </aside>
+          </footer>
+        </div>
+      </div>
+      
+      <!-- slide source: 01op/index.md -->
+      <div class="slide-wrapper">
+        <div class="slide has_code">
+          <div class="inner">
+            
+            <header><h2><code>find</code></h2></header>
+            
+            
+            <section><p><code>find</code> → Dizin ağacında dosya ara</p>
+
+<ul>
+<li><p>Argüman olarak verilen dizinde arama yap</p></li>
+<li><p><code>grep</code> dosya içeriğinde; <code>find</code> dosya sisteminde arama yapıyor</p></li>
+<li><p><code>grep</code> eşleşen içeriği görüntülüyor; <code>find</code> eşleşen dosya/dizin adlarını</p></li>
+<li><p>&ldquo;Ev dizininde ismi <code>foo</code> olan dosya/dizinleri görüntüle&rdquo;</p>
+
+<div class="highlight"><pre><span class="nv">$ </span>find ~ -name foo
+</pre></div>
+</li>
+<li><p>&ldquo;Aramayı dosyalarla sınırla (eşleşen dizinleri hariç tut)&rdquo;</p>
+
+<div class="highlight"><pre><span class="nv">$ </span>find ~ -type f -name foo
+</pre></div>
+</li>
+<li><p>Tüm UNIX komutları içinde en sıradışı argüman düzenine sahip komut</p></li>
+</ul></section>
+            
+          </div>
+          <div class="presenter_notes">
+            <header><h1>Presenter Notes</h1></header>
+            <section>
+            
+            </section>
+          </div>
+          <footer>
+            
+            <aside class="source">
+              Source: <a href="01op/index.md">01op/index.md</a>
+            </aside>
+            
+            <aside class="page_number">
+              87/101
+            </aside>
+          </footer>
+        </div>
+      </div>
+      
+      <!-- slide source: 01op/index.md -->
+      <div class="slide-wrapper">
+        <div class="slide achtung">
+          <div class="inner">
+            
+            <header><h2>Görev</h2></header>
+            
+            
+            <section>
+<ul>
+<li><p>Kılavuz dokümanlarından yararlanarak <code>grep</code> ve <code>find</code> komutlarının
+seçeneklerini inceleyin ve örneklendirin.</p></li>
+<li><p>İki komut bir arada nasıl kullanılabilir?  Şu ana kadar öğrendiğiniz
+bilgilerle bunu sağlayabilir misiniz?</p></li>
+</ul></section>
+            
+          </div>
+          <div class="presenter_notes">
+            <header><h1>Presenter Notes</h1></header>
+            <section>
+            
+            </section>
+          </div>
+          <footer>
+            
+            <aside class="source">
+              Source: <a href="01op/index.md">01op/index.md</a>
+            </aside>
+            
+            <aside class="page_number">
+              88/101
+            </aside>
+          </footer>
+        </div>
+      </div>
+      
+      <!-- slide source: 01op/index.md -->
+      <div class="slide-wrapper">
+        <div class="slide">
+          <div class="inner">
+            
+            <header><h2><code>xargs</code></h2></header>
+            
+            
+            <section><p>.</p></section>
+            
+          </div>
+          <div class="presenter_notes">
+            <header><h1>Presenter Notes</h1></header>
+            <section>
+            
+            </section>
+          </div>
+          <footer>
+            
+            <aside class="source">
+              Source: <a href="01op/index.md">01op/index.md</a>
+            </aside>
+            
+            <aside class="page_number">
+              89/101
+            </aside>
+          </footer>
+        </div>
+      </div>
+      
+      <!-- slide source: 01op/index.md -->
+      <div class="slide-wrapper">
+        <div class="slide">
+          <div class="inner">
+            
+            <header><h2>Ne Nerede?</h2></header>
+            
+            
+            <section><pre><code>/
+        home/
+        tmp/
+        bin/
+        sbin/
+        etc/
+                init.d/
+                default/
+                rc[0-6S].d
+                cron.d/
+                cron.daily/
+        usr/
+                bin/
+                sbin/
+                share/
+                        man/
+                        doc/
+                lib/
+                include/
+                local/
+                        bin/
+                        sbin/
+        var/
+                log/
+                lib/
+                        dpkg/
+                tmp/
+                cache/
+                        apt/
+                mail/
+                spool/
+                        cups/
+                backups/
+        run/
+                lock/
+        lib/
+                modules/
+        boot/
+                grub/
+        dev/
+        proc/
+        media/
+        mnt/
+        srv/
+        opt/
+</code></pre></section>
+            
+          </div>
+          <div class="presenter_notes">
+            <header><h1>Presenter Notes</h1></header>
+            <section>
+            
+            </section>
+          </div>
+          <footer>
+            
+            <aside class="source">
+              Source: <a href="01op/index.md">01op/index.md</a>
+            </aside>
+            
+            <aside class="page_number">
+              90/101
+            </aside>
+          </footer>
+        </div>
+      </div>
+      
+      <!-- slide source: 01op/index.md -->
+      <div class="slide-wrapper">
+        <div class="slide has_code">
+          <div class="inner">
+            
+            <header><h2>Dizin: <code>/dev</code></h2></header>
+            
+            
+            <section><p>Bellek çubuğuna sistem kurulumu yap</p>
+
+<div class="highlight"><pre><span class="nv">$ </span>cat mini.iso &gt;/dev/sdb
+</pre></div>
+
+
+<ul>
+<li><p><code>/dev/sdb</code> → (<strong>bu örnek için</strong>) Bellek çubuğunu temsil eden aygıt dosyası</p></li>
+<li><p><code>mini.iso</code> → Önyüklenebilir (&ldquo;bootable&rdquo;) sistem imajı</p></li>
+<li><p>İmaj dosyası işletim sisteminin <code>/</code> dizin hiyerarşisindeki tüm dosya ve
+dizinlerin tek bir dosyada paketlenmiş hali</p></li>
+<li><p><code>cat</code> imaj dosyasını bit-bit bellek çubuğuna kaydediyor</p></li>
+<li><p>İmaj dosyası önyüklenebilir biçimde hazırlanmış olmalı → ilk sektörlerde
+önyükleme kodu bulunmalı</p></li>
+<li><p>Önyükleme kodu → bilgisayar bellek çubuğu ile başlatıldığında işletim
+sistemini yörüngeye oturtan bir &ldquo;taşıyıcı roket&rdquo; kaydı</p></li>
+</ul></section>
+            
+          </div>
+          <div class="presenter_notes">
+            <header><h1>Presenter Notes</h1></header>
+            <section>
+            
+            </section>
+          </div>
+          <footer>
+            
+            <aside class="source">
+              Source: <a href="01op/index.md">01op/index.md</a>
+            </aside>
+            
+            <aside class="page_number">
+              91/101
+            </aside>
+          </footer>
+        </div>
+      </div>
+      
+      <!-- slide source: 01op/index.md -->
+      <div class="slide-wrapper">
+        <div class="slide">
+          <div class="inner">
+            
+            <header><h2>Dizin: <code>/dev</code></h2></header>
+            
+            
+            <section><ul>
+<li><p>Görüldüğü gibi bir aygıta bir dosya gibi erişebiliyorsunuz</p></li>
+<li><p>Aygıt dosyaları <code>/dev</code> dizini altında</p></li>
+<li><p>Bu dosyalar aslında ilgili aygıtların sürücüleriyle temas noktaları</p></li>
+<li><p>Aygıt dosyasına erişildiğinde ilgili aygıt yazılımıyla haberleşiyoruz</p></li>
+<li><p>Önkoşul → aygıt yazılımları en basitinden &ldquo;oku/yaz/denetle&rdquo; şeklinde bir
+arayüzü (&ldquo;interface&rdquo;) gerçeklemeli</p></li>
+<li><p>&ldquo;Aygıtın denetlenmesi&rdquo; → aygıt davranışının kontrol edilebilmesi; davranışı
+şekillendiren parameterlerin ayarlanabilmesi</p></li>
+</ul></section>
+            
+          </div>
+          <div class="presenter_notes">
+            <header><h1>Presenter Notes</h1></header>
+            <section>
+            
+            </section>
+          </div>
+          <footer>
+            
+            <aside class="source">
+              Source: <a href="01op/index.md">01op/index.md</a>
+            </aside>
+            
+            <aside class="page_number">
+              92/101
+            </aside>
+          </footer>
+        </div>
+      </div>
+      
+      <!-- slide source: 01op/index.md -->
+      <div class="slide-wrapper">
+        <div class="slide achtung">
+          <div class="inner">
+            
+            <header><h2>Her Şey Bir Dosya</h2></header>
+            
+            
+            <section>
+<p>UNIX işletim sistemlerinde &ldquo;hemen her şey bir dosyadır&rdquo;</p>
+
+<ul>
+<li><p>İşletim sistemi aktörleriyle bir dosya üzerinden temas kurabilirsiniz</p></li>
+<li><p>Bu aktörler oku/yaz sistem çağrılarına yanıt verecek şekilde düzenlenmiş</p></li>
+</ul></section>
+            
+          </div>
+          <div class="presenter_notes">
+            <header><h1>Presenter Notes</h1></header>
+            <section>
+            
+            </section>
+          </div>
+          <footer>
+            
+            <aside class="source">
+              Source: <a href="01op/index.md">01op/index.md</a>
+            </aside>
+            
+            <aside class="page_number">
+              93/101
+            </aside>
+          </footer>
+        </div>
+      </div>
+      
+      <!-- slide source: 01op/index.md -->
+      <div class="slide-wrapper">
+        <div class="slide task">
+          <div class="inner">
+            
+            <header><h2>Görev</h2></header>
+            
+            
+            <section>
+<p>Aşağıdaki bilgilerin hangi dosya/dizinlerde olduğunu araştırın</p>
+
+<ul>
+<li><p>Kablosuz ağ bağdaştırıcısının sürücüsü ve (varsa) aygıt yazılımı (&ldquo;firmware&rdquo;)</p></li>
+<li><p>Türkçe klavye tanımları</p></li>
+<li><p>İlk açılışta görüntülenen menüdeki metinler (Grub menüsü)</p></li>
+<li><p>Masaüstündeki ikonlar</p></li>
+<li><p>Tarayıcıya kurduğunuz bir eklenti</p></li>
+<li><p>Sisteme hatalı giriş teşebbüsleri (önce bu durumu simüle edin)</p></li>
+<li><p>Python modülleri</p></li>
+</ul></section>
+            
+          </div>
+          <div class="presenter_notes">
+            <header><h1>Presenter Notes</h1></header>
+            <section>
+            
+            </section>
+          </div>
+          <footer>
+            
+            <aside class="source">
+              Source: <a href="01op/index.md">01op/index.md</a>
+            </aside>
+            
+            <aside class="page_number">
+              94/101
+            </aside>
+          </footer>
+        </div>
+      </div>
+      
+      <!-- slide source: 01op/index.md -->
+      <div class="slide-wrapper">
+        <div class="slide">
+          <div class="inner">
+            
+            <header><h1>Ek: Kabuk Yapılandırması</h1></header>
+            
+            
+          </div>
+          <div class="presenter_notes">
+            <header><h1>Presenter Notes</h1></header>
+            <section>
+            
+            </section>
+          </div>
+          <footer>
+            
+            <aside class="source">
+              Source: <a href="01op/index.md">01op/index.md</a>
+            </aside>
+            
+            <aside class="page_number">
+              95/101
+            </aside>
+          </footer>
+        </div>
+      </div>
+      
+      <!-- slide source: 01op/index.md -->
+      <div class="slide-wrapper">
+        <div class="slide">
+          <div class="inner">
+            
+            <header><h1><code>~/.bashrc</code></h1></header>
+            
+            
+            <section><p>.</p></section>
+            
+          </div>
+          <div class="presenter_notes">
+            <header><h1>Presenter Notes</h1></header>
+            <section>
+            
+            </section>
+          </div>
+          <footer>
+            
+            <aside class="source">
+              Source: <a href="01op/index.md">01op/index.md</a>
+            </aside>
+            
+            <aside class="page_number">
+              96/101
+            </aside>
+          </footer>
+        </div>
+      </div>
+      
+      <!-- slide source: 01op/index.md -->
+      <div class="slide-wrapper">
+        <div class="slide">
+          <div class="inner">
+            
+            <header><h1>Ek: Sudo</h1></header>
+            
+            
+          </div>
+          <div class="presenter_notes">
+            <header><h1>Presenter Notes</h1></header>
+            <section>
+            
+            </section>
+          </div>
+          <footer>
+            
+            <aside class="source">
+              Source: <a href="01op/index.md">01op/index.md</a>
+            </aside>
+            
+            <aside class="page_number">
+              97/101
+            </aside>
+          </footer>
+        </div>
+      </div>
+      
+      <!-- slide source: 01op/index.md -->
+      <div class="slide-wrapper">
+        <div class="slide">
+          <div class="inner">
+            
+            <header><h2>Sudo Yapılandırması</h2></header>
+            
+            
+            <section><p>Bir kullanıcı sistem yöneticisi olarak nasıl atanır?</p>
+
+<ul>
+<li>Bazı dağıtımlarda (ör. Ubuntu ve türevleri) kurulum sırasında hesabı
+oluşturulan kullanıcı aynı zamanda <code>sudo</code> hakkına sahip</li>
+</ul>
+
+<p>Şöyle bir mekanizma&hellip;</p>
+
+<ul>
+<li><p><code>sudo</code> komutunu &ldquo;<strong>?</strong> grubundaki kullanıcılar <code>sudo</code> komutunu çalıştırabilir&rdquo;
+şeklinde yapılandır (bk. <code>visudo</code>)</p></li>
+<li><p>&ldquo;<strong>?</strong> grup&rdquo; olarak Ubuntu ve türevlerinde <code>admin</code> grubunu kullan</p></li>
+<li><p>Kullanıcıyı (kurulum sırasında) <code>admin</code> grubuna ekle</p></li>
+</ul></section>
+            
+          </div>
+          <div class="presenter_notes">
+            <header><h1>Presenter Notes</h1></header>
+            <section>
+            
+            </section>
+          </div>
+          <footer>
+            
+            <aside class="source">
+              Source: <a href="01op/index.md">01op/index.md</a>
+            </aside>
+            
+            <aside class="page_number">
+              98/101
+            </aside>
+          </footer>
+        </div>
+      </div>
+      
+      <!-- slide source: 01op/index.md -->
+      <div class="slide-wrapper">
+        <div class="slide">
+          <div class="inner">
+            
+            <header><h2>Sudo Yapılandırması</h2></header>
+            
+            
+            <section><ul>
+<li><p>Her dağıtımda böyle bir mekanizma sunulmayabilir</p></li>
+<li><p>Ayrıca bu dağıtımlarda <code>admin</code> adında bir grup da bulunmayabilir</p></li>
+<li><p>Alternatif olarak <code>sudo</code> veya <code>wheel</code> gruplarını kullanabilirsiniz; bu
+gruplardan en az bir tanesinin çoğu dağıtımda bulunduğunu varsayıyoruz</p></li>
+</ul></section>
+            
+          </div>
+          <div class="presenter_notes">
+            <header><h1>Presenter Notes</h1></header>
+            <section>
+            
+            </section>
+          </div>
+          <footer>
+            
+            <aside class="source">
+              Source: <a href="01op/index.md">01op/index.md</a>
+            </aside>
+            
+            <aside class="page_number">
+              99/101
+            </aside>
+          </footer>
+        </div>
+      </div>
+      
+      <!-- slide source: 01op/index.md -->
+      <div class="slide-wrapper">
+        <div class="slide has_code">
+          <div class="inner">
+            
+            <header><h2>Sudo Yapılandırması</h2></header>
+            
+            
+            <section><p>Benzer bir mekanizmayı kurmak için</p>
+
+<ul>
+<li><p>Önce <code>root</code> ol (<code>root</code> parolasını gir)</p>
+
+<div class="highlight"><pre><span class="nv">$ </span>su
+</pre></div>
+</li>
+<li><p><code>sudo</code> yapılandırmasına gir</p>
+
+<div class="highlight"><pre>root<span class="nv">$ </span>visudo
+</pre></div>
+</li>
+</ul></section>
+            
+          </div>
+          <div class="presenter_notes">
+            <header><h1>Presenter Notes</h1></header>
+            <section>
+            
+            </section>
+          </div>
+          <footer>
+            
+            <aside class="source">
+              Source: <a href="01op/index.md">01op/index.md</a>
+            </aside>
+            
+            <aside class="page_number">
+              100/101
+            </aside>
+          </footer>
+        </div>
+      </div>
+      
+      <!-- slide source: 01op/index.md -->
+      <div class="slide-wrapper">
+        <div class="slide has_code">
+          <div class="inner">
+            
+            <header><h2>Sudo Yapılandırması</h2></header>
+            
+            
+            <section><p>Örneğin <code>sudo</code> grubu varsa (sistemde bunun yerine <code>wheel</code> grubu varsa grup adını
+buna uygun şekilde değiştirin)</p>
+
+<ul>
+<li><p><code>sudo</code> grubuna <code>sudo</code> çalıştırma hakkı vermek için şöyle bir satır (bu ayar
+zaten yapılmış olabilir)</p>
+
+<div class="highlight"><pre>%sudo   <span class="nv">ALL</span><span class="o">=(</span>ALL:ALL<span class="o">)</span> ALL
+</pre></div>
+</li>
+<li><p><code>roktas</code> isimli kullanıcıyı <code>sudo</code> grubuna ekle</p>
+
+<div class="highlight"><pre>root<span class="nv">$ </span>adduser roktas sudo
+</pre></div>
+</li>
+<li><p>Değişikler mevcut oturumdan çıkıp yeni bir oturuma girdiğinizde etkili olur</p></li>
+</ul></section>
+            
+          </div>
+          <div class="presenter_notes">
+            <header><h1>Presenter Notes</h1></header>
+            <section>
+            
+            </section>
+          </div>
+          <footer>
+            
+            <aside class="source">
+              Source: <a href="01op/index.md">01op/index.md</a>
+            </aside>
+            
+            <aside class="page_number">
+              101/101
+            </aside>
+          </footer>
+        </div>
+      </div>
+      
+    </div>
+  </div>
+  
+  <div id="toc" class="sidebar hidden">
+    <h2>Table of Contents</h2>
+    <table>
+      <caption>Table of Contents</caption>
+      
+      <tr id="toc-row-1">
+        <th><a href="#slide1">Operatör</a></th>
+        <td><a href="#slide1">1</a></td>
+      </tr>
+      
+        
+        <tr id="toc-row-2" class="sub">
+          <th><a href="#slide2">Kabuk</a></th>
+          <td><a href="#slide2">2</a></td>
+        </tr>
+        
+        <tr id="toc-row-3" class="sub">
+          <th><a href="#slide3">Kabuk</a></th>
+          <td><a href="#slide3">3</a></td>
+        </tr>
+        
+        <tr id="toc-row-4" class="sub">
+          <th><a href="#slide4"><code>whoami</code></a></th>
+          <td><a href="#slide4">4</a></td>
+        </tr>
+        
+        <tr id="toc-row-5" class="sub">
+          <th><a href="#slide5">Kullanıcı Adı</a></th>
+          <td><a href="#slide5">5</a></td>
+        </tr>
+        
+        <tr id="toc-row-6" class="sub">
+          <th><a href="#slide6"><code>passwd</code></a></th>
+          <td><a href="#slide6">6</a></td>
+        </tr>
+        
+        <tr id="toc-row-7" class="sub">
+          <th><a href="#slide7">Parola Seçimi</a></th>
+          <td><a href="#slide7">7</a></td>
+        </tr>
+        
+        <tr id="toc-row-8" class="sub">
+          <th><a href="#slide8"><code>lspci</code></a></th>
+          <td><a href="#slide8">8</a></td>
+        </tr>
+        
+        <tr id="toc-row-9" class="sub">
+          <th><a href="#slide9">Uçbirim</a></th>
+          <td><a href="#slide9">9</a></td>
+        </tr>
+        
+        <tr id="toc-row-10" class="sub">
+          <th><a href="#slide10">Uçbirim</a></th>
+          <td><a href="#slide10">10</a></td>
+        </tr>
+        
+        <tr id="toc-row-11" class="sub">
+          <th><a href="#slide11">Konsol</a></th>
+          <td><a href="#slide11">11</a></td>
+        </tr>
+        
+        <tr id="toc-row-12" class="sub">
+          <th><a href="#slide12"><code>echo</code></a></th>
+          <td><a href="#slide12">12</a></td>
+        </tr>
+        
+        <tr id="toc-row-13" class="sub">
+          <th><a href="#slide13">Kabuk</a></th>
+          <td><a href="#slide13">13</a></td>
+        </tr>
+        
+        <tr id="toc-row-14" class="sub">
+          <th><a href="#slide14">İpuçları</a></th>
+          <td><a href="#slide14">14</a></td>
+        </tr>
+        
+        <tr id="toc-row-15" class="sub">
+          <th><a href="#slide15">Kabuk Programlama</a></th>
+          <td><a href="#slide15">15</a></td>
+        </tr>
+        
+        <tr id="toc-row-16" class="sub">
+          <th><a href="#slide16">Neredeyim?</a></th>
+          <td><a href="#slide16">16</a></td>
+        </tr>
+        
+        <tr id="toc-row-17" class="sub">
+          <th><a href="#slide17">Çalışma Dizini</a></th>
+          <td><a href="#slide17">17</a></td>
+        </tr>
+        
+        <tr id="toc-row-18" class="sub">
+          <th><a href="#slide18">Dizinler ve Dosyalar</a></th>
+          <td><a href="#slide18">18</a></td>
+        </tr>
+        
+        <tr id="toc-row-19" class="sub">
+          <th><a href="#slide19">Dizin ve Dosya</a></th>
+          <td><a href="#slide19">19</a></td>
+        </tr>
+        
+        <tr id="toc-row-20" class="sub">
+          <th><a href="#slide20">Dosya Yolu</a></th>
+          <td><a href="#slide20">20</a></td>
+        </tr>
+        
+        <tr id="toc-row-21" class="sub">
+          <th><a href="#slide21"><code>cd</code></a></th>
+          <td><a href="#slide21">21</a></td>
+        </tr>
+        
+        <tr id="toc-row-22" class="sub">
+          <th><a href="#slide22">Özel Dizin İsimleri</a></th>
+          <td><a href="#slide22">22</a></td>
+        </tr>
+        
+        <tr id="toc-row-23" class="sub">
+          <th><a href="#slide23">Özel Dizin İsimleri</a></th>
+          <td><a href="#slide23">23</a></td>
+        </tr>
+        
+        <tr id="toc-row-24" class="sub">
+          <th><a href="#slide24">Dosya İsimleri</a></th>
+          <td><a href="#slide24">24</a></td>
+        </tr>
+        
+        <tr id="toc-row-25" class="sub">
+          <th><a href="#slide25">Dosya İsimleri</a></th>
+          <td><a href="#slide25">25</a></td>
+        </tr>
+        
+        <tr id="toc-row-26" class="sub">
+          <th><a href="#slide26"><code>ls</code></a></th>
+          <td><a href="#slide26">26</a></td>
+        </tr>
+        
+        <tr id="toc-row-27" class="sub">
+          <th><a href="#slide27">Bir Komutun Anatomisi</a></th>
+          <td><a href="#slide27">27</a></td>
+        </tr>
+        
+        <tr id="toc-row-28" class="sub">
+          <th><a href="#slide28">Bir Komutun Anatomisi</a></th>
+          <td><a href="#slide28">28</a></td>
+        </tr>
+        
+        <tr id="toc-row-29" class="sub">
+          <th><a href="#slide29">Seçenekler</a></th>
+          <td><a href="#slide29">29</a></td>
+        </tr>
+        
+        <tr id="toc-row-30" class="sub">
+          <th><a href="#slide30"><code>man</code></a></th>
+          <td><a href="#slide30">30</a></td>
+        </tr>
+        
+        <tr id="toc-row-31" class="sub">
+          <th><a href="#slide31"><code>man</code></a></th>
+          <td><a href="#slide31">31</a></td>
+        </tr>
+        
+        <tr id="toc-row-32" class="sub">
+          <th><a href="#slide32">BSD Kılavuz Sayfaları</a></th>
+          <td><a href="#slide32">32</a></td>
+        </tr>
+        
+        <tr id="toc-row-33" class="sub">
+          <th><a href="#slide33"><code>ls</code></a></th>
+          <td><a href="#slide33">33</a></td>
+        </tr>
+        
+        <tr id="toc-row-34" class="sub">
+          <th><a href="#slide34"><code>ls</code></a></th>
+          <td><a href="#slide34">34</a></td>
+        </tr>
+        
+        <tr id="toc-row-35" class="sub">
+          <th><a href="#slide35">Gizli Dosyalar</a></th>
+          <td><a href="#slide35">35</a></td>
+        </tr>
+        
+        <tr id="toc-row-36" class="sub">
+          <th><a href="#slide36"><code>mkdir</code></a></th>
+          <td><a href="#slide36">36</a></td>
+        </tr>
+        
+        <tr id="toc-row-37" class="sub">
+          <th><a href="#slide37"><code>touch</code></a></th>
+          <td><a href="#slide37">37</a></td>
+        </tr>
+        
+        <tr id="toc-row-38" class="sub">
+          <th><a href="#slide38"><code>rmdir</code></a></th>
+          <td><a href="#slide38">38</a></td>
+        </tr>
+        
+        <tr id="toc-row-39" class="sub">
+          <th><a href="#slide39"><code>rm</code></a></th>
+          <td><a href="#slide39">39</a></td>
+        </tr>
+        
+        <tr id="toc-row-40" class="sub">
+          <th><a href="#slide40"><code>cp</code></a></th>
+          <td><a href="#slide40">40</a></td>
+        </tr>
+        
+        <tr id="toc-row-41" class="sub">
+          <th><a href="#slide41"><code>mv</code></a></th>
+          <td><a href="#slide41">41</a></td>
+        </tr>
+        
+        <tr id="toc-row-42" class="sub">
+          <th><a href="#slide42"><code>ln</code></a></th>
+          <td><a href="#slide42">42</a></td>
+        </tr>
+        
+        <tr id="toc-row-43" class="sub">
+          <th><a href="#slide43">Sahiplik ve İzinler</a></th>
+          <td><a href="#slide43">43</a></td>
+        </tr>
+        
+        <tr id="toc-row-44" class="sub">
+          <th><a href="#slide44">Sahiplik ve İzinler</a></th>
+          <td><a href="#slide44">44</a></td>
+        </tr>
+        
+        <tr id="toc-row-45" class="sub">
+          <th><a href="#slide45">Sahiplik ve İzinler</a></th>
+          <td><a href="#slide45">45</a></td>
+        </tr>
+        
+        <tr id="toc-row-46" class="sub">
+          <th><a href="#slide46">Çalıştırılabilir Dosya</a></th>
+          <td><a href="#slide46">46</a></td>
+        </tr>
+        
+        <tr id="toc-row-47" class="sub">
+          <th><a href="#slide47">Çalıştırılabilir Dizin</a></th>
+          <td><a href="#slide47">47</a></td>
+        </tr>
+        
+        <tr id="toc-row-48" class="sub">
+          <th><a href="#slide48"><code>chown</code></a></th>
+          <td><a href="#slide48">48</a></td>
+        </tr>
+        
+        <tr id="toc-row-49" class="sub">
+          <th><a href="#slide49"><code>chgrp</code></a></th>
+          <td><a href="#slide49">49</a></td>
+        </tr>
+        
+        <tr id="toc-row-50" class="sub">
+          <th><a href="#slide50"><code>chmod</code></a></th>
+          <td><a href="#slide50">50</a></td>
+        </tr>
+        
+        <tr id="toc-row-51" class="sub">
+          <th><a href="#slide51"><code>chmod</code></a></th>
+          <td><a href="#slide51">51</a></td>
+        </tr>
+        
+        <tr id="toc-row-52" class="sub">
+          <th><a href="#slide52">Program</a></th>
+          <td><a href="#slide52">52</a></td>
+        </tr>
+        
+        <tr id="toc-row-53" class="sub">
+          <th><a href="#slide53">Betik</a></th>
+          <td><a href="#slide53">53</a></td>
+        </tr>
+        
+        <tr id="toc-row-54" class="sub">
+          <th><a href="#slide54">Dosya Uzantıları</a></th>
+          <td><a href="#slide54">54</a></td>
+        </tr>
+        
+        <tr id="toc-row-55" class="sub">
+          <th><a href="#slide55">Dosya Uzantıları</a></th>
+          <td><a href="#slide55">55</a></td>
+        </tr>
+        
+        <tr id="toc-row-56" class="sub">
+          <th><a href="#slide56">Betik</a></th>
+          <td><a href="#slide56">56</a></td>
+        </tr>
+        
+        <tr id="toc-row-57" class="sub">
+          <th><a href="#slide57">Betik</a></th>
+          <td><a href="#slide57">57</a></td>
+        </tr>
+        
+        <tr id="toc-row-58" class="sub">
+          <th><a href="#slide58">Betik</a></th>
+          <td><a href="#slide58">58</a></td>
+        </tr>
+        
+        <tr id="toc-row-59" class="sub">
+          <th><a href="#slide59"><code>PATH</code></a></th>
+          <td><a href="#slide59">59</a></td>
+        </tr>
+        
+        <tr id="toc-row-60" class="sub">
+          <th><a href="#slide60">Betik</a></th>
+          <td><a href="#slide60">60</a></td>
+        </tr>
+        
+        <tr id="toc-row-61" class="sub">
+          <th><a href="#slide61">Betik</a></th>
+          <td><a href="#slide61">61</a></td>
+        </tr>
+        
+        <tr id="toc-row-62" class="sub">
+          <th><a href="#slide62"><code>#!</code> Shebang</a></th>
+          <td><a href="#slide62">62</a></td>
+        </tr>
+        
+        <tr id="toc-row-63" class="sub">
+          <th><a href="#slide63"><code>#!</code> Shebang</a></th>
+          <td><a href="#slide63">63</a></td>
+        </tr>
+        
+        <tr id="toc-row-64" class="sub">
+          <th><a href="#slide64">Betik</a></th>
+          <td><a href="#slide64">64</a></td>
+        </tr>
+        
+        <tr id="toc-row-65" class="sub">
+          <th><a href="#slide65">Betik</a></th>
+          <td><a href="#slide65">65</a></td>
+        </tr>
+        
+        <tr id="toc-row-66" class="sub">
+          <th><a href="#slide66">Betik</a></th>
+          <td><a href="#slide66">66</a></td>
+        </tr>
+        
+        <tr id="toc-row-67" class="sub">
+          <th><a href="#slide67"><code>root</code></a></th>
+          <td><a href="#slide67">67</a></td>
+        </tr>
+        
+        <tr id="toc-row-68" class="sub">
+          <th><a href="#slide68"><code>sudo</code></a></th>
+          <td><a href="#slide68">68</a></td>
+        </tr>
+        
+        <tr id="toc-row-69" class="sub">
+          <th><a href="#slide69"><code>sudo</code></a></th>
+          <td><a href="#slide69">69</a></td>
+        </tr>
+        
+        <tr id="toc-row-70" class="sub">
+          <th><a href="#slide70">Görev</a></th>
+          <td><a href="#slide70">70</a></td>
+        </tr>
+        
+        <tr id="toc-row-71" class="sub">
+          <th><a href="#slide71"><code>root</code></a></th>
+          <td><a href="#slide71">71</a></td>
+        </tr>
+        
+        <tr id="toc-row-72" class="sub">
+          <th><a href="#slide72">Yönlendirme</a></th>
+          <td><a href="#slide72">72</a></td>
+        </tr>
+        
+        <tr id="toc-row-73" class="sub">
+          <th><a href="#slide73">Yönlendirme</a></th>
+          <td><a href="#slide73">73</a></td>
+        </tr>
+        
+        <tr id="toc-row-74" class="sub">
+          <th><a href="#slide74">Yönlendirme: <code>&gt;</code></a></th>
+          <td><a href="#slide74">74</a></td>
+        </tr>
+        
+        <tr id="toc-row-75" class="sub">
+          <th><a href="#slide75"><code>cat</code></a></th>
+          <td><a href="#slide75">75</a></td>
+        </tr>
+        
+        <tr id="toc-row-76" class="sub">
+          <th><a href="#slide76">Yönlendirme: <code>&gt;&gt;</code></a></th>
+          <td><a href="#slide76">76</a></td>
+        </tr>
+        
+        <tr id="toc-row-77" class="sub">
+          <th><a href="#slide77"><code>cat</code></a></th>
+          <td><a href="#slide77">77</a></td>
+        </tr>
+        
+        <tr id="toc-row-78" class="sub">
+          <th><a href="#slide78">Borulama: <code>|</code></a></th>
+          <td><a href="#slide78">78</a></td>
+        </tr>
+        
+        <tr id="toc-row-79" class="sub">
+          <th><a href="#slide79">Borulama: <code>|</code></a></th>
+          <td><a href="#slide79">79</a></td>
+        </tr>
+        
+        <tr id="toc-row-80" class="sub">
+          <th><a href="#slide80">Borulama</a></th>
+          <td><a href="#slide80">80</a></td>
+        </tr>
+        
+        <tr id="toc-row-81" class="sub">
+          <th><a href="#slide81"><code>less</code></a></th>
+          <td><a href="#slide81">81</a></td>
+        </tr>
+        
+        <tr id="toc-row-82" class="sub">
+          <th><a href="#slide82"><code>grep</code></a></th>
+          <td><a href="#slide82">82</a></td>
+        </tr>
+        
+        <tr id="toc-row-83" class="sub">
+          <th><a href="#slide83">Küçük Araçlar Anlayışı</a></th>
+          <td><a href="#slide83">83</a></td>
+        </tr>
+        
+        <tr id="toc-row-84" class="sub">
+          <th><a href="#slide84"><code>grep</code></a></th>
+          <td><a href="#slide84">84</a></td>
+        </tr>
+        
+        <tr id="toc-row-85" class="sub">
+          <th><a href="#slide85">Düzenli İfadeler</a></th>
+          <td><a href="#slide85">85</a></td>
+        </tr>
+        
+        <tr id="toc-row-86" class="sub">
+          <th><a href="#slide86">Kabuk Desenleri</a></th>
+          <td><a href="#slide86">86</a></td>
+        </tr>
+        
+        <tr id="toc-row-87" class="sub">
+          <th><a href="#slide87"><code>find</code></a></th>
+          <td><a href="#slide87">87</a></td>
+        </tr>
+        
+        <tr id="toc-row-88" class="sub">
+          <th><a href="#slide88">Görev</a></th>
+          <td><a href="#slide88">88</a></td>
+        </tr>
+        
+        <tr id="toc-row-89" class="sub">
+          <th><a href="#slide89"><code>xargs</code></a></th>
+          <td><a href="#slide89">89</a></td>
+        </tr>
+        
+        <tr id="toc-row-90" class="sub">
+          <th><a href="#slide90">Ne Nerede?</a></th>
+          <td><a href="#slide90">90</a></td>
+        </tr>
+        
+        <tr id="toc-row-91" class="sub">
+          <th><a href="#slide91">Dizin: <code>/dev</code></a></th>
+          <td><a href="#slide91">91</a></td>
+        </tr>
+        
+        <tr id="toc-row-92" class="sub">
+          <th><a href="#slide92">Dizin: <code>/dev</code></a></th>
+          <td><a href="#slide92">92</a></td>
+        </tr>
+        
+        <tr id="toc-row-93" class="sub">
+          <th><a href="#slide93">Her Şey Bir Dosya</a></th>
+          <td><a href="#slide93">93</a></td>
+        </tr>
+        
+        <tr id="toc-row-94" class="sub">
+          <th><a href="#slide94">Görev</a></th>
+          <td><a href="#slide94">94</a></td>
+        </tr>
+        
+      
+      
+      <tr id="toc-row-95">
+        <th><a href="#slide95">Ek: Kabuk Yapılandırması</a></th>
+        <td><a href="#slide95">95</a></td>
+      </tr>
+      
+      
+      <tr id="toc-row-96">
+        <th><a href="#slide96"><code>~/.bashrc</code></a></th>
+        <td><a href="#slide96">96</a></td>
+      </tr>
+      
+      
+      <tr id="toc-row-97">
+        <th><a href="#slide97">Ek: Sudo</a></th>
+        <td><a href="#slide97">97</a></td>
+      </tr>
+      
+        
+        <tr id="toc-row-98" class="sub">
+          <th><a href="#slide98">Sudo Yapılandırması</a></th>
+          <td><a href="#slide98">98</a></td>
+        </tr>
+        
+        <tr id="toc-row-99" class="sub">
+          <th><a href="#slide99">Sudo Yapılandırması</a></th>
+          <td><a href="#slide99">99</a></td>
+        </tr>
+        
+        <tr id="toc-row-100" class="sub">
+          <th><a href="#slide100">Sudo Yapılandırması</a></th>
+          <td><a href="#slide100">100</a></td>
+        </tr>
+        
+        <tr id="toc-row-101" class="sub">
+          <th><a href="#slide101">Sudo Yapılandırması</a></th>
+          <td><a href="#slide101">101</a></td>
+        </tr>
+        
+      
+      
+    </table>
+  </div>
+  
+  <div id="help" class="sidebar hidden">
+    <h2>Help</h2>
+    <table>
+      <caption>Help</caption>
+      <tr>
+        <th>Table of Contents</th>
+        <td>t</td>
+      </tr>
+      <tr>
+        <th>Exposé</th>
+        <td>ESC</td>
+      </tr>
+      <tr>
+        <th>Full screen slides</th>
+        <td>e</td>
+      </tr>
+      <tr>
+        <th>Presenter View</th>
+        <td>p</td>
+      </tr>
+      <tr>
+        <th>Source Files</th>
+        <td>s</td>
+      </tr>
+      <tr>
+        <th>Slide Numbers</th>
+        <td>n</td>
+      </tr>
+      <tr>
+        <th>Toggle screen blanking</th>
+        <td>b</td>
+      </tr>
+      <tr>
+        <th>Show/hide slide context</th>
+        <td>c</td>
+      </tr>
+      <tr>
+        <th>Notes</th>
+        <td>2</td>
+      </tr>
+      <tr>
+        <th>Help</th>
+        <td>h</td>
+      </tr>
+    </table>
+  </div>
+  <script>main()</script>
+</body>
+</html>

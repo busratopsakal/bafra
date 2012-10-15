@@ -1,0 +1,14 @@
+---
+author: Recai Oktaş
+description: Bilgisayarcının El Kitabı
+email: roktas@bil.omu.edu.tr
+url: bafra.roktas.me
+domain: roktas.me
+intro: ''
+googleanalytics: 'UA-30559967-1'
+googleplus: '101391045956417989620'
+brand: '57'
+landslide: /usr/bin/landslide
+css: _/default.css
+js: _/default.js
+template: _/index.erb
