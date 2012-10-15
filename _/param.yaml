@@ -4,7 +4,9 @@ description: Bilgisayarcının El Kitabı
 email: roktas@bil.omu.edu.tr
 url: bafra.roktas.me
 domain: roktas.me
-intro: ''
+intro: |
+  Bir kitabın <a href="http://fo.roktas.me/fo-intro">folyo</a> biçiminde
+  hazırlanmış kaotik taslak notları.
 googleanalytics: 'UA-30559967-1'
 googleplus: '101391045956417989620'
 brand: '57'
