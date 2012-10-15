@@ -485,7 +485,7 @@ Başvuru sayısı →  İlgili dosya nesnesine referans veren düğüm sayısı
 
 ## `echo(1)`
 
-.code: echo.txt
+.code: code/echo.txt
 
 ---
 
@@ -536,7 +536,7 @@ Tüm kılavuz sayfalarında geçerli bir anahat yok
 
 ## `man(1)`
 
-.code: man.txt
+.code: code/man.txt
 
 ---
 
@@ -565,7 +565,7 @@ Tüm kılavuz sayfalarında geçerli bir anahat yok
 
 ## `echo`
 
-.code: echo.c
+.code: code/echo.c
 
 ---
 
@@ -836,7 +836,7 @@ Tüm proseslerin ebeveyni durumundaki `init` prosesini görebiliyor musunuz?
 
 ## Çıkış Kodu
 
-.code: echo.c
+.code: code/echo.c
 
 ---
 
