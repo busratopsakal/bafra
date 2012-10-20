@@ -1685,13 +1685,13 @@ div.slide {
             <header><h2>Kimim?</h2></header>
             
             
-            <section><div class="highlight"><pre><span class="nv">$ </span>id
-<span class="nv">uid</span><span class="o">=</span>1000<span class="o">(</span>roktas<span class="o">)</span> <span class="nv">gid</span><span class="o">=</span>1000<span class="o">(</span>roktas<span class="o">)</span> <span class="nv">gruplar</span><span class="o">=</span>1000<span class="o">(</span>roktas<span class="o">)</span>,...
+            <section><div class="highlight"><pre>    <span class="nv">$ </span>id
+    <span class="nv">uid</span><span class="o">=</span>1000<span class="o">(</span>roktas<span class="o">)</span> <span class="nv">gid</span><span class="o">=</span>1000<span class="o">(</span>roktas<span class="o">)</span> <span class="nv">gruplar</span><span class="o">=</span>1000<span class="o">(</span>roktas<span class="o">)</span>,...
 </pre></div>
 
 
 <ul>
-<li><code>id</code> komutu <code>whoami</code>&#39;dan daha ayrıntılı bilgi görüntülüyor</li>
+<li>  <code>id</code> komutu <code>whoami</code>&#39;dan daha ayrıntılı bilgi görüntülüyor</li>
 </ul></section>
             
           </div>
@@ -1726,8 +1726,8 @@ div.slide {
 <li><p>Sistemde her kullanıcıya ait tekil bir no (<code>uid</code>) ve isim (<code>roktas</code>) var</p></li>
 <li><p>Gerçek kullanıcılara ait kullanıcı no&#39;ların başladığı aralık dağıtımdan
 dağıtıma değişir</p></li>
-<li><p>Debian&#39;da <code>1000</code>&#39;den başlar; <code>0-999</code> sanal veya özel kullanıcılar için rezerve
-edilmiş</p></li>
+<li><p>Debian&#39;da <code>1000</code>&#39;den başlar; <code>0-999</code> sanal veya özel kullanıcılar için
+rezerve edilmiş</p></li>
 </ul></section>
             
           </div>
@@ -1761,11 +1761,12 @@ edilmiş</p></li>
             <section><ul>
 <li><p>Gruplar belirli bir kullanıcı topluluğunun sistem faaliyetlerini toplu halde
 sınırlamak veya genişletmek amacını taşır</p></li>
-<li><p>Her kullanıcının kullanıcı no ve adıyla aynı değerlerde birer grubu da vardır
-→ &ldquo;öz grup&rdquo;</p></li>
+<li><p>Her kullanıcının kullanıcı no ve adıyla aynı değerlerde birer grubu da
+vardır → &ldquo;öz grup&rdquo;</p></li>
 <li><p>Yani her kullanıcı en az bir gruba, yine kendi adıyla anılan gruba üyedir</p></li>
 <li><p>Ama tersi doğru değil, her grup için o gruba karşı düşen aynı isimde bir
-kullanıcının bulunması gerekmez; gruba üye bir kullanıcı bulunması da gerekmez</p></li>
+kullanıcının bulunması gerekmez; gruba üye bir kullanıcı bulunması da
+gerekmez</p></li>
 </ul></section>
             
           </div>
@@ -1949,7 +1950,7 @@ kullanıyoruz</p></li>
             <header><h2>Dosya Sistemi</h2></header>
             
             
-            <section><div class="highlight"><pre>/home/roktas/foo.txt
+            <section><div class="highlight"><pre>    /home/roktas/foo.txt
 </pre></div>
 
 
@@ -1994,8 +1995,8 @@ kullanıyoruz</p></li>
 <li><p>Verileri ve isimleri ayırdık</p></li>
 <li><p>İsim bilgileri nerede?  Dizinlerde</p></li>
 <li><p>İsim bilgileri?  Bir tür veri</p></li>
-<li><p>Dizin sadece bir fihrist; içerdiği dosya ve diğer dizin isimlerini barındıran
-bir nesne</p></li>
+<li><p>Dizin sadece bir fihrist; içerdiği dosya ve diğer dizin isimlerini
+barındıran bir nesne</p></li>
 <li><p>Dosya da veri barındıran bir nesne</p></li>
 <li><p>O halde bir dizine &ldquo;fihrist&rdquo; <strong>dosyası</strong> olarak bakabilir miyiz?</p></li>
 <li><p>Dizin → Verileri dosya/dizin isimleri olan dosya</p></li>
@@ -2074,7 +2075,7 @@ olabilir</p></li>
             <section><p>Bu veri bloğu numaralarını nerede tutuyoruz?</p>
 
 <ul>
-<li>Örneğin <code>foo.txt</code> → <code>36148</code>, <code>36149</code>, <code>36499</code>, <code>36500</code></li>
+<li>  Örneğin <code>foo.txt</code> → <code>36148</code>, <code>36149</code>, <code>36499</code>, <code>36500</code></li>
 </ul>
 
 <p>Veri blokları listesi dışında tutmamız gereken bilgiler olabilir mi?</p>
@@ -2083,8 +2084,8 @@ olabilir</p></li>
 <li><p>Bu veri blokları topluluğuna ne zaman erişildi?</p></li>
 <li><p>Veriler ne zaman değiştirildi?</p></li>
 <li><p>Veriler hangi kullanıcıya ve gruba ait?</p></li>
-<li><p>Bu veri blokları olağan bir dosya mı yoksa bir dizin mi (içinde dosya isimleri
-barındıran)?</p></li>
+<li><p>Bu veri blokları olağan bir dosya mı yoksa bir dizin mi (içinde dosya
+isimleri barındıran)?</p></li>
 </ul></section>
             
           </div>
@@ -2295,7 +2296,7 @@ ilgili veri blokları serbest bırakılır</p></li>
 tutulmaz!</strong></p>
 
 <ul>
-<li>Bu bilgi ilgili dosya nesnesine ait <code>inode</code>&#39;da</li>
+<li>  Bu bilgi ilgili dosya nesnesine ait <code>inode</code>&#39;da</li>
 </ul></section>
             
           </div>
@@ -2329,8 +2330,8 @@ tutulmaz!</strong></p>
             <section>
 <p>Aynı dosyanın bir başka dosyaya kopyalanması ve taşınması işlemini ele alın</p>
 
-<div class="highlight"><pre><span class="nv">$ </span>cp foo.txt bar.txt
-<span class="nv">$ </span>mv foo.txt bar.txt
+<div class="highlight"><pre>    <span class="nv">$ </span>cp foo.txt bar.txt
+    <span class="nv">$ </span>mv foo.txt bar.txt
 </pre></div>
 
 
@@ -2468,8 +2469,8 @@ herhangi biri; örneğin dosya boyutu, dosya izinleri değiştiğinde güncellen
 <li><p>Dosyayı okumanız, listelemeniz bu zamanı değiştirmez</p></li>
 <li><p><code>mtime</code> güncellendiğinde, yani dosya içeriğine dokunulduğunda <code>ctime</code> da
 güncellenir</p></li>
-<li><p>Dosyanın sahibi/grubu veya izinleri değiştirildiğinde, dsya isminde değişiklik
-yapıldığında <code>ctime</code> güncellenir; <code>atime</code> ve <code>mtime</code> değişmez</p></li>
+<li><p>Dosyanın sahibi/grubu veya izinleri değiştirildiğinde, dsya isminde
+değişiklik yapıldığında <code>ctime</code> güncellenir; <code>atime</code> ve <code>mtime</code> değişmez</p></li>
 </ul></section>
             
           </div>
@@ -2502,9 +2503,11 @@ yapıldığında <code>ctime</code> güncellenir; <code>atime</code> ve <code>mt
             
             <section>
 <ul>
-<li><p><code>atime</code> sadece dosya içeriği okunduğunda (dosya kopyalama da buna dahil) güncellenir</p></li>
+<li><p><code>atime</code> sadece dosya içeriği okunduğunda (dosya kopyalama da buna dahil)
+güncellenir</p></li>
 <li><p><code>mtime</code> sadece dosya içeriğinde değişiklik olduğunda güncellenir; dosya
-metabilgilerindeki (dosya ismi, sahipler, izinler) değişikliklerden etkilenmez</p></li>
+metabilgilerindeki (dosya ismi, sahipler, izinler) değişikliklerden
+etkilenmez</p></li>
 <li><p><code>ctime</code> dosya üzerinde gerçekleşen neredeyse her türlü değişiklikte
 güncellenir</p></li>
 <li><p>UNIX&#39;te dosyanın ilk oluşturulma zamanı bilgisi kaydedilmez</p></li>
@@ -2540,12 +2543,12 @@ güncellenir</p></li>
             
             <section><p>Başvuru sayısı →  İlgili dosya nesnesine referans veren düğüm sayısı</p>
 
-<div class="highlight"><pre><span class="nv">$ </span>mkdir /tmp/t
-<span class="nv">$ </span>ls -ld /tmp/t
-drwxr-xr-x 2 roktas roktas 4096 Eki 11 00:17 /tmp/t
-<span class="nv">$ </span>touch /tmp/t/f
-<span class="nv">$ </span>ls -l /tmp/t/f
--rw-r--r-- 1 roktas roktas 0 Eki 11 00:17 /tmp/t/f
+<div class="highlight"><pre>    <span class="nv">$ </span>mkdir /tmp/t
+    <span class="nv">$ </span>ls -ld /tmp/t
+    drwxr-xr-x 2 roktas roktas 4096 Eki 11 00:17 /tmp/t
+    <span class="nv">$ </span>touch /tmp/t/f
+    <span class="nv">$ </span>ls -l /tmp/t/f
+    -rw-r--r-- 1 roktas roktas 0 Eki 11 00:17 /tmp/t/f
 </pre></div>
 
 
@@ -2584,19 +2587,19 @@ drwxr-xr-x 2 roktas roktas 4096 Eki 11 00:17 /tmp/t
             <header><h2>Dizin Başvuru Sayısı</h2></header>
             
             
-            <section><div class="highlight"><pre><span class="nv">$ </span>ls -ld /tmp/t
-drwxr-xr-x 2 roktas roktas 4096 Eki 11 00:17 /tmp/t
-<span class="nv">$ </span>mkdir /tmp/t/u
-<span class="nv">$ </span>ls -ld /tmp/t
-drwxr-xr-x 3 roktas roktas 4096 Eki 11 00:17 /tmp/t
+            <section><div class="highlight"><pre>    <span class="nv">$ </span>ls -ld /tmp/t
+    drwxr-xr-x 2 roktas roktas 4096 Eki 11 00:17 /tmp/t
+    <span class="nv">$ </span>mkdir /tmp/t/u
+    <span class="nv">$ </span>ls -ld /tmp/t
+    drwxr-xr-x 3 roktas roktas 4096 Eki 11 00:17 /tmp/t
 </pre></div>
 
 
 <ul>
 <li><p>Dizinde bulunan alt dizinlerin her biri <code>..</code> ile ilgili dizine referans
 verdiğinden dizin başvuru sayısı → <code>2</code> + alt dizin sayısı</p></li>
-<li><p><code>ln -s</code> yoluyla dizine yapılan sembolik bağlamalar başvuru sayısını etkilemez,
-neden?</p></li>
+<li><p><code>ln -s</code> yoluyla dizine yapılan sembolik bağlamalar başvuru sayısını
+etkilemez, neden?</p></li>
 <li><p><code>ln</code> yoluyla dizinlere sabit bağlama zaten yapılamaz</p></li>
 </ul></section>
             
@@ -2628,11 +2631,11 @@ neden?</p></li>
             <header><h2>Dosya Başvuru Sayısı</h2></header>
             
             
-            <section><pre><code>$ ls -l /tmp/t/f
--rw-r--r-- 1 roktas roktas 0 Eki 11 00:17 /tmp/t/f
-$ ln /tmp/f /tmp/g
-$ ls -l /tmp/t/f
--rw-r--r-- 2 roktas roktas 0 Eki 11 00:17 /tmp/t/f
+            <section><pre><code>    $ ls -l /tmp/t/f
+    -rw-r--r-- 1 roktas roktas 0 Eki 11 00:17 /tmp/t/f
+    $ ln /tmp/f /tmp/g
+    $ ls -l /tmp/t/f
+    -rw-r--r-- 2 roktas roktas 0 Eki 11 00:17 /tmp/t/f
 </code></pre>
 
 <ul>
@@ -2671,15 +2674,15 @@ etkilemez, neden?</p></li>
             <header><h2>Dosya Başvuru Sayısı</h2></header>
             
             
-            <section><div class="highlight"><pre><span class="nv">$ </span>ls -ld /tmp/t
-drwxr-xr-x 2 roktas roktas 4096 Eki 11 00:17 /tmp/t
-<span class="nv">$ </span>ln /tmp/t /tmp/u
-<span class="nv">$ </span>ls -ld /tmp/t
-drwxr-xr-x 3 roktas roktas 4096 Eki 11 00:17 /tmp/t
+            <section><div class="highlight"><pre>    <span class="nv">$ </span>ls -ld /tmp/t
+    drwxr-xr-x 2 roktas roktas 4096 Eki 11 00:17 /tmp/t
+    <span class="nv">$ </span>ln /tmp/t /tmp/u
+    <span class="nv">$ </span>ls -ld /tmp/t
+    drwxr-xr-x 3 roktas roktas 4096 Eki 11 00:17 /tmp/t
 
-<span class="nv">$ </span>touch /tmp/t/f
-<span class="nv">$ </span>ls -l /tmp/t/f
--rw-r--r-- 1 roktas roktas 0 Eki 11 00:17 /tmp/t/f
+    <span class="nv">$ </span>touch /tmp/t/f
+    <span class="nv">$ </span>ls -l /tmp/t/f
+    -rw-r--r-- 1 roktas roktas 0 Eki 11 00:17 /tmp/t/f
 </pre></div>
 </section>
             
@@ -2812,7 +2815,8 @@ OpenBSD 5.0                    September 3, 2010                   OpenBSD 5.0
             
             <section><ul>
 <li><p>Kılavuzun anahatlarını dikkatli inceleyin</p></li>
-<li><p>Üst Başlık → Komut (veya konu) kılavuzun hangi bölümünde? Ör. <code>echo(1)</code> → <code>1</code></p></li>
+<li><p>Üst Başlık → Komut (veya konu) kılavuzun hangi bölümünde? Ör. <code>echo(1)</code> →
+<code>1</code></p></li>
 <li><p><code>NAME</code> → Kılavuzun (komut/konu) adı ve kısa açıklama</p></li>
 <li><p><code>SYNOPSIS</code> → Kullanımla ilgili özet bilgi</p></li>
 <li><p><code>DESCRIPTION</code> → Uzun açıklama ve seçenekler (bazı kılavuz sayfalarında
@@ -2853,8 +2857,8 @@ seçenekler ayrı bir <code>OPTIONS</code> başlığında olabilir)</p></li>
 <ul>
 <li><p>Fakat hemen her kılavuz sayfasında listelenen bu başlıklar var</p></li>
 <li><p>Bazı kılavuzlarda başka başlıklar da görebilirsiniz</p></li>
-<li><p><code>FILES</code> → Kılavuzda anlatılan yazılımın kullandığı dosyalar; ör. yapılandırma
-dosyaları</p></li>
+<li><p><code>FILES</code> → Kılavuzda anlatılan yazılımın kullandığı dosyalar; ör.
+yapılandırma dosyaları</p></li>
 <li><p><code>ENVIRONMENT</code> → Yazılımın çalışmasını etkileyen ortam değişkenleri</p></li>
 </ul></section>
             
@@ -3143,7 +3147,8 @@ OpenBSD 5.0                     August 23, 2012                    OpenBSD 5.0
 <div class="highlight"><pre><span class="nv">$ </span>man passwd
 </pre></div>
 </li>
-<li><p><code>passwd</code> komutuna ilişkin <code>1</code> numaralı kısımdaki kılavuz sayfası görüntülendi</p></li>
+<li><p><code>passwd</code> komutuna ilişkin <code>1</code> numaralı kısımdaki kılavuz sayfası
+görüntülendi</p></li>
 <li><p>Fakat bu kılavuz komutun kullandığı <code>/etc/passwd</code> dosyasının biçimi hakkında
 bir şey söylemez</p></li>
 <li><p>Dosya biçimi için <code>5</code> numaralı kısma bakmalıyız</p>
@@ -3358,8 +3363,8 @@ yoluyla yazıyoruz</p></li>
             
             <section>
 <ul>
-<li><p><code>echo</code> belirtiminde (<code>echo(1)</code>) geçen <code>-n</code> seçeneğini için tipik bir kullanım
-senaryosu önerebilir misiniz?</p></li>
+<li><p><code>echo</code> belirtiminde (<code>echo(1)</code>) geçen <code>-n</code> seçeneğini için tipik bir
+kullanım senaryosu önerebilir misiniz?</p></li>
 <li><p><code>echo.c</code> kodunu esas alarak <code>-n</code> seçeneğini gerçekleyin</p></li>
 </ul></section>
             
@@ -3423,9 +3428,10 @@ senaryosu önerebilir misiniz?</p></li>
 <li><p><code>echo.c</code> (kaynak kod) → Derle → <code>echo</code> (program)</p></li>
 <li><p><code>./echo</code>(program)  → Koştur → <strong>Proses</strong></p></li>
 <li><p>Program depolama aygıtlarında kayıtlı bir ikili dosya</p></li>
-<li><p>Kabuk yoluyla (koşturma yollarından sadece biri) ikili dosya belleğe yüklendi</p></li>
-<li><p>Proses → &ldquo;Programın bellekteki hali&rdquo; (biraz somutlaştırmak adına), &ldquo;koşturulan
-program&rdquo;</p></li>
+<li><p>Kabuk yoluyla (koşturma yollarından sadece biri) ikili dosya belleğe
+yüklendi</p></li>
+<li><p>Proses → &ldquo;Programın bellekteki hali&rdquo; (biraz somutlaştırmak adına),
+&ldquo;koşturulan program&rdquo;</p></li>
 <li><p>Program → sınıf (&ldquo;class&rdquo;), Proses → nesne (&ldquo;object&rdquo;)</p></li>
 <li><p>Bir program kullanıcılar tarafından aynı anda pek çok kez koşturulabilir</p></li>
 <li><p>Tek program → Çok proses</p></li>
@@ -3548,7 +3554,7 @@ root      6302  0.0  0.0  53592  1500 pts/12   S+   15:37   0:00 passwd
             <header><h2>Prosesin Kimliği</h2></header>
             
             
-            <section><div class="highlight"><pre><span class="nv">$ </span>ps a -o user,group,ppid,pid,cmd
+            <section><div class="highlight"><pre>    <span class="nv">$ </span>ps a -o user,group,ppid,pid,cmd
 </pre></div>
 
 
@@ -3666,14 +3672,14 @@ proses, yani <code>init</code> prosesi tarafından oluşturuluyor</p></li>
             <header><h2>Proses Ağacı</h2></header>
             
             
-            <section><div class="highlight"><pre><span class="nv">$ </span>pstree -p | less
+            <section><div class="highlight"><pre>    <span class="nv">$ </span>pstree -p | less
 </pre></div>
 
 
 <p>Tüm proseslerin ebeveyni durumundaki <code>init</code> prosesini görebiliyor musunuz?</p>
 
 <ul>
-<li><code>| less</code>?  Komutun ürettiği çıktı tek ekrana sığmayacağından sayfalanmasını
+<li>  <code>| less</code>?  Komutun ürettiği çıktı tek ekrana sığmayacağından sayfalanmasını
 sağlıyor (daha sonra üzerinde duracağız)</li>
 </ul></section>
             
@@ -3706,10 +3712,11 @@ sağlıyor (daha sonra üzerinde duracağız)</li>
             
             
             <section><ul>
-<li><p>UNIX araç setinde komut satırı seçeneklerinin düzeni açısından en karmaşık ve
-tutarsız programlardan biri</p></li>
+<li><p>UNIX araç setinde komut satırı seçeneklerinin düzeni açısından en karmaşık
+ve tutarsız programlardan biri</p></li>
 <li><p>Fakat çok güçlü; aşağıdaki kullanımlara elinizi alıştırın</p></li>
-<li><p>Konsollarda çalıştırılan prosesleri kullanıcı bilgileriyle birlikte görüntüle</p>
+<li><p>Konsollarda çalıştırılan prosesleri kullanıcı bilgileriyle birlikte
+görüntüle</p>
 
 <div class="highlight"><pre><span class="nv">$ </span>ps au
 </pre></div>
@@ -3754,7 +3761,7 @@ tutarsız programlardan biri</p></li>
             <header><h2><code>top</code></h2></header>
             
             
-            <section><div class="highlight"><pre><span class="nv">$ </span>top
+            <section><div class="highlight"><pre>    <span class="nv">$ </span>top
 </pre></div>
 
 
@@ -4041,10 +4048,10 @@ bir C kodu ise tercihen <code>EXIT_FAILURE</code> makrosuyla) sisteme bildirmeli
 <div class="highlight"><pre><span class="nv">$ </span>cc -o <span class="nb">echo </span>echo.c <span class="o">&amp;&amp;</span> ./echo
 </pre></div>
 </li>
-<li><p><code>cc</code> konvansiyonlara uygun şekilde kodlanmış bir program; başarısızlık halinde
-<code>&gt; 0</code>, başarı halinde <code>0</code> değeri dönüyor</p></li>
-<li><p>Kabuk tarafından sunulan <code>&amp;&amp;</code> operatörü kendisinden önceki komut başarılı ise
-(<code>0</code> çıkış kodu), sonraki komutu çalıştırıyor; aksi halde (<code>&gt; 0</code>) işlem
+<li><p><code>cc</code> konvansiyonlara uygun şekilde kodlanmış bir program; başarısızlık
+halinde <code>&gt; 0</code>, başarı halinde <code>0</code> değeri dönüyor</p></li>
+<li><p>Kabuk tarafından sunulan <code>&amp;&amp;</code> operatörü kendisinden önceki komut başarılı
+ise (<code>0</code> çıkış kodu), sonraki komutu çalıştırıyor; aksi halde (<code>&gt; 0</code>) işlem
 sonlanıyor</p></li>
 </ul></section>
             
@@ -4232,8 +4239,8 @@ aşmış olursunuz!</p></li>
             
             
             <section><ul>
-<li><p>Pek çok durumda kabuğa girilen komutlar yeni prosesler üretiyor → proseslerle
-dolu bir ortam</p></li>
+<li><p>Pek çok durumda kabuğa girilen komutlar yeni prosesler üretiyor →
+proseslerle dolu bir ortam</p></li>
 <li><p>Ortam değişkenlerini basitçe kabuk değişkenleri olarak düşünün</p></li>
 <li><p>(Kabuğun kendisi de dahil olmak üzere) Proseslerin davranışını yönlendiren
 değişkenler</p></li>
@@ -4271,8 +4278,8 @@ komut satırı seçenekleri yerine ortam değişkenlerinden alabilir</p></li>
             
             
             <section><ul>
-<li><p>Ortam değişkenleri birer kabuk değişkeni, fakat bunları olağan değişkenlerden
-ayıran bir kaç önemli nokta var</p></li>
+<li><p>Ortam değişkenleri birer kabuk değişkeni, fakat bunları olağan
+değişkenlerden ayıran bir kaç önemli nokta var</p></li>
 <li><p>Ortam değişkenleri tüm çocuk proseslerde etkin olması için ihraç edilmiştir</p>
 
 <div class="highlight"><pre><span class="nv">$ PATH</span><span class="o">=</span>~/bin:<span class="nv">$PATH</span>
@@ -4320,8 +4327,8 @@ ayıran bir kaç önemli nokta var</p></li>
 0
 </pre></div>
 </li>
-<li><p><code>$!</code> → Son komutun ürettiği prosesin numarası (sizde örnektekinden farklı bir
-değer görüntülenecektir)</p>
+<li><p><code>$!</code> → Son komutun ürettiği prosesin numarası (sizde örnektekinden farklı
+bir değer görüntülenecektir)</p>
 
 <div class="highlight"><pre><span class="nv">$ </span>cc -o <span class="nb">echo </span>echo.c
 <span class="nv">$ </span><span class="nb">echo</span> <span class="nv">$!</span>
@@ -4359,8 +4366,8 @@ değer görüntülenecektir)</p>
             
             
             <section><ul>
-<li><p>Şu ana kadar göz ardı ettiğimiz gerçek: <code>cd</code>, <code>pwd</code> ve <code>echo</code> aslında yerleşik
-kabuk komutları</p></li>
+<li><p>Şu ana kadar göz ardı ettiğimiz gerçek: <code>cd</code>, <code>pwd</code> ve <code>echo</code> aslında
+yerleşik kabuk komutları</p></li>
 <li><p>Yerleşik komutlar hakkında yardım almak için <code>help</code> komutunu (bir başka
 yerleşik komut) kullanabilirsiniz</p>
 
@@ -4441,7 +4448,7 @@ sürümleri de bulunur</p>
             
             <section>
 <ul>
-<li><code>cd</code> komutu neden yerleşik bir komut olmak zorundadır?</li>
+<li>  <code>cd</code> komutu neden yerleşik bir komut olmak zorundadır?</li>
 </ul></section>
             
           </div>
@@ -4539,15 +4546,15 @@ okuyabilir/yazabilir, grup okuyabilir, başkaları hiç bir şey yapamaz&rdquo; 
             <header><h2><code>root</code></h2></header>
             
             
-            <section><div class="highlight"><pre><span class="nv">$ </span>sudo id
-<span class="nv">uid</span><span class="o">=</span>0<span class="o">(</span>root<span class="o">)</span> <span class="nv">gid</span><span class="o">=</span>0<span class="o">(</span>root<span class="o">)</span> <span class="nv">gruplar</span><span class="o">=</span>0<span class="o">(</span>root<span class="o">)</span>
+            <section><div class="highlight"><pre>    <span class="nv">$ </span>sudo id
+    <span class="nv">uid</span><span class="o">=</span>0<span class="o">(</span>root<span class="o">)</span> <span class="nv">gid</span><span class="o">=</span>0<span class="o">(</span>root<span class="o">)</span> <span class="nv">gruplar</span><span class="o">=</span>0<span class="o">(</span>root<span class="o">)</span>
 </pre></div>
 
 
 <ul>
 <li><p>Sistem yöneticisinin kullanıcı no&#39;su <code>0</code>, kullanıcı adı <code>root</code></p></li>
-<li><p>Aynı kimlikte bir <code>root</code> grubu da mevcut; diğer &ldquo;öz grup&quot;larda olduğu gibi bu
-gruba sadece <code>root</code> kullanıcısı üyedir ve öyle de bırakılmalıdır</p></li>
+<li><p>Aynı kimlikte bir <code>root</code> grubu da mevcut; diğer &ldquo;öz grup&quot;larda olduğu gibi
+bu gruba sadece <code>root</code> kullanıcısı üyedir ve öyle de bırakılmalıdır</p></li>
 <li><p>Böyle bir hesap düzenlemesi her UNIX sisteminde daima mevcuttur</p></li>
 <li><p>Fakat bazı UNIX sistemlerinde (ör. Ubuntu ve türevleri) <code>root</code> hesabıyla
 oturum açamazsınız</p></li>
@@ -4587,13 +4594,13 @@ kullanıcı hesabınıza ait paroladır</strong></p></li>
             <section><p>Etkin kombinasyonu nerede saklıyoruz? → <code>inode</code></p>
 
 <ul>
-<li>Dosya durum bilgileriyle birlikte sahiplik ve izin bilgileri de kayıtlı</li>
+<li>  Dosya durum bilgileriyle birlikte sahiplik ve izin bilgileri de kayıtlı</li>
 </ul>
 
 <p>Nasıl görüntülüyoruz?</p>
 
-<div class="highlight"><pre><span class="nv">$ </span>ls foo.txt
--rw-r--r-- 1 roktas staff 0 Eki  2 01:27 foo.txt
+<div class="highlight"><pre>    <span class="nv">$ </span>ls foo.txt
+    -rw-r--r-- 1 roktas staff 0 Eki  2 01:27 foo.txt
 </pre></div>
 
 
@@ -4715,8 +4722,8 @@ sistemlerine kolayca taşınabiliyor</p></li>
 <li><p>Örneğin: okuma izni → <code>read</code>, yazma izni → <code>write</code>, çalıştırma izni → <code>exec</code>
 sistem çağrıları içeren komutlarda devreye girer</p></li>
 <li><p>Fakat belirsiz veya uç durumlar var; bu noktada POSIX devrede</p></li>
-<li><p>&quot;Neden böyle davranıyor?&rdquo; sorusuna evvel emirde verilecek cevap: &ldquo;POSIX böyle
-buyurmuş&rdquo;</p></li>
+<li><p>&quot;Neden böyle davranıyor?&rdquo; sorusuna evvel emirde verilecek cevap: &ldquo;POSIX
+böyle buyurmuş&rdquo;</p></li>
 </ul></section>
             
           </div>
@@ -4911,7 +4918,8 @@ dosyanın bulunduğu dizin çalıştırılabilir olmalıdır</p></li>
 <ul>
 <li><p><code>cp</code>, <code>mv</code>, <code>rm</code>, <code>ln</code> komutları <code>inode</code>&#39;da bulunan bilgileri kullanır mı?
 &ldquo;Evet&rdquo; ise neden ve hangi bilgiler?</p></li>
-<li><p>Size ait olmayan bir dosyayı silebilir misiniz?  &ldquo;Evet&rdquo; ise hangi koşullarda?</p></li>
+<li><p>Size ait olmayan bir dosyayı silebilir misiniz?  &ldquo;Evet&rdquo; ise hangi
+koşullarda?</p></li>
 <li><p>Salt okunur olarak ayarlı bir dosya silinebilir veya ismi değiştirilebilir mi?</p></li>
 <li><p>Aşağıdaki komut satırı sonuçlarını yorumlayın</p>
 
@@ -5106,8 +5114,8 @@ temsil sorusu cevaplandı gibi</p></li>
 </pre></div>
 </li>
 <li><p>Karışık mı?  Sorun değil &ldquo;mnemonik&quot;li komutları kullanın</p></li>
-<li><p>Ama bu gösterimi bilmenizin yararlı olacağı önemli bir özellik var: <code>umask</code> →
-dosya oluşturma maskesi</p></li>
+<li><p>Ama bu gösterimi bilmenizin yararlı olacağı önemli bir özellik var: <code>umask</code>
+→ dosya oluşturma maskesi</p></li>
 </ul></section>
             
           </div>
@@ -5141,7 +5149,7 @@ dosya oluşturma maskesi</p></li>
             <section><p>Yeni bir dosya oluşturulduğunda izinleri kim belirliyor?</p>
 
 <ul>
-<li>Dosya oluşturulduğunda <code>ls -l</code> ile gördüğümüz izinlere kim karar veriyor?</li>
+<li>  Dosya oluşturulduğunda <code>ls -l</code> ile gördüğümüz izinlere kim karar veriyor?</li>
 </ul>
 
 <p>Dosya oluşturma genel olarak ilgili programda yapılan bir <code>open</code> sistem
@@ -5158,7 +5166,7 @@ oluşturması güzel bir konfordur</p></li>
 <p>Bu süreç üzerinde bizim bir denetimimiz var mı?</p>
 
 <ul>
-<li>Evet var, <code>umask</code> sayesinde</li>
+<li>  Evet var, <code>umask</code> sayesinde</li>
 </ul></section>
             
           </div>
@@ -5199,9 +5207,9 @@ değil&rdquo;, <code>0777</code> → &ldquo;herkes yazsın/okusun ve bu dizine g
 <code>umask</code> değerini kullanır</p></li>
 <li><p>Örneğin pek çok sistemde öntanımlı olarak gelen <code>0022</code> maskesi için <code>0666 -
 0022 = 0644</code> ve <code>0777 - 0022 = 0755</code> izinleriyle dosya/dizin oluşturulur</p></li>
-<li><p>Yani <code>0644</code> → &ldquo;herkes okur/yazar, fakat sadece kullanıcı yazma hakkına sahip&rdquo;,
-<code>0755</code> → &ldquo;herkes okuyabilir ve çalıştırabilir, fakat sadece kullanıcı
-yazabilir&rdquo;</p></li>
+<li><p>Yani <code>0644</code> → &ldquo;herkes okur/yazar, fakat sadece kullanıcı yazma hakkına
+sahip&rdquo;, <code>0755</code> → &ldquo;herkes okuyabilir ve çalıştırabilir, fakat sadece
+kullanıcı yazabilir&rdquo;</p></li>
 <li><p>Görüldüğü gibi <code>umask</code> bir negatif maske olarak vazife görüyor</p></li>
 </ul></section>
             
@@ -5235,7 +5243,7 @@ yazabilir&rdquo;</p></li>
             
             <section><p>Maskeyi yerleşik bir kabuk komutu olan <code>umask</code> ile ayarlıyoruz</p>
 
-<div class="highlight"><pre><span class="nv">$ </span><span class="nb">umask </span>002
+<div class="highlight"><pre>    <span class="nv">$ </span><span class="nb">umask </span>002
 </pre></div>
 
 
@@ -5510,7 +5518,8 @@ olarak kullan</p>
             <section><ul>
 <li><p>Her iki terim de benzer şeyleri anlatıyor</p></li>
 <li><p>Tamponlama veya önbellekleme; çok temel bir başarım iyileştirmesi</p></li>
-<li><p>Bilgisayar sistemlerinde tamponlar (önbellekler) pek çok düzeyde <strong>her yerde</strong></p></li>
+<li><p>Bilgisayar sistemlerinde tamponlar (önbellekler) pek çok düzeyde <strong>her
+yerde</strong></p></li>
 <li><p>Hemen hemen her donanım biriminde önbellek var: L1, L2, L3 önbellekler,
 sabit disk önbellekleri vb</p></li>
 <li><p>Pek çok yazılımda bir tür önbellekleme var; önbelleğin bellekte olması bile
@@ -5949,7 +5958,8 @@ Sonra
 <li><p>Özel olarak istendiğinde boşalt</p></li>
 <li><p><code>fflush</code> argüman olarak verilen <code>FILE *</code> çıktı akımına ayrılan tamponu
 boşaltıyor</p></li>
-<li><p>Örnekte dosyaya yönlendirme olmasaydı <code>fflush</code>&#39;a gerek yoktu (satır tamponlu)</p></li>
+<li><p>Örnekte dosyaya yönlendirme olmasaydı <code>fflush</code>&#39;a gerek yoktu (satır
+tamponlu)</p></li>
 </ul>
 
 <p><strong>Dikkat!  Girdi akımları da (örneğin <code>stdin</code>) tamponlanmıştır, fakat <code>fflush</code>
@@ -6141,7 +6151,8 @@ Sonra
 <li><p>Kullanıcı proseslerinin sistem kaynaklarına erişim yetkisi sınırlı</p></li>
 <li><p>Örneğin çekirdek bellekte herhangi bir hücreyi okuyabilir veya yazabilir</p></li>
 <li><p>Ama kullanıcı prosesleri bu işlemi doğrudan yapamaz, neden?</p></li>
-<li><p>Kullanıcı prosesi bu işlemi yetkili organa, yani işletim sistemine yaptırmalı</p></li>
+<li><p>Kullanıcı prosesi bu işlemi yetkili organa, yani işletim sistemine
+yaptırmalı</p></li>
 <li><p>Nasıl?  İşletim sistemine çağrıda bulunarak → Sistem çağrıları</p></li>
 </ul></section>
             
@@ -6179,9 +6190,11 @@ Sonra
 olağan komutlar</p></li>
 <li><p>Ayrıcalıklı komutlar → çoğunlukla ortak kullanılan sistem kaynaklarına
 doğrudan erişim yapan komutlar; örneğin belleğe yazmak</p></li>
-<li><p>Olağan komutlar → yetki gerektirmeyen olağan komutlar; örneğin toplama işlemi</p></li>
+<li><p>Olağan komutlar → yetki gerektirmeyen olağan komutlar; örneğin toplama
+işlemi</p></li>
 <li><p>Yetki durumu işlemcinin özel bir kipe anahtarlanmasıyla belirleniyor</p></li>
-<li><p>Yetkilendirilmemiş kip → Kullanıcı kipi, Yetkilendirilmiş kip → Çekirdek kipi</p></li>
+<li><p>Yetkilendirilmemiş kip → Kullanıcı kipi, Yetkilendirilmiş kip → Çekirdek
+kipi</p></li>
 </ul></section>
             
           </div>
@@ -6296,8 +6309,8 @@ katmanlar var</p></li>
             
             
             <section><ul>
-<li>Sistem çağrıları kullanıcı kipinde başlayıp çekirdek kipine geçişle devam eden
-ve kullanıcı kipine geçişle sonlanan bir işlev çağrısı</li>
+<li>  Sistem çağrıları kullanıcı kipinde başlayıp çekirdek kipine geçişle devam
+eden ve kullanıcı kipine geçişle sonlanan bir işlev çağrısı</li>
 </ul></section>
             
           </div>
@@ -6362,25 +6375,25 @@ ve kullanıcı kipine geçişle sonlanan bir işlev çağrısı</li>
             
             <section><!--
 
-- unix'te sayılar, kullanıcılar → uid, proses → pid, dosyalar → inode
-- dizin entry'de her isim-inode çifti bir link oluşturur, ls çıktısında görülen
-- dosyalarda 255 karakter değil bayt sınırlaması
-- FAT'te 8 +3.  noktaya özel muamemele, kötü tasarım
-- programlanmamış istisnalar: fault trap abort
-- trap aslında programlanmamış bir exception
-- exceptionlarda func call'dan farklı olarak işlemci state değiştirir
-- intel bunlara gate diyor
-- fault → işlemi tekrarla
-- abort → çık
-- trap → işleme bununla devam et
-- kesmeler → istisna değil, dış kaynaklardan asenkron geliyor
-- çekirdekte kesme vektörü tablosu, trap n, n indisiyle fonksiyonu bul
-- eskiden int x80/iret kullanılıyor, artık syscall/sysexit
-- ring 0 priveleged mode, ring 3 user mode
-- syscall maliyetli, çünkü ring değişimi yapılıyor ve context kaydediliyor
-- user/kernel tradeoff, güvenli+kararlı/hızlı+yetenekli
-- windows task manager penceresi, kırmızı kernel, yeşil user; aradaki fark
-- sürücülerin bir kısmı user'da bir kısmı kernel'da; tradeoff'a dikkat
+*   unix'te sayılar, kullanıcılar → uid, proses → pid, dosyalar → inode
+*   dizin entry'de her isim-inode çifti bir link oluşturur, ls çıktısında görülen
+*   dosyalarda 255 karakter değil bayt sınırlaması
+*   FAT'te 8 +3.  noktaya özel muamemele, kötü tasarım
+*   programlanmamış istisnalar: fault trap abort
+*   trap aslında programlanmamış bir exception
+*   exceptionlarda func call'dan farklı olarak işlemci state değiştirir
+*   intel bunlara gate diyor
+*   fault → işlemi tekrarla
+*   abort → çık
+*   trap → işleme bununla devam et
+*   kesmeler → istisna değil, dış kaynaklardan asenkron geliyor
+*   çekirdekte kesme vektörü tablosu, trap n, n indisiyle fonksiyonu bul
+*   eskiden int x80/iret kullanılıyor, artık syscall/sysexit
+*   ring 0 priveleged mode, ring 3 user mode
+*   syscall maliyetli, çünkü ring değişimi yapılıyor ve context kaydediliyor
+*   user/kernel tradeoff, güvenli+kararlı/hızlı+yetenekli
+*   windows task manager penceresi, kırmızı kernel, yeşil user; aradaki fark
+*   sürücülerin bir kısmı user'da bir kısmı kernel'da; tradeoff'a dikkat
 
 
 https://www.youtube.com/user/briantwill
