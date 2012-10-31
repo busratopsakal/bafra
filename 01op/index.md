@@ -588,7 +588,7 @@ Bazı dizin isimleri özel
 *   Bu sayfalardan yararlanmak için BSD kurmanız gerekmiyor (ama öneririz);
     Web'den okuyabilirsiniz
 
-*   [http://www.openbsd.org/cgi-bin/man.cgi](http://www.openbsd.org/cgi-bin/man.cgi)
+*   http://www.openbsd.org/cgi-bin/man.cgi
 
 *   UNIX sistemler arasında taşınabilir programlar yazmanız için de çok yararlı
 
