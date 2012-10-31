@@ -4,7 +4,7 @@
 
 Recai Oktaş `<roktas@bil.omu.edu.tr>`
 
-[http://roktas.me/](http://roktas.me/)
+http://roktas.me/
 
 Ekim 2012
 
@@ -481,7 +481,7 @@ Bazı dizin isimleri özel
 
 ##  Bir Komutun Anatomisi
 
-*   Daha uzun ("**l**ong") bilgi görüntüle → `-l`
+*   Daha uzun ("long") bilgi görüntüle → `-l`
 
         !sh
         ~$ ls -l ~
@@ -626,13 +626,13 @@ Bazı dizin isimleri özel
 
 ##  `ls`
 
-*   Sadece dizin ("**d**irectory") hakkında bilgi → `-d`
+*   Sadece dizin ("directory") hakkında bilgi → `-d`
 
         !sh
         ~$ ls -ld
         drwx------ 49 roktas roktas 4096 Eki  3 21:34 .
 
-*   Çıktıda bazı dosya/dizinler gizlenir; hepsini ("**a**ll") gör → `-a`
+*   Çıktıda bazı dosya/dizinler gizlenir; hepsini ("all") gör → `-a`
 
         !sh
         ~$ ls -a
@@ -689,7 +689,7 @@ Bazı dizin isimleri özel
         ~$ mkdir tmp/foo/bar
         mkdir: `tmp/foo/bar' dizini oluşturulamıyor: ...
 
-*   `-p` → önce ebeveyn dizinleri ("**p**arents") yoksa oluştur
+*   `-p` → önce ebeveyn dizinleri ("parents") yoksa oluştur
 
         !sh
         ~$ mkdir -p tmp/foo/bar
@@ -761,11 +761,11 @@ Bir dosya ile sahiplik ilişkimiz nasıl olabilir?
 
 Bir dosya üzerinde hangi eylemler gerçekleştirilebilir?
 
-*   Oku → **r**ead
+*   Oku → Read
 
-*   Yaz → **w**rite
+*   Yaz → Write
 
-*   Çalıştır → e**x**ecute
+*   Çalıştır → eXecute
 
 ---
 
@@ -1300,7 +1300,7 @@ UNIX sistemlerde bu nasıl yapılıyor
 
 ##  `cat`
 
-`cat` → con**cat**enate → ardarda bitiştir
+`cat` → concatenate → ardarda bitiştir
 
 *   Argüman olarak verilen dosyaları ardarda ekranda görüntülüyor
 
@@ -1613,7 +1613,7 @@ Bellek çubuğuna sistem kurulumu yap
         !sh
         $ cat mini.iso >/dev/sdb
 
-*   `/dev/sdb` → (**bu örnek için**) Bellek çubuğunu temsil eden aygıt dosyası
+*   `/dev/sdb` → (bu örnek için) Bellek çubuğunu temsil eden aygıt dosyası
 
 *   `mini.iso` → Önyüklenebilir ("bootable") sistem imajı
 
@@ -1706,10 +1706,10 @@ Bir kullanıcı sistem yöneticisi olarak nasıl atanır?
 
 Şöyle bir mekanizma...
 
-*   `sudo` komutunu "**?** grubundaki kullanıcılar `sudo` komutunu
-    çalıştırabilir" şeklinde yapılandır (bk. `visudo`)
+*   `sudo` komutunu "falan gruptaki kullanıcılar `sudo` komutunu çalıştırabilir"
+    şeklinde yapılandır (bk. `visudo`)
 
-*   "**?** grup" olarak Ubuntu ve türevlerinde `admin` grubunu kullan
+*   "falan grup" olarak Ubuntu ve türevlerinde `admin` grubunu kullan
 
 *   Kullanıcıyı (kurulum sırasında) `admin` grubuna ekle
 

@@ -4,7 +4,7 @@
 
 Recai Oktaş `<roktas@bil.omu.edu.tr>`
 
-[http://roktas.me/](http://roktas.me/)
+http://roktas.me/
 
 Ekim 2012
 
@@ -1712,7 +1712,7 @@ Tamponu ne zaman boşaltacağız?
 
 ---
 
-##  Tamponlama**ma**
+##  Tamponlamama
 
 *   Çıktı aygıtı `stderr` olduğunda `stdio.h` işlevleri tamponlama yapmıyor
 
