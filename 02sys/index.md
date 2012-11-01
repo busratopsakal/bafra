@@ -75,7 +75,7 @@ yürütülmüyor ve böyle sayılar kullanıyoruz?
     betimleyiciler, tamsayıların kullanılmasına yönelik tutarlı ve etkin bir
     tasarım zaten var
 
-Fakat bu tamsayılar genel olarak geliştiriciler için gerekli; olağan bilgisayar
+Fakat tamsayılar genel olarak geliştiriciler için gerekli; olağan bilgisayar
 kullanımında kullanıcı/grup adlarıyla çalışıyoruz
 
 ---
@@ -217,7 +217,7 @@ içinde tutuyoruz → `inode`
 
 *   UNIX sistemlerde tamsayıların her yerde kullanıldığını söylemiştik
 
-*   `inode`'lar da birer tamsayı, öyleki işletim sistemi bu tamsayıları anahtar
+*   `inode`'lar da birer tamsayı, öyle ki işletim sistemi bu tamsayıları anahtar
     (indis) olarak kullanarak inode veri yapısına erişebiliyor
 
         !sh
@@ -379,7 +379,7 @@ time değil)
 *   `mtime` güncellendiğinde, yani dosya içeriğine dokunulduğunda `ctime` da
     güncellenir
 
-*   Dosyanın sahibi/grubu veya izinleri değiştirildiğinde, dsya isminde
+*   Dosyanın sahibi/grubu veya izinleri değiştirildiğinde, dosya isminde
     değişiklik yapıldığında `ctime` güncellenir; `atime` ve `mtime` değişmez
 
 ---
@@ -447,7 +447,7 @@ Başvuru sayısı →  İlgili dosya nesnesine referans veren düğüm sayısı
 
         $ ls -l /tmp/t/f
         -rw-r--r-- 1 roktas roktas 0 Eki 11 00:17 /tmp/t/f
-        $ ln /tmp/f /tmp/g
+        $ ln /tmp/t/f /tmp/t/g
         $ ls -l /tmp/t/f
         -rw-r--r-- 2 roktas roktas 0 Eki 11 00:17 /tmp/t/f
 

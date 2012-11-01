@@ -1828,7 +1828,7 @@ betimleyiciler, tamsayıların kullanılmasına yönelik tutarlı ve etkin bir
 tasarım zaten var</p></li>
 </ul>
 
-<p>Fakat bu tamsayılar genel olarak geliştiriciler için gerekli; olağan bilgisayar
+<p>Fakat tamsayılar genel olarak geliştiriciler için gerekli; olağan bilgisayar
 kullanımında kullanıcı/grup adlarıyla çalışıyoruz</p></section>
             
           </div>
@@ -2142,7 +2142,7 @@ içinde tutuyoruz → <code>inode</code></p>
 <li><p>Dosya nesnesi <code>inode</code> ile somutlaşacaksa <code>inode</code>&#39;u nasıl somutlaştıracağız?
 <code>inode</code> numaralarıyla</p></li>
 <li><p>UNIX sistemlerde tamsayıların her yerde kullanıldığını söylemiştik</p></li>
-<li><p><code>inode</code>&#39;lar da birer tamsayı, öyleki işletim sistemi bu tamsayıları anahtar
+<li><p><code>inode</code>&#39;lar da birer tamsayı, öyle ki işletim sistemi bu tamsayıları anahtar
 (indis) olarak kullanarak inode veri yapısına erişebiliyor</p>
 
 <div class="highlight"><pre><span class="nv">$ </span>ls -i /home/roktas/foo.xt
@@ -2486,7 +2486,7 @@ herhangi biri; örneğin dosya boyutu, dosya izinleri değiştiğinde güncellen
 <li><p>Dosyayı okumanız, listelemeniz bu zamanı değiştirmez</p></li>
 <li><p><code>mtime</code> güncellendiğinde, yani dosya içeriğine dokunulduğunda <code>ctime</code> da
 güncellenir</p></li>
-<li><p>Dosyanın sahibi/grubu veya izinleri değiştirildiğinde, dsya isminde
+<li><p>Dosyanın sahibi/grubu veya izinleri değiştirildiğinde, dosya isminde
 değişiklik yapıldığında <code>ctime</code> güncellenir; <code>atime</code> ve <code>mtime</code> değişmez</p></li>
 </ul></section>
             
@@ -2650,7 +2650,7 @@ etkilemez, neden?</p></li>
             
             <section><pre><code>    $ ls -l /tmp/t/f
     -rw-r--r-- 1 roktas roktas 0 Eki 11 00:17 /tmp/t/f
-    $ ln /tmp/f /tmp/g
+    $ ln /tmp/t/f /tmp/t/g
     $ ls -l /tmp/t/f
     -rw-r--r-- 2 roktas roktas 0 Eki 11 00:17 /tmp/t/f
 </code></pre>
