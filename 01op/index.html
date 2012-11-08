@@ -27,7 +27,7 @@
     <meta http-equiv="X-UA-Compatible" content="chrome=1" />
     <meta name="apple-mobile-web-app-capable" content="yes" />
     <meta id="viewport" name="viewport" content="user-scalable=no" />
-    <title>Operatör</title>
+    <title>Operat&ouml;r</title>
     <!-- Styles -->
     
     <style type="text/css" media="print">
@@ -756,7 +756,7 @@ div.slide div.presenter_notes {
     
       
       <style type="text/css" media="screen, projection">
-        /* begin presentation.css */
+        /* begin default.css */
 
 ul li {
   list-style: none;
@@ -919,7 +919,159 @@ div.slide {
 /* Pygments */
 .err { border: 0px; }
 
-/* end presentation.css */
+/* Definition lists */
+
+dl {
+  margin-top: 20px;
+  padding: 8px;
+}
+
+dt, dd {
+  padding: 10px 0;
+  font-size: 20px;
+}
+
+dt {
+  display: inline;
+  padding: 8px;
+  color: white;
+  background-color: #9c000d;
+  border-radius: 4px;
+  -moz-border-radius: 4px;
+  -webkit-border-radius: 4px;
+  margin-right: 12px;
+}
+
+dd {
+  margin-right: 30px;
+  margin: 20px;
+  padding: 20px;
+  color: #666;
+  -moz-border-radius: 3px;
+  -moz-box-shadow: 0 1px 2px #d1d1d1;
+  -webkit-border-radius: 3px;
+  -webkit-box-shadow: 0 1px 2px #d1d1d1;
+  background: #fafafa;
+  border: #ccc 1px solid;
+  border-radius: 3px;
+  box-shadow: 0 1px 2px #d1d1d1;
+}
+
+dd p {
+  margin: 0px;
+  padding: 0px;
+}
+
+/*
+ * Tables
+ *
+ * http://johnsardine.com/freebies/dl-html-css/simple-little-tab/
+ */
+
+div.slide .inner table {
+  margin: 20px;
+  color: #666;
+  -moz-border-radius: 3px;
+  -moz-box-shadow: 0 1px 2px #d1d1d1;
+  -webkit-border-radius: 3px;
+  -webkit-box-shadow: 0 1px 2px #d1d1d1;
+  background: #eaebec;
+  border: #ccc 1px solid;
+  border-radius: 3px;
+  box-shadow: 0 1px 2px #d1d1d1;
+  text-shadow: 1px 1px 0px #fff;
+  font-size: 20px;
+}
+
+div.slide .inner table tr.even td {
+  background: #f6f6f6;
+  background: -webkit-gradient(linear, left top, left bottom, from(#f8f8f8), to(#f6f6f6));
+  background: -moz-linear-gradient(top, #f8f8f8, #f6f6f6);
+}
+
+div.slide .inner table th {
+  padding: 21px 25px 22px 25px;
+  border-bottom: 1px solid #e0e0e0; border-top: 1px solid #fafafa;
+  background: #ededed;
+  background: -webkit-gradient(linear, left top, left bottom, from(#ededed), to(#ebebeb));
+  background: -moz-linear-gradient(top, #ededed, #ebebeb);
+}
+
+div.slide .inner table th:first-child {
+  padding-left: 20px;
+  text-align: left
+}
+
+div.slide .inner table a:visited {
+  color: #999999;
+  font-weight: bold;
+  text-decoration: none
+}
+
+div.slide .inner table a:active,
+div.slide .inner table a:hover {
+  color: #bd5a35;
+  text-decoration: underline
+}
+
+div.slide .inner table a:link {
+  color: #666;
+  font-weight: bold;
+  text-decoration: none
+}
+
+div.slide .inner table tr {
+  padding-left: 20px;
+  text-align: center
+}
+
+div.slide .inner table tr:first-child th:first-child {
+  -moz-border-radius-topleft: 3px;
+  -webkit-border-top-left-radius: 3px;
+  border-top-left-radius: 3px;
+}
+
+div.slide .inner table tr:first-child th:last-child {
+  -moz-border-radius-topright: 3px;
+  -webkit-border-top-right-radius: 3px;
+  border-top-right-radius: 3px;
+}
+
+div.slide .inner table tr:last-child td {    border-bottom: 0 }
+
+div.slide .inner table tr:last-child td:first-child {
+  -moz-border-radius-bottomleft: 3px;
+  -webkit-border-bottom-left-radius: 3px;
+  border-bottom-left-radius: 3px;
+}
+
+div.slide .inner table tr:last-child td:last-child {
+  -moz-border-radius-bottomright: 3px;
+  -webkit-border-bottom-right-radius: 3px;
+  border-bottom-right-radius: 3px;
+}
+
+div.slide .inner table tr:hover td {
+  background: #f2f2f2;
+  background: -webkit-gradient(linear, left top, left bottom, from(#f2f2f2), to(#f0f0f0));
+  background: -moz-linear-gradient(top, #f2f2f2, #f0f0f0);
+}
+
+div.slide .inner table tr td {
+  padding: 18px;
+  border-bottom: 1px solid #e0e0e0; border-left: 1px solid #e0e0e0; border-top: 1px solid #ffffff;
+  background: #fafafa;
+  background: -webkit-gradient(linear, left top, left bottom, from(#fbfbfb), to(#fafafa));
+  background: -moz-linear-gradient(top, #fbfbfb, #fafafa);
+}
+
+div.slide .inner table tr td:first-child {
+  padding-left: 20px;
+  border-left: 0;
+  text-align: left
+}
+
+/* end default.css */
 
       </style>
       
@@ -1600,14 +1752,11 @@ div.slide {
         <div class="slide first">
           <div class="inner">
             
-            <header><h1>Operatör</h1></header>
+            <header><h1>Operat&ouml;r</h1></header>
             
             
-            <section>
-<p>Recai Oktaş <code>&lt;roktas@bil.omu.edu.tr&gt;</code></p>
-
+            <section><p>Recai Okta&#351; <code>&lt;roktas@bil.omu.edu.tr&gt;</code></p>
 <p><a href="http://roktas.me/">http://roktas.me/</a></p>
-
 <p>Ekim 2012</p></section>
             
           </div>
@@ -1639,14 +1788,26 @@ div.slide {
             
             
             <section><ul>
-<li><p>Sisteme girdiğinizde sizi karşılayan ortam; siyah ekran!</p></li>
-<li><p>İşletim sistemiyle (adeta) &ldquo;chat&rdquo; yapıyorsunuz</p></li>
-<li><p>Bu nasıl bir ortam, nasıl bir sistem?</p></li>
-<li><p>Sekreter Lale hanımı her sistem açılışından sonra mutad olduğu üzre
-karşılayan Feysbuk ortamından bahsetmiyoruz!</p></li>
-<li><p>Örneğin bir veri merkezinde (&ldquo;data center&rdquo;) yönetiminden sorumlu olduğunuz
-bir sunucu</p></li>
-<li><p>Örneğin kodlama yaptığınız bir iş istasyonu</p></li>
+<li>
+<p>Sisteme girdi&#287;inizde sizi kar&#351;&#305;layan ortam; siyah ekran!</p>
+</li>
+<li>
+<p>&#304;&#351;letim sistemiyle (adeta) &ldquo;chat&rdquo; yap&#305;yorsunuz</p>
+</li>
+<li>
+<p>Bu nas&#305;l bir ortam, nas&#305;l bir sistem?</p>
+</li>
+<li>
+<p>Sekreter Lale han&#305;m&#305; her sistem a&ccedil;&#305;l&#305;&#351;&#305;ndan sonra mutad oldu&#287;u &uuml;zre
+    kar&#351;&#305;layan Feysbuk ortam&#305;ndan bahsetmiyoruz!</p>
+</li>
+<li>
+<p>&Ouml;rne&#287;in bir veri merkezinde (&ldquo;data center&rdquo;) y&ouml;netiminden sorumlu oldu&#287;unuz
+    bir sunucu</p>
+</li>
+<li>
+<p>&Ouml;rne&#287;in kodlama yapt&#305;&#287;&#305;n&#305;z bir i&#351; istasyonu</p>
+</li>
 </ul></section>
             
           </div>
@@ -1681,15 +1842,26 @@ bir sunucu</p></li>
     roktas
 </pre></div>
 
-
 <ul>
-<li><p><code>$</code> → &ldquo;Komut girebilirsin&rdquo; sembolü (&ldquo;Command Prompt&rdquo;)</p></li>
-<li><p>Kabuk tarafından görüntüleniyor</p></li>
-<li><p>Farklı biçimlerde farklı bilgiler içerecek şekilde ayarlanabilir</p></li>
-<li><p>Dokümantasyonda geleneksel olarak <code>$</code> + boşluk şeklinde gösteriyoruz</p></li>
-<li><p><code>whoami</code> → komut; <code>roktas</code> → komut çıktısı</p></li>
-<li><p>Bu dokümandaki komutları denerken, komutun <code>$</code>&#39;dan sonraki kısım olduğunu
-unutmayın!</p></li>
+<li>
+<p><code>$</code> &rarr; &ldquo;Komut girebilirsin&rdquo; sembol&uuml; (&ldquo;Command Prompt&rdquo;)</p>
+</li>
+<li>
+<p>Kabuk taraf&#305;ndan g&ouml;r&uuml;nt&uuml;leniyor</p>
+</li>
+<li>
+<p>Farkl&#305; bi&ccedil;imlerde farkl&#305; bilgiler i&ccedil;erecek &#351;ekilde ayarlanabilir</p>
+</li>
+<li>
+<p>Dok&uuml;mantasyonda geleneksel olarak <code>$</code> + bo&#351;luk &#351;eklinde g&ouml;steriyoruz</p>
+</li>
+<li>
+<p><code>whoami</code> &rarr; komut; <code>roktas</code> &rarr; komut &ccedil;&#305;kt&#305;s&#305;</p>
+</li>
+<li>
+<p>Bu dok&uuml;mandaki komutlar&#305; denerken, komutun <code>$</code>&lsquo;dan sonraki k&#305;s&#305;m oldu&#287;unu
+    unutmay&#305;n!</p>
+</li>
 </ul></section>
             
           </div>
@@ -1724,16 +1896,22 @@ unutmayın!</p></li>
     roktas
 </pre></div>
 
-
 <p><code>whoami</code> &ldquo;Ben Kimim?&rdquo;</p>
-
 <ul>
-<li><p>UNIX sistemlerde her kullanıcının bir adı var</p></li>
-<li><p>Kullanıcı adı (&ldquo;username&rdquo;) geleneksel olarak hepsi küçük harf (noktalama
-işareti veya rakam yok) ve Türkçe karakter içermiyor</p></li>
-<li><p>Sistemi grafik arayüzle kullandığınız masaüstü ortamların giriş ekranlarında
-&ldquo;kullanıcı dostu&rdquo; olmak adına ad soyadınız da görüntülenebilir</p></li>
-<li><p>Fakat kullanıcı adı size ait önemli bir öge</p></li>
+<li>
+<p>UNIX sistemlerde her kullan&#305;c&#305;n&#305;n bir ad&#305; var</p>
+</li>
+<li>
+<p>Kullan&#305;c&#305; ad&#305; (&ldquo;username&rdquo;) geleneksel olarak hepsi k&uuml;&ccedil;&uuml;k harf (noktalama
+    i&#351;areti veya rakam yok) ve T&uuml;rk&ccedil;e karakter i&ccedil;ermiyor</p>
+</li>
+<li>
+<p>Sistemi grafik aray&uuml;zle kulland&#305;&#287;&#305;n&#305;z masa&uuml;st&uuml; ortamlar&#305;n giri&#351; ekranlar&#305;nda
+    &ldquo;kullan&#305;c&#305; dostu&rdquo; olmak ad&#305;na ad soyad&#305;n&#305;z da g&ouml;r&uuml;nt&uuml;lenebilir</p>
+</li>
+<li>
+<p>Fakat kullan&#305;c&#305; ad&#305; size ait &ouml;nemli bir &ouml;ge</p>
+</li>
 </ul></section>
             
           </div>
@@ -1761,25 +1939,35 @@ işareti veya rakam yok) ve Türkçe karakter içermiyor</p></li>
         <div class="slide achtung">
           <div class="inner">
             
-            <header><h2>Kullanıcı Adı</h2></header>
+            <header><h2>Kullan&#305;c&#305; Ad&#305;</h2></header>
             
             
-            <section>
-<p>Kullanıcı adınızı özenle seçin ve meslek hayatınız boyunca da tutarlı olarak her
-ortamda kullanın</p>
-
+            <section><p>Kullan&#305;c&#305; ad&#305;n&#305;z&#305; &ouml;zenle se&ccedil;in ve meslek hayat&#305;n&#305;z boyunca da tutarl&#305; olarak her
+ortamda kullan&#305;n</p>
 <ul>
-<li><p><strong>Sadece <code>a-z</code> aralığında; hepsi küçük harf, Türkçe karakter (maalesef)
-yok</strong></p></li>
-<li><p>Kullanıcı adının fazla uzun olmamasında yarar var; bu adı meslek hayatınız
-boyunca kaç kere tuşlayacağınızı düşünün!</p></li>
-<li><p>Eposta adresi başta gelmek üzere kullandığınız her serviste kullanıcı adı
-aynı olsun</p></li>
-<li><p>Bu düzenlemenin programatik bir değeri var; değişiklik günceleri, telif
-hakkı metinleri başta olmak üzere pek çok yerde bu adı kullanacaksınız</p></li>
-<li><p>Fakat İnternet kullanımının olağanüstü yaygınlaştığı günümüzde geçerli
-biçimde (<code>a-z</code>), kısa ve tekil bir isim bulmak kolay olmayabilir</p></li>
-<li><p>Bu koşullara uygun bir ad bulmak için hayalgücünüzü kullanın</p></li>
+<li>
+<p><strong>Sadece <code>a-z</code> aral&#305;&#287;&#305;nda; hepsi k&uuml;&ccedil;&uuml;k harf, T&uuml;rk&ccedil;e karakter (maalesef)
+    yok</strong></p>
+</li>
+<li>
+<p>Kullan&#305;c&#305; ad&#305;n&#305;n fazla uzun olmamas&#305;nda yarar var; bu ad&#305; meslek hayat&#305;n&#305;z
+    boyunca ka&ccedil; kere tu&#351;layaca&#287;&#305;n&#305;z&#305; d&uuml;&#351;&uuml;n&uuml;n!</p>
+</li>
+<li>
+<p>Eposta adresi ba&#351;ta gelmek &uuml;zere kulland&#305;&#287;&#305;n&#305;z her serviste kullan&#305;c&#305; ad&#305;
+    ayn&#305; olsun</p>
+</li>
+<li>
+<p>Bu d&uuml;zenlemenin programatik bir de&#287;eri var; de&#287;i&#351;iklik g&uuml;nceleri, telif
+    hakk&#305; metinleri ba&#351;ta olmak &uuml;zere pek &ccedil;ok yerde bu ad&#305; kullanacaks&#305;n&#305;z</p>
+</li>
+<li>
+<p>Fakat &#304;nternet kullan&#305;m&#305;n&#305;n ola&#287;an&uuml;st&uuml; yayg&#305;nla&#351;t&#305;&#287;&#305; g&uuml;n&uuml;m&uuml;zde ge&ccedil;erli
+    bi&ccedil;imde (<code>a-z</code>), k&#305;sa ve tekil bir isim bulmak kolay olmayabilir</p>
+</li>
+<li>
+<p>Bu ko&#351;ullara uygun bir ad bulmak i&ccedil;in hayalg&uuml;c&uuml;n&uuml;z&uuml; kullan&#305;n</p>
+</li>
 </ul></section>
             
           </div>
@@ -1811,11 +1999,14 @@ biçimde (<code>a-z</code>), kısa ve tekil bir isim bulmak kolay olmayabilir</p
             
             
             <section><ul>
-<li><p>Parolanızı nasıl değiştireceksiniz?</p></li>
-<li><p>Hemen başlangıçta öğrenilmesi gereken ilk işlem</p>
-
+<li>
+<p>Parolan&#305;z&#305; nas&#305;l de&#287;i&#351;tireceksiniz?</p>
+</li>
+<li>
+<p>Hemen ba&#351;lang&#305;&ccedil;ta &ouml;&#287;renilmesi gereken ilk i&#351;lem</p>
 <div class="highlight"><pre><span class="nv">$ </span>passwd
 </pre></div>
+
 </li>
 </ul></section>
             
@@ -1844,11 +2035,10 @@ biçimde (<code>a-z</code>), kısa ve tekil bir isim bulmak kolay olmayabilir</p
         <div class="slide achtung">
           <div class="inner">
             
-            <header><h2>Parola Seçimi</h2></header>
+            <header><h2>Parola Se&ccedil;imi</h2></header>
             
             
-            <section>
-<pre><code>    Qwerty
+            <section><pre><code>    Qwerty
 </code></pre></section>
             
           </div>
@@ -1887,15 +2077,21 @@ biçimde (<code>a-z</code>), kısa ve tekil bir isim bulmak kolay olmayabilir</p
     02:00.0 Ethernet controller: Atheros ...
 </pre></div>
 
-
-<p><code>lspci</code> → List PCI</p>
-
+<p><code>lspci</code> &rarr; List PCI</p>
 <ul>
-<li><p>İşletim sistemiyle (adeta) &ldquo;chat&rdquo; yapıyoruz</p></li>
-<li><p>İşletim sistemine soralım: &ldquo;PCI veriyoluna bağlı bileşenler neler?&rdquo;</p></li>
-<li><p>PCI veriyoluna bağlı bileşenler; örneğin ses yongası, ağ bağdaştırıcısı,
-ekran bağdaştırıcısı</p></li>
-<li><p>Bu bilgileri bir grafik arayüz üzerinden de öğrenebilirsiniz</p></li>
+<li>
+<p>&#304;&#351;letim sistemiyle (adeta) &ldquo;chat&rdquo; yap&#305;yoruz</p>
+</li>
+<li>
+<p>&#304;&#351;letim sistemine soral&#305;m: &ldquo;PCI veriyoluna ba&#287;l&#305; bile&#351;enler neler?&rdquo;</p>
+</li>
+<li>
+<p>PCI veriyoluna ba&#287;l&#305; bile&#351;enler; &ouml;rne&#287;in ses yongas&#305;, a&#287; ba&#287;da&#351;t&#305;r&#305;c&#305;s&#305;,
+    ekran ba&#287;da&#351;t&#305;r&#305;c&#305;s&#305;</p>
+</li>
+<li>
+<p>Bu bilgileri bir grafik aray&uuml;z &uuml;zerinden de &ouml;&#287;renebilirsiniz</p>
+</li>
 </ul></section>
             
           </div>
@@ -1923,16 +2119,24 @@ ekran bağdaştırıcısı</p></li>
         <div class="slide">
           <div class="inner">
             
-            <header><h2>Uçbirim</h2></header>
+            <header><h2>U&ccedil;birim</h2></header>
             
             
             <section><ul>
-<li><p>Tipik bir UNIX iş istasyonunda (güçlü bir masaüstü sistem) grafik ortam
-(GUI) her zaman erişilir durumda</p></li>
-<li><p>Sisteme muhtemelen böyle bir grafik ortam üzerinden (GNOME → GDM),
-kimliğinizi doğrulatarak girdiniz</p></li>
-<li><p>Sonra bir uçbirim (&ldquo;terminal&rdquo;) açıyorsunuz</p></li>
-<li><p>İşletim sistemiyle etkileşime girmenin tek yolu grafik ortam değil</p></li>
+<li>
+<p>Tipik bir UNIX i&#351; istasyonunda (g&uuml;&ccedil;l&uuml; bir masa&uuml;st&uuml; sistem) grafik ortam
+    (GUI) her zaman eri&#351;ilir durumda</p>
+</li>
+<li>
+<p>Sisteme muhtemelen b&ouml;yle bir grafik ortam &uuml;zerinden (GNOME &rarr; GDM),
+    kimli&#287;inizi do&#287;rulatarak girdiniz</p>
+</li>
+<li>
+<p>Sonra bir u&ccedil;birim (&ldquo;terminal&rdquo;) a&ccedil;&#305;yorsunuz</p>
+</li>
+<li>
+<p>&#304;&#351;letim sistemiyle etkile&#351;ime girmenin tek yolu grafik ortam de&#287;il</p>
+</li>
 </ul></section>
             
           </div>
@@ -1960,26 +2164,35 @@ kimliğinizi doğrulatarak girdiniz</p></li>
         <div class="slide">
           <div class="inner">
             
-            <header><h2>Uçbirim</h2></header>
+            <header><h2>U&ccedil;birim</h2></header>
             
             
-            <section><p>Neden uçbirim?</p>
-
+            <section><p>Neden u&ccedil;birim?</p>
 <ul>
-<li><p>Uçbirim dediğimizde bir klavye/ekran çiftini anlıyoruz</p></li>
-<li><p>Bu ikili geçmişte tek bir ünite halinde bir veri kablosu üzerinden (işlemci,
-bellek ve depolama aygıtlarını barındıran) ana bilgisayara bağlanıyordu</p></li>
-<li><p>Ana makine → veri kablosu (seri iletişim) → kablo bir klavye/ekran
-ünitesiyle sonlandırılıyor</p></li>
-<li><p>Sonlandırma → Termination; yani Terminal → Uçbirim</p></li>
+<li>
+<p>U&ccedil;birim dedi&#287;imizde bir klavye/ekran &ccedil;iftini anl&#305;yoruz</p>
+</li>
+<li>
+<p>Bu ikili ge&ccedil;mi&#351;te tek bir &uuml;nite halinde bir veri kablosu &uuml;zerinden (i&#351;lemci,
+    bellek ve depolama ayg&#305;tlar&#305;n&#305; bar&#305;nd&#305;ran) ana bilgisayara ba&#287;lan&#305;yordu</p>
+</li>
+<li>
+<p>Ana makine &rarr; veri kablosu (seri ileti&#351;im) &rarr; kablo bir klavye/ekran
+    &uuml;nitesiyle sonland&#305;r&#305;l&#305;yor</p>
+</li>
+<li>
+<p>Sonland&#305;rma &rarr; Termination; yani Terminal &rarr; U&ccedil;birim</p>
+</li>
 </ul>
-
-<p>Günümüzde böyle bir düzenleme yok</p>
-
+<p>G&uuml;n&uuml;m&uuml;zde b&ouml;yle bir d&uuml;zenleme yok</p>
 <ul>
-<li><p>Ana makine, klavye, ekran tek bir ünitede</p></li>
-<li><p>Böyle bir terminal ünitesi yok ama o eski düzene öykünen yazılımlar var →
-Terminal Emulators</p></li>
+<li>
+<p>Ana makine, klavye, ekran tek bir &uuml;nitede</p>
+</li>
+<li>
+<p>B&ouml;yle bir terminal &uuml;nitesi yok ama o eski d&uuml;zene &ouml;yk&uuml;nen yaz&#305;l&#305;mlar var &rarr;
+    Terminal Emulators</p>
+</li>
 </ul></section>
             
           </div>
@@ -2011,11 +2224,19 @@ Terminal Emulators</p></li>
             
             
             <section><ul>
-<li><p>Uçbirim veya Uçbirim Emulatörü adlandırması kablo sonlandırması yönüyle
-anlam kazanıyor</p></li>
-<li><p>Uçbirimin çalışma ortamında daha dekoratif durmasını sağlayabilirsiniz</p></li>
-<li><p>Bir konsol gibi&hellip;</p></li>
-<li><p>Konsol uçbirimle aynı şeyi anlatıyor, tek farkla &ldquo;mobilya bakış açısı&rdquo;</p></li>
+<li>
+<p>U&ccedil;birim veya U&ccedil;birim Emulat&ouml;r&uuml; adland&#305;rmas&#305; kablo sonland&#305;rmas&#305; y&ouml;n&uuml;yle
+    anlam kazan&#305;yor</p>
+</li>
+<li>
+<p>U&ccedil;birimin &ccedil;al&#305;&#351;ma ortam&#305;nda daha dekoratif durmas&#305;n&#305; sa&#287;layabilirsiniz</p>
+</li>
+<li>
+<p>Bir konsol gibi&hellip;</p>
+</li>
+<li>
+<p>Konsol u&ccedil;birimle ayn&#305; &#351;eyi anlat&#305;yor, tek farkla &ldquo;mobilya bak&#305;&#351; a&ccedil;&#305;s&#305;&rdquo;</p>
+</li>
 </ul></section>
             
           </div>
@@ -2040,20 +2261,23 @@ anlam kazanıyor</p></li>
       
       <!-- slide source: 01op/index.md -->
       <div class="slide-wrapper">
-        <div class="slide has_code">
+        <div class="slide">
           <div class="inner">
             
             <header><h2><code>echo</code></h2></header>
             
             
-            <section><div class="highlight"><pre>    <span class="nv">$ </span><span class="nb">echo </span>Merhaba Dünya
-    Merhaba Dünya
-</pre></div>
-
-
+            <section><pre><code>    !sh
+    $ echo Merhaba D&uuml;nya
+    Merhaba D&uuml;nya
+</code></pre>
 <ul>
-<li><p>En basit komutlardan biri</p></li>
-<li><p>Komut satırı argümanlarını görüntülüyor</p></li>
+<li>
+<p>En basit komutlardan biri</p>
+</li>
+<li>
+<p>Komut sat&#305;r&#305; arg&uuml;manlar&#305;n&#305; g&ouml;r&uuml;nt&uuml;l&uuml;yor</p>
+</li>
 </ul></section>
             
           </div>
@@ -2085,16 +2309,25 @@ anlam kazanıyor</p></li>
             
             
             <section><ul>
-<li><p>Sadece komut girilen bir &ldquo;çalıştırıcı&rdquo; (&ldquo;launcher&rdquo;) değil</p>
-
+<li>
+<p>Sadece komut girilen bir &ldquo;&ccedil;al&#305;&#351;t&#305;r&#305;c&#305;&rdquo; (&ldquo;launcher&rdquo;) de&#287;il</p>
 <div class="highlight"><pre><span class="nv">$ </span><span class="nb">echo </span>Merhaba <span class="nv">$USER</span>
 Merhaba roktas
 </pre></div>
+
 </li>
-<li><p>Örneğin bir değişken kullandık: <code>$USER</code></p></li>
-<li><p>Değişken referansları <code>$</code> ile başlıyor</p></li>
-<li><p>Değişkenin adı → <code>USER</code>, içeriği → <code>$USER</code></p></li>
-<li><p>Kabukta bundan da fazlası var gibi</p></li>
+<li>
+<p>&Ouml;rne&#287;in bir de&#287;i&#351;ken kulland&#305;k: <code>$USER</code></p>
+</li>
+<li>
+<p>De&#287;i&#351;ken referanslar&#305; <code>$</code> ile ba&#351;l&#305;yor</p>
+</li>
+<li>
+<p>De&#287;i&#351;kenin ad&#305; &rarr; <code>USER</code>, i&ccedil;eri&#287;i &rarr; <code>$USER</code></p>
+</li>
+<li>
+<p>Kabukta bundan da fazlas&#305; var gibi</p>
+</li>
 </ul></section>
             
           </div>
@@ -2122,29 +2355,36 @@ Merhaba roktas
         <div class="slide has_code achtung">
           <div class="inner">
             
-            <header><h2>İpuçları</h2></header>
+            <header><h2>&#304;pu&ccedil;lar&#305;</h2></header>
             
             
-            <section>
-<p>Komut satırında çalışmak herşeyi yazmak anlamına gelmiyor; aşağıdaki basit
-kısayolları kullanabilirsiniz</p>
-
+            <section><p>Komut sat&#305;r&#305;nda &ccedil;al&#305;&#351;mak her&#351;eyi yazmak anlam&#305;na gelmiyor; a&#351;a&#287;&#305;daki basit
+k&#305;sayollar&#305; kullanabilirsiniz</p>
 <ul>
-<li><p>Önceden girdiğiniz bir komutu tekrar yazmanız gerekmiyor; aşağı/yukarı ok
-tuşlarıyla komut satırı tarihçesinde dolaşabilirsiniz</p></li>
-<li><p>Bir komutun adını veya komuta verilen argümanları (örneğin dosya isimleri)
-sonuna kadar yazmanız gerekmiyor; sekme (&ldquo;tab&rdquo;) tuşunu kullanarak otomatik
-tamamlama yapabilirsiniz</p></li>
-<li><p>Geçmiş bir komuta ulaşmak için komut tarihçesinde baştan sona dolaşmanız
-gerekmiyor; <code>ctrl-r</code> tuşuna basın ve komutun hatırladığınız bir bölümünü
-(örneğin ilk harfini) yazmaya başlayın</p></li>
-<li><p>Kopyalama için fareyle metni seçin ve imleci uygun yere konumladıktan sonra
-farenin orta tuşuna (veya kaydırma tekerleğine) basın</p></li>
-<li><p>Bir komutun çıktısını (örneğin yardım almak amacıyla) bir dosyaya kaydetmeyi
-tercih edin; nasıl?</p>
-
+<li>
+<p>&Ouml;nceden girdi&#287;iniz bir komutu tekrar yazman&#305;z gerekmiyor; a&#351;a&#287;&#305;/yukar&#305; ok
+    tu&#351;lar&#305;yla komut sat&#305;r&#305; tarih&ccedil;esinde dola&#351;abilirsiniz</p>
+</li>
+<li>
+<p>Bir komutun ad&#305;n&#305; veya komuta verilen arg&uuml;manlar&#305; (&ouml;rne&#287;in dosya isimleri)
+    sonuna kadar yazman&#305;z gerekmiyor; sekme (&ldquo;tab&rdquo;) tu&#351;unu kullanarak otomatik
+    tamamlama yapabilirsiniz</p>
+</li>
+<li>
+<p>Ge&ccedil;mi&#351; bir komuta ula&#351;mak i&ccedil;in komut tarih&ccedil;esinde ba&#351;tan sona dola&#351;man&#305;z
+    gerekmiyor; <code>ctrl-r</code> tu&#351;una bas&#305;n ve komutun hat&#305;rlad&#305;&#287;&#305;n&#305;z bir b&ouml;l&uuml;m&uuml;n&uuml;
+    (&ouml;rne&#287;in ilk harfini) yazmaya ba&#351;lay&#305;n</p>
+</li>
+<li>
+<p>Kopyalama i&ccedil;in fareyle metni se&ccedil;in ve imleci uygun yere konumlad&#305;ktan sonra
+    farenin orta tu&#351;una (veya kayd&#305;rma tekerle&#287;ine) bas&#305;n</p>
+</li>
+<li>
+<p>Bir komutun &ccedil;&#305;kt&#305;s&#305;n&#305; (&ouml;rne&#287;in yard&#305;m almak amac&#305;yla) bir dosyaya kaydetmeyi
+    tercih edin; nas&#305;l?</p>
 <div class="highlight"><pre><span class="nv">$ </span>KOMUT &gt;dosya 2&gt;&amp;1
 </pre></div>
+
 </li>
 </ul></section>
             
@@ -2170,37 +2410,36 @@ tercih edin; nasıl?</p>
       
       <!-- slide source: 01op/index.md -->
       <div class="slide-wrapper">
-        <div class="slide has_code">
+        <div class="slide">
           <div class="inner">
             
             <header><h2>Kabuk Programlama</h2></header>
             
             
-            <section><p><strong>Kabuk bir programlama ortamı!</strong></p>
-
-<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
-2
-3
-4
-5
-6
-7
-8</pre></div></td><td class="code"><div class="highlight"><pre>    <span class="nv">$ </span><span class="k">if</span> <span class="o">[</span> <span class="nv">$USER</span> <span class="o">=</span> roktas <span class="o">]</span>
-    &gt; <span class="k">then</span>
-    &gt;       <span class="nv">you</span><span class="o">=</span><span class="s2">&quot;dostum&quot;</span>
-    &gt; <span class="k">else</span>
-    &gt;       <span class="nv">you</span><span class="o">=</span><span class="s2">&quot;yabancı&quot;</span>
-    &gt; <span class="k">fi</span>
-    &gt; <span class="nb">echo </span>Merhaba <span class="nv">$you</span>
+            <section><p><strong>Kabuk bir programlama ortam&#305;!</strong></p>
+<pre><code>    #!sh
+    $ if [ $USER = roktas ]
+    &gt; then
+    &gt;       you="dostum"
+    &gt; else
+    &gt;       you="yabanc&#305;"
+    &gt; fi
+    &gt; echo Merhaba $you
     Merhaba dostum
-</pre></div>
-</td></tr></table>
-
+</code></pre>
 <ul>
-<li><p>Komutlar tek satıra sığmadığında komut istemi değişiyor; <code>&gt;</code> →  &ldquo;devamı&rdquo;</p></li>
-<li><p>Fakat dikkat sözdiziminde boşluk özgürlüğü yok!</p></li>
-<li><p>Atama yaparken (satır 3 ve 5) <code>=</code> etrafında boşluk <strong>olmamalı</strong></p></li>
-<li><p><code>[</code>&#39;dan sonra ve <code>]</code>&#39;dan önce en az bir boşluk <strong>olmalı</strong></p></li>
+<li>
+<p>Komutlar tek sat&#305;ra s&#305;&#287;mad&#305;&#287;&#305;nda komut istemi de&#287;i&#351;iyor; <code>&gt;</code> &rarr;  &ldquo;devam&#305;&rdquo;</p>
+</li>
+<li>
+<p>Fakat dikkat s&ouml;zdiziminde bo&#351;luk &ouml;zg&uuml;rl&uuml;&#287;&uuml; yok!</p>
+</li>
+<li>
+<p>Atama yaparken (sat&#305;r 3 ve 5) <code>=</code> etraf&#305;nda bo&#351;luk <strong>olmamal&#305;</strong></p>
+</li>
+<li>
+<p><code>[</code>&lsquo;dan sonra ve <code>]</code>&lsquo;dan &ouml;nce en az bir bo&#351;luk <strong>olmal&#305;</strong></p>
+</li>
 </ul></section>
             
           </div>
@@ -2235,12 +2474,17 @@ tercih edin; nasıl?</p>
     /home/roktas
 </pre></div>
 
-
 <ul>
-<li><p><code>pwd</code> → &ldquo;Print Working Directory&rdquo;</p></li>
-<li><p>Bulunduğunuz dizini görüntüler; bulunduğunuz dizin → çalışma dizini</p></li>
-<li><p>Sisteme giriş yaptığınızda (özel bir yapılandırma kullanmadığınız sürece)
-daima &ldquo;ev dizini&rdquo; içindesiniz</p></li>
+<li>
+<p><code>pwd</code> &rarr; &ldquo;Print Working Directory&rdquo;</p>
+</li>
+<li>
+<p>Bulundu&#287;unuz dizini g&ouml;r&uuml;nt&uuml;ler; bulundu&#287;unuz dizin &rarr; &ccedil;al&#305;&#351;ma dizini</p>
+</li>
+<li>
+<p>Sisteme giri&#351; yapt&#305;&#287;&#305;n&#305;zda (&ouml;zel bir yap&#305;land&#305;rma kullanmad&#305;&#287;&#305;n&#305;z s&uuml;rece)
+    daima &ldquo;ev dizini&rdquo; i&ccedil;indesiniz</p>
+</li>
 </ul></section>
             
           </div>
@@ -2268,26 +2512,36 @@ daima &ldquo;ev dizini&rdquo; içindesiniz</p></li>
         <div class="slide has_code">
           <div class="inner">
             
-            <header><h2>Çalışma Dizini</h2></header>
+            <header><h2>&Ccedil;al&#305;&#351;ma Dizini</h2></header>
             
             
-            <section><p>Çalışma dizini temel bir kavram</p>
-
+            <section><p>&Ccedil;al&#305;&#351;ma dizini temel bir kavram</p>
 <ul>
-<li><p>Örneğin göreceli dosya yolları çalışma dizinine göre çözülür</p></li>
-<li><p>Yaptığınız bazı işlemler (okuma/yazma) çalışma dizininde size tanınan
-haklarla sınırlı</p></li>
-<li><p>Oturum süresince çalışma dizinin görünür durumda olmasında yarar var</p></li>
-<li><p>Bunu nasıl sağlarız?  Komut istemi &ldquo;farklı biçimlerde farklı bilgiler
-içerecek şekilde ayarlanabilir&rdquo;</p></li>
-<li><p>Bu ayar yapıldığında örneğin <code>/tmp</code> dizinindeyseniz komut istemi şuna benzer
-görünür</p>
-
+<li>
+<p>&Ouml;rne&#287;in g&ouml;receli dosya yollar&#305; &ccedil;al&#305;&#351;ma dizinine g&ouml;re &ccedil;&ouml;z&uuml;l&uuml;r</p>
+</li>
+<li>
+<p>Yapt&#305;&#287;&#305;n&#305;z baz&#305; i&#351;lemler (okuma/yazma) &ccedil;al&#305;&#351;ma dizininde size tan&#305;nan
+    haklarla s&#305;n&#305;rl&#305;</p>
+</li>
+<li>
+<p>Oturum s&uuml;resince &ccedil;al&#305;&#351;ma dizinin g&ouml;r&uuml;n&uuml;r durumda olmas&#305;nda yarar var</p>
+</li>
+<li>
+<p>Bunu nas&#305;l sa&#287;lar&#305;z?  Komut istemi &ldquo;farkl&#305; bi&ccedil;imlerde farkl&#305; bilgiler
+    i&ccedil;erecek &#351;ekilde ayarlanabilir&rdquo;</p>
+</li>
+<li>
+<p>Bu ayar yap&#305;ld&#305;&#287;&#305;nda &ouml;rne&#287;in <code>/tmp</code> dizinindeyseniz komut istemi &#351;una benzer
+    g&ouml;r&uuml;n&uuml;r</p>
 <div class="highlight"><pre>/tmp<span class="err">$</span>
 </pre></div>
+
 </li>
-<li><p>Dokümanda, çalışma dizininin bilinmesini gerektiren örneklerde böyle bir
-komut istemi kullanacağız</p></li>
+<li>
+<p>Dok&uuml;manda, &ccedil;al&#305;&#351;ma dizininin bilinmesini gerektiren &ouml;rneklerde b&ouml;yle bir
+    komut istemi kullanaca&#287;&#305;z</p>
+</li>
 </ul></section>
             
           </div>
@@ -2349,15 +2603,27 @@ komut istemi kullanacağız</p></li>
             
             
             <section><ul>
-<li><p>Dizin (&ldquo;Directory&rdquo;): GUI ortamlarda klasör (&ldquo;folder&rdquo;) olarak biliniyor</p></li>
-<li><p>UNIX sistemlerde dosya ve dizin mümkün olduğunca benzer bir semantik
-gösterir</p></li>
-<li><p>Aslolan dosyadır</p></li>
-<li><p>Dizinlere de birer dosya gibi muamele edilir</p></li>
-<li><p>Bir dizini, içindeki dosyalarla ilgili bilgileri (dosya isimleri, erişim
-zamanları vs) tutan bir dosya gibi düşünebilirsiniz</p></li>
-<li><p>Aksi belirtilmediği sürece dosyalar için belirtilen özellikler dizinler için
-de geçerli</p></li>
+<li>
+<p>Dizin (&ldquo;Directory&rdquo;): GUI ortamlarda klas&ouml;r (&ldquo;folder&rdquo;) olarak biliniyor</p>
+</li>
+<li>
+<p>UNIX sistemlerde dosya ve dizin m&uuml;mk&uuml;n oldu&#287;unca benzer bir semantik
+    g&ouml;sterir</p>
+</li>
+<li>
+<p>Aslolan dosyad&#305;r</p>
+</li>
+<li>
+<p>Dizinlere de birer dosya gibi muamele edilir</p>
+</li>
+<li>
+<p>Bir dizini, i&ccedil;indeki dosyalarla ilgili bilgileri (dosya isimleri, eri&#351;im
+    zamanlar&#305; vs) tutan bir dosya gibi d&uuml;&#351;&uuml;nebilirsiniz</p>
+</li>
+<li>
+<p>Aksi belirtilmedi&#287;i s&uuml;rece dosyalar i&ccedil;in belirtilen &ouml;zellikler dizinler i&ccedil;in
+    de ge&ccedil;erli</p>
+</li>
 </ul></section>
             
           </div>
@@ -2389,11 +2655,21 @@ de geçerli</p></li>
             
             
             <section><ul>
-<li><p><code>/</code> kök dizin altında bir ağaç yapısı</p></li>
-<li><p><code>/</code> ile ayrılmış dizin/dosya isimleri → <code>/home/roktas</code></p></li>
-<li><p>Bu bir <code>PATH</code> tanımlar: dosya yolu, patika</p></li>
-<li><p>&ldquo;mutlak/göreceli dosya yolu&rdquo; → <code>/</code> ile başlayan/başlamayan dosya yolu</p></li>
-<li><p>Göreceli dosya yolunda başlangıç noktası çalışma dizini</p></li>
+<li>
+<p><code>/</code> k&ouml;k dizin alt&#305;nda bir a&#287;a&ccedil; yap&#305;s&#305;</p>
+</li>
+<li>
+<p><code>/</code> ile ayr&#305;lm&#305;&#351; dizin/dosya isimleri &rarr; <code>/home/roktas</code></p>
+</li>
+<li>
+<p>Bu bir <code>PATH</code> tan&#305;mlar: dosya yolu, patika</p>
+</li>
+<li>
+<p>&ldquo;mutlak/g&ouml;receli dosya yolu&rdquo; &rarr; <code>/</code> ile ba&#351;layan/ba&#351;lamayan dosya yolu</p>
+</li>
+<li>
+<p>G&ouml;receli dosya yolunda ba&#351;lang&#305;&ccedil; noktas&#305; &ccedil;al&#305;&#351;ma dizini</p>
+</li>
 </ul></section>
             
           </div>
@@ -2418,30 +2694,33 @@ de geçerli</p></li>
       
       <!-- slide source: 01op/index.md -->
       <div class="slide-wrapper">
-        <div class="slide has_code">
+        <div class="slide">
           <div class="inner">
             
             <header><h2><code>cd</code></h2></header>
             
             
-            <section><p><code>cd</code> → &ldquo;Change Directory&rdquo; - &ldquo;Dizin Değiştir&rdquo;</p>
-
+            <section><p><code>cd</code> &rarr; &ldquo;Change Directory&rdquo; - &ldquo;Dizin De&#287;i&#351;tir&rdquo;</p>
 <ul>
-<li><p>Dosya sisteminde gezinmek için birincil araç</p>
-
-<div class="highlight"><pre>/home/roktas<span class="nv">$ </span><span class="nb">cd</span> .config
-/home/roktas/.config<span class="nv">$ </span><span class="nb">cd</span> -
-/home/roktas<span class="err">$</span>
-</pre></div>
+<li>
+<p>Dosya sisteminde gezinmek i&ccedil;in birincil ara&ccedil;</p>
+<pre><code>!sh
+/home/roktas$ cd .config
+/home/roktas/.config$ cd -
+/home/roktas$
+</code></pre>
 </li>
-<li><p>Teknik olarak &ldquo;çalışma dizini&quot;ni argümanla bildirilen dizin olarak ayarlıyor</p></li>
-<li><p>Göreceli dosya yolları çalışma dizinine göre çözülüyor</p>
-
-<div class="highlight"><pre>/home/roktas<span class="nv">$ </span><span class="nb">cd </span>tmp
-bash: <span class="nb">cd</span>: tmp: Böyle bir dosya ya da dizin yok
-/home/roktas<span class="nv">$ </span><span class="nb">cd</span> /tmp
-/tmp<span class="err">$</span>
-</pre></div>
+<li>
+<p>Teknik olarak &ldquo;&ccedil;al&#305;&#351;ma dizini&rdquo;ni arg&uuml;manla bildirilen dizin olarak ayarl&#305;yor</p>
+</li>
+<li>
+<p>G&ouml;receli dosya yollar&#305; &ccedil;al&#305;&#351;ma dizinine g&ouml;re &ccedil;&ouml;z&uuml;l&uuml;yor</p>
+<pre><code>!sh
+/home/roktas$ cd tmp
+bash: cd: tmp: B&ouml;yle bir dosya ya da dizin yok
+/home/roktas$ cd /tmp
+/tmp$
+</code></pre>
 </li>
 </ul></section>
             
@@ -2470,26 +2749,29 @@ bash: <span class="nb">cd</span>: tmp: Böyle bir dosya ya da dizin yok
         <div class="slide has_code">
           <div class="inner">
             
-            <header><h2>Özel Dizin İsimleri</h2></header>
+            <header><h2>&Ouml;zel Dizin &#304;simleri</h2></header>
             
             
-            <section><p>Bazı dizin isimleri özel</p>
-
+            <section><p>Baz&#305; dizin isimleri &ouml;zel</p>
 <ul>
-<li><p><code>.</code> → bulunduğunuz dizin</p>
-
+<li>
+<p><code>.</code> &rarr; bulundu&#287;unuz dizin</p>
 <div class="highlight"><pre>/home/roktas<span class="nv">$ </span><span class="nb">cd</span> .
 /home/roktas<span class="err">$</span>
 </pre></div>
-</li>
-<li><p><code>..</code> → üst dizin</p>
 
+</li>
+<li>
+<p><code>..</code> &rarr; &uuml;st dizin</p>
 <div class="highlight"><pre>/home/roktas<span class="nv">$ </span><span class="nb">cd</span> ..
 /home<span class="err">$</span>
 </pre></div>
+
 </li>
-<li><p>Bu isimler kabuktan bağımsız, çekirdek tarafından oluşturuluyor ve her
-düzeyde anlamlı</p></li>
+<li>
+<p>Bu isimler kabuktan ba&#287;&#305;ms&#305;z, &ccedil;ekirdek taraf&#305;ndan olu&#351;turuluyor ve her
+    d&uuml;zeyde anlaml&#305;</p>
+</li>
 </ul></section>
             
           </div>
@@ -2517,27 +2799,35 @@ düzeyde anlamlı</p></li>
         <div class="slide has_code">
           <div class="inner">
             
-            <header><h2>Özel Dizin İsimleri</h2></header>
+            <header><h2>&Ouml;zel Dizin &#304;simleri</h2></header>
             
             
             <section><ul>
-<li><p><code>~</code> → ev dizini</p>
-
+<li>
+<p><code>~</code> &rarr; ev dizini</p>
 <div class="highlight"><pre>/home<span class="nv">$ </span><span class="nb">cd</span> ~
 /home/roktas<span class="err">$</span>
 </pre></div>
-</li>
-<li><p>Argüman vermediğinizde öntanımlı argüman <code>~</code></p>
 
+</li>
+<li>
+<p>Arg&uuml;man vermedi&#287;inizde &ouml;ntan&#305;ml&#305; arg&uuml;man <code>~</code></p>
 <div class="highlight"><pre>/home/roktas<span class="nv">$ </span><span class="nb">cd</span> /tmp
 /tmp<span class="nv">$ </span><span class="nb">cd</span>
 /home/roktas<span class="err">$</span>
 </pre></div>
+
 </li>
-<li><p><code>~</code> kabuk tarafından dönüştürülüyor → tilde dönüşümü (&quot;tilde expansion&rdquo;)</p></li>
-<li><p>Program (örnekte <code>cd</code>) <code>~</code>&#39;nin varlığından haberdar değil, dönüşüm program
-çalışmadan önce gerçekleşiyor</p></li>
-<li><p>Kabuk tarafından çalıştırılmayan bazı programlarda <code>~</code> tanınmayabilir</p></li>
+<li>
+<p><code>~</code> kabuk taraf&#305;ndan d&ouml;n&uuml;&#351;t&uuml;r&uuml;l&uuml;yor &rarr; tilde d&ouml;n&uuml;&#351;&uuml;m&uuml; (&ldquo;tilde expansion&rdquo;)</p>
+</li>
+<li>
+<p>Program (&ouml;rnekte <code>cd</code>) <code>~</code>&lsquo;nin varl&#305;&#287;&#305;ndan haberdar de&#287;il, d&ouml;n&uuml;&#351;&uuml;m program
+    &ccedil;al&#305;&#351;madan &ouml;nce ger&ccedil;ekle&#351;iyor</p>
+</li>
+<li>
+<p>Kabuk taraf&#305;ndan &ccedil;al&#305;&#351;t&#305;r&#305;lmayan baz&#305; programlarda <code>~</code> tan&#305;nmayabilir</p>
+</li>
 </ul></section>
             
           </div>
@@ -2565,16 +2855,26 @@ düzeyde anlamlı</p></li>
         <div class="slide">
           <div class="inner">
             
-            <header><h2>Dosya İsimleri</h2></header>
+            <header><h2>Dosya &#304;simleri</h2></header>
             
             
             <section><ul>
-<li><p><code>/</code> dosya yolu ayırıcısı olarak kullanılıyor</p></li>
-<li><p>(<code>/</code> ayırıcısı dışında) ASCII <code>NUL</code> karakteri yasak; diğer her karakter
-&ldquo;teknik olarak&rdquo; serbest (boşluk dahil)</p></li>
-<li><p>Dosya yolu için maksimum uzunluk tipik olarak 255 karakter</p></li>
-<li><p>Fakat &ldquo;doğru pratikler&quot;e uymanızda yarar var</p></li>
-<li><p>Özellikle geliştirme yaparken</p></li>
+<li>
+<p><code>/</code> dosya yolu ay&#305;r&#305;c&#305;s&#305; olarak kullan&#305;l&#305;yor</p>
+</li>
+<li>
+<p>(<code>/</code> ay&#305;r&#305;c&#305;s&#305; d&#305;&#351;&#305;nda) ASCII <code>NUL</code> karakteri yasak; di&#287;er her karakter
+    &ldquo;teknik olarak&rdquo; serbest (bo&#351;luk dahil)</p>
+</li>
+<li>
+<p>Dosya yolu i&ccedil;in maksimum uzunluk tipik olarak 255 karakter</p>
+</li>
+<li>
+<p>Fakat &ldquo;do&#287;ru pratikler&rdquo;e uyman&#305;zda yarar var</p>
+</li>
+<li>
+<p>&Ouml;zellikle geli&#351;tirme yaparken</p>
+</li>
 </ul></section>
             
           </div>
@@ -2602,24 +2902,39 @@ düzeyde anlamlı</p></li>
         <div class="slide achtung">
           <div class="inner">
             
-            <header><h2>Dosya İsimleri</h2></header>
+            <header><h2>Dosya &#304;simleri</h2></header>
             
             
-            <section>
-<ul>
-<li><p>Kodlamada değişken isimlerini seçerken gösterdiğiniz özeni (yoksa böyle bir
-özeniniz yok mu?) dosya isimlendirmelerinde de gösterin</p></li>
-<li><p>Veya e-posta iletilerinde konu alanını yazarken gösterdiğiniz özene benzer
-bir özen</p></li>
-<li><p>İçeriği en kısa ve anlamlı şekilde yansıtan bir isim seçin (idealde dosya
-içeriğini görüntülemek zorunda kalınmamalı)</p></li>
-<li><p>Boşluk karakterleri kullanmayın</p></li>
-<li><p>Türkçe karakterler kullanmayın</p></li>
-<li><p>Kelimeleri <code>-</code> veya <code>_</code> ile ayırın (ilki daha yaygın)</p></li>
-<li><p>Özel anlamı olan bazı dosya/dizinler dışında büyük harf kullanmayın; dosya
-ismi küçük harflerden oluşmalı</p></li>
-<li><p>Kod dosyaları için önerilen bu kısıtlamaları ofis dosyalarında
-gevşetebilirsiniz (örneğin Türkçe karakterler kullanılabilir)</p></li>
+            <section><ul>
+<li>
+<p>Kodlamada de&#287;i&#351;ken isimlerini se&ccedil;erken g&ouml;sterdi&#287;iniz &ouml;zeni (yoksa b&ouml;yle bir
+    &ouml;zeniniz yok mu?) dosya isimlendirmelerinde de g&ouml;sterin</p>
+</li>
+<li>
+<p>Veya e-posta iletilerinde konu alan&#305;n&#305; yazarken g&ouml;sterdi&#287;iniz &ouml;zene benzer
+    bir &ouml;zen</p>
+</li>
+<li>
+<p>&#304;&ccedil;eri&#287;i en k&#305;sa ve anlaml&#305; &#351;ekilde yans&#305;tan bir isim se&ccedil;in (idealde dosya
+    i&ccedil;eri&#287;ini g&ouml;r&uuml;nt&uuml;lemek zorunda kal&#305;nmamal&#305;)</p>
+</li>
+<li>
+<p>Bo&#351;luk karakterleri kullanmay&#305;n</p>
+</li>
+<li>
+<p>T&uuml;rk&ccedil;e karakterler kullanmay&#305;n</p>
+</li>
+<li>
+<p>Kelimeleri <code>-</code> veya <code>_</code> ile ay&#305;r&#305;n (ilki daha yayg&#305;n)</p>
+</li>
+<li>
+<p>&Ouml;zel anlam&#305; olan baz&#305; dosya/dizinler d&#305;&#351;&#305;nda b&uuml;y&uuml;k harf kullanmay&#305;n; dosya
+    ismi k&uuml;&ccedil;&uuml;k harflerden olu&#351;mal&#305;</p>
+</li>
+<li>
+<p>Kod dosyalar&#305; i&ccedil;in &ouml;nerilen bu k&#305;s&#305;tlamalar&#305; ofis dosyalar&#305;nda
+    gev&#351;etebilirsiniz (&ouml;rne&#287;in T&uuml;rk&ccedil;e karakterler kullan&#305;labilir)</p>
+</li>
 </ul></section>
             
           </div>
@@ -2650,22 +2965,25 @@ gevşetebilirsiniz (örneğin Türkçe karakterler kullanılabilir)</p></li>
             <header><h2><code>ls</code></h2></header>
             
             
-            <section><p><code>ls</code> &quot;List Directory Contents&rdquo; → Dizin içeriğini listele</p>
-
+            <section><p><code>ls</code> &ldquo;List Directory Contents&rdquo; &rarr; Dizin i&ccedil;eri&#287;ini listele</p>
 <div class="highlight"><pre>    ~<span class="nv">$ </span>ls /tmp
     ...
 </pre></div>
 
-
 <ul>
-<li><p>Argüman verilmediğinde çalışma dizini <code>.</code></p>
-
+<li>
+<p>Arg&uuml;man verilmedi&#287;inde &ccedil;al&#305;&#351;ma dizini <code>.</code></p>
 <div class="highlight"><pre>~<span class="nv">$ </span>ls
 bin etc lib
 </pre></div>
+
 </li>
-<li><p>Fakat bu haliyle ayrıntı vermiyor sadece dosya/dizin isimleri</p></li>
-<li><p>Görüntülenen ismin dizin mi, dosya mı olduğunu bile öğrenemiyoruz!</p></li>
+<li>
+<p>Fakat bu haliyle ayr&#305;nt&#305; vermiyor sadece dosya/dizin isimleri</p>
+</li>
+<li>
+<p>G&ouml;r&uuml;nt&uuml;lenen ismin dizin mi, dosya m&#305; oldu&#287;unu bile &ouml;&#287;renemiyoruz!</p>
+</li>
 </ul></section>
             
           </div>
@@ -2690,27 +3008,40 @@ bin etc lib
       
       <!-- slide source: 01op/index.md -->
       <div class="slide-wrapper">
-        <div class="slide has_code">
+        <div class="slide">
           <div class="inner">
             
             <header><h2>Bir Komutun Anatomisi</h2></header>
             
             
             <section><ul>
-<li><p>Daha uzun (&ldquo;long&rdquo;) bilgi görüntüle → <code>-l</code></p>
-
-<div class="highlight"><pre>~<span class="nv">$ </span>ls -l ~
-drwxr-xr-x 2 roktas roktas 4096 Ağu 12 00:37 bin
+<li>
+<p>Daha uzun (&ldquo;long&rdquo;) bilgi g&ouml;r&uuml;nt&uuml;le &rarr; <code>-l</code></p>
+<pre><code>!sh
+~$ ls -l ~
+drwxr-xr-x 2 roktas roktas 4096 A&#287;u 12 00:37 bin
 ...
-</pre></div>
+</code></pre>
 </li>
-<li><p>Şimdilik program çıktısı üzerinde durmayalım; komutun yapısını inceleyin</p></li>
-<li><p>Program → <code>ls</code>, program argümanları → <code>-l</code>, <code>~</code> (argüman vektörü)</p></li>
-<li><p>Komut satırı seçenekleri (&ldquo;options&rdquo;) → <code>-l</code></p></li>
-<li><p>Seçenekler genellikle <code>-&lt;KARAKTER&gt;</code> biçiminde</p></li>
-<li><p>Yaygın kullanımda argüman denildiğinde seçenek dışındaki ögeler kastediliyor
-→ <code>~</code></p></li>
-<li><p>Seçeneğin bir diğer adı &ldquo;anahtar&rdquo; → <code>l</code> anahtarı</p></li>
+<li>
+<p>&#350;imdilik program &ccedil;&#305;kt&#305;s&#305; &uuml;zerinde durmayal&#305;m; komutun yap&#305;s&#305;n&#305; inceleyin</p>
+</li>
+<li>
+<p>Program &rarr; <code>ls</code>, program arg&uuml;manlar&#305; &rarr; <code>-l</code>, <code>~</code> (arg&uuml;man vekt&ouml;r&uuml;)</p>
+</li>
+<li>
+<p>Komut sat&#305;r&#305; se&ccedil;enekleri (&ldquo;options&rdquo;) &rarr; <code>-l</code></p>
+</li>
+<li>
+<p>Se&ccedil;enekler genellikle <code>-&lt;KARAKTER&gt;</code> bi&ccedil;iminde</p>
+</li>
+<li>
+<p>Yayg&#305;n kullan&#305;mda arg&uuml;man denildi&#287;inde se&ccedil;enek d&#305;&#351;&#305;ndaki &ouml;geler kastediliyor
+    &rarr; <code>~</code></p>
+</li>
+<li>
+<p>Se&ccedil;ene&#287;in bir di&#287;er ad&#305; &ldquo;anahtar&rdquo; &rarr; <code>l</code> anahtar&#305;</p>
+</li>
 </ul></section>
             
           </div>
@@ -2735,21 +3066,26 @@ drwxr-xr-x 2 roktas roktas 4096 Ağu 12 00:37 bin
       
       <!-- slide source: 01op/index.md -->
       <div class="slide-wrapper">
-        <div class="slide has_code">
+        <div class="slide">
           <div class="inner">
             
             <header><h2>Bir Komutun Anatomisi</h2></header>
             
             
             <section><ul>
-<li><p>Genel biçim</p>
-
-<div class="highlight"><pre><span class="nv">$ </span>&lt;PROGRAM&gt; <span class="o">[</span>&lt;SEÇENEKLER&gt;...<span class="o">]</span> <span class="o">[</span>&lt;ARGÜMANLAR&gt;...<span class="o">]</span>
-</pre></div>
+<li>
+<p>Genel bi&ccedil;im</p>
+<pre><code>!sh
+$ &lt;PROGRAM&gt; [&lt;SE&Ccedil;ENEKLER&gt;...] [&lt;ARG&Uuml;MANLAR&gt;...]
+</code></pre>
 </li>
-<li><p>Yaygın notasyonda <code>[]</code> ilgili ögelerin isteğe bağlı olduğunu, <code>...</code> ise
-ögelerin bir veya daha fazla sayıda tekrar ettiğini anlatır</p></li>
-<li><p><code>[]</code> yoksa ilgili ögenin varlığı gerekli</p></li>
+<li>
+<p>Yayg&#305;n notasyonda <code>[]</code> ilgili &ouml;gelerin iste&#287;e ba&#287;l&#305; oldu&#287;unu, <code>...</code> ise
+    &ouml;gelerin bir veya daha fazla say&#305;da tekrar etti&#287;ini anlat&#305;r</p>
+</li>
+<li>
+<p><code>[]</code> yoksa ilgili &ouml;genin varl&#305;&#287;&#305; gerekli</p>
+</li>
 </ul></section>
             
           </div>
@@ -2777,23 +3113,34 @@ drwxr-xr-x 2 roktas roktas 4096 Ağu 12 00:37 bin
         <div class="slide has_code">
           <div class="inner">
             
-            <header><h2>Seçenekler</h2></header>
+            <header><h2>Se&ccedil;enekler</h2></header>
             
             
             <section><ul>
-<li><p>GUI uygulamalarındaki &ldquo;Tercihler&quot;in (&quot;Preferences&rdquo; veya &ldquo;Setup&rdquo;) komut
-satırındaki karşılığı</p></li>
-<li><p>Programın davranışını kontrol etmeye yarıyor</p></li>
-<li><p>Genellikle tek harf (&ldquo;short options&rdquo;)</p></li>
-<li><p>Standartlara uygunluk endişesiyle seçenekleri (varsa) argümanlardan önce
-yazıyoruz</p></li>
-<li><p>Fakat bazı programlarda (özellikle GNU araç seti) yeri önemli değil</p></li>
-<li><p>Yine standart dışı bir ekleme olarak pek çok program iki tireyle başlayan
-kelimelerden oluşan uzun seçenekleri de kabul ediliyor (&ldquo;long options&rdquo;)</p>
-
+<li>
+<p>GUI uygulamalar&#305;ndaki &ldquo;Tercihler&rdquo;in (&ldquo;Preferences&rdquo; veya &ldquo;Setup&rdquo;) komut
+    sat&#305;r&#305;ndaki kar&#351;&#305;l&#305;&#287;&#305;</p>
+</li>
+<li>
+<p>Program&#305;n davran&#305;&#351;&#305;n&#305; kontrol etmeye yar&#305;yor</p>
+</li>
+<li>
+<p>Genellikle tek harf (&ldquo;short options&rdquo;)</p>
+</li>
+<li>
+<p>Standartlara uygunluk endi&#351;esiyle se&ccedil;enekleri (varsa) arg&uuml;manlardan &ouml;nce
+    yaz&#305;yoruz</p>
+</li>
+<li>
+<p>Fakat baz&#305; programlarda (&ouml;zellikle GNU ara&ccedil; seti) yeri &ouml;nemli de&#287;il</p>
+</li>
+<li>
+<p>Yine standart d&#305;&#351;&#305; bir ekleme olarak pek &ccedil;ok program iki tireyle ba&#351;layan
+    kelimelerden olu&#351;an uzun se&ccedil;enekleri de kabul ediliyor (&ldquo;long options&rdquo;)</p>
 <div class="highlight"><pre><span class="nv">$ </span>ls --all ~
 <span class="nv">$ </span>ls --ignore-backups ~
 </pre></div>
+
 </li>
 </ul></section>
             
@@ -2828,16 +3175,19 @@ kelimelerden oluşan uzun seçenekleri de kabul ediliyor (&ldquo;long options&rd
             <section><div class="highlight"><pre>    <span class="nv">$ </span>man ls
 </pre></div>
 
-
-<p><code>man</code> → &ldquo;Manual&rdquo; - &ldquo;Kılavuz&rdquo;</p>
-
+<p><code>man</code> &rarr; &ldquo;Manual&rdquo; - &ldquo;K&#305;lavuz&rdquo;</p>
 <ul>
-<li><p><code>ls</code> ile ilgili seçenek bilgilerini nereden öğreniyoruz?</p></li>
-<li><p>Kılavuz → Kullandığınız sistemin otoriter bilgi kaynağı</p></li>
-<li><p>Kılavuz hakkında yine kendisinden yardım alalım</p>
-
+<li>
+<p><code>ls</code> ile ilgili se&ccedil;enek bilgilerini nereden &ouml;&#287;reniyoruz?</p>
+</li>
+<li>
+<p>K&#305;lavuz &rarr; Kulland&#305;&#287;&#305;n&#305;z sistemin otoriter bilgi kayna&#287;&#305;</p>
+</li>
+<li>
+<p>K&#305;lavuz hakk&#305;nda yine kendisinden yard&#305;m alal&#305;m</p>
 <div class="highlight"><pre><span class="nv">$ </span>man man
 </pre></div>
+
 </li>
 </ul></section>
             
@@ -2870,14 +3220,26 @@ kelimelerden oluşan uzun seçenekleri de kabul ediliyor (&ldquo;long options&rd
             
             
             <section><ul>
-<li><p>Seçenek sayısı fazla olan komutlar için zorunlu; ör. <code>ls</code></p></li>
-<li><p>Çıktısı basit olmayan komutlar için de yararlı; ör. <code>ls</code></p></li>
-<li><p>Sık kullanılan komut ve seçenekler akılda kalabilir</p></li>
-<li><p>Fakat tüm seçeneklerini bildiğiniz komutlarda bile bazen uç durumlardaki
-davranışı kestiremeyebilirsiniz</p></li>
-<li><p>Bu komuta elinizi alıştırın</p></li>
-<li><p>İngilizceniz çok iyi olmasa bile sorununuzu çözebilecek örnek komutlar veya
-basit açıklamalar bulabilirsiniz</p></li>
+<li>
+<p>Se&ccedil;enek say&#305;s&#305; fazla olan komutlar i&ccedil;in zorunlu; &ouml;r. <code>ls</code></p>
+</li>
+<li>
+<p>&Ccedil;&#305;kt&#305;s&#305; basit olmayan komutlar i&ccedil;in de yararl&#305;; &ouml;r. <code>ls</code></p>
+</li>
+<li>
+<p>S&#305;k kullan&#305;lan komut ve se&ccedil;enekler ak&#305;lda kalabilir</p>
+</li>
+<li>
+<p>Fakat t&uuml;m se&ccedil;eneklerini bildi&#287;iniz komutlarda bile bazen u&ccedil; durumlardaki
+    davran&#305;&#351;&#305; kestiremeyebilirsiniz</p>
+</li>
+<li>
+<p>Bu komuta elinizi al&#305;&#351;t&#305;r&#305;n</p>
+</li>
+<li>
+<p>&#304;ngilizceniz &ccedil;ok iyi olmasa bile sorununuzu &ccedil;&ouml;zebilecek &ouml;rnek komutlar veya
+    basit a&ccedil;&#305;klamalar bulabilirsiniz</p>
+</li>
 </ul></section>
             
           </div>
@@ -2905,20 +3267,31 @@ basit açıklamalar bulabilirsiniz</p></li>
         <div class="slide achtung">
           <div class="inner">
             
-            <header><h2>BSD Kılavuz Sayfaları</h2></header>
+            <header><h2>BSD K&#305;lavuz Sayfalar&#305;</h2></header>
             
             
-            <section>
-<ul>
-<li><p>Linux kılavuz sayfalarında kalite bazen çok düşüyor</p></li>
-<li><p>BSD sistemlerinin, özellikle OpenBSD&#39;nin, kılavuz sayfaları son derece
-özenli ve doyurucu</p></li>
-<li><p>Bu sayfalardan yararlanmak için BSD kurmanız gerekmiyor (ama öneririz);
-Web&#39;den okuyabilirsiniz</p></li>
-<li><p><a href="http://www.openbsd.org/cgi-bin/man.cgi">http://www.openbsd.org/cgi-bin/man.cgi</a></p></li>
-<li><p>UNIX sistemler arasında taşınabilir programlar yazmanız için de çok yararlı</p></li>
-<li><p>BSD ile Linux arasındaki farklılıklara dikkat edin!  Bazı komutlar Linux&#39;ta
-farklı davranabilir</p></li>
+            <section><ul>
+<li>
+<p>Linux k&#305;lavuz sayfalar&#305;nda kalite bazen &ccedil;ok d&uuml;&#351;&uuml;yor</p>
+</li>
+<li>
+<p>BSD sistemlerinin, &ouml;zellikle OpenBSD&rsquo;nin, k&#305;lavuz sayfalar&#305; son derece
+    &ouml;zenli ve doyurucu</p>
+</li>
+<li>
+<p>Bu sayfalardan yararlanmak i&ccedil;in BSD kurman&#305;z gerekmiyor (ama &ouml;neririz);
+    Web&rsquo;den okuyabilirsiniz</p>
+</li>
+<li>
+<p><a href="http://www.openbsd.org/cgi-bin/man.cgi">http://www.openbsd.org/cgi-bin/man.cgi</a></p>
+</li>
+<li>
+<p>UNIX sistemler aras&#305;nda ta&#351;&#305;nabilir programlar yazman&#305;z i&ccedil;in de &ccedil;ok yararl&#305;</p>
+</li>
+<li>
+<p>BSD ile Linux aras&#305;ndaki farkl&#305;l&#305;klara dikkat edin!  Baz&#305; komutlar Linux&rsquo;ta
+    farkl&#305; davranabilir</p>
+</li>
 </ul></section>
             
           </div>
@@ -2943,29 +3316,44 @@ farklı davranabilir</p></li>
       
       <!-- slide source: 01op/index.md -->
       <div class="slide-wrapper">
-        <div class="slide has_code">
+        <div class="slide">
           <div class="inner">
             
             <header><h2><code>ls</code></h2></header>
             
             
-            <section><div class="highlight"><pre>    ~<span class="nv">$ </span>ls -l
-    drwxr-xr-x 2 roktas roktas 4096 Ağu 12 00:37 bin
+            <section><pre><code>    !sh
+    ~$ ls -l
+    drwxr-xr-x 2 roktas roktas 4096 A&#287;u 12 00:37 bin
     ...
-</pre></div>
-
-
+</code></pre>
 <ul>
-<li><p><code>d</code> → dosya türü: bu bir dizin</p></li>
-<li><p><code>rwxr-xr-x</code> → izinler: sahibi okur/yazar/çalıştırır, grup ve diğerleri
-okur/çalıştırır</p></li>
-<li><p><code>2</code> → referans sayısı: diğer dosya sistemi nesneleri tarafından bu nesneye
-verilen referansların sayısı</p></li>
-<li><p><code>roktas</code> → sahip</p></li>
-<li><p><code>roktas</code> → grup</p></li>
-<li><p><code>4096</code> → boyut: Bayt cinsinden</p></li>
-<li><p><code>Ağu 12 00:37</code> → son değişiklik zamanı</p></li>
-<li><p><code>bin</code> → isim</p></li>
+<li>
+<p><code>d</code> &rarr; dosya t&uuml;r&uuml;: bu bir dizin</p>
+</li>
+<li>
+<p><code>rwxr-xr-x</code> &rarr; izinler: sahibi okur/yazar/&ccedil;al&#305;&#351;t&#305;r&#305;r, grup ve di&#287;erleri
+    okur/&ccedil;al&#305;&#351;t&#305;r&#305;r</p>
+</li>
+<li>
+<p><code>2</code> &rarr; referans say&#305;s&#305;: di&#287;er dosya sistemi nesneleri taraf&#305;ndan bu nesneye
+    verilen referanslar&#305;n say&#305;s&#305;</p>
+</li>
+<li>
+<p><code>roktas</code> &rarr; sahip</p>
+</li>
+<li>
+<p><code>roktas</code> &rarr; grup</p>
+</li>
+<li>
+<p><code>4096</code> &rarr; boyut: Bayt cinsinden</p>
+</li>
+<li>
+<p><code>A&#287;u 12 00:37</code> &rarr; son de&#287;i&#351;iklik zaman&#305;</p>
+</li>
+<li>
+<p><code>bin</code> &rarr; isim</p>
+</li>
 </ul></section>
             
           </div>
@@ -2997,21 +3385,25 @@ verilen referansların sayısı</p></li>
             
             
             <section><ul>
-<li><p>Sadece dizin (&ldquo;directory&rdquo;) hakkında bilgi → <code>-d</code></p>
-
+<li>
+<p>Sadece dizin (&ldquo;directory&rdquo;) hakk&#305;nda bilgi &rarr; <code>-d</code></p>
 <div class="highlight"><pre>~<span class="nv">$ </span>ls -ld
 drwx------ 49 roktas roktas 4096 Eki  3 21:34 .
 </pre></div>
-</li>
-<li><p>Çıktıda bazı dosya/dizinler gizlenir; hepsini (&ldquo;all&rdquo;) gör → <code>-a</code></p>
 
+</li>
+<li>
+<p>&Ccedil;&#305;kt&#305;da baz&#305; dosya/dizinler gizlenir; hepsini (&ldquo;all&rdquo;) g&ouml;r &rarr; <code>-a</code></p>
 <div class="highlight"><pre>~<span class="nv">$ </span>ls -a
 .bashrc
 ...
 .private
 </pre></div>
+
 </li>
-<li><p>Hangi dosyalar gizleniyor?</p></li>
+<li>
+<p>Hangi dosyalar gizleniyor?</p>
+</li>
 </ul></section>
             
           </div>
@@ -3043,24 +3435,34 @@ drwx------ 49 roktas roktas 4096 Eki  3 21:34 .
             
             
             <section><ul>
-<li><p>UNIX sistemlerde dosyaları &ldquo;gizleyen&rdquo; bir mekanizma yok fakat bir
-konvansiyon var</p></li>
-<li><p><code>.</code> ile başlayan dosyalar pek çok program tarafından öntanımlı kullanımda
-işleme alınmaz → &ldquo;nokta dosyalar&rdquo; (&ldquo;dotfiles&rdquo;)</p>
-
+<li>
+<p>UNIX sistemlerde dosyalar&#305; &ldquo;gizleyen&rdquo; bir mekanizma yok fakat bir
+    konvansiyon var</p>
+</li>
+<li>
+<p><code>.</code> ile ba&#351;layan dosyalar pek &ccedil;ok program taraf&#305;ndan &ouml;ntan&#305;ml&#305; kullan&#305;mda
+    i&#351;leme al&#305;nmaz &rarr; &ldquo;nokta dosyalar&rdquo; (&ldquo;dotfiles&rdquo;)</p>
 <div class="highlight"><pre><span class="nv">$ </span>ls ~
 </pre></div>
-</li>
-<li><p>Örneğin ev dizininizde bulunan yapılandırma dosyaları, geçici dosyalar,
-önbellekleme veya yedekleme amaçlı kullanılan dosyalar</p></li>
-<li><p>Örneğin sürüm takip sistemlerinin meta dizinleri (<code>.git</code>, <code>.svn</code>)</p></li>
-<li><p><strong>Bu konvansiyonda amaç mahremiyet değil (dosya izinlerinin konusu),
-kullanım konforu (&ldquo;sadece gerekli olanları göster&rdquo;)</strong></p></li>
-<li><p>Konvansiyonla işleme alınmayan bu dosyaların dikkate alınması için programa
-özel bir seçenek girmeniz gerekebilir</p>
 
+</li>
+<li>
+<p>&Ouml;rne&#287;in ev dizininizde bulunan yap&#305;land&#305;rma dosyalar&#305;, ge&ccedil;ici dosyalar,
+    &ouml;nbellekleme veya yedekleme ama&ccedil;l&#305; kullan&#305;lan dosyalar</p>
+</li>
+<li>
+<p>&Ouml;rne&#287;in s&uuml;r&uuml;m takip sistemlerinin meta dizinleri (<code>.git</code>, <code>.svn</code>)</p>
+</li>
+<li>
+<p><strong>Bu konvansiyonda ama&ccedil; mahremiyet de&#287;il (dosya izinlerinin konusu),
+    kullan&#305;m konforu (&ldquo;sadece gerekli olanlar&#305; g&ouml;ster&rdquo;)</strong></p>
+</li>
+<li>
+<p>Konvansiyonla i&#351;leme al&#305;nmayan bu dosyalar&#305;n dikkate al&#305;nmas&#305; i&ccedil;in programa
+    &ouml;zel bir se&ccedil;enek girmeniz gerekebilir</p>
 <div class="highlight"><pre><span class="nv">$ </span>ls -a ~
 </pre></div>
+
 </li>
 </ul></section>
             
@@ -3086,35 +3488,37 @@ kullanım konforu (&ldquo;sadece gerekli olanları göster&rdquo;)</strong></p><
       
       <!-- slide source: 01op/index.md -->
       <div class="slide-wrapper">
-        <div class="slide has_code">
+        <div class="slide">
           <div class="inner">
             
             <header><h2><code>mkdir</code></h2></header>
             
             
-            <section><p><code>mkdir</code> Make Directory → Dizin Oluştur</p>
-
-<div class="highlight"><pre>    ~<span class="nv">$ </span>mkdir tmp
-    ~<span class="nv">$ </span>ls -d tmp
+            <section><p><code>mkdir</code> Make Directory &rarr; Dizin Olu&#351;tur</p>
+<pre><code>    !sh
+    ~$ mkdir tmp
+    ~$ ls -d tmp
     tmp
-</pre></div>
-
-
+</code></pre>
 <ul>
-<li><p>Argüman olarak verilen dizini oluşturur</p></li>
-<li><p>Argüman olarak bir dizin yolu verilmişse yolda son dizin (çocuk) dışındaki
-dizinler (ebeveynler) önceden varolmalı</p>
-
-<div class="highlight"><pre>~<span class="nv">$ </span>mkdir tmp/foo/bar
-mkdir: <span class="sb">`</span>tmp/foo/bar<span class="err">&#39;</span> dizini oluşturulamıyor: ...
-</pre></div>
+<li>
+<p>Arg&uuml;man olarak verilen dizini olu&#351;turur</p>
 </li>
-<li><p><code>-p</code> → önce ebeveyn dizinleri (&ldquo;parents&rdquo;) yoksa oluştur</p>
-
-<div class="highlight"><pre>~<span class="nv">$ </span>mkdir -p tmp/foo/bar
-~<span class="nv">$ </span>ls -d tmp/foo/bar
+<li>
+<p>Arg&uuml;man olarak bir dizin yolu verilmi&#351;se yolda son dizin (&ccedil;ocuk) d&#305;&#351;&#305;ndaki
+    dizinler (ebeveynler) &ouml;nceden varolmal&#305;</p>
+<pre><code>!sh
+~$ mkdir tmp/foo/bar
+mkdir: `tmp/foo/bar' dizini olu&#351;turulam&#305;yor: ...
+</code></pre>
+</li>
+<li>
+<p><code>-p</code> &rarr; &ouml;nce ebeveyn dizinleri (&ldquo;parents&rdquo;) yoksa olu&#351;tur</p>
+<pre><code>!sh
+~$ mkdir -p tmp/foo/bar
+~$ ls -d tmp/foo/bar
 tmp/foo/bar
-</pre></div>
+</code></pre>
 </li>
 </ul></section>
             
@@ -3323,18 +3727,23 @@ tmp/foo/bar
         <div class="slide has_code">
           <div class="inner">
             
-            <header><h2>Sahiplik ve İzinler</h2></header>
+            <header><h2>Sahiplik ve &#304;zinler</h2></header>
             
             
             <section><div class="highlight"><pre>    <span class="nv">$ </span>ls foo.txt
     -rw-r--r-- 1 roktas users 0 Eki  2 01:27 foo.txt
 </pre></div>
 
-
 <ul>
-<li><p>Uzun <code>ls</code> çıktılarındaki sahiplik ve izin bilgilerine tekrar bakalım</p></li>
-<li><p>9 karakterlik bir dizgi; 3&#39;lü <code>rwx</code> öbekleri</p></li>
-<li><p>Her öbekte <code>rwx</code> dizgisinde izin verilmeyen eylem için <code>-</code></p></li>
+<li>
+<p>Uzun <code>ls</code> &ccedil;&#305;kt&#305;lar&#305;ndaki sahiplik ve izin bilgilerine tekrar bakal&#305;m</p>
+</li>
+<li>
+<p>9 karakterlik bir dizgi; 3&rsquo;l&uuml; <code>rwx</code> &ouml;bekleri</p>
+</li>
+<li>
+<p>Her &ouml;bekte <code>rwx</code> dizgisinde izin verilmeyen eylem i&ccedil;in <code>-</code></p>
+</li>
 </ul></section>
             
           </div>
@@ -3362,23 +3771,32 @@ tmp/foo/bar
         <div class="slide">
           <div class="inner">
             
-            <header><h2>Sahiplik ve İzinler</h2></header>
+            <header><h2>Sahiplik ve &#304;zinler</h2></header>
             
             
-            <section><p>Bir dosya ile sahiplik ilişkimiz nasıl olabilir?</p>
-
+            <section><p>Bir dosya ile sahiplik ili&#351;kimiz nas&#305;l olabilir?</p>
 <ul>
-<li><p>Dosya kullanıcıya ait: kullanıcı → <strong>u</strong>ser</p></li>
-<li><p>Gruba ait: grup → <strong>g</strong>roup</p></li>
-<li><p>Başkalarına ait: başkaları → <strong>o</strong>thers</p></li>
+<li>
+<p>Dosya kullan&#305;c&#305;ya ait: kullan&#305;c&#305; &rarr; <strong>u</strong>ser</p>
+</li>
+<li>
+<p>Gruba ait: grup &rarr; <strong>g</strong>roup</p>
+</li>
+<li>
+<p>Ba&#351;kalar&#305;na ait: ba&#351;kalar&#305; &rarr; <strong>o</strong>thers</p>
+</li>
 </ul>
-
-<p>Bir dosya üzerinde hangi eylemler gerçekleştirilebilir?</p>
-
+<p>Bir dosya &uuml;zerinde hangi eylemler ger&ccedil;ekle&#351;tirilebilir?</p>
 <ul>
-<li><p>Oku → Read</p></li>
-<li><p>Yaz → Write</p></li>
-<li><p>Çalıştır → eXecute</p></li>
+<li>
+<p>Oku &rarr; Read</p>
+</li>
+<li>
+<p>Yaz &rarr; Write</p>
+</li>
+<li>
+<p>&Ccedil;al&#305;&#351;t&#305;r &rarr; eXecute</p>
+</li>
 </ul></section>
             
           </div>
@@ -3406,20 +3824,27 @@ tmp/foo/bar
         <div class="slide has_code">
           <div class="inner">
             
-            <header><h2>Sahiplik ve İzinler</h2></header>
+            <header><h2>Sahiplik ve &#304;zinler</h2></header>
             
             
             <section><div class="highlight"><pre>    <span class="nv">$ </span>ls foo.txt
     -rw-r--r-- 1 roktas users 0 Eki  2 01:27 foo.txt
 </pre></div>
 
-
 <ul>
-<li><p>Kullanıcı (<code>roktas</code>) okuyabilir/yazabilir, çalıştıramaz</p></li>
-<li><p>Grup (<code>users</code>) ve başkaları sadece okuyabilir</p></li>
-<li><p>Görüldüğü gibi bu dosyanın çalıştırılması anlamlı da değil; çünkü bu bir
-veri dosyası</p></li>
-<li><p>Fakat dizinlerde çalıştırılabilirlik izninin bulunduğunu görmüştük</p></li>
+<li>
+<p>Kullan&#305;c&#305; (<code>roktas</code>) okuyabilir/yazabilir, &ccedil;al&#305;&#351;t&#305;ramaz</p>
+</li>
+<li>
+<p>Grup (<code>users</code>) ve ba&#351;kalar&#305; sadece okuyabilir</p>
+</li>
+<li>
+<p>G&ouml;r&uuml;ld&uuml;&#287;&uuml; gibi bu dosyan&#305;n &ccedil;al&#305;&#351;t&#305;r&#305;lmas&#305; anlaml&#305; da de&#287;il; &ccedil;&uuml;nk&uuml; bu bir
+    veri dosyas&#305;</p>
+</li>
+<li>
+<p>Fakat dizinlerde &ccedil;al&#305;&#351;t&#305;r&#305;labilirlik izninin bulundu&#287;unu g&ouml;rm&uuml;&#351;t&uuml;k</p>
+</li>
 </ul></section>
             
           </div>
@@ -3447,15 +3872,23 @@ veri dosyası</p></li>
         <div class="slide">
           <div class="inner">
             
-            <header><h2>Çalıştırılabilir Dosya</h2></header>
+            <header><h2>&Ccedil;al&#305;&#351;t&#305;r&#305;labilir Dosya</h2></header>
             
             
             <section><ul>
-<li><p>Okuma ve yazma izinlerinin kavranması görece kolay</p></li>
-<li><p>Dosya için çalıştırılabilirlik?  Dosyanın bir program olarak
-çalıştırılabilmesi</p></li>
-<li><p>Çalıştırılabilir bir dosya hemen hemen daima bir program dosyasıdır</p></li>
-<li><p>Bu konuya döneceğiz</p></li>
+<li>
+<p>Okuma ve yazma izinlerinin kavranmas&#305; g&ouml;rece kolay</p>
+</li>
+<li>
+<p>Dosya i&ccedil;in &ccedil;al&#305;&#351;t&#305;r&#305;labilirlik?  Dosyan&#305;n bir program olarak
+    &ccedil;al&#305;&#351;t&#305;r&#305;labilmesi</p>
+</li>
+<li>
+<p>&Ccedil;al&#305;&#351;t&#305;r&#305;labilir bir dosya hemen hemen daima bir program dosyas&#305;d&#305;r</p>
+</li>
+<li>
+<p>Bu konuya d&ouml;nece&#287;iz</p>
+</li>
 </ul></section>
             
           </div>
@@ -3483,18 +3916,28 @@ veri dosyası</p></li>
         <div class="slide">
           <div class="inner">
             
-            <header><h2>Çalıştırılabilir Dizin</h2></header>
+            <header><h2>&Ccedil;al&#305;&#351;t&#305;r&#305;labilir Dizin</h2></header>
             
             
             <section><ul>
-<li><p>&ldquo;Dosya çalıştırılabilir&rdquo; anlamlı bir izin; dosyanın bir program dosyası
-olduğunu anlıyoruz</p></li>
-<li><p>&ldquo;Çalıştırılabilir dizin&rdquo; anlamlı mı?  Dizin bir program değil ki
-çalıştırılsın</p></li>
-<li><p>&ldquo;Çalıştırılabilir dizin&quot;i basitçe şöyle yorumlayın: &quot;dizine girebilir → <code>cd</code>
-ve içeriğini listeleyebilirim → <code>ls -l</code>&rdquo;</p></li>
-<li><p>Bu yorum olağan senaryolarda gayet yeterli</p></li>
-<li><p>Fakat muğlak kaldığı durumlar da var; ilerleyen bölümlerde&hellip;</p></li>
+<li>
+<p>&ldquo;Dosya &ccedil;al&#305;&#351;t&#305;r&#305;labilir&rdquo; anlaml&#305; bir izin; dosyan&#305;n bir program dosyas&#305;
+    oldu&#287;unu anl&#305;yoruz</p>
+</li>
+<li>
+<p>&ldquo;&Ccedil;al&#305;&#351;t&#305;r&#305;labilir dizin&rdquo; anlaml&#305; m&#305;?  Dizin bir program de&#287;il ki
+    &ccedil;al&#305;&#351;t&#305;r&#305;ls&#305;n</p>
+</li>
+<li>
+<p>&ldquo;&Ccedil;al&#305;&#351;t&#305;r&#305;labilir dizin&rdquo;i basit&ccedil;e &#351;&ouml;yle yorumlay&#305;n: &ldquo;dizine girebilir &rarr; <code>cd</code>
+    ve i&ccedil;eri&#287;ini listeleyebilirim &rarr; <code>ls -l</code>&rdquo;</p>
+</li>
+<li>
+<p>Bu yorum ola&#287;an senaryolarda gayet yeterli</p>
+</li>
+<li>
+<p>Fakat mu&#287;lak kald&#305;&#287;&#305; durumlar da var; ilerleyen b&ouml;l&uuml;mlerde&hellip;</p>
+</li>
 </ul></section>
             
           </div>
@@ -3525,23 +3968,25 @@ ve içeriğini listeleyebilirim → <code>ls -l</code>&rdquo;</p></li>
             <header><h2><code>chown</code></h2></header>
             
             
-            <section><p>Sahipliği nasıl düzenliyoruz?</p>
-
+            <section><p>Sahipli&#287;i nas&#305;l d&uuml;zenliyoruz?</p>
 <ul>
-<li><p>Kullanıcıyı değiştir</p>
-
+<li>
+<p>Kullan&#305;c&#305;y&#305; de&#287;i&#351;tir</p>
 <div class="highlight"><pre><span class="nv">$ </span>chown roktas foo.txt
 </pre></div>
-</li>
-<li><p>Kullanıcı ve grubu değiştir</p>
 
+</li>
+<li>
+<p>Kullan&#305;c&#305; ve grubu de&#287;i&#351;tir</p>
 <div class="highlight"><pre><span class="nv">$ </span>chown roktas:staff foo.txt
 </pre></div>
-</li>
-<li><p>Grubu değiştir</p>
 
+</li>
+<li>
+<p>Grubu de&#287;i&#351;tir</p>
 <div class="highlight"><pre><span class="nv">$ </span>chown :staff foo.txt
 </pre></div>
+
 </li>
 </ul></section>
             
@@ -3573,16 +4018,20 @@ ve içeriğini listeleyebilirim → <code>ls -l</code>&rdquo;</p></li>
             <header><h2><code>chgrp</code></h2></header>
             
             
-            <section><p>Grubu düzenlemenin bir başka yolu</p>
-
+            <section><p>Grubu d&uuml;zenlemenin bir ba&#351;ka yolu</p>
 <div class="highlight"><pre><span class="nv">$ </span>chgrp staff foo.txt
 </pre></div>
 
-
 <ul>
-<li><p><code>chown</code> ile hem kullanıcı hem grup düzenlenebiliyor</p></li>
-<li><p>Kognitif yükü azaltmak için tek bir araç: <code>chown</code> kullanmak daha doğru</p></li>
-<li><p>Bu nedenle fazla kullanmıyoruz</p></li>
+<li>
+<p><code>chown</code> ile hem kullan&#305;c&#305; hem grup d&uuml;zenlenebiliyor</p>
+</li>
+<li>
+<p>Kognitif y&uuml;k&uuml; azaltmak i&ccedil;in tek bir ara&ccedil;: <code>chown</code> kullanmak daha do&#287;ru</p>
+</li>
+<li>
+<p>Bu nedenle fazla kullanm&#305;yoruz</p>
+</li>
 </ul></section>
             
           </div>
@@ -3613,28 +4062,31 @@ ve içeriğini listeleyebilirim → <code>ls -l</code>&rdquo;</p></li>
             <header><h2><code>chmod</code></h2></header>
             
             
-            <section><p>İzinleri nasıl düzenliyoruz?</p>
-
+            <section><p>&#304;zinleri nas&#305;l d&uuml;zenliyoruz?</p>
 <ul>
-<li><p>Sadece ben okuyup/yazabileyim</p>
-
+<li>
+<p>Sadece ben okuyup/yazabileyim</p>
 <div class="highlight"><pre><span class="nv">$ </span>chmod <span class="nv">u</span><span class="o">=</span>rw foo.txt
 </pre></div>
-</li>
-<li><p>Gruba yazma hakkı ver</p>
 
+</li>
+<li>
+<p>Gruba yazma hakk&#305; ver</p>
 <div class="highlight"><pre><span class="nv">$ </span>chmod g+w foo.txt
 </pre></div>
-</li>
-<li><p>Başkalarının tüm haklarını kısıtla</p>
 
+</li>
+<li>
+<p>Ba&#351;kalar&#305;n&#305;n t&uuml;m haklar&#305;n&#305; k&#305;s&#305;tla</p>
 <div class="highlight"><pre><span class="nv">$ </span>chmod <span class="nv">o</span><span class="o">=</span> foo.txt
 </pre></div>
-</li>
-<li><p>Herkese (ben, grubum ve başkaları) çalıştırma hakkı ver</p>
 
+</li>
+<li>
+<p>Herkese (ben, grubum ve ba&#351;kalar&#305;) &ccedil;al&#305;&#351;t&#305;rma hakk&#305; ver</p>
 <div class="highlight"><pre><span class="nv">$ </span>chmod +x foo.txt
 </pre></div>
+
 </li>
 </ul></section>
             
@@ -3667,13 +4119,25 @@ ve içeriğini listeleyebilirim → <code>ls -l</code>&rdquo;</p></li>
             
             
             <section><ul>
-<li><p>Sahiplik için <code>ugoa</code>, izinler için <code>rwx</code> mnemonikleri ve üç basit operatör
-<code>=+-</code> kullanılıyor</p></li>
-<li><p>Sol tarafta → sahiplik, ortada → operatör, sağ tarafta → izinler</p></li>
-<li><p>Sol tarafın yokluğu <code>a</code> (&ldquo;all&rdquo;) yani herkes anlamına geliyor</p></li>
-<li><p><code>=</code> ile ilgili sahip alanının <strong>üzerine yazılıyor</strong></p></li>
-<li><p><code>=</code> bir atama, ekleme/çıkarma değil; sağ taraf boşsa tüm izinler kaldırılır</p></li>
-<li><p><code>+/-</code> ile mevcut düzenlemeye ekleme/çıkarma yapılıyor</p></li>
+<li>
+<p>Sahiplik i&ccedil;in <code>ugoa</code>, izinler i&ccedil;in <code>rwx</code> mnemonikleri ve &uuml;&ccedil; basit operat&ouml;r
+    <code>=+-</code> kullan&#305;l&#305;yor</p>
+</li>
+<li>
+<p>Sol tarafta &rarr; sahiplik, ortada &rarr; operat&ouml;r, sa&#287; tarafta &rarr; izinler</p>
+</li>
+<li>
+<p>Sol taraf&#305;n yoklu&#287;u <code>a</code> (&ldquo;all&rdquo;) yani herkes anlam&#305;na geliyor</p>
+</li>
+<li>
+<p><code>=</code> ile ilgili sahip alan&#305;n&#305;n <strong>&uuml;zerine yaz&#305;l&#305;yor</strong></p>
+</li>
+<li>
+<p><code>=</code> bir atama, ekleme/&ccedil;&#305;karma de&#287;il; sa&#287; taraf bo&#351;sa t&uuml;m izinler kald&#305;r&#305;l&#305;r</p>
+</li>
+<li>
+<p><code>+/-</code> ile mevcut d&uuml;zenlemeye ekleme/&ccedil;&#305;karma yap&#305;l&#305;yor</p>
+</li>
 </ul></section>
             
           </div>
@@ -3705,16 +4169,28 @@ ve içeriğini listeleyebilirim → <code>ls -l</code>&rdquo;</p></li>
             
             
             <section><ul>
-<li><p>UNIX&#39;te program dosyalarının önemli bir kısmı ikili (&ldquo;binary&rdquo;) biçimde</p></li>
-<li><p>Bunlar derlenmiş dosyalar; içeriğine baktığınızda adeta şifrelenmiş bir
-metin</p></li>
-<li><p>İkili içerik programın kaynak kodu hakkında yeterli bir bilgi vermez (fakat
-özel araçlarla bu içerik bile yorumlanabilir)</p></li>
-<li><p>Bazı program dosyaları ise dinamik bir programlama diliyle; örneğin kabuğun
-kendisiyle veya Perl, Python, Ruby gibi dillerle yazılıyor</p></li>
-<li><p>Bu tür programlara &ldquo;betik&rdquo; (&ldquo;script&rdquo;) diyoruz</p></li>
-<li><p>Betik aynı zamanda kaynak kod; Web sayfalarında yüklenen JavaScript
-betikleri gibi</p></li>
+<li>
+<p>UNIX&rsquo;te program dosyalar&#305;n&#305;n &ouml;nemli bir k&#305;sm&#305; ikili (&ldquo;binary&rdquo;) bi&ccedil;imde</p>
+</li>
+<li>
+<p>Bunlar derlenmi&#351; dosyalar; i&ccedil;eri&#287;ine bakt&#305;&#287;&#305;n&#305;zda adeta &#351;ifrelenmi&#351; bir
+    metin</p>
+</li>
+<li>
+<p>&#304;kili i&ccedil;erik program&#305;n kaynak kodu hakk&#305;nda yeterli bir bilgi vermez (fakat
+    &ouml;zel ara&ccedil;larla bu i&ccedil;erik bile yorumlanabilir)</p>
+</li>
+<li>
+<p>Baz&#305; program dosyalar&#305; ise dinamik bir programlama diliyle; &ouml;rne&#287;in kabu&#287;un
+    kendisiyle veya Perl, Python, Ruby gibi dillerle yaz&#305;l&#305;yor</p>
+</li>
+<li>
+<p>Bu t&uuml;r programlara &ldquo;betik&rdquo; (&ldquo;script&rdquo;) diyoruz</p>
+</li>
+<li>
+<p>Betik ayn&#305; zamanda kaynak kod; Web sayfalar&#305;nda y&uuml;klenen JavaScript
+    betikleri gibi</p>
+</li>
 </ul></section>
             
           </div>
@@ -3746,16 +4222,20 @@ betikleri gibi</p></li>
             
             
             <section><ul>
-<li><p>Ruby ile yazılmış tek satırlık bir <code>echo.rb</code> dosyası</p>
-
+<li>
+<p>Ruby ile yaz&#305;lm&#305;&#351; tek sat&#305;rl&#305;k bir <code>echo.rb</code> dosyas&#305;</p>
 <div class="highlight"><pre><span class="nb">puts</span> <span class="no">ARGV</span><span class="o">.</span><span class="n">join</span> <span class="s1">&#39; &#39;</span>
 </pre></div>
-</li>
-<li><p>Kabukta kullandığımız <code>echo</code>&#39;nun Ruby sürümü</p></li>
-<li><p>Bu betiği nasıl çalıştırırız?</p>
 
+</li>
+<li>
+<p>Kabukta kulland&#305;&#287;&#305;m&#305;z <code>echo</code>&lsquo;nun Ruby s&uuml;r&uuml;m&uuml;</p>
+</li>
+<li>
+<p>Bu beti&#287;i nas&#305;l &ccedil;al&#305;&#351;t&#305;r&#305;r&#305;z?</p>
 <div class="highlight"><pre><span class="nv">$ </span>ruby echo.rb
 </pre></div>
+
 </li>
 </ul></section>
             
@@ -3784,17 +4264,27 @@ betikleri gibi</p></li>
         <div class="slide">
           <div class="inner">
             
-            <header><h2>Dosya Uzantıları</h2></header>
+            <header><h2>Dosya Uzant&#305;lar&#305;</h2></header>
             
             
             <section><ul>
-<li><p><code>echo.rb</code> dosya uzantısı → <code>.rb</code></p></li>
-<li><p>Uzantının betiğin çalıştırılması bağlamında özel bir anlamı yok!</p></li>
-<li><p>Fakat güzel bir pratik; betiğin Ruby diliyle yazıldığını anlatıyor</p></li>
-<li><p>Bu bir konvansiyon; <code>rb</code> uzantısı sadece Ruby ile yazılan kaynak kodlarda
-kullanılmalı&quot;</p></li>
-<li><p>Dosyayı düzenlerken de yararlı; pek çok düzenleyici bu uzantıya bakarak
-ilgili dilin sözdizimi renklendirmesini etkinleştiriyor</p></li>
+<li>
+<p><code>echo.rb</code> dosya uzant&#305;s&#305; &rarr; <code>.rb</code></p>
+</li>
+<li>
+<p>Uzant&#305;n&#305;n beti&#287;in &ccedil;al&#305;&#351;t&#305;r&#305;lmas&#305; ba&#287;lam&#305;nda &ouml;zel bir anlam&#305; yok!</p>
+</li>
+<li>
+<p>Fakat g&uuml;zel bir pratik; beti&#287;in Ruby diliyle yaz&#305;ld&#305;&#287;&#305;n&#305; anlat&#305;yor</p>
+</li>
+<li>
+<p>Bu bir konvansiyon; <code>rb</code> uzant&#305;s&#305; sadece Ruby ile yaz&#305;lan kaynak kodlarda
+    kullan&#305;lmal&#305;&rdquo;</p>
+</li>
+<li>
+<p>Dosyay&#305; d&uuml;zenlerken de yararl&#305;; pek &ccedil;ok d&uuml;zenleyici bu uzant&#305;ya bakarak
+    ilgili dilin s&ouml;zdizimi renklendirmesini etkinle&#351;tiriyor</p>
+</li>
 </ul></section>
             
           </div>
@@ -3822,16 +4312,18 @@ ilgili dilin sözdizimi renklendirmesini etkinleştiriyor</p></li>
         <div class="slide achtung">
           <div class="inner">
             
-            <header><h2>Dosya Uzantıları</h2></header>
+            <header><h2>Dosya Uzant&#305;lar&#305;</h2></header>
             
             
-            <section>
-<p>UNIX sistemlerde dosya uzantısı sadece bir konvansiyondur; dosyanın nasıl
-çalıştırılacağıyla ilgili teknik bir zorunluluk değildir</p>
-
+            <section><p>UNIX sistemlerde dosya uzant&#305;s&#305; sadece bir konvansiyondur; dosyan&#305;n nas&#305;l
+&ccedil;al&#305;&#351;t&#305;r&#305;laca&#287;&#305;yla ilgili teknik bir zorunluluk de&#287;ildir</p>
 <ul>
-<li><p>Windows® sistemlerde karşılaştırın → <code>.exe</code> uzantıları</p></li>
-<li><p>UNIX&#39;te böyle bir zorunluluk yok</p></li>
+<li>
+<p>Windows&reg; sistemlerde kar&#351;&#305;la&#351;t&#305;r&#305;n &rarr; <code>.exe</code> uzant&#305;lar&#305;</p>
+</li>
+<li>
+<p>UNIX&rsquo;te b&ouml;yle bir zorunluluk yok</p>
+</li>
 </ul></section>
             
           </div>
@@ -3863,17 +4355,26 @@ ilgili dilin sözdizimi renklendirmesini etkinleştiriyor</p></li>
             
             
             <section><ul>
-<li><p>Bu yöntemde <code>echo.rb</code>&#39;nin çalıştırılabilir olması gerekiyor mu?  Hayır</p>
-
+<li>
+<p>Bu y&ouml;ntemde <code>echo.rb</code>&lsquo;nin &ccedil;al&#305;&#351;t&#305;r&#305;labilir olmas&#305; gerekiyor mu?  Hay&#305;r</p>
 <div class="highlight"><pre><span class="nv">$ </span>ls -l echo.rb
 -rw-r--r-- 1 roktas roktas 19 Eki  4 03:32 echo.rb
 </pre></div>
+
 </li>
-<li><p>Çalıştırılabilir olması gereken Ruby yorumlayıcısı, betik değil</p></li>
-<li><p>Çalıştırma eylemini gerçekleştiren kişi için okunabilir olması yeterli</p></li>
-<li><p>Madem betik programlar kaynak kod halinde geliyor, programı düzenleyebilir
-de!</p></li>
-<li><p>Tek şartla dosya yazılabilir olmalı</p></li>
+<li>
+<p>&Ccedil;al&#305;&#351;t&#305;r&#305;labilir olmas&#305; gereken Ruby yorumlay&#305;c&#305;s&#305;, betik de&#287;il</p>
+</li>
+<li>
+<p>&Ccedil;al&#305;&#351;t&#305;rma eylemini ger&ccedil;ekle&#351;tiren ki&#351;i i&ccedil;in okunabilir olmas&#305; yeterli</p>
+</li>
+<li>
+<p>Madem betik programlar kaynak kod halinde geliyor, program&#305; d&uuml;zenleyebilir
+    de!</p>
+</li>
+<li>
+<p>Tek &#351;artla dosya yaz&#305;labilir olmal&#305;</p>
+</li>
 </ul></section>
             
           </div>
@@ -3904,15 +4405,17 @@ de!</p></li>
             <header><h2>Betik</h2></header>
             
             
-            <section><p>Betiği tıpkı olağan bir komut gibi çalıştırmak isterseniz?</p>
-
+            <section><p>Beti&#287;i t&#305;pk&#305; ola&#287;an bir komut gibi &ccedil;al&#305;&#351;t&#305;rmak isterseniz?</p>
 <ul>
-<li><p>Örneğin buna bir isim verelim → <code>papagan</code></p></li>
-<li><p>Şöyle istiyoruz</p>
-
+<li>
+<p>&Ouml;rne&#287;in buna bir isim verelim &rarr; <code>papagan</code></p>
+</li>
+<li>
+<p>&#350;&ouml;yle istiyoruz</p>
 <div class="highlight"><pre><span class="nv">$ </span>papagan Naber
 Naber
 </pre></div>
+
 </li>
 </ul></section>
             
@@ -3945,21 +4448,24 @@ Naber
             
             
             <section><ul>
-<li><p>İsmi değiştirmemiz yeterli değil, ama ilk adım</p>
-
+<li>
+<p>&#304;smi de&#287;i&#351;tirmemiz yeterli de&#287;il, ama ilk ad&#305;m</p>
 <div class="highlight"><pre><span class="nv">$ </span>mv echo.rb papagan
 </pre></div>
-</li>
-<li><p><strong>Zorunlu adım</strong> dosya çalıştırılabilir olmalı</p>
 
+</li>
+<li>
+<p><strong>Zorunlu ad&#305;m</strong> dosya &ccedil;al&#305;&#351;t&#305;r&#305;labilir olmal&#305;</p>
 <div class="highlight"><pre><span class="nv">$ </span>chmod +x papagan
 </pre></div>
-</li>
-<li><p>Bakalım böyle çalışıyor mu?</p>
 
+</li>
+<li>
+<p>Bakal&#305;m b&ouml;yle &ccedil;al&#305;&#351;&#305;yor mu?</p>
 <div class="highlight"><pre><span class="nv">$ </span>papagan
 bash: papagan: komut yok
 </pre></div>
+
 </li>
 </ul></section>
             
@@ -3992,19 +4498,28 @@ bash: papagan: komut yok
             
             
             <section><ul>
-<li><p>Komut satırında girilen programlar belirli dizinlerde aranır ve ilk bulunan
-çalıştırılır</p></li>
-<li><p>Aranacak dizinler <code>:</code> ayrılmış bir biçimde <code>PATH</code> isimli ortam değişkeninde</p>
-
+<li>
+<p>Komut sat&#305;r&#305;nda girilen programlar belirli dizinlerde aran&#305;r ve ilk bulunan
+    &ccedil;al&#305;&#351;t&#305;r&#305;l&#305;r</p>
+</li>
+<li>
+<p>Aranacak dizinler <code>:</code> ayr&#305;lm&#305;&#351; bir bi&ccedil;imde <code>PATH</code> isimli ortam de&#287;i&#351;keninde</p>
 <div class="highlight"><pre><span class="nv">$ </span><span class="nb">echo</span> <span class="nv">$PATH</span>
 ~/bin:/usr/local/bin:/usr/bin:/bin
 </pre></div>
+
 </li>
-<li><p>Bulunduğunuz dizin <code>PATH</code>&#39;te tanımlı değildir ve <strong>tanımlı olmamalıdır</strong>,
-neden?</p></li>
-<li><p><code>PATH</code>&#39;te tanımlı olmayan bir programı çalıştırmak için programı açık dosya
-yoluyla yazmalısınız</p></li>
-<li><p>Açık dosya yolu?  Bulunduğumuz dizin → <code>.</code>, dosya yolu → <code>./papagan</code></p></li>
+<li>
+<p>Bulundu&#287;unuz dizin <code>PATH</code>&lsquo;te tan&#305;ml&#305; de&#287;ildir ve <strong>tan&#305;ml&#305; olmamal&#305;d&#305;r</strong>,
+    neden?</p>
+</li>
+<li>
+<p><code>PATH</code>&lsquo;te tan&#305;ml&#305; olmayan bir program&#305; &ccedil;al&#305;&#351;t&#305;rmak i&ccedil;in program&#305; a&ccedil;&#305;k dosya
+    yoluyla yazmal&#305;s&#305;n&#305;z</p>
+</li>
+<li>
+<p>A&ccedil;&#305;k dosya yolu?  Bulundu&#287;umuz dizin &rarr; <code>.</code>, dosya yolu &rarr; <code>./papagan</code></p>
+</li>
 </ul></section>
             
           </div>
@@ -4036,21 +4551,34 @@ yoluyla yazmalısınız</p></li>
             
             
             <section><ul>
-<li><p>O halde şöyle çalışmalı?</p>
-
+<li>
+<p>O halde &#351;&ouml;yle &ccedil;al&#305;&#351;mal&#305;?</p>
 <div class="highlight"><pre><span class="nv">$ </span>./papagan
 ./papagan: line 1: puts: komut yok
 </pre></div>
+
 </li>
-<li><p>Hayır çalışmadı; hata iletisi kabuktan geliyor gibi</p></li>
-<li><p>Bakın Ruby bu hikayede hala sahneye çıkmadı → <code>ruby echo.rb</code> etkisi</p></li>
-<li><p>Sistem kaynak kodun kabukta yazıldığını düşünüyor</p></li>
-<li><p>Sistem yani kabuğun talimat verdiği &ldquo;program yükleyici&rdquo;; işletim sisteminin
-bir unsuru</p></li>
-<li><p>Bu makul bir varsayım, hangi yorumlayıcının kullanılacağı bilinmiyorsa kabuk
-dilini varsay</p></li>
-<li><p>Kaynağın Ruby ile yorumlanması gerektiğini &ldquo;program yükleyici&quot;ye
-anlatmalıyız</p></li>
+<li>
+<p>Hay&#305;r &ccedil;al&#305;&#351;mad&#305;; hata iletisi kabuktan geliyor gibi</p>
+</li>
+<li>
+<p>Bak&#305;n Ruby bu hikayede hala sahneye &ccedil;&#305;kmad&#305; &rarr; <code>ruby echo.rb</code> etkisi</p>
+</li>
+<li>
+<p>Sistem kaynak kodun kabukta yaz&#305;ld&#305;&#287;&#305;n&#305; d&uuml;&#351;&uuml;n&uuml;yor</p>
+</li>
+<li>
+<p>Sistem yani kabu&#287;un talimat verdi&#287;i &ldquo;program y&uuml;kleyici&rdquo;; i&#351;letim sisteminin
+    bir unsuru</p>
+</li>
+<li>
+<p>Bu makul bir varsay&#305;m, hangi yorumlay&#305;c&#305;n&#305;n kullan&#305;laca&#287;&#305; bilinmiyorsa kabuk
+    dilini varsay</p>
+</li>
+<li>
+<p>Kayna&#287;&#305;n Ruby ile yorumlanmas&#305; gerekti&#287;ini &ldquo;program y&uuml;kleyici&rdquo;ye
+    anlatmal&#305;y&#305;z</p>
+</li>
 </ul></section>
             
           </div>
@@ -4081,12 +4609,17 @@ anlatmalıyız</p></li>
             <header><h2>Betik</h2></header>
             
             
-            <section><p>UNIX sistemlerde bu nasıl yapılıyor</p>
-
+            <section><p>UNIX sistemlerde bu nas&#305;l yap&#305;l&#305;yor</p>
 <ul>
-<li><p>Sistem ikili dosyalarla düz metin dosyaları ayırabiliyor</p></li>
-<li><p>Çalıştırılabilir ikili dosyalarda içeriğin ilk baytlarında bir tür imza var</p></li>
-<li><p>Düz metin dosyalarda ise ilk satır özel</p></li>
+<li>
+<p>Sistem ikili dosyalarla d&uuml;z metin dosyalar&#305; ay&#305;rabiliyor</p>
+</li>
+<li>
+<p>&Ccedil;al&#305;&#351;t&#305;r&#305;labilir ikili dosyalarda i&ccedil;eri&#287;in ilk baytlar&#305;nda bir t&uuml;r imza var</p>
+</li>
+<li>
+<p>D&uuml;z metin dosyalarda ise ilk sat&#305;r &ouml;zel</p>
+</li>
 </ul></section>
             
           </div>
@@ -4118,18 +4651,27 @@ anlatmalıyız</p></li>
             
             
             <section><ul>
-<li><p>Program yükleyici ilk satırı ayrıştırarak dosyanın hangi dille yorumlanması
-gerektiğini belirliyor</p></li>
-<li><p>Betik artık şöyle görünmeli</p>
-
+<li>
+<p>Program y&uuml;kleyici ilk sat&#305;r&#305; ayr&#305;&#351;t&#305;rarak dosyan&#305;n hangi dille yorumlanmas&#305;
+    gerekti&#287;ini belirliyor</p>
+</li>
+<li>
+<p>Betik art&#305;k &#351;&ouml;yle g&ouml;r&uuml;nmeli</p>
 <div class="highlight"><pre><span class="c">#!/usr/bin/ruby</span>
 puts ARGV.join <span class="s1">&#39; &#39;</span>
 </pre></div>
+
 </li>
-<li><p><strong>Dikkat!</strong>  Shebang satırında yorumlayıcının mutlak dosya yolunu yazmanız
-gerekiyor; neden?</p></li>
-<li><p><code>#</code> Hash simgesi + <code>!</code> simgesi → Hashbang</p></li>
-<li><p>İngilizce &quot;Hash&rdquo; kelimesini okursanız &ldquo;She&rdquo; sesini alacaksınız → Shebang</p></li>
+<li>
+<p><strong>Dikkat!</strong>  Shebang sat&#305;r&#305;nda yorumlay&#305;c&#305;n&#305;n mutlak dosya yolunu yazman&#305;z
+    gerekiyor; neden?</p>
+</li>
+<li>
+<p><code>#</code> Hash simgesi + <code>!</code> simgesi &rarr; Hashbang</p>
+</li>
+<li>
+<p>&#304;ngilizce &ldquo;Hash&rdquo; kelimesini okursan&#305;z &ldquo;She&rdquo; sesini alacaks&#305;n&#305;z &rarr; Shebang</p>
+</li>
 </ul></section>
             
           </div>
@@ -4161,16 +4703,23 @@ gerekiyor; neden?</p></li>
             
             
             <section><ul>
-<li><p><code>!</code> anlaşılır bir şey; program yükleyiciye bir nida gibi; <code>#</code> neden var?</p></li>
-<li><p><code>#</code> karakteri Ruby dahil pek çok betik dilinde açıklama satırlarını
-belirtmek için kullanılır; bu karakterle başlayan satırlar göz ardı ediliyor</p></li>
-<li><p>Bakın bu düzenlemeyle artık önceki çalıştırma yöntemi de geçerliliğini korur</p>
-
+<li>
+<p><code>!</code> anla&#351;&#305;l&#305;r bir &#351;ey; program y&uuml;kleyiciye bir nida gibi; <code>#</code> neden var?</p>
+</li>
+<li>
+<p><code>#</code> karakteri Ruby dahil pek &ccedil;ok betik dilinde a&ccedil;&#305;klama sat&#305;rlar&#305;n&#305;
+    belirtmek i&ccedil;in kullan&#305;l&#305;r; bu karakterle ba&#351;layan sat&#305;rlar g&ouml;z ard&#305; ediliyor</p>
+</li>
+<li>
+<p>Bak&#305;n bu d&uuml;zenlemeyle art&#305;k &ouml;nceki &ccedil;al&#305;&#351;t&#305;rma y&ouml;ntemi de ge&ccedil;erlili&#287;ini korur</p>
 <div class="highlight"><pre><span class="nv">$ </span>ruby papagan
 </pre></div>
+
 </li>
-<li><p><code>#</code> olmasaydı bu sefer Ruby (veya bir başka betik dili) ihtimal ki <code>!</code> ile
-başlayan satırı yorumlayamayacak ve hata oluşacaktı</p></li>
+<li>
+<p><code>#</code> olmasayd&#305; bu sefer Ruby (veya bir ba&#351;ka betik dili) ihtimal ki <code>!</code> ile
+    ba&#351;layan sat&#305;r&#305; yorumlayamayacak ve hata olu&#351;acakt&#305;</p>
+</li>
 </ul></section>
             
           </div>
@@ -4205,14 +4754,21 @@ başlayan satırı yorumlayamayacak ve hata oluşacaktı</p></li>
     Naber
 </pre></div>
 
-
 <ul>
-<li><p>Evet çalıştı!  Ama baştaki şu <code>./</code>&#39;dan kurtulamaz mıyız?  Diğer komutlar
-gibi olmasını istiyoruz</p></li>
-<li><p>Açık dosya yolunu verdik çünkü program sadece <code>PATH</code> içinde belirtilen
-dizinlerde aranıyor ve <code>.</code> dizini <code>PATH</code>&#39;te değil</p></li>
-<li><p>Ve tekrar edelim → <strong>&ldquo;<code>.</code> dizini <code>PATH</code>&#39;te olmamalı&rdquo;</strong>  Neden?</p></li>
-<li><p>Dosyayı PATH&#39;te belirtilen bir dizine koymalıyız</p></li>
+<li>
+<p>Evet &ccedil;al&#305;&#351;t&#305;!  Ama ba&#351;taki &#351;u <code>./</code>&lsquo;dan kurtulamaz m&#305;y&#305;z?  Di&#287;er komutlar
+    gibi olmas&#305;n&#305; istiyoruz</p>
+</li>
+<li>
+<p>A&ccedil;&#305;k dosya yolunu verdik &ccedil;&uuml;nk&uuml; program sadece <code>PATH</code> i&ccedil;inde belirtilen
+    dizinlerde aran&#305;yor ve <code>.</code> dizini <code>PATH</code>&lsquo;te de&#287;il</p>
+</li>
+<li>
+<p>Ve tekrar edelim &rarr; <strong>&ldquo;<code>.</code> dizini <code>PATH</code>&lsquo;te olmamal&#305;&rdquo;</strong>  Neden?</p>
+</li>
+<li>
+<p>Dosyay&#305; PATH&rsquo;te belirtilen bir dizine koymal&#305;y&#305;z</p>
+</li>
 </ul></section>
             
           </div>
@@ -4247,16 +4803,25 @@ dizinlerde aranıyor ve <code>.</code> dizini <code>PATH</code>&#39;te değil</p
     ~/bin:/usr/local/bin:/usr/bin:/bin
 </pre></div>
 
-
 <ul>
-<li><p>Bu sistemde seçenekler → <code>~/bin</code>, <code>/usr/local/bin</code>, <code>/usr/bin</code>,  <code>/bin</code></p></li>
-<li><p>Sizde seçenekler böyle olmayabilir</p></li>
-<li><p>İlki dışındaki seçenekler olmaz çünkü bu dizinlere yazma hakkımız yok,
-dosyayı bu dizinlere kopyalayamayız</p></li>
-<li><p>Kullandığınız sistemde yazma hakkına sahip olduğunuz böyle bir <code>~/bin</code>
-dizini yoksa?</p></li>
-<li><p>Bu dizini oluşturarak, dizinin <strong>kalıcı şekilde</strong> <code>PATH</code>&#39;te listelenmesini
-sağlamalısınız; Nasıl?  Eklere bakın</p></li>
+<li>
+<p>Bu sistemde se&ccedil;enekler &rarr; <code>~/bin</code>, <code>/usr/local/bin</code>, <code>/usr/bin</code>,  <code>/bin</code></p>
+</li>
+<li>
+<p>Sizde se&ccedil;enekler b&ouml;yle olmayabilir</p>
+</li>
+<li>
+<p>&#304;lki d&#305;&#351;&#305;ndaki se&ccedil;enekler olmaz &ccedil;&uuml;nk&uuml; bu dizinlere yazma hakk&#305;m&#305;z yok,
+    dosyay&#305; bu dizinlere kopyalayamay&#305;z</p>
+</li>
+<li>
+<p>Kulland&#305;&#287;&#305;n&#305;z sistemde yazma hakk&#305;na sahip oldu&#287;unuz b&ouml;yle bir <code>~/bin</code>
+    dizini yoksa?</p>
+</li>
+<li>
+<p>Bu dizini olu&#351;turarak, dizinin <strong>kal&#305;c&#305; &#351;ekilde</strong> <code>PATH</code>&lsquo;te listelenmesini
+    sa&#287;lamal&#305;s&#305;n&#305;z; Nas&#305;l?  Eklere bak&#305;n</p>
+</li>
 </ul></section>
             
           </div>
@@ -4291,18 +4856,19 @@ sağlamalısınız; Nasıl?  Eklere bakın</p></li>
     ~/bin:/usr/local/bin:/usr/bin:/bin
 </pre></div>
 
-
 <ul>
-<li><p><code>~/bin</code> dizinine yazma hakkımız var</p>
-
+<li>
+<p><code>~/bin</code> dizinine yazma hakk&#305;m&#305;z var</p>
 <div class="highlight"><pre><span class="nv">$ </span>cp papagan ~/bin
 </pre></div>
-</li>
-<li><p>Ve&hellip;</p>
 
+</li>
+<li>
+<p>Ve&hellip;</p>
 <div class="highlight"><pre><span class="nv">$ </span>papagan Naber
 Naber
 </pre></div>
+
 </li>
 </ul></section>
             
@@ -4335,13 +4901,23 @@ Naber
             
             
             <section><ul>
-<li><p>Sistem yöneticisi; sistemde her türlü eylemi yapma gücüne sahip kullanıcı</p></li>
-<li><p>Yani &ldquo;superuser&rdquo;</p></li>
-<li><p>Sistem yöneticisi bir rol; yöneticinin gerçekte kim veya kimler olacağına
-sistemi yönetimi karar verir</p></li>
-<li><p>Tipik ev kullanımı senaryosunda kurulumu yapan kişi aynı zamanda sistem
-yöneticisi</p></li>
-<li><p><code>sudo</code> yapılandırması hakkında daha ayrıntılı bilgi için eklere bakın</p></li>
+<li>
+<p>Sistem y&ouml;neticisi; sistemde her t&uuml;rl&uuml; eylemi yapma g&uuml;c&uuml;ne sahip kullan&#305;c&#305;</p>
+</li>
+<li>
+<p>Yani &ldquo;superuser&rdquo;</p>
+</li>
+<li>
+<p>Sistem y&ouml;neticisi bir rol; y&ouml;neticinin ger&ccedil;ekte kim veya kimler olaca&#287;&#305;na
+    sistemi y&ouml;netimi karar verir</p>
+</li>
+<li>
+<p>Tipik ev kullan&#305;m&#305; senaryosunda kurulumu yapan ki&#351;i ayn&#305; zamanda sistem
+    y&ouml;neticisi</p>
+</li>
+<li>
+<p><code>sudo</code> yap&#305;land&#305;rmas&#305; hakk&#305;nda daha ayr&#305;nt&#305;l&#305; bilgi i&ccedil;in eklere bak&#305;n</p>
+</li>
 </ul></section>
             
           </div>
@@ -4373,20 +4949,26 @@ yöneticisi</p></li>
             
             
             <section><ul>
-<li><p>Sistem yöneticisi olarak atanan gerçek bir kullanıcının bu rolle bir işlem
-yapması için <code>sudo</code> (&ldquo;superuser do&rdquo;) komutu kullanılıyor</p>
-
+<li>
+<p>Sistem y&ouml;neticisi olarak atanan ger&ccedil;ek bir kullan&#305;c&#305;n&#305;n bu rolle bir i&#351;lem
+    yapmas&#305; i&ccedil;in <code>sudo</code> (&ldquo;superuser do&rdquo;) komutu kullan&#305;l&#305;yor</p>
 <div class="highlight"><pre><span class="nv">$ </span>sudo whoami
 root
 </pre></div>
-</li>
-<li><p><code>sudo</code> başına yazıldığı komutu sistem yöneticisi rolüyle çalıştırır</p></li>
-<li><p>Tipik ev kullanımı senaryosunda bu komut genellikle sisteme yeni programlar
-yüklemek için kullanılır</p></li>
-<li><p>Örneğin Debian ve türevi sistemlerde</p>
 
+</li>
+<li>
+<p><code>sudo</code> ba&#351;&#305;na yaz&#305;ld&#305;&#287;&#305; komutu sistem y&ouml;neticisi rol&uuml;yle &ccedil;al&#305;&#351;t&#305;r&#305;r</p>
+</li>
+<li>
+<p>Tipik ev kullan&#305;m&#305; senaryosunda bu komut genellikle sisteme yeni programlar
+    y&uuml;klemek i&ccedil;in kullan&#305;l&#305;r</p>
+</li>
+<li>
+<p>&Ouml;rne&#287;in Debian ve t&uuml;revi sistemlerde</p>
 <div class="highlight"><pre><span class="nv">$ </span>sudo apt-get install chromium
 </pre></div>
+
 </li>
 </ul></section>
             
@@ -4418,8 +5000,7 @@ yüklemek için kullanılır</p></li>
             <header><h2><code>sudo</code></h2></header>
             
             
-            <section>
-<p><strong><code>sudo</code> komutu iki tarafı keskin bir bıçaktır, kullanırken dikkatli olun,
+            <section><p><strong><code>sudo</code> komutu iki taraf&#305; keskin bir b&#305;&ccedil;akt&#305;r, kullan&#305;rken dikkatli olun,
   sisteme hasar verebilirsiniz!</strong></p></section>
             
           </div>
@@ -4447,14 +5028,17 @@ yüklemek için kullanılır</p></li>
         <div class="slide task">
           <div class="inner">
             
-            <header><h2>Görev</h2></header>
+            <header><h2>G&ouml;rev</h2></header>
             
             
-            <section>
-<ul>
-<li><p><code>sudo</code> ve <code>su</code> komutlarının arasında ne farklar vardır</p></li>
-<li><p>Bu farklara göre her iki komut için tipik kullanım senaryoları neler
-olabilir?</p></li>
+            <section><ul>
+<li>
+<p><code>sudo</code> ve <code>su</code> komutlar&#305;n&#305;n aras&#305;nda ne farklar vard&#305;r</p>
+</li>
+<li>
+<p>Bu farklara g&ouml;re her iki komut i&ccedil;in tipik kullan&#305;m senaryolar&#305; neler
+    olabilir?</p>
+</li>
 </ul></section>
             
           </div>
@@ -4486,15 +5070,25 @@ olabilir?</p></li>
             
             
             <section><ul>
-<li><p>Sistem yöneticisi → &ldquo;superuser&rdquo;</p></li>
-<li><p>Aynı kimlikte bir <code>root</code> grubu da mevcut; diğer &ldquo;öz grup&quot;larda olduğu gibi
-bu gruba sadece <code>root</code> kullanıcısı üyedir ve öyle de bırakılmalıdır</p></li>
-<li><p>Böyle bir hesap düzenlemesi her UNIX sisteminde daima mevcuttur</p></li>
-<li><p>Fakat bazı UNIX sistemlerinde (ör. Ubuntu ve türevleri) <code>root</code> hesabıyla
-oturum açamazsınız</p></li>
-<li><p>Kullandığınız dağıtımda gerçek bir <code>root</code> hesabı varsa (ör. Debian) <strong><code>sudo</code>
-komutunu çalıştırdığınızda istenen parola <code>root</code> parolası değil normal
-kullanıcı hesabınıza ait paroladır</strong></p></li>
+<li>
+<p>Sistem y&ouml;neticisi &rarr; &ldquo;superuser&rdquo;</p>
+</li>
+<li>
+<p>Ayn&#305; kimlikte bir <code>root</code> grubu da mevcut; di&#287;er &ldquo;&ouml;z grup&rdquo;larda oldu&#287;u gibi
+    bu gruba sadece <code>root</code> kullan&#305;c&#305;s&#305; &uuml;yedir ve &ouml;yle de b&#305;rak&#305;lmal&#305;d&#305;r</p>
+</li>
+<li>
+<p>B&ouml;yle bir hesap d&uuml;zenlemesi her UNIX sisteminde daima mevcuttur</p>
+</li>
+<li>
+<p>Fakat baz&#305; UNIX sistemlerinde (&ouml;r. Ubuntu ve t&uuml;revleri) <code>root</code> hesab&#305;yla
+    oturum a&ccedil;amazs&#305;n&#305;z</p>
+</li>
+<li>
+<p>Kulland&#305;&#287;&#305;n&#305;z da&#287;&#305;t&#305;mda ger&ccedil;ek bir <code>root</code> hesab&#305; varsa (&ouml;r. Debian) <strong><code>sudo</code>
+    komutunu &ccedil;al&#305;&#351;t&#305;rd&#305;&#287;&#305;n&#305;zda istenen parola <code>root</code> parolas&#305; de&#287;il normal
+    kullan&#305;c&#305; hesab&#305;n&#305;za ait parolad&#305;r</strong></p>
+</li>
 </ul></section>
             
           </div>
@@ -4522,19 +5116,33 @@ kullanıcı hesabınıza ait paroladır</strong></p></li>
         <div class="slide">
           <div class="inner">
             
-            <header><h2>Yönlendirme</h2></header>
+            <header><h2>Y&ouml;nlendirme</h2></header>
             
             
             <section><ul>
-<li><p>Bir senaryo: bilgisayarınızda bir sorun var; örneğin ağ bağdaştırıcı
-çalışmıyor</p></li>
-<li><p>İhtimal o ki ağ bağdaştırıcısının sürücüsü yüklenmemiş veya hatalı çalışıyor</p></li>
-<li><p>Doğru sürücüyü bulma prosedürü: bağdaştırıcının marka/modelini öğren →
-İnternette arama yap → benzer sorunla karşılaşanların önerilerini incele</p></li>
-<li><p>Sorunu çözemediniz, artık bir bilene (forum, liste, kişi) yazabilirsiniz</p></li>
-<li><p>Yardım isteyeceğiniz kişilere donanım bilgisini nasıl gönderirsiniz?</p></li>
-<li><p>Kopyala/yapıştır?  Daha kolay bir yolu olmalı</p></li>
-<li><p>Ekranda gördüğünü bir dosyaya kaydet ve yardım iletisine dosya olarak ekle</p></li>
+<li>
+<p>Bir senaryo: bilgisayar&#305;n&#305;zda bir sorun var; &ouml;rne&#287;in a&#287; ba&#287;da&#351;t&#305;r&#305;c&#305;
+    &ccedil;al&#305;&#351;m&#305;yor</p>
+</li>
+<li>
+<p>&#304;htimal o ki a&#287; ba&#287;da&#351;t&#305;r&#305;c&#305;s&#305;n&#305;n s&uuml;r&uuml;c&uuml;s&uuml; y&uuml;klenmemi&#351; veya hatal&#305; &ccedil;al&#305;&#351;&#305;yor</p>
+</li>
+<li>
+<p>Do&#287;ru s&uuml;r&uuml;c&uuml;y&uuml; bulma prosed&uuml;r&uuml;: ba&#287;da&#351;t&#305;r&#305;c&#305;n&#305;n marka/modelini &ouml;&#287;ren &rarr;
+    &#304;nternette arama yap &rarr; benzer sorunla kar&#351;&#305;la&#351;anlar&#305;n &ouml;nerilerini incele</p>
+</li>
+<li>
+<p>Sorunu &ccedil;&ouml;zemediniz, art&#305;k bir bilene (forum, liste, ki&#351;i) yazabilirsiniz</p>
+</li>
+<li>
+<p>Yard&#305;m isteyece&#287;iniz ki&#351;ilere donan&#305;m bilgisini nas&#305;l g&ouml;nderirsiniz?</p>
+</li>
+<li>
+<p>Kopyala/yap&#305;&#351;t&#305;r?  Daha kolay bir yolu olmal&#305;</p>
+</li>
+<li>
+<p>Ekranda g&ouml;rd&uuml;&#287;&uuml;n&uuml; bir dosyaya kaydet ve yard&#305;m iletisine dosya olarak ekle</p>
+</li>
 </ul></section>
             
           </div>
@@ -4562,28 +5170,33 @@ kullanıcı hesabınıza ait paroladır</strong></p></li>
         <div class="slide has_code">
           <div class="inner">
             
-            <header><h2>Yönlendirme</h2></header>
+            <header><h2>Y&ouml;nlendirme</h2></header>
             
             
             <section><ul>
-<li><p>Komut çıktıları ekranda görüntüleniyor</p>
-
+<li>
+<p>Komut &ccedil;&#305;kt&#305;lar&#305; ekranda g&ouml;r&uuml;nt&uuml;leniyor</p>
 <div class="highlight"><pre><span class="nv">$ </span>lspci
 ...
 </pre></div>
-</li>
-<li><p>Şimdi çıktıyı ekrana değil bir dosyaya <strong>yönlendirelim</strong></p>
 
+</li>
+<li>
+<p>&#350;imdi &ccedil;&#305;kt&#305;y&#305; ekrana de&#287;il bir dosyaya <strong>y&ouml;nlendirelim</strong></p>
 <div class="highlight"><pre><span class="nv">$ </span>lspci &gt; pci.txt
 </pre></div>
-</li>
-<li><p>Ekranda görünen tüm bilgiler <code>pci.txt</code> dosyasında</p>
 
+</li>
+<li>
+<p>Ekranda g&ouml;r&uuml;nen t&uuml;m bilgiler <code>pci.txt</code> dosyas&#305;nda</p>
 <div class="highlight"><pre><span class="nv">$ </span>cat pci.txt
 ...
 </pre></div>
+
 </li>
-<li><p><code>cat</code> dosya içeriğini görüntülüyor</p></li>
+<li>
+<p><code>cat</code> dosya i&ccedil;eri&#287;ini g&ouml;r&uuml;nt&uuml;l&uuml;yor</p>
+</li>
 </ul></section>
             
           </div>
@@ -4611,16 +5224,23 @@ kullanıcı hesabınıza ait paroladır</strong></p></li>
         <div class="slide">
           <div class="inner">
             
-            <header><h2>Yönlendirme: <code>&gt;</code></h2></header>
+            <header><h2>Y&ouml;nlendirme: <code>&gt;</code></h2></header>
             
             
-            <section><p><code>&gt;</code> → yönlendirme operatörü</p>
-
+            <section><p><code>&gt;</code> &rarr; y&ouml;nlendirme operat&ouml;r&uuml;</p>
 <ul>
-<li><p>Bu özelliği kabuk sunuyor</p></li>
-<li><p><code>lspci</code> programı <code>&gt;</code>&#39;ın varlığından bile haberdar değil</p></li>
-<li><p><strong>Dikkat!  Yönlendirme yapılan dosya zaten varsa üzerine yazıyoruz</strong></p></li>
-<li><p>Dosya adını dikkatli seçin</p></li>
+<li>
+<p>Bu &ouml;zelli&#287;i kabuk sunuyor</p>
+</li>
+<li>
+<p><code>lspci</code> program&#305; <code>&gt;</code>&lsquo;&#305;n varl&#305;&#287;&#305;ndan bile haberdar de&#287;il</p>
+</li>
+<li>
+<p><strong>Dikkat!  Y&ouml;nlendirme yap&#305;lan dosya zaten varsa &uuml;zerine yaz&#305;yoruz</strong></p>
+</li>
+<li>
+<p>Dosya ad&#305;n&#305; dikkatli se&ccedil;in</p>
+</li>
 </ul></section>
             
           </div>
@@ -4651,26 +5271,27 @@ kullanıcı hesabınıza ait paroladır</strong></p></li>
             <header><h2><code>cat</code></h2></header>
             
             
-            <section><p><code>cat</code> → concatenate → ardarda bitiştir</p>
-
+            <section><p><code>cat</code> &rarr; concatenate &rarr; ardarda biti&#351;tir</p>
 <ul>
-<li><p>Argüman olarak verilen dosyaları ardarda ekranda görüntülüyor</p>
-
+<li>
+<p>Arg&uuml;man olarak verilen dosyalar&#305; ardarda ekranda g&ouml;r&uuml;nt&uuml;l&uuml;yor</p>
 <div class="highlight"><pre><span class="nv">$ </span><span class="nb">echo </span>foo &gt;/tmp/foo.txt
 <span class="nv">$ </span><span class="nb">echo </span>bar &gt;/tmp/bar.txt
 <span class="nv">$ </span>cat foo.txt bar.txt
 foo
 bar
 </pre></div>
-</li>
-<li><p>Tek dosya verilirse bitiştirme sonucu yine tek dosya ve o dosyayı
-görüntülüyor</p>
 
+</li>
+<li>
+<p>Tek dosya verilirse biti&#351;tirme sonucu yine tek dosya ve o dosyay&#305;
+    g&ouml;r&uuml;nt&uuml;l&uuml;yor</p>
 <div class="highlight"><pre><span class="nv">$ </span>cat /tmp/foo.txt /tmp/bar.txt &gt;/tmp/foobar.txt
 <span class="nv">$ </span>cat /tmp/foobar.txt
 foo
 bar
 </pre></div>
+
 </li>
 </ul></section>
             
@@ -4699,31 +5320,36 @@ bar
         <div class="slide has_code">
           <div class="inner">
             
-            <header><h2>Yönlendirme: <code>&gt;&gt;</code></h2></header>
+            <header><h2>Y&ouml;nlendirme: <code>&gt;&gt;</code></h2></header>
             
             
-            <section><p><code>&gt;&gt;</code> → sonuna ekleyerek yönlendirme operatörü</p>
-
+            <section><p><code>&gt;&gt;</code> &rarr; sonuna ekleyerek y&ouml;nlendirme operat&ouml;r&uuml;</p>
 <ul>
-<li><p>Bakın burada ikinci yönlendirme dosyanın üzerine yazılıyor</p>
-
+<li>
+<p>Bak&#305;n burada ikinci y&ouml;nlendirme dosyan&#305;n &uuml;zerine yaz&#305;l&#305;yor</p>
 <div class="highlight"><pre><span class="nv">$ </span><span class="nb">echo </span>foo &gt;/tmp/foo.txt
 <span class="nv">$ </span><span class="nb">echo </span>bar &gt;/tmp/foo.txt
 <span class="nv">$ </span>cat foo.txt
 bar
 </pre></div>
-</li>
-<li><p>Üzerine yazmak yerine sonuna eklemek istiyoruz</p>
 
+</li>
+<li>
+<p>&Uuml;zerine yazmak yerine sonuna eklemek istiyoruz</p>
 <div class="highlight"><pre><span class="nv">$ </span><span class="nb">echo </span>foo &gt;/tmp/foo.txt
 <span class="nv">$ </span><span class="nb">echo </span>bar &gt;&gt;/tmp/foo.txt
 foo
 bar
 </pre></div>
+
 </li>
-<li><p>Bu bir &quot;ekleme&rdquo; → <code>append</code>; bir açıdan bu da bir &ldquo;bitiştirme&rdquo;  → <code>cat</code></p></li>
-<li><p>Aynı işlemi üç farklı dosya kullanarak <code>cat</code> ile de yapabildiğimizi
-görmüştük</p></li>
+<li>
+<p>Bu bir &ldquo;ekleme&rdquo; &rarr; <code>append</code>; bir a&ccedil;&#305;dan bu da bir &ldquo;biti&#351;tirme&rdquo;  &rarr; <code>cat</code></p>
+</li>
+<li>
+<p>Ayn&#305; i&#351;lemi &uuml;&ccedil; farkl&#305; dosya kullanarak <code>cat</code> ile de yapabildi&#287;imizi
+    g&ouml;rm&uuml;&#351;t&uuml;k</p>
+</li>
 </ul></section>
             
           </div>
@@ -4755,18 +5381,27 @@ görmüştük</p></li>
             
             
             <section><ul>
-<li><p><code>cat</code> terimi bir tür bitiştirme yapan işlev ve programların
-isimlendirmesinde kullanılan standart bir son ek; bu semantiği unutmayın</p></li>
-<li><p>Örneğin: <code>strcat</code> → iki dizgiyi birleştir, <code>netcat</code> → <code>cat</code> dosya sistemi
-için, bu ağ için</p></li>
-<li><p>Kabuk programlarında <code>cat</code> kullanımı bir antipatern&#39;dir; nadiren gereklidir</p></li>
-<li><p><code>cat</code> kullanılan her yerde daha uygun ve etkili bir alternatif çoğunlukla
-vardır (gelecekte bahsedeğiz)</p></li>
-<li><p>Ama komut satırında bazen yararlı olabilir; özellikle bir aygıtın içerik
-dökümünü (&ldquo;dump) bir başka aygıta veya dosyaya yönlendirmek için</p>
-
+<li>
+<p><code>cat</code> terimi bir t&uuml;r biti&#351;tirme yapan i&#351;lev ve programlar&#305;n
+    isimlendirmesinde kullan&#305;lan standart bir son ek; bu semanti&#287;i unutmay&#305;n</p>
+</li>
+<li>
+<p>&Ouml;rne&#287;in: <code>strcat</code> &rarr; iki dizgiyi birle&#351;tir, <code>netcat</code> &rarr; <code>cat</code> dosya sistemi
+    i&ccedil;in, bu a&#287; i&ccedil;in</p>
+</li>
+<li>
+<p>Kabuk programlar&#305;nda <code>cat</code> kullan&#305;m&#305; bir antipatern&rsquo;dir; nadiren gereklidir</p>
+</li>
+<li>
+<p><code>cat</code> kullan&#305;lan her yerde daha uygun ve etkili bir alternatif &ccedil;o&#287;unlukla
+    vard&#305;r (gelecekte bahsede&#287;iz)</p>
+</li>
+<li>
+<p>Ama komut sat&#305;r&#305;nda bazen yararl&#305; olabilir; &ouml;zellikle bir ayg&#305;t&#305;n i&ccedil;erik
+    d&ouml;k&uuml;m&uuml;n&uuml; (&ldquo;dump) bir ba&#351;ka ayg&#305;ta veya dosyaya y&ouml;nlendirmek i&ccedil;in</p>
 <div class="highlight"><pre><span class="nv">$ </span>cat mini.iso &gt;/dev/sdb
 </pre></div>
+
 </li>
 </ul></section>
             
@@ -4798,23 +5433,35 @@ dökümünü (&ldquo;dump) bir başka aygıta veya dosyaya yönlendirmek için</
             <header><h2>Borulama: <code>|</code></h2></header>
             
             
-            <section><p><code>|</code> → boru (&quot;pipe&rdquo;) operatörü</p>
-
+            <section><p><code>|</code> &rarr; boru (&ldquo;pipe&rdquo;) operat&ouml;r&uuml;</p>
 <ul>
-<li><p><code>&gt;</code> ve <code>&gt;&gt;</code> yönlendirme operatörleriyle komut çıktılarını dosyalara
-yönlendiriyoruz</p></li>
-<li><p>Bu operatörlerin sağ tarafında birer dosya adı var</p></li>
-<li><p>Komut çıktısını bir başka komuta yönlendirebilir miyiz?</p></li>
-<li><p>Öyle ki alıcı komut yönlendirdiğimiz komut çıktısını girdi olarak kabul
-etsin</p></li>
-<li><p>Örneğin &ldquo;foo&rdquo; dizgisinde kaç bayt var?</p>
-
+<li>
+<p><code>&gt;</code> ve <code>&gt;&gt;</code> y&ouml;nlendirme operat&ouml;rleriyle komut &ccedil;&#305;kt&#305;lar&#305;n&#305; dosyalara
+    y&ouml;nlendiriyoruz</p>
+</li>
+<li>
+<p>Bu operat&ouml;rlerin sa&#287; taraf&#305;nda birer dosya ad&#305; var</p>
+</li>
+<li>
+<p>Komut &ccedil;&#305;kt&#305;s&#305;n&#305; bir ba&#351;ka komuta y&ouml;nlendirebilir miyiz?</p>
+</li>
+<li>
+<p>&Ouml;yle ki al&#305;c&#305; komut y&ouml;nlendirdi&#287;imiz komut &ccedil;&#305;kt&#305;s&#305;n&#305; girdi olarak kabul
+    etsin</p>
+</li>
+<li>
+<p>&Ouml;rne&#287;in &ldquo;foo&rdquo; dizgisinde ka&ccedil; bayt var?</p>
 <div class="highlight"><pre><span class="nv">$ </span><span class="nb">echo</span> -n foo | wc -c
 3
 </pre></div>
+
 </li>
-<li><p>Operatörün sağ tarafında dosya değil bir komut var</p></li>
-<li><p>Örnekte &ldquo;<code>foo</code>&rdquo; dizgisindeki bayt sayısı hesaplanıyor</p></li>
+<li>
+<p>Operat&ouml;r&uuml;n sa&#287; taraf&#305;nda dosya de&#287;il bir komut var</p>
+</li>
+<li>
+<p>&Ouml;rnekte &ldquo;<code>foo</code>&rdquo; dizgisindeki bayt say&#305;s&#305; hesaplan&#305;yor</p>
+</li>
 </ul></section>
             
           </div>
@@ -4849,16 +5496,29 @@ etsin</p></li>
     3
 </pre></div>
 
-
 <ul>
-<li><p>İki komut arasında veri akışını sağlayan bir tür boru düşünün → &ldquo;borulama&rdquo;</p></li>
-<li><p>Dikkatli bakarsanız <code>|</code> karakterinin ortasında bir boru deliği göreceksiniz
-(bazı sabit genişlikli yazıtiplerinde bu belirgin olmayabilir)</p></li>
-<li><p>Verinin o delikten aktığını düşünün</p></li>
-<li><p>Borunun sol ucunda <code>echo</code>, sağ ucunda <code>wc</code></p></li>
-<li><p><code>echo</code> komutu &ldquo;<code>foo</code>&rdquo; dizgisini sonda satır sonu olmadan görüntülüyor</p></li>
-<li><p>Fakat çıktı ekranda değil boruda</p></li>
-<li><p>Borunun diğer ucundaki <code>wc</code> komutu veriyi alarak işliyor</p></li>
+<li>
+<p>&#304;ki komut aras&#305;nda veri ak&#305;&#351;&#305;n&#305; sa&#287;layan bir t&uuml;r boru d&uuml;&#351;&uuml;n&uuml;n &rarr; &ldquo;borulama&rdquo;</p>
+</li>
+<li>
+<p>Dikkatli bakarsan&#305;z <code>|</code> karakterinin ortas&#305;nda bir boru deli&#287;i g&ouml;receksiniz
+    (baz&#305; sabit geni&#351;likli yaz&#305;tiplerinde bu belirgin olmayabilir)</p>
+</li>
+<li>
+<p>Verinin o delikten akt&#305;&#287;&#305;n&#305; d&uuml;&#351;&uuml;n&uuml;n</p>
+</li>
+<li>
+<p>Borunun sol ucunda <code>echo</code>, sa&#287; ucunda <code>wc</code></p>
+</li>
+<li>
+<p><code>echo</code> komutu &ldquo;<code>foo</code>&rdquo; dizgisini sonda sat&#305;r sonu olmadan g&ouml;r&uuml;nt&uuml;l&uuml;yor</p>
+</li>
+<li>
+<p>Fakat &ccedil;&#305;kt&#305; ekranda de&#287;il boruda</p>
+</li>
+<li>
+<p>Borunun di&#287;er ucundaki <code>wc</code> komutu veriyi alarak i&#351;liyor</p>
+</li>
 </ul></section>
             
           </div>
@@ -4890,13 +5550,25 @@ etsin</p></li>
             
             
             <section><ul>
-<li><p>Borulama işlemi kabuk tarafından yönetiliyor</p></li>
-<li><p>Borunun iki ucundaki aktörler bu işlemden habersiz</p></li>
-<li><p>Komutların dikkate aldığı tek şey şu: &ldquo;veri bir yerden okunur, bir yere
-yazılır&rdquo;</p></li>
-<li><p>&ldquo;Bir yer&rdquo; bir dosya da olabilir, bir boru da olabilir</p></li>
-<li><p>Ama komutların bunu bilmesi gerekmiyor</p></li>
-<li><p>Bu şekilde komutları birleştirerek pek çok iş çevirebilirsiniz!</p></li>
+<li>
+<p>Borulama i&#351;lemi kabuk taraf&#305;ndan y&ouml;netiliyor</p>
+</li>
+<li>
+<p>Borunun iki ucundaki akt&ouml;rler bu i&#351;lemden habersiz</p>
+</li>
+<li>
+<p>Komutlar&#305;n dikkate ald&#305;&#287;&#305; tek &#351;ey &#351;u: &ldquo;veri bir yerden okunur, bir yere
+    yaz&#305;l&#305;r&rdquo;</p>
+</li>
+<li>
+<p>&ldquo;Bir yer&rdquo; bir dosya da olabilir, bir boru da olabilir</p>
+</li>
+<li>
+<p>Ama komutlar&#305;n bunu bilmesi gerekmiyor</p>
+</li>
+<li>
+<p>Bu &#351;ekilde komutlar&#305; birle&#351;tirerek pek &ccedil;ok i&#351; &ccedil;evirebilirsiniz!</p>
+</li>
 </ul></section>
             
           </div>
@@ -4957,21 +5629,29 @@ yazılır&rdquo;</p></li>
             <header><h2><code>grep</code></h2></header>
             
             
-            <section><p><code>grep</code> → Global Regular Expression Printer → (basitçesi) İfadeyle eşleşen
-satırları görüntüle</p>
-
+            <section><p><code>grep</code> &rarr; Global Regular Expression Printer &rarr; (basit&ccedil;esi) &#304;fadeyle e&#351;le&#351;en
+sat&#305;rlar&#305; g&ouml;r&uuml;nt&uuml;le</p>
 <ul>
-<li><p>Argüman olarak verilen ifadeyi (diğer argümanla bildirilen) dosyada veya
-boruda ara</p></li>
-<li><p>&ldquo;Bu makinede kullanılan ağ bağdaştıcısının (Ethernet) markası ne?&rdquo;</p>
-
+<li>
+<p>Arg&uuml;man olarak verilen ifadeyi (di&#287;er arg&uuml;manla bildirilen) dosyada veya
+    boruda ara</p>
+</li>
+<li>
+<p>&ldquo;Bu makinede kullan&#305;lan a&#287; ba&#287;da&#351;t&#305;c&#305;s&#305;n&#305;n (Ethernet) markas&#305; ne?&rdquo;</p>
 <div class="highlight"><pre><span class="nv">$ </span>lspci | grep thernet
 02:00.0 Ethernet controller: Atheros Communications Inc...
 </pre></div>
+
 </li>
-<li><p><code>lspci</code>&#39;nin veri pompaladığı boruda arama <code>thernet</code> terimini aradık</p></li>
-<li><p>Aranan bulunmuşsa terimi içeren satır görüntüleniyor</p></li>
-<li><p>Aramada neden &ldquo;<code>ethernet</code>&rdquo; demedik?</p></li>
+<li>
+<p><code>lspci</code>&lsquo;nin veri pompalad&#305;&#287;&#305; boruda arama <code>thernet</code> terimini arad&#305;k</p>
+</li>
+<li>
+<p>Aranan bulunmu&#351;sa terimi i&ccedil;eren sat&#305;r g&ouml;r&uuml;nt&uuml;leniyor</p>
+</li>
+<li>
+<p>Aramada neden &ldquo;<code>ethernet</code>&rdquo; demedik?</p>
+</li>
 </ul></section>
             
           </div>
@@ -4999,21 +5679,27 @@ boruda ara</p></li>
         <div class="slide achtung">
           <div class="inner">
             
-            <header><h2>Küçük Araçlar Anlayışı</h2></header>
+            <header><h2>K&uuml;&ccedil;&uuml;k Ara&ccedil;lar Anlay&#305;&#351;&#305;</h2></header>
             
             
-            <section>
-<p>UNIX araçları borulama yoluyla birleştirilerek farklı ihtiyaçları
-karşılayabilecek şekilde tasarlanmıştır</p>
-
+            <section><p>UNIX ara&ccedil;lar&#305; borulama yoluyla birle&#351;tirilerek farkl&#305; ihtiya&ccedil;lar&#305;
+kar&#351;&#305;layabilecek &#351;ekilde tasarlanm&#305;&#351;t&#305;r</p>
 <ul>
-<li><p>Küçük ama kişilikli araçlar geliştir öyle ki her biri yalnız bir işi yapsın
-ve borulama yoluyla birleştirilebilsin</p></li>
-<li><p>Küçük araçları borulama yoluyla birleştirerek farklı kabiliyetler oluştur</p></li>
-<li><p>Kompozisyonla elde edilen kabiliyet sadece o kabiliyete sahip büyük ve özel
-bir araca olan ihtiyacı ortadan kaldırıyor</p></li>
-<li><p>Tüm araçları bir arada kullanabilmek için (bir tür yapıştırıcı olarak)
-kabuktan yararlan</p></li>
+<li>
+<p>K&uuml;&ccedil;&uuml;k ama ki&#351;ilikli ara&ccedil;lar geli&#351;tir &ouml;yle ki her biri yaln&#305;z bir i&#351;i yaps&#305;n
+    ve borulama yoluyla birle&#351;tirilebilsin</p>
+</li>
+<li>
+<p>K&uuml;&ccedil;&uuml;k ara&ccedil;lar&#305; borulama yoluyla birle&#351;tirerek farkl&#305; kabiliyetler olu&#351;tur</p>
+</li>
+<li>
+<p>Kompozisyonla elde edilen kabiliyet sadece o kabiliyete sahip b&uuml;y&uuml;k ve &ouml;zel
+    bir araca olan ihtiyac&#305; ortadan kald&#305;r&#305;yor</p>
+</li>
+<li>
+<p>T&uuml;m ara&ccedil;lar&#305; bir arada kullanabilmek i&ccedil;in (bir t&uuml;r yap&#305;&#351;t&#305;r&#305;c&#305; olarak)
+    kabuktan yararlan</p>
+</li>
 </ul></section>
             
           </div>
@@ -5038,22 +5724,29 @@ kabuktan yararlan</p></li>
       
       <!-- slide source: 01op/index.md -->
       <div class="slide-wrapper">
-        <div class="slide has_code">
+        <div class="slide">
           <div class="inner">
             
             <header><h2><code>grep</code></h2></header>
             
             
             <section><ul>
-<li><p>Dosyalarda da arama yapabilirsiniz</p>
-
-<div class="highlight"><pre><span class="nv">$ </span>grep roktas /etc/passwd
-roktas:x:1000:1000:Recai Oktaş,,,:/home/roktas:/bin/bash
-</pre></div>
+<li>
+<p>Dosyalarda da arama yapabilirsiniz</p>
+<pre><code>!sh
+$ grep roktas /etc/passwd
+roktas:x:1000:1000:Recai Okta&#351;,,,:/home/roktas:/bin/bash
+</code></pre>
 </li>
-<li><p>İlk argüman &ldquo;ifade&rdquo;, ikinci argüman dosya</p></li>
-<li><p><code>grep</code>&#39;te bundan da fazlası var →  &ldquo;Global <strong>Regular Expression</strong> Printer&rdquo;</p></li>
-<li><p>Karmaşık ifadeler tanımlanabiliyor</p></li>
+<li>
+<p>&#304;lk arg&uuml;man &ldquo;ifade&rdquo;, ikinci arg&uuml;man dosya</p>
+</li>
+<li>
+<p><code>grep</code>&lsquo;te bundan da fazlas&#305; var &rarr;  &ldquo;Global <strong>Regular Expression</strong> Printer&rdquo;</p>
+</li>
+<li>
+<p>Karma&#351;&#305;k ifadeler tan&#305;mlanabiliyor</p>
+</li>
 </ul></section>
             
           </div>
@@ -5081,11 +5774,10 @@ roktas:x:1000:1000:Recai Oktaş,,,:/home/roktas:/bin/bash
         <div class="slide">
           <div class="inner">
             
-            <header><h2>Düzenli İfadeler</h2></header>
+            <header><h2>D&uuml;zenli &#304;fadeler</h2></header>
             
             
-            <section><p>Regular Expression → Düzenli İfade</p>
-
+            <section><p>Regular Expression &rarr; D&uuml;zenli &#304;fade</p>
 <p>.</p></section>
             
           </div>
@@ -5146,23 +5838,32 @@ roktas:x:1000:1000:Recai Oktaş,,,:/home/roktas:/bin/bash
             <header><h2><code>find</code></h2></header>
             
             
-            <section><p><code>find</code> → Dizin ağacında dosya ara</p>
-
+            <section><p><code>find</code> &rarr; Dizin a&#287;ac&#305;nda dosya ara</p>
 <ul>
-<li><p>Argüman olarak verilen dizinde arama yap</p></li>
-<li><p><code>grep</code> dosya içeriğinde; <code>find</code> dosya sisteminde arama yapıyor</p></li>
-<li><p><code>grep</code> eşleşen içeriği görüntülüyor; <code>find</code> eşleşen dosya/dizin adlarını</p></li>
-<li><p>&ldquo;Ev dizininde ismi <code>foo</code> olan dosya/dizinleri görüntüle&rdquo;</p>
-
+<li>
+<p>Arg&uuml;man olarak verilen dizinde arama yap</p>
+</li>
+<li>
+<p><code>grep</code> dosya i&ccedil;eri&#287;inde; <code>find</code> dosya sisteminde arama yap&#305;yor</p>
+</li>
+<li>
+<p><code>grep</code> e&#351;le&#351;en i&ccedil;eri&#287;i g&ouml;r&uuml;nt&uuml;l&uuml;yor; <code>find</code> e&#351;le&#351;en dosya/dizin adlar&#305;n&#305;</p>
+</li>
+<li>
+<p>&ldquo;Ev dizininde ismi <code>foo</code> olan dosya/dizinleri g&ouml;r&uuml;nt&uuml;le&rdquo;</p>
 <div class="highlight"><pre><span class="nv">$ </span>find ~ -name foo
 </pre></div>
-</li>
-<li><p>&ldquo;Aramayı dosyalarla sınırla (eşleşen dizinleri hariç tut)&rdquo;</p>
 
+</li>
+<li>
+<p>&ldquo;Aramay&#305; dosyalarla s&#305;n&#305;rla (e&#351;le&#351;en dizinleri hari&ccedil; tut)&rdquo;</p>
 <div class="highlight"><pre><span class="nv">$ </span>find ~ -type f -name foo
 </pre></div>
+
 </li>
-<li><p>Tüm UNIX komutları içinde en sıradışı argüman düzenine sahip komut</p></li>
+<li>
+<p>T&uuml;m UNIX komutlar&#305; i&ccedil;inde en s&#305;rad&#305;&#351;&#305; arg&uuml;man d&uuml;zenine sahip komut</p>
+</li>
 </ul></section>
             
           </div>
@@ -5190,15 +5891,18 @@ roktas:x:1000:1000:Recai Oktaş,,,:/home/roktas:/bin/bash
         <div class="slide achtung">
           <div class="inner">
             
-            <header><h2>Görev</h2></header>
+            <header><h2>G&ouml;rev</h2></header>
             
             
-            <section>
-<ul>
-<li><p>Kılavuz dokümanlarından yararlanarak <code>grep</code> ve <code>find</code> komutlarının
-seçeneklerini inceleyin ve örneklendirin.</p></li>
-<li><p>İki komut bir arada nasıl kullanılabilir?  Şu ana kadar öğrendiğiniz
-bilgilerle bunu sağlayabilir misiniz?</p></li>
+            <section><ul>
+<li>
+<p>K&#305;lavuz dok&uuml;manlar&#305;ndan yararlanarak <code>grep</code> ve <code>find</code> komutlar&#305;n&#305;n
+    se&ccedil;eneklerini inceleyin ve &ouml;rneklendirin.</p>
+</li>
+<li>
+<p>&#304;ki komut bir arada nas&#305;l kullan&#305;labilir?  &#350;u ana kadar &ouml;&#287;rendi&#287;iniz
+    bilgilerle bunu sa&#287;layabilir misiniz?</p>
+</li>
 </ul></section>
             
           </div>
@@ -5334,22 +6038,32 @@ bilgilerle bunu sağlayabilir misiniz?</p></li>
             <header><h2>Dizin: <code>/dev</code></h2></header>
             
             
-            <section><p>Bellek çubuğuna sistem kurulumu yap</p>
-
+            <section><p>Bellek &ccedil;ubu&#287;una sistem kurulumu yap</p>
 <div class="highlight"><pre>    <span class="nv">$ </span>cat mini.iso &gt;/dev/sdb
 </pre></div>
 
-
 <ul>
-<li><p><code>/dev/sdb</code> → (bu örnek için) Bellek çubuğunu temsil eden aygıt dosyası</p></li>
-<li><p><code>mini.iso</code> → Önyüklenebilir (&ldquo;bootable&rdquo;) sistem imajı</p></li>
-<li><p>İmaj dosyası işletim sisteminin <code>/</code> dizin hiyerarşisindeki tüm dosya ve
-dizinlerin tek bir dosyada paketlenmiş hali</p></li>
-<li><p><code>cat</code> imaj dosyasını bit-bit bellek çubuğuna kaydediyor</p></li>
-<li><p>İmaj dosyası önyüklenebilir biçimde hazırlanmış olmalı → ilk sektörlerde
-önyükleme kodu bulunmalı</p></li>
-<li><p>Önyükleme kodu → bilgisayar bellek çubuğu ile başlatıldığında işletim
-sistemini yörüngeye oturtan bir &ldquo;taşıyıcı roket&rdquo; kaydı</p></li>
+<li>
+<p><code>/dev/sdb</code> &rarr; (bu &ouml;rnek i&ccedil;in) Bellek &ccedil;ubu&#287;unu temsil eden ayg&#305;t dosyas&#305;</p>
+</li>
+<li>
+<p><code>mini.iso</code> &rarr; &Ouml;ny&uuml;klenebilir (&ldquo;bootable&rdquo;) sistem imaj&#305;</p>
+</li>
+<li>
+<p>&#304;maj dosyas&#305; i&#351;letim sisteminin <code>/</code> dizin hiyerar&#351;isindeki t&uuml;m dosya ve
+    dizinlerin tek bir dosyada paketlenmi&#351; hali</p>
+</li>
+<li>
+<p><code>cat</code> imaj dosyas&#305;n&#305; bit-bit bellek &ccedil;ubu&#287;una kaydediyor</p>
+</li>
+<li>
+<p>&#304;maj dosyas&#305; &ouml;ny&uuml;klenebilir bi&ccedil;imde haz&#305;rlanm&#305;&#351; olmal&#305; &rarr; ilk sekt&ouml;rlerde
+    &ouml;ny&uuml;kleme kodu bulunmal&#305;</p>
+</li>
+<li>
+<p>&Ouml;ny&uuml;kleme kodu &rarr; bilgisayar bellek &ccedil;ubu&#287;u ile ba&#351;lat&#305;ld&#305;&#287;&#305;nda i&#351;letim
+    sistemini y&ouml;r&uuml;ngeye oturtan bir &ldquo;ta&#351;&#305;y&#305;c&#305; roket&rdquo; kayd&#305;</p>
+</li>
 </ul></section>
             
           </div>
@@ -5381,14 +6095,26 @@ sistemini yörüngeye oturtan bir &ldquo;taşıyıcı roket&rdquo; kaydı</p></l
             
             
             <section><ul>
-<li><p>Görüldüğü gibi bir aygıta bir dosya gibi erişebiliyorsunuz</p></li>
-<li><p>Aygıt dosyaları <code>/dev</code> dizini altında</p></li>
-<li><p>Bu dosyalar aslında ilgili aygıtların sürücüleriyle temas noktaları</p></li>
-<li><p>Aygıt dosyasına erişildiğinde ilgili aygıt yazılımıyla haberleşiyoruz</p></li>
-<li><p>Önkoşul → aygıt yazılımları en basitinden &ldquo;oku/yaz/denetle&rdquo; şeklinde bir
-arayüzü (&ldquo;interface&rdquo;) gerçeklemeli</p></li>
-<li><p>&ldquo;Aygıtın denetlenmesi&rdquo; → aygıt davranışının kontrol edilebilmesi; davranışı
-şekillendiren parameterlerin ayarlanabilmesi</p></li>
+<li>
+<p>G&ouml;r&uuml;ld&uuml;&#287;&uuml; gibi bir ayg&#305;ta bir dosya gibi eri&#351;ebiliyorsunuz</p>
+</li>
+<li>
+<p>Ayg&#305;t dosyalar&#305; <code>/dev</code> dizini alt&#305;nda</p>
+</li>
+<li>
+<p>Bu dosyalar asl&#305;nda ilgili ayg&#305;tlar&#305;n s&uuml;r&uuml;c&uuml;leriyle temas noktalar&#305;</p>
+</li>
+<li>
+<p>Ayg&#305;t dosyas&#305;na eri&#351;ildi&#287;inde ilgili ayg&#305;t yaz&#305;l&#305;m&#305;yla haberle&#351;iyoruz</p>
+</li>
+<li>
+<p>&Ouml;nko&#351;ul &rarr; ayg&#305;t yaz&#305;l&#305;mlar&#305; en basitinden &ldquo;oku/yaz/denetle&rdquo; &#351;eklinde bir
+    aray&uuml;z&uuml; (&ldquo;interface&rdquo;) ger&ccedil;eklemeli</p>
+</li>
+<li>
+<p>&ldquo;Ayg&#305;t&#305;n denetlenmesi&rdquo; &rarr; ayg&#305;t davran&#305;&#351;&#305;n&#305;n kontrol edilebilmesi; davran&#305;&#351;&#305;
+    &#351;ekillendiren parameterlerin ayarlanabilmesi</p>
+</li>
 </ul></section>
             
           </div>
@@ -5416,15 +6142,17 @@ arayüzü (&ldquo;interface&rdquo;) gerçeklemeli</p></li>
         <div class="slide achtung">
           <div class="inner">
             
-            <header><h2>Her Şey Bir Dosya</h2></header>
+            <header><h2>Her &#350;ey Bir Dosya</h2></header>
             
             
-            <section>
-<p>UNIX işletim sistemlerinde &ldquo;hemen her şey bir dosyadır&rdquo;</p>
-
+            <section><p>UNIX i&#351;letim sistemlerinde &ldquo;hemen her &#351;ey bir dosyad&#305;r&rdquo;</p>
 <ul>
-<li><p>İşletim sistemi aktörleriyle bir dosya üzerinden temas kurabilirsiniz</p></li>
-<li><p>Bu aktörler oku/yaz sistem çağrılarına yanıt verecek şekilde düzenlenmiş</p></li>
+<li>
+<p>&#304;&#351;letim sistemi akt&ouml;rleriyle bir dosya &uuml;zerinden temas kurabilirsiniz</p>
+</li>
+<li>
+<p>Bu akt&ouml;rler oku/yaz sistem &ccedil;a&#287;r&#305;lar&#305;na yan&#305;t verecek &#351;ekilde d&uuml;zenlenmi&#351;</p>
+</li>
 </ul></section>
             
           </div>
@@ -5452,21 +6180,33 @@ arayüzü (&ldquo;interface&rdquo;) gerçeklemeli</p></li>
         <div class="slide task">
           <div class="inner">
             
-            <header><h2>Görev</h2></header>
+            <header><h2>G&ouml;rev</h2></header>
             
             
-            <section>
-<p>Aşağıdaki bilgilerin hangi dosya/dizinlerde olduğunu araştırın</p>
-
+            <section><p>A&#351;a&#287;&#305;daki bilgilerin hangi dosya/dizinlerde oldu&#287;unu ara&#351;t&#305;r&#305;n</p>
 <ul>
-<li><p>Kablosuz ağ bağdaştırıcısının sürücüsü ve (varsa) aygıt yazılımı
-(&ldquo;firmware&rdquo;)</p></li>
-<li><p>Türkçe klavye tanımları</p></li>
-<li><p>İlk açılışta görüntülenen menüdeki metinler (Grub menüsü)</p></li>
-<li><p>Masaüstündeki ikonlar</p></li>
-<li><p>Tarayıcıya kurduğunuz bir eklenti</p></li>
-<li><p>Sisteme hatalı giriş teşebbüsleri (önce bu durumu simüle edin)</p></li>
-<li><p>Python modülleri</p></li>
+<li>
+<p>Kablosuz a&#287; ba&#287;da&#351;t&#305;r&#305;c&#305;s&#305;n&#305;n s&uuml;r&uuml;c&uuml;s&uuml; ve (varsa) ayg&#305;t yaz&#305;l&#305;m&#305;
+    (&ldquo;firmware&rdquo;)</p>
+</li>
+<li>
+<p>T&uuml;rk&ccedil;e klavye tan&#305;mlar&#305;</p>
+</li>
+<li>
+<p>&#304;lk a&ccedil;&#305;l&#305;&#351;ta g&ouml;r&uuml;nt&uuml;lenen men&uuml;deki metinler (Grub men&uuml;s&uuml;)</p>
+</li>
+<li>
+<p>Masa&uuml;st&uuml;ndeki ikonlar</p>
+</li>
+<li>
+<p>Taray&#305;c&#305;ya kurdu&#287;unuz bir eklenti</p>
+</li>
+<li>
+<p>Sisteme hatal&#305; giri&#351; te&#351;ebb&uuml;sleri (&ouml;nce bu durumu sim&uuml;le edin)</p>
+</li>
+<li>
+<p>Python mod&uuml;lleri</p>
+</li>
 </ul></section>
             
           </div>
@@ -5494,7 +6234,7 @@ arayüzü (&ldquo;interface&rdquo;) gerçeklemeli</p></li>
         <div class="slide">
           <div class="inner">
             
-            <header><h1>Ek: Kabuk Yapılandırması</h1></header>
+            <header><h1>Ek: Kabuk Yap&#305;land&#305;rmas&#305;</h1></header>
             
             
           </div>
@@ -5580,23 +6320,26 @@ arayüzü (&ldquo;interface&rdquo;) gerçeklemeli</p></li>
         <div class="slide">
           <div class="inner">
             
-            <header><h2>Sudo Yapılandırması</h2></header>
+            <header><h2>Sudo Yap&#305;land&#305;rmas&#305;</h2></header>
             
             
-            <section><p>Bir kullanıcı sistem yöneticisi olarak nasıl atanır?</p>
-
+            <section><p>Bir kullan&#305;c&#305; sistem y&ouml;neticisi olarak nas&#305;l atan&#305;r?</p>
 <ul>
-<li>  Bazı dağıtımlarda (ör. Ubuntu ve türevleri) kurulum sırasında hesabı
-oluşturulan kullanıcı aynı zamanda <code>sudo</code> hakkına sahip</li>
+<li>Baz&#305; da&#287;&#305;t&#305;mlarda (&ouml;r. Ubuntu ve t&uuml;revleri) kurulum s&#305;ras&#305;nda hesab&#305;
+    olu&#351;turulan kullan&#305;c&#305; ayn&#305; zamanda <code>sudo</code> hakk&#305;na sahip</li>
 </ul>
-
-<p>Şöyle bir mekanizma&hellip;</p>
-
+<p>&#350;&ouml;yle bir mekanizma&hellip;</p>
 <ul>
-<li><p><code>sudo</code> komutunu &ldquo;falan gruptaki kullanıcılar <code>sudo</code> komutunu çalıştırabilir&rdquo;
-şeklinde yapılandır (bk. <code>visudo</code>)</p></li>
-<li><p>&ldquo;falan grup&rdquo; olarak Ubuntu ve türevlerinde <code>admin</code> grubunu kullan</p></li>
-<li><p>Kullanıcıyı (kurulum sırasında) <code>admin</code> grubuna ekle</p></li>
+<li>
+<p><code>sudo</code> komutunu &ldquo;falan gruptaki kullan&#305;c&#305;lar <code>sudo</code> komutunu &ccedil;al&#305;&#351;t&#305;rabilir&rdquo;
+    &#351;eklinde yap&#305;land&#305;r (bk. <code>visudo</code>)</p>
+</li>
+<li>
+<p>&ldquo;falan grup&rdquo; olarak Ubuntu ve t&uuml;revlerinde <code>admin</code> grubunu kullan</p>
+</li>
+<li>
+<p>Kullan&#305;c&#305;y&#305; (kurulum s&#305;ras&#305;nda) <code>admin</code> grubuna ekle</p>
+</li>
 </ul></section>
             
           </div>
@@ -5624,14 +6367,20 @@ oluşturulan kullanıcı aynı zamanda <code>sudo</code> hakkına sahip</li>
         <div class="slide">
           <div class="inner">
             
-            <header><h2>Sudo Yapılandırması</h2></header>
+            <header><h2>Sudo Yap&#305;land&#305;rmas&#305;</h2></header>
             
             
             <section><ul>
-<li><p>Her dağıtımda böyle bir mekanizma sunulmayabilir</p></li>
-<li><p>Ayrıca bu dağıtımlarda <code>admin</code> adında bir grup da bulunmayabilir</p></li>
-<li><p>Alternatif olarak <code>sudo</code> veya <code>wheel</code> gruplarını kullanabilirsiniz; bu
-gruplardan en az bir tanesinin çoğu dağıtımda bulunduğunu varsayıyoruz</p></li>
+<li>
+<p>Her da&#287;&#305;t&#305;mda b&ouml;yle bir mekanizma sunulmayabilir</p>
+</li>
+<li>
+<p>Ayr&#305;ca bu da&#287;&#305;t&#305;mlarda <code>admin</code> ad&#305;nda bir grup da bulunmayabilir</p>
+</li>
+<li>
+<p>Alternatif olarak <code>sudo</code> veya <code>wheel</code> gruplar&#305;n&#305; kullanabilirsiniz; bu
+    gruplardan en az bir tanesinin &ccedil;o&#287;u da&#287;&#305;t&#305;mda bulundu&#287;unu varsay&#305;yoruz</p>
+</li>
 </ul></section>
             
           </div>
@@ -5659,21 +6408,22 @@ gruplardan en az bir tanesinin çoğu dağıtımda bulunduğunu varsayıyoruz</p
         <div class="slide has_code">
           <div class="inner">
             
-            <header><h2>Sudo Yapılandırması</h2></header>
+            <header><h2>Sudo Yap&#305;land&#305;rmas&#305;</h2></header>
             
             
-            <section><p>Benzer bir mekanizmayı kurmak için</p>
-
+            <section><p>Benzer bir mekanizmay&#305; kurmak i&ccedil;in</p>
 <ul>
-<li><p>Önce <code>root</code> ol (<code>root</code> parolasını gir)</p>
-
+<li>
+<p>&Ouml;nce <code>root</code> ol (<code>root</code> parolas&#305;n&#305; gir)</p>
 <div class="highlight"><pre><span class="nv">$ </span>su
 </pre></div>
-</li>
-<li><p><code>sudo</code> yapılandırmasına gir</p>
 
+</li>
+<li>
+<p><code>sudo</code> yap&#305;land&#305;rmas&#305;na gir</p>
 <div class="highlight"><pre>root<span class="nv">$ </span>visudo
 </pre></div>
+
 </li>
 </ul></section>
             
@@ -5702,25 +6452,28 @@ gruplardan en az bir tanesinin çoğu dağıtımda bulunduğunu varsayıyoruz</p
         <div class="slide has_code">
           <div class="inner">
             
-            <header><h2>Sudo Yapılandırması</h2></header>
+            <header><h2>Sudo Yap&#305;land&#305;rmas&#305;</h2></header>
             
             
-            <section><p>Örneğin <code>sudo</code> grubu varsa (sistemde bunun yerine <code>wheel</code> grubu varsa grup adını
-buna uygun şekilde değiştirin)</p>
-
+            <section><p>&Ouml;rne&#287;in <code>sudo</code> grubu varsa (sistemde bunun yerine <code>wheel</code> grubu varsa grup ad&#305;n&#305;
+buna uygun &#351;ekilde de&#287;i&#351;tirin)</p>
 <ul>
-<li><p><code>sudo</code> grubuna <code>sudo</code> çalıştırma hakkı vermek için şöyle bir satır (bu ayar
-zaten yapılmış olabilir)</p>
-
+<li>
+<p><code>sudo</code> grubuna <code>sudo</code> &ccedil;al&#305;&#351;t&#305;rma hakk&#305; vermek i&ccedil;in &#351;&ouml;yle bir sat&#305;r (bu ayar
+    zaten yap&#305;lm&#305;&#351; olabilir)</p>
 <div class="highlight"><pre>%sudo   <span class="nv">ALL</span><span class="o">=(</span>ALL:ALL<span class="o">)</span> ALL
 </pre></div>
-</li>
-<li><p><code>roktas</code> isimli kullanıcıyı <code>sudo</code> grubuna ekle</p>
 
+</li>
+<li>
+<p><code>roktas</code> isimli kullan&#305;c&#305;y&#305; <code>sudo</code> grubuna ekle</p>
 <div class="highlight"><pre>root<span class="nv">$ </span>adduser roktas sudo
 </pre></div>
+
 </li>
-<li><p>Değişikler mevcut oturumdan çıkıp yeni bir oturuma girdiğinizde etkili olur</p></li>
+<li>
+<p>De&#287;i&#351;ikler mevcut oturumdan &ccedil;&#305;k&#305;p yeni bir oturuma girdi&#287;inizde etkili olur</p>
+</li>
 </ul></section>
             
           </div>
@@ -5752,7 +6505,7 @@ zaten yapılmış olabilir)</p>
       <caption>Table of Contents</caption>
       
       <tr id="toc-row-1">
-        <th><a href="#slide1">Operatör</a></th>
+        <th><a href="#slide1">Operat&ouml;r</a></th>
         <td><a href="#slide1">1</a></td>
       </tr>
       
@@ -5773,7 +6526,7 @@ zaten yapılmış olabilir)</p>
         </tr>
         
         <tr id="toc-row-5" class="sub">
-          <th><a href="#slide5">Kullanıcı Adı</a></th>
+          <th><a href="#slide5">Kullan&#305;c&#305; Ad&#305;</a></th>
           <td><a href="#slide5">5</a></td>
         </tr>
         
@@ -5783,7 +6536,7 @@ zaten yapılmış olabilir)</p>
         </tr>
         
         <tr id="toc-row-7" class="sub">
-          <th><a href="#slide7">Parola Seçimi</a></th>
+          <th><a href="#slide7">Parola Se&ccedil;imi</a></th>
           <td><a href="#slide7">7</a></td>
         </tr>
         
@@ -5793,12 +6546,12 @@ zaten yapılmış olabilir)</p>
         </tr>
         
         <tr id="toc-row-9" class="sub">
-          <th><a href="#slide9">Uçbirim</a></th>
+          <th><a href="#slide9">U&ccedil;birim</a></th>
           <td><a href="#slide9">9</a></td>
         </tr>
         
         <tr id="toc-row-10" class="sub">
-          <th><a href="#slide10">Uçbirim</a></th>
+          <th><a href="#slide10">U&ccedil;birim</a></th>
           <td><a href="#slide10">10</a></td>
         </tr>
         
@@ -5818,7 +6571,7 @@ zaten yapılmış olabilir)</p>
         </tr>
         
         <tr id="toc-row-14" class="sub">
-          <th><a href="#slide14">İpuçları</a></th>
+          <th><a href="#slide14">&#304;pu&ccedil;lar&#305;</a></th>
           <td><a href="#slide14">14</a></td>
         </tr>
         
@@ -5833,7 +6586,7 @@ zaten yapılmış olabilir)</p>
         </tr>
         
         <tr id="toc-row-17" class="sub">
-          <th><a href="#slide17">Çalışma Dizini</a></th>
+          <th><a href="#slide17">&Ccedil;al&#305;&#351;ma Dizini</a></th>
           <td><a href="#slide17">17</a></td>
         </tr>
         
@@ -5858,22 +6611,22 @@ zaten yapılmış olabilir)</p>
         </tr>
         
         <tr id="toc-row-22" class="sub">
-          <th><a href="#slide22">Özel Dizin İsimleri</a></th>
+          <th><a href="#slide22">&Ouml;zel Dizin &#304;simleri</a></th>
           <td><a href="#slide22">22</a></td>
         </tr>
         
         <tr id="toc-row-23" class="sub">
-          <th><a href="#slide23">Özel Dizin İsimleri</a></th>
+          <th><a href="#slide23">&Ouml;zel Dizin &#304;simleri</a></th>
           <td><a href="#slide23">23</a></td>
         </tr>
         
         <tr id="toc-row-24" class="sub">
-          <th><a href="#slide24">Dosya İsimleri</a></th>
+          <th><a href="#slide24">Dosya &#304;simleri</a></th>
           <td><a href="#slide24">24</a></td>
         </tr>
         
         <tr id="toc-row-25" class="sub">
-          <th><a href="#slide25">Dosya İsimleri</a></th>
+          <th><a href="#slide25">Dosya &#304;simleri</a></th>
           <td><a href="#slide25">25</a></td>
         </tr>
         
@@ -5893,7 +6646,7 @@ zaten yapılmış olabilir)</p>
         </tr>
         
         <tr id="toc-row-29" class="sub">
-          <th><a href="#slide29">Seçenekler</a></th>
+          <th><a href="#slide29">Se&ccedil;enekler</a></th>
           <td><a href="#slide29">29</a></td>
         </tr>
         
@@ -5908,7 +6661,7 @@ zaten yapılmış olabilir)</p>
         </tr>
         
         <tr id="toc-row-32" class="sub">
-          <th><a href="#slide32">BSD Kılavuz Sayfaları</a></th>
+          <th><a href="#slide32">BSD K&#305;lavuz Sayfalar&#305;</a></th>
           <td><a href="#slide32">32</a></td>
         </tr>
         
@@ -5963,27 +6716,27 @@ zaten yapılmış olabilir)</p>
         </tr>
         
         <tr id="toc-row-43" class="sub">
-          <th><a href="#slide43">Sahiplik ve İzinler</a></th>
+          <th><a href="#slide43">Sahiplik ve &#304;zinler</a></th>
           <td><a href="#slide43">43</a></td>
         </tr>
         
         <tr id="toc-row-44" class="sub">
-          <th><a href="#slide44">Sahiplik ve İzinler</a></th>
+          <th><a href="#slide44">Sahiplik ve &#304;zinler</a></th>
           <td><a href="#slide44">44</a></td>
         </tr>
         
         <tr id="toc-row-45" class="sub">
-          <th><a href="#slide45">Sahiplik ve İzinler</a></th>
+          <th><a href="#slide45">Sahiplik ve &#304;zinler</a></th>
           <td><a href="#slide45">45</a></td>
         </tr>
         
         <tr id="toc-row-46" class="sub">
-          <th><a href="#slide46">Çalıştırılabilir Dosya</a></th>
+          <th><a href="#slide46">&Ccedil;al&#305;&#351;t&#305;r&#305;labilir Dosya</a></th>
           <td><a href="#slide46">46</a></td>
         </tr>
         
         <tr id="toc-row-47" class="sub">
-          <th><a href="#slide47">Çalıştırılabilir Dizin</a></th>
+          <th><a href="#slide47">&Ccedil;al&#305;&#351;t&#305;r&#305;labilir Dizin</a></th>
           <td><a href="#slide47">47</a></td>
         </tr>
         
@@ -6018,12 +6771,12 @@ zaten yapılmış olabilir)</p>
         </tr>
         
         <tr id="toc-row-54" class="sub">
-          <th><a href="#slide54">Dosya Uzantıları</a></th>
+          <th><a href="#slide54">Dosya Uzant&#305;lar&#305;</a></th>
           <td><a href="#slide54">54</a></td>
         </tr>
         
         <tr id="toc-row-55" class="sub">
-          <th><a href="#slide55">Dosya Uzantıları</a></th>
+          <th><a href="#slide55">Dosya Uzant&#305;lar&#305;</a></th>
           <td><a href="#slide55">55</a></td>
         </tr>
         
@@ -6098,7 +6851,7 @@ zaten yapılmış olabilir)</p>
         </tr>
         
         <tr id="toc-row-70" class="sub">
-          <th><a href="#slide70">Görev</a></th>
+          <th><a href="#slide70">G&ouml;rev</a></th>
           <td><a href="#slide70">70</a></td>
         </tr>
         
@@ -6108,17 +6861,17 @@ zaten yapılmış olabilir)</p>
         </tr>
         
         <tr id="toc-row-72" class="sub">
-          <th><a href="#slide72">Yönlendirme</a></th>
+          <th><a href="#slide72">Y&ouml;nlendirme</a></th>
           <td><a href="#slide72">72</a></td>
         </tr>
         
         <tr id="toc-row-73" class="sub">
-          <th><a href="#slide73">Yönlendirme</a></th>
+          <th><a href="#slide73">Y&ouml;nlendirme</a></th>
           <td><a href="#slide73">73</a></td>
         </tr>
         
         <tr id="toc-row-74" class="sub">
-          <th><a href="#slide74">Yönlendirme: <code>&gt;</code></a></th>
+          <th><a href="#slide74">Y&ouml;nlendirme: <code>&gt;</code></a></th>
           <td><a href="#slide74">74</a></td>
         </tr>
         
@@ -6128,7 +6881,7 @@ zaten yapılmış olabilir)</p>
         </tr>
         
         <tr id="toc-row-76" class="sub">
-          <th><a href="#slide76">Yönlendirme: <code>&gt;&gt;</code></a></th>
+          <th><a href="#slide76">Y&ouml;nlendirme: <code>&gt;&gt;</code></a></th>
           <td><a href="#slide76">76</a></td>
         </tr>
         
@@ -6163,7 +6916,7 @@ zaten yapılmış olabilir)</p>
         </tr>
         
         <tr id="toc-row-83" class="sub">
-          <th><a href="#slide83">Küçük Araçlar Anlayışı</a></th>
+          <th><a href="#slide83">K&uuml;&ccedil;&uuml;k Ara&ccedil;lar Anlay&#305;&#351;&#305;</a></th>
           <td><a href="#slide83">83</a></td>
         </tr>
         
@@ -6173,7 +6926,7 @@ zaten yapılmış olabilir)</p>
         </tr>
         
         <tr id="toc-row-85" class="sub">
-          <th><a href="#slide85">Düzenli İfadeler</a></th>
+          <th><a href="#slide85">D&uuml;zenli &#304;fadeler</a></th>
           <td><a href="#slide85">85</a></td>
         </tr>
         
@@ -6188,7 +6941,7 @@ zaten yapılmış olabilir)</p>
         </tr>
         
         <tr id="toc-row-88" class="sub">
-          <th><a href="#slide88">Görev</a></th>
+          <th><a href="#slide88">G&ouml;rev</a></th>
           <td><a href="#slide88">88</a></td>
         </tr>
         
@@ -6213,19 +6966,19 @@ zaten yapılmış olabilir)</p>
         </tr>
         
         <tr id="toc-row-93" class="sub">
-          <th><a href="#slide93">Her Şey Bir Dosya</a></th>
+          <th><a href="#slide93">Her &#350;ey Bir Dosya</a></th>
           <td><a href="#slide93">93</a></td>
         </tr>
         
         <tr id="toc-row-94" class="sub">
-          <th><a href="#slide94">Görev</a></th>
+          <th><a href="#slide94">G&ouml;rev</a></th>
           <td><a href="#slide94">94</a></td>
         </tr>
         
       
       
       <tr id="toc-row-95">
-        <th><a href="#slide95">Ek: Kabuk Yapılandırması</a></th>
+        <th><a href="#slide95">Ek: Kabuk Yap&#305;land&#305;rmas&#305;</a></th>
         <td><a href="#slide95">95</a></td>
       </tr>
       
@@ -6243,22 +6996,22 @@ zaten yapılmış olabilir)</p>
       
         
         <tr id="toc-row-98" class="sub">
-          <th><a href="#slide98">Sudo Yapılandırması</a></th>
+          <th><a href="#slide98">Sudo Yap&#305;land&#305;rmas&#305;</a></th>
           <td><a href="#slide98">98</a></td>
         </tr>
         
         <tr id="toc-row-99" class="sub">
-          <th><a href="#slide99">Sudo Yapılandırması</a></th>
+          <th><a href="#slide99">Sudo Yap&#305;land&#305;rmas&#305;</a></th>
           <td><a href="#slide99">99</a></td>
         </tr>
         
         <tr id="toc-row-100" class="sub">
-          <th><a href="#slide100">Sudo Yapılandırması</a></th>
+          <th><a href="#slide100">Sudo Yap&#305;land&#305;rmas&#305;</a></th>
           <td><a href="#slide100">100</a></td>
         </tr>
         
         <tr id="toc-row-101" class="sub">
-          <th><a href="#slide101">Sudo Yapılandırması</a></th>
+          <th><a href="#slide101">Sudo Yap&#305;land&#305;rmas&#305;</a></th>
           <td><a href="#slide101">101</a></td>
         </tr>
         
