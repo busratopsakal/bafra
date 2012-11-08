@@ -3614,7 +3614,7 @@ OpenBSD 5.0                     August 23, 2012                    OpenBSD 5.0
       
       <!-- slide source: 02sys/index.md -->
       <div class="slide-wrapper">
-        <div class="slide">
+        <div class="slide has_code">
           <div class="inner">
             
             <header><h2><code>echo</code></h2></header>
@@ -3623,15 +3623,15 @@ OpenBSD 5.0                     August 23, 2012                    OpenBSD 5.0
             <section><ul>
 <li>
 <p>Derle</p>
-<pre><code>!sh
-$ cc -o echo echo.c
-</code></pre>
+<div class="highlight"><pre><span class="nv">$ </span>cc -o <span class="nb">echo </span>echo.c
+</pre></div>
+
 </li>
 <li>
 <p>&Ccedil;al&#305;&#351;t&#305;r</p>
-<pre><code>!sh
-$ ./echo Merhaba D&uuml;nya!
-</code></pre>
+<div class="highlight"><pre><span class="nv">$ </span>./echo Merhaba D&amp;uuml;nya!
+</pre></div>
+
 </li>
 </ul></section>
             
@@ -4198,7 +4198,7 @@ root      6302  0.0  0.0  53592  1500 pts/12   S+   15:37   0:00 passwd
 </li>
 <li>
 <p>&#304;&ccedil;inde sadece <code>&lt;terim&gt;</code> ge&ccedil;en sat&#305;rlar&#305; g&ouml;r&uuml;nt&uuml;le</p>
-<div class="highlight"><pre><span class="nv">$ </span>ps ax | grep &lt;terim&gt;
+<div class="highlight"><pre><span class="nv">$ </span>ps ax | grep &amp;lt;terim&amp;gt;
 </pre></div>
 
 </li>
@@ -4282,7 +4282,7 @@ root      6302  0.0  0.0  53592  1500 pts/12   S+   15:37   0:00 passwd
 </li>
 <li>
 <p>Fakat &ouml;ld&uuml;rerek de sonland&#305;rabilirsiniz</p>
-<div class="highlight"><pre><span class="nv">$ </span><span class="nb">kill</span> &lt;pid&gt;
+<div class="highlight"><pre><span class="nv">$ </span><span class="nb">kill</span> &amp;lt;pid&amp;gt;
 </pre></div>
 
 </li>
@@ -4553,7 +4553,7 @@ root      6302  0.0  0.0  53592  1500 pts/12   S+   15:37   0:00 passwd
 <ul>
 <li>
 <p>Program&#305; derle ve derleme i&#351;lemi ba&#351;ar&#305;l&#305;ysa ko&#351;tur</p>
-<div class="highlight"><pre><span class="nv">$ </span>cc -o <span class="nb">echo </span>echo.c <span class="o">&amp;&amp;</span> ./echo
+<div class="highlight"><pre><span class="nv">$ </span>cc -o <span class="nb">echo </span>echo.c &amp;amp;&amp;amp; ./echo
 </pre></div>
 
 </li>
@@ -4629,7 +4629,7 @@ root      6302  0.0  0.0  53592  1500 pts/12   S+   15:37   0:00 passwd
 <ul>
 <li>
 <p>Yani bu bir &ldquo;k&#305;sadevre&rdquo; (&ldquo;shorcircuit&rdquo;) operat&ouml;r&uuml;</p>
-<div class="highlight"><pre><span class="k">if</span> <span class="p">(</span><span class="o">&lt;</span><span class="n">ifade1</span><span class="o">&gt;</span> <span class="o">&amp;&amp;</span> <span class="o">&lt;</span><span class="n">ifade2</span><span class="o">&gt;</span><span class="p">)</span>
+<div class="highlight"><pre><span class="k">if</span> <span class="p">(</span><span class="o">&amp;</span><span class="n">lt</span><span class="p">;</span><span class="n">ifade1</span><span class="o">&amp;</span><span class="n">gt</span><span class="p">;</span> <span class="o">&amp;</span><span class="n">amp</span><span class="p">;</span><span class="o">&amp;</span><span class="n">amp</span><span class="p">;</span> <span class="o">&amp;</span><span class="n">lt</span><span class="p">;</span><span class="n">ifade2</span><span class="o">&amp;</span><span class="n">gt</span><span class="p">;)</span>
         <span class="n">deyim</span><span class="p">;</span>
 </pre></div>
 
@@ -4707,7 +4707,7 @@ root      6302  0.0  0.0  53592  1500 pts/12   S+   15:37   0:00 passwd
       
       <!-- slide source: 02sys/index.md -->
       <div class="slide-wrapper">
-        <div class="slide">
+        <div class="slide has_code">
           <div class="inner">
             
             <header><h2>Kabuk ve <code>true</code>/<code>false</code></h2></header>
@@ -4717,15 +4717,15 @@ root      6302  0.0  0.0  53592  1500 pts/12   S+   15:37   0:00 passwd
 <ul>
 <li>
 <p>&Ccedil;al&#305;&#351;maya b&#305;rak&#305;lan kritik bir i&#351;lem hatayla sonland&#305;&#287;&#305;nda uyar</p>
-<pre><code>!sh
-$ kritik_i&#351;lem || mail -s "kritik_i&#351;lem: hata var, &ccedil;abuk gel!" roktas
-</code></pre>
+<div class="highlight"><pre><span class="nv">$ </span>kritik_i&amp;#351;lem <span class="o">||</span> mail -s <span class="s2">&quot;kritik_i&amp;#351;lem: hata var, &amp;ccedil;abuk gel!&quot;</span> roktas
+</pre></div>
+
 </li>
 <li>
 <p>&#304;&#351;lem her nas&#305;l sonlan&#305;rsa sonlans&#305;n bir &#351;eyler yap</p>
-<pre><code>!sh
-$ da&#287;&#305;n&#305;k_i&#351;lem ; rm -rf &ccedil;&ouml;pler
-</code></pre>
+<div class="highlight"><pre><span class="nv">$ </span>da&amp;#287;&amp;#305;n&amp;#305;k_i&amp;#351;lem ; rm -rf &amp;ccedil;&amp;ouml;pler
+</pre></div>
+
 </li>
 </ul></section>
             
@@ -5396,7 +5396,7 @@ okuyabilir/yazabilir, grup okuyabilir, ba&#351;kalar&#305; hi&ccedil; bir &#351;
       
       <!-- slide source: 02sys/index.md -->
       <div class="slide-wrapper">
-        <div class="slide">
+        <div class="slide has_code">
           <div class="inner">
             
             <header><h2>Dizin: Yaz&#305;labilir</h2></header>
@@ -5408,9 +5408,9 @@ okuyabilir/yazabilir, grup okuyabilir, ba&#351;kalar&#305; hi&ccedil; bir &#351;
 </li>
 <li>
 <p>Yaz&#305;labilir olmasa bile dizinde varolan bir dosyaya yazabilirsiniz</p>
-<pre><code>!sh
-$ echo ekleme &gt;yaz&#305;labilir_olmayan_dizin/varolan_dosya
-</code></pre>
+<div class="highlight"><pre><span class="nv">$ </span><span class="nb">echo </span>ekleme &amp;gt;yaz&amp;#305;labilir_olmayan_dizin/varolan_dosya
+</pre></div>
+
 </li>
 <li>
 <p>Ko&#351;ul &rarr; Dizin ayn&#305; zamanda &ccedil;al&#305;&#351;t&#305;r&#305;labilir olmal&#305;</p>
@@ -5526,7 +5526,7 @@ $ echo ekleme &gt;yaz&#305;labilir_olmayan_dizin/varolan_dosya
       
       <!-- slide source: 02sys/index.md -->
       <div class="slide-wrapper">
-        <div class="slide task">
+        <div class="slide has_code task">
           <div class="inner">
             
             <header><h2>G&ouml;rev</h2></header>
@@ -5546,17 +5546,17 @@ $ echo ekleme &gt;yaz&#305;labilir_olmayan_dizin/varolan_dosya
 </li>
 <li>
 <p>A&#351;a&#287;&#305;daki komut sat&#305;r&#305; sonu&ccedil;lar&#305;n&#305; yorumlay&#305;n</p>
-<pre><code>!sh
-$ cd /tmp
-$ mkdir t
-$ echo foo &gt;t/foo
-$ chmod -x t
-$ ls t
-ls: t/foo'e eri&#351;ilemedi: Eri&#351;im engellendi
+<div class="highlight"><pre><span class="nv">$ </span><span class="nb">cd</span> /tmp
+<span class="nv">$ </span>mkdir t
+<span class="nv">$ </span><span class="nb">echo </span>foo &amp;gt;t/foo
+<span class="nv">$ </span>chmod -x t
+<span class="nv">$ </span>ls t
+ls: t/foo<span class="err">&#39;</span>e eri&amp;#351;ilemedi: Eri&amp;#351;im engellendi
 foo
-$ /bin/ls t
+<span class="nv">$ </span>/bin/ls t
 foo
-</code></pre>
+</pre></div>
+
 </li>
 </ul></section>
             
@@ -6288,7 +6288,7 @@ olarak kullan</p>
       
       <!-- slide source: 02sys/index.md -->
       <div class="slide-wrapper">
-        <div class="slide">
+        <div class="slide has_code">
           <div class="inner">
             
             <header><h2>Tamponlama</h2></header>
@@ -6297,25 +6297,25 @@ olarak kullan</p>
             <section><ul>
 <li>
 <p>Kaynak</p>
-<pre><code>!c
-#include &lt;stdio.h&gt;
-#include &lt;unistd.h&gt;
+<div class="highlight"><pre><span class="cp">#include &amp;lt;stdio.h&amp;gt;</span>
+<span class="cp">#include &amp;lt;unistd.h&amp;gt;</span>
 
-int
-main(void)
-{
-        printf("&Ouml;nce");
-        write(1, "Sonra", 5);
-        return 0;
-}
-</code></pre>
+<span class="kt">int</span>
+<span class="nf">main</span><span class="p">(</span><span class="kt">void</span><span class="p">)</span>
+<span class="p">{</span>
+        <span class="n">printf</span><span class="p">(</span><span class="s">&quot;&amp;Ouml;nce&quot;</span><span class="p">);</span>
+        <span class="n">write</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="s">&quot;Sonra&quot;</span><span class="p">,</span> <span class="mi">5</span><span class="p">);</span>
+        <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
+
 </li>
 <li>
 <p>&Ccedil;&#305;kt&#305; (ekran)</p>
-<pre><code>!sh
-$ ./a.out
-Sonra&Ouml;nce
-</code></pre></section>
+<div class="highlight"><pre><span class="nv">$ </span>./a.out
+Sonra&amp;Ouml;nce
+</pre></div>
+</section>
             
           </div>
           <div class="presenter_notes">
@@ -6439,7 +6439,7 @@ Sonra&Ouml;nce
       
       <!-- slide source: 02sys/index.md -->
       <div class="slide-wrapper">
-        <div class="slide">
+        <div class="slide has_code">
           <div class="inner">
             
             <header><h2>Tamponlama: Sat&#305;r</h2></header>
@@ -6448,26 +6448,26 @@ Sonra&Ouml;nce
             <section><ul>
 <li>
 <p>Kaynak</p>
-<pre><code>!c
-#include &lt;stdio.h&gt;
-#include &lt;unistd.h&gt;
+<div class="highlight"><pre><span class="cp">#include &amp;lt;stdio.h&amp;gt;</span>
+<span class="cp">#include &amp;lt;unistd.h&amp;gt;</span>
 
-int
-main(void)
-{
-        printf("&Ouml;nce\n");
-        write(1, "Sonra", 5);
-        return 0;
-}
-</code></pre>
+<span class="kt">int</span>
+<span class="nf">main</span><span class="p">(</span><span class="kt">void</span><span class="p">)</span>
+<span class="p">{</span>
+        <span class="n">printf</span><span class="p">(</span><span class="s">&quot;&amp;Ouml;nce</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">);</span>
+        <span class="n">write</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="s">&quot;Sonra&quot;</span><span class="p">,</span> <span class="mi">5</span><span class="p">);</span>
+        <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
+
 </li>
 <li>
 <p>&Ccedil;&#305;kt&#305; (ekran)</p>
-<pre><code>!sh
-$ ./a.out
-&Ouml;nce
+<div class="highlight"><pre><span class="nv">$ </span>./a.out
+&amp;Ouml;nce
 Sonra
-</code></pre>
+</pre></div>
+
 </li>
 </ul></section>
             
@@ -6537,7 +6537,7 @@ Sonra
       
       <!-- slide source: 02sys/index.md -->
       <div class="slide-wrapper">
-        <div class="slide">
+        <div class="slide has_code">
           <div class="inner">
             
             <header><h2>Tamponlama: Tam</h2></header>
@@ -6546,27 +6546,27 @@ Sonra
             <section><ul>
 <li>
 <p>Kaynak</p>
-<pre><code>!c
-#include &lt;stdio.h&gt;
-#include &lt;unistd.h&gt;
+<div class="highlight"><pre><span class="cp">#include &amp;lt;stdio.h&amp;gt;</span>
+<span class="cp">#include &amp;lt;unistd.h&amp;gt;</span>
 
-int
-main(void)
-{
-        printf("&Ouml;nce\n");
-        write(1, "Sonra", 5);
-        return 0;
-}
-</code></pre>
+<span class="kt">int</span>
+<span class="nf">main</span><span class="p">(</span><span class="kt">void</span><span class="p">)</span>
+<span class="p">{</span>
+        <span class="n">printf</span><span class="p">(</span><span class="s">&quot;&amp;Ouml;nce</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">);</span>
+        <span class="n">write</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="s">&quot;Sonra&quot;</span><span class="p">,</span> <span class="mi">5</span><span class="p">);</span>
+        <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
+
 </li>
 <li>
 <p>&Ccedil;&#305;kt&#305; (dosya)</p>
-<pre><code>!sh
-$ ./a.out &gt;out
-$ cat out
+<div class="highlight"><pre><span class="nv">$ </span>./a.out &amp;gt;out
+<span class="nv">$ </span>cat out
 Sonra
-&Ouml;nce
-</code></pre>
+&amp;Ouml;nce
+</pre></div>
+
 </li>
 </ul></section>
             
@@ -6643,7 +6643,7 @@ Sonra
       
       <!-- slide source: 02sys/index.md -->
       <div class="slide-wrapper">
-        <div class="slide">
+        <div class="slide has_code">
           <div class="inner">
             
             <header><h2><code>fflush</code></h2></header>
@@ -6652,28 +6652,28 @@ Sonra
             <section><ul>
 <li>
 <p>Kaynak</p>
-<pre><code>!c
-#include &lt;stdio.h&gt;
-#include &lt;unistd.h&gt;
+<div class="highlight"><pre><span class="cp">#include &amp;lt;stdio.h&amp;gt;</span>
+<span class="cp">#include &amp;lt;unistd.h&amp;gt;</span>
 
-int
-main(void)
-{
-        printf("&Ouml;nce\n");
-        fflush(stdout);
-        write(1, "Sonra", 5);
-        return 0;
-}
-</code></pre>
+<span class="kt">int</span>
+<span class="nf">main</span><span class="p">(</span><span class="kt">void</span><span class="p">)</span>
+<span class="p">{</span>
+        <span class="n">printf</span><span class="p">(</span><span class="s">&quot;&amp;Ouml;nce</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">);</span>
+        <span class="n">fflush</span><span class="p">(</span><span class="n">stdout</span><span class="p">);</span>
+        <span class="n">write</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="s">&quot;Sonra&quot;</span><span class="p">,</span> <span class="mi">5</span><span class="p">);</span>
+        <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
+
 </li>
 <li>
 <p>&Ccedil;&#305;kt&#305; (dosya)</p>
-<pre><code>!sh
-$ ./a.out &gt;out
-$ cat out
-&Ouml;nce
+<div class="highlight"><pre><span class="nv">$ </span>./a.out &amp;gt;out
+<span class="nv">$ </span>cat out
+&amp;Ouml;nce
 Sonra
-</code></pre>
+</pre></div>
+
 </li>
 </ul></section>
             
@@ -6744,7 +6744,7 @@ Sonra
       
       <!-- slide source: 02sys/index.md -->
       <div class="slide-wrapper">
-        <div class="slide">
+        <div class="slide has_code">
           <div class="inner">
             
             <header><h2>Tamponlama: <code>stderr</code></h2></header>
@@ -6753,26 +6753,26 @@ Sonra
             <section><ul>
 <li>
 <p>Kaynak</p>
-<pre><code>!c
-#include &lt;stdio.h&gt;
-#include &lt;unistd.h&gt;
+<div class="highlight"><pre><span class="cp">#include &amp;lt;stdio.h&amp;gt;</span>
+<span class="cp">#include &amp;lt;unistd.h&amp;gt;</span>
 
-int
-main(void)
-{
-        fprintf(stderr, "&Ouml;nce");
-        write(2, "Sonra", 5);
-        return 0;
-}
-</code></pre>
+<span class="kt">int</span>
+<span class="nf">main</span><span class="p">(</span><span class="kt">void</span><span class="p">)</span>
+<span class="p">{</span>
+        <span class="n">fprintf</span><span class="p">(</span><span class="n">stderr</span><span class="p">,</span> <span class="s">&quot;&amp;Ouml;nce&quot;</span><span class="p">);</span>
+        <span class="n">write</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="s">&quot;Sonra&quot;</span><span class="p">,</span> <span class="mi">5</span><span class="p">);</span>
+        <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
+
 </li>
 <li>
 <p>&Ccedil;&#305;kt&#305; (ekran)</p>
-<pre><code>!sh
-$ ./a.out
-&Ouml;nce
+<div class="highlight"><pre><span class="nv">$ </span>./a.out
+&amp;Ouml;nce
 Sonra
-</code></pre>
+</pre></div>
+
 </li>
 </ul></section>
             

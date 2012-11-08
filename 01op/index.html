@@ -2261,16 +2261,16 @@ ortamda kullan&#305;n</p>
       
       <!-- slide source: 01op/index.md -->
       <div class="slide-wrapper">
-        <div class="slide">
+        <div class="slide has_code">
           <div class="inner">
             
             <header><h2><code>echo</code></h2></header>
             
             
-            <section><pre><code>    !sh
-    $ echo Merhaba D&uuml;nya
-    Merhaba D&uuml;nya
-</code></pre>
+            <section><div class="highlight"><pre>    <span class="nv">$ </span><span class="nb">echo </span>Merhaba D&amp;uuml;nya
+    Merhaba D&amp;uuml;nya
+</pre></div>
+
 <ul>
 <li>
 <p>En basit komutlardan biri</p>
@@ -2382,7 +2382,7 @@ k&#305;sayollar&#305; kullanabilirsiniz</p>
 <li>
 <p>Bir komutun &ccedil;&#305;kt&#305;s&#305;n&#305; (&ouml;rne&#287;in yard&#305;m almak amac&#305;yla) bir dosyaya kaydetmeyi
     tercih edin; nas&#305;l?</p>
-<div class="highlight"><pre><span class="nv">$ </span>KOMUT &gt;dosya 2&gt;&amp;1
+<div class="highlight"><pre><span class="nv">$ </span>KOMUT &amp;gt;dosya 2&amp;gt;&amp;amp;1
 </pre></div>
 
 </li>
@@ -2410,23 +2410,30 @@ k&#305;sayollar&#305; kullanabilirsiniz</p>
       
       <!-- slide source: 01op/index.md -->
       <div class="slide-wrapper">
-        <div class="slide">
+        <div class="slide has_code">
           <div class="inner">
             
             <header><h2>Kabuk Programlama</h2></header>
             
             
             <section><p><strong>Kabuk bir programlama ortam&#305;!</strong></p>
-<pre><code>    #!sh
-    $ if [ $USER = roktas ]
-    &gt; then
-    &gt;       you="dostum"
-    &gt; else
-    &gt;       you="yabanc&#305;"
-    &gt; fi
-    &gt; echo Merhaba $you
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3
+4
+5
+6
+7
+8</pre></div></td><td class="code"><div class="highlight"><pre>    <span class="nv">$ </span><span class="k">if</span> <span class="o">[</span> <span class="nv">$USER</span> <span class="o">=</span> roktas <span class="o">]</span>
+    &amp;gt; <span class="k">then</span>
+    &amp;gt;       <span class="nv">you</span><span class="o">=</span><span class="s2">&quot;dostum&quot;</span>
+    &amp;gt; <span class="k">else</span>
+    &amp;gt;       <span class="nv">you</span><span class="o">=</span><span class="s2">&quot;yabanc&amp;#305;&quot;</span>
+    &amp;gt; <span class="k">fi</span>
+    &amp;gt; <span class="nb">echo </span>Merhaba <span class="nv">$you</span>
     Merhaba dostum
-</code></pre>
+</pre></div>
+</td></tr></table>
 <ul>
 <li>
 <p>Komutlar tek sat&#305;ra s&#305;&#287;mad&#305;&#287;&#305;nda komut istemi de&#287;i&#351;iyor; <code>&gt;</code> &rarr;  &ldquo;devam&#305;&rdquo;</p>
@@ -2694,7 +2701,7 @@ k&#305;sayollar&#305; kullanabilirsiniz</p>
       
       <!-- slide source: 01op/index.md -->
       <div class="slide-wrapper">
-        <div class="slide">
+        <div class="slide has_code">
           <div class="inner">
             
             <header><h2><code>cd</code></h2></header>
@@ -2704,23 +2711,23 @@ k&#305;sayollar&#305; kullanabilirsiniz</p>
 <ul>
 <li>
 <p>Dosya sisteminde gezinmek i&ccedil;in birincil ara&ccedil;</p>
-<pre><code>!sh
-/home/roktas$ cd .config
-/home/roktas/.config$ cd -
-/home/roktas$
-</code></pre>
+<div class="highlight"><pre>/home/roktas<span class="nv">$ </span><span class="nb">cd</span> .config
+/home/roktas/.config<span class="nv">$ </span><span class="nb">cd</span> -
+/home/roktas<span class="err">$</span>
+</pre></div>
+
 </li>
 <li>
 <p>Teknik olarak &ldquo;&ccedil;al&#305;&#351;ma dizini&rdquo;ni arg&uuml;manla bildirilen dizin olarak ayarl&#305;yor</p>
 </li>
 <li>
 <p>G&ouml;receli dosya yollar&#305; &ccedil;al&#305;&#351;ma dizinine g&ouml;re &ccedil;&ouml;z&uuml;l&uuml;yor</p>
-<pre><code>!sh
-/home/roktas$ cd tmp
-bash: cd: tmp: B&ouml;yle bir dosya ya da dizin yok
-/home/roktas$ cd /tmp
-/tmp$
-</code></pre>
+<div class="highlight"><pre>/home/roktas<span class="nv">$ </span><span class="nb">cd </span>tmp
+bash: <span class="nb">cd</span>: tmp: B&amp;ouml;yle bir dosya ya da dizin yok
+/home/roktas<span class="nv">$ </span><span class="nb">cd</span> /tmp
+/tmp<span class="err">$</span>
+</pre></div>
+
 </li>
 </ul></section>
             
@@ -3008,7 +3015,7 @@ bin etc lib
       
       <!-- slide source: 01op/index.md -->
       <div class="slide-wrapper">
-        <div class="slide">
+        <div class="slide has_code">
           <div class="inner">
             
             <header><h2>Bir Komutun Anatomisi</h2></header>
@@ -3017,11 +3024,11 @@ bin etc lib
             <section><ul>
 <li>
 <p>Daha uzun (&ldquo;long&rdquo;) bilgi g&ouml;r&uuml;nt&uuml;le &rarr; <code>-l</code></p>
-<pre><code>!sh
-~$ ls -l ~
-drwxr-xr-x 2 roktas roktas 4096 A&#287;u 12 00:37 bin
+<div class="highlight"><pre>~<span class="nv">$ </span>ls -l ~
+drwxr-xr-x 2 roktas roktas 4096 A&amp;#287;u 12 00:37 bin
 ...
-</code></pre>
+</pre></div>
+
 </li>
 <li>
 <p>&#350;imdilik program &ccedil;&#305;kt&#305;s&#305; &uuml;zerinde durmayal&#305;m; komutun yap&#305;s&#305;n&#305; inceleyin</p>
@@ -3066,7 +3073,7 @@ drwxr-xr-x 2 roktas roktas 4096 A&#287;u 12 00:37 bin
       
       <!-- slide source: 01op/index.md -->
       <div class="slide-wrapper">
-        <div class="slide">
+        <div class="slide has_code">
           <div class="inner">
             
             <header><h2>Bir Komutun Anatomisi</h2></header>
@@ -3075,9 +3082,9 @@ drwxr-xr-x 2 roktas roktas 4096 A&#287;u 12 00:37 bin
             <section><ul>
 <li>
 <p>Genel bi&ccedil;im</p>
-<pre><code>!sh
-$ &lt;PROGRAM&gt; [&lt;SE&Ccedil;ENEKLER&gt;...] [&lt;ARG&Uuml;MANLAR&gt;...]
-</code></pre>
+<div class="highlight"><pre><span class="nv">$ </span>&amp;lt;PROGRAM&amp;gt; <span class="o">[</span>&amp;lt;SE&amp;Ccedil;ENEKLER&amp;gt;...<span class="o">]</span> <span class="o">[</span>&amp;lt;ARG&amp;Uuml;MANLAR&amp;gt;...<span class="o">]</span>
+</pre></div>
+
 </li>
 <li>
 <p>Yayg&#305;n notasyonda <code>[]</code> ilgili &ouml;gelerin iste&#287;e ba&#287;l&#305; oldu&#287;unu, <code>...</code> ise
@@ -3316,17 +3323,17 @@ $ &lt;PROGRAM&gt; [&lt;SE&Ccedil;ENEKLER&gt;...] [&lt;ARG&Uuml;MANLAR&gt;...]
       
       <!-- slide source: 01op/index.md -->
       <div class="slide-wrapper">
-        <div class="slide">
+        <div class="slide has_code">
           <div class="inner">
             
             <header><h2><code>ls</code></h2></header>
             
             
-            <section><pre><code>    !sh
-    ~$ ls -l
-    drwxr-xr-x 2 roktas roktas 4096 A&#287;u 12 00:37 bin
+            <section><div class="highlight"><pre>    ~<span class="nv">$ </span>ls -l
+    drwxr-xr-x 2 roktas roktas 4096 A&amp;#287;u 12 00:37 bin
     ...
-</code></pre>
+</pre></div>
+
 <ul>
 <li>
 <p><code>d</code> &rarr; dosya t&uuml;r&uuml;: bu bir dizin</p>
@@ -3488,18 +3495,18 @@ drwx------ 49 roktas roktas 4096 Eki  3 21:34 .
       
       <!-- slide source: 01op/index.md -->
       <div class="slide-wrapper">
-        <div class="slide">
+        <div class="slide has_code">
           <div class="inner">
             
             <header><h2><code>mkdir</code></h2></header>
             
             
             <section><p><code>mkdir</code> Make Directory &rarr; Dizin Olu&#351;tur</p>
-<pre><code>    !sh
-    ~$ mkdir tmp
-    ~$ ls -d tmp
+<div class="highlight"><pre>    ~<span class="nv">$ </span>mkdir tmp
+    ~<span class="nv">$ </span>ls -d tmp
     tmp
-</code></pre>
+</pre></div>
+
 <ul>
 <li>
 <p>Arg&uuml;man olarak verilen dizini olu&#351;turur</p>
@@ -3507,18 +3514,18 @@ drwx------ 49 roktas roktas 4096 Eki  3 21:34 .
 <li>
 <p>Arg&uuml;man olarak bir dizin yolu verilmi&#351;se yolda son dizin (&ccedil;ocuk) d&#305;&#351;&#305;ndaki
     dizinler (ebeveynler) &ouml;nceden varolmal&#305;</p>
-<pre><code>!sh
-~$ mkdir tmp/foo/bar
-mkdir: `tmp/foo/bar' dizini olu&#351;turulam&#305;yor: ...
-</code></pre>
+<div class="highlight"><pre>~<span class="nv">$ </span>mkdir tmp/foo/bar
+mkdir: <span class="sb">`</span>tmp/foo/bar<span class="err">&#39;</span> dizini olu&amp;#351;turulam&amp;#305;yor: ...
+</pre></div>
+
 </li>
 <li>
 <p><code>-p</code> &rarr; &ouml;nce ebeveyn dizinleri (&ldquo;parents&rdquo;) yoksa olu&#351;tur</p>
-<pre><code>!sh
-~$ mkdir -p tmp/foo/bar
-~$ ls -d tmp/foo/bar
+<div class="highlight"><pre>~<span class="nv">$ </span>mkdir -p tmp/foo/bar
+~<span class="nv">$ </span>ls -d tmp/foo/bar
 tmp/foo/bar
-</code></pre>
+</pre></div>
+
 </li>
 </ul></section>
             
@@ -5183,7 +5190,7 @@ root
 </li>
 <li>
 <p>&#350;imdi &ccedil;&#305;kt&#305;y&#305; ekrana de&#287;il bir dosyaya <strong>y&ouml;nlendirelim</strong></p>
-<div class="highlight"><pre><span class="nv">$ </span>lspci &gt; pci.txt
+<div class="highlight"><pre><span class="nv">$ </span>lspci &amp;gt; pci.txt
 </pre></div>
 
 </li>
@@ -5275,8 +5282,8 @@ root
 <ul>
 <li>
 <p>Arg&uuml;man olarak verilen dosyalar&#305; ardarda ekranda g&ouml;r&uuml;nt&uuml;l&uuml;yor</p>
-<div class="highlight"><pre><span class="nv">$ </span><span class="nb">echo </span>foo &gt;/tmp/foo.txt
-<span class="nv">$ </span><span class="nb">echo </span>bar &gt;/tmp/bar.txt
+<div class="highlight"><pre><span class="nv">$ </span><span class="nb">echo </span>foo &amp;gt;/tmp/foo.txt
+<span class="nv">$ </span><span class="nb">echo </span>bar &amp;gt;/tmp/bar.txt
 <span class="nv">$ </span>cat foo.txt bar.txt
 foo
 bar
@@ -5286,7 +5293,7 @@ bar
 <li>
 <p>Tek dosya verilirse biti&#351;tirme sonucu yine tek dosya ve o dosyay&#305;
     g&ouml;r&uuml;nt&uuml;l&uuml;yor</p>
-<div class="highlight"><pre><span class="nv">$ </span>cat /tmp/foo.txt /tmp/bar.txt &gt;/tmp/foobar.txt
+<div class="highlight"><pre><span class="nv">$ </span>cat /tmp/foo.txt /tmp/bar.txt &amp;gt;/tmp/foobar.txt
 <span class="nv">$ </span>cat /tmp/foobar.txt
 foo
 bar
@@ -5327,8 +5334,8 @@ bar
 <ul>
 <li>
 <p>Bak&#305;n burada ikinci y&ouml;nlendirme dosyan&#305;n &uuml;zerine yaz&#305;l&#305;yor</p>
-<div class="highlight"><pre><span class="nv">$ </span><span class="nb">echo </span>foo &gt;/tmp/foo.txt
-<span class="nv">$ </span><span class="nb">echo </span>bar &gt;/tmp/foo.txt
+<div class="highlight"><pre><span class="nv">$ </span><span class="nb">echo </span>foo &amp;gt;/tmp/foo.txt
+<span class="nv">$ </span><span class="nb">echo </span>bar &amp;gt;/tmp/foo.txt
 <span class="nv">$ </span>cat foo.txt
 bar
 </pre></div>
@@ -5336,8 +5343,8 @@ bar
 </li>
 <li>
 <p>&Uuml;zerine yazmak yerine sonuna eklemek istiyoruz</p>
-<div class="highlight"><pre><span class="nv">$ </span><span class="nb">echo </span>foo &gt;/tmp/foo.txt
-<span class="nv">$ </span><span class="nb">echo </span>bar &gt;&gt;/tmp/foo.txt
+<div class="highlight"><pre><span class="nv">$ </span><span class="nb">echo </span>foo &amp;gt;/tmp/foo.txt
+<span class="nv">$ </span><span class="nb">echo </span>bar &amp;gt;&amp;gt;/tmp/foo.txt
 foo
 bar
 </pre></div>
@@ -5399,7 +5406,7 @@ bar
 <li>
 <p>Ama komut sat&#305;r&#305;nda bazen yararl&#305; olabilir; &ouml;zellikle bir ayg&#305;t&#305;n i&ccedil;erik
     d&ouml;k&uuml;m&uuml;n&uuml; (&ldquo;dump) bir ba&#351;ka ayg&#305;ta veya dosyaya y&ouml;nlendirmek i&ccedil;in</p>
-<div class="highlight"><pre><span class="nv">$ </span>cat mini.iso &gt;/dev/sdb
+<div class="highlight"><pre><span class="nv">$ </span>cat mini.iso &amp;gt;/dev/sdb
 </pre></div>
 
 </li>
@@ -5724,7 +5731,7 @@ kar&#351;&#305;layabilecek &#351;ekilde tasarlanm&#305;&#351;t&#305;r</p>
       
       <!-- slide source: 01op/index.md -->
       <div class="slide-wrapper">
-        <div class="slide">
+        <div class="slide has_code">
           <div class="inner">
             
             <header><h2><code>grep</code></h2></header>
@@ -5733,10 +5740,10 @@ kar&#351;&#305;layabilecek &#351;ekilde tasarlanm&#305;&#351;t&#305;r</p>
             <section><ul>
 <li>
 <p>Dosyalarda da arama yapabilirsiniz</p>
-<pre><code>!sh
-$ grep roktas /etc/passwd
-roktas:x:1000:1000:Recai Okta&#351;,,,:/home/roktas:/bin/bash
-</code></pre>
+<div class="highlight"><pre><span class="nv">$ </span>grep roktas /etc/passwd
+roktas:x:1000:1000:Recai Okta&amp;#351;,,,:/home/roktas:/bin/bash
+</pre></div>
+
 </li>
 <li>
 <p>&#304;lk arg&uuml;man &ldquo;ifade&rdquo;, ikinci arg&uuml;man dosya</p>
@@ -6039,7 +6046,7 @@ roktas:x:1000:1000:Recai Okta&#351;,,,:/home/roktas:/bin/bash
             
             
             <section><p>Bellek &ccedil;ubu&#287;una sistem kurulumu yap</p>
-<div class="highlight"><pre>    <span class="nv">$ </span>cat mini.iso &gt;/dev/sdb
+<div class="highlight"><pre>    <span class="nv">$ </span>cat mini.iso &amp;gt;/dev/sdb
 </pre></div>
 
 <ul>
